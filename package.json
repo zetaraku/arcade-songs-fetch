@@ -16,6 +16,7 @@
     "eslint-plugin-import": "^2.25.4"
   },
   "dependencies": {
-    "dotenv": "^16.0.0"
+    "dotenv": "^16.0.0",
+    "sqlite3": "^5.0.2"
   }
 }
