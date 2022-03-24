@@ -25,6 +25,7 @@
     "download": "^8.0.0",
     "log4js": "^6.4.4",
     "node_extra_ca_certs_mozilla_bundle": "^1.0.4",
+    "puppeteer": "^13.5.1",
     "sequelize": "^6.17.0",
     "sqlite3": "^5.0.2"
   }
