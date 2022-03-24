@@ -16,6 +16,7 @@
     "eslint-plugin-import": "^2.25.4"
   },
   "dependencies": {
+    "axios": "^0.26.1",
     "dotenv": "^16.0.0",
     "sequelize": "^6.17.0",
     "sqlite3": "^5.0.2"
