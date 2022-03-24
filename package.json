@@ -18,6 +18,7 @@
   "dependencies": {
     "axios": "^0.26.1",
     "dotenv": "^16.0.0",
+    "log4js": "^6.4.4",
     "sequelize": "^6.17.0",
     "sqlite3": "^5.0.2"
   }
