@@ -90,6 +90,7 @@ export default async function run() {
       sheet.isCnExcluded = Boolean(sheet.isCnExcluded);
     }
 
+    delete song.imageUrl;
     song.sheets = sheetsOfSong;
     song.isNew = Boolean(song.isNew);
     song.isLocked = Boolean(song.isLocked);
