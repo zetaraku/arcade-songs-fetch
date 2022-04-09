@@ -93,19 +93,19 @@ export default async function run() {
   const rawSongs: Record<string, any>[] = response.data;
   logger.info(`OK, ${rawSongs.length} songs fetched.`);
 
-  logger.info('Recreating Songs table ...');
-  await Song.sync({ force: true });
+  logger.info('Preparing Songs table ...');
+  await Song.sync();
 
-  logger.info('Recreating Sheets table ...');
-  await Sheet.sync({ force: true });
+  logger.info('Preparing Sheets table ...');
+  await Sheet.sync();
 
-  logger.info('Inserting songs ...');
+  logger.info('Updating songs ...');
   const songs = rawSongs.map((rawSong) => extractSong(rawSong));
-  await Song.bulkCreate(songs);
+  await Promise.all(songs.map((song) => Song.upsert(song)));
 
-  logger.info('Inserting sheets ...');
+  logger.info('Updating sheets ...');
   const sheets = rawSongs.flatMap((rawSong) => extractSheets(rawSong));
-  await Sheet.bulkCreate(sheets);
+  await Promise.all(sheets.map((sheet) => Sheet.upsert(sheet)));
 
   logger.info('Done!');
 }
