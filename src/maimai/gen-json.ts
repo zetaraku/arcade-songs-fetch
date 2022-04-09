@@ -30,7 +30,7 @@ const versionMappingList = [
   { version: 'Splash PLUS', abbr: 'Splash+' },
   { version: 'UNiVERSE', abbr: 'UNiVERSE' },
   { version: 'UNiVERSE PLUS', abbr: 'UNiVERSE+' },
-  //! add further mapping here !//
+  //! add further version here !//
 ];
 const typeMappingList = [
   { type: 'std', name: 'STD（スタンダード）', abbr: 'STD', iconUrl: '/img/maimai/music_standard.png' },

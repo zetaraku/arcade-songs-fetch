@@ -29,7 +29,7 @@ const versionMap = new Map([
   [215, 'Splash PLUS'],
   [220, 'UNiVERSE'],
   [225, 'UNiVERSE PLUS'],
-  //! add further mapping here !//
+  //! add further version here !//
 ]);
 
 function extractSong(rawSong: Record<string, any>) {
