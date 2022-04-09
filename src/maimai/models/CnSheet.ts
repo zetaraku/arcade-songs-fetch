@@ -18,6 +18,4 @@ export default sequelize.define('CnSheet', {
     type: DataTypes.STRING,
     primaryKey: true,
   },
-}, {
-  timestamps: false,
 });

@@ -16,6 +16,4 @@ export default sequelize.define('SheetVersion', {
   },
 
   version: DataTypes.STRING,
-}, {
-  timestamps: false,
 });

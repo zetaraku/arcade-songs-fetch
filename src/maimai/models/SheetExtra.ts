@@ -27,6 +27,4 @@ export default sequelize.define('SheetExtra', {
   totalCount: DataTypes.INTEGER,
 
   noteDesigner: DataTypes.STRING,
-}, {
-  timestamps: false,
 });

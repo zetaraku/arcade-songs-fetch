@@ -12,6 +12,4 @@ export default sequelize.define('SongExtra', {
   },
 
   bpm: DataTypes.REAL,
-}, {
-  timestamps: false,
 });

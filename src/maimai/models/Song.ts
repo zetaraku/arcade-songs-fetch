@@ -25,6 +25,4 @@ export default sequelize.define('Song', {
 
   isNew: DataTypes.BOOLEAN,
   isLocked: DataTypes.BOOLEAN,
-}, {
-  timestamps: false,
 });

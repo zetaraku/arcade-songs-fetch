@@ -20,6 +20,4 @@ export default sequelize.define('Sheet', {
   },
 
   level: DataTypes.STRING,
-}, {
-  timestamps: false,
 });
