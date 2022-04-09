@@ -99,6 +99,21 @@ export default async function run() {
       delete sheet.isJpIncluded;
       delete sheet.isIntlIncluded;
       delete sheet.isCnIncluded;
+
+      sheet.noteCounts = {
+        tap: sheet.tapCount,
+        hold: sheet.holdCount,
+        slide: sheet.slideCount,
+        touch: sheet.touchCount,
+        break: sheet.breakCount,
+        total: sheet.totalCount,
+      };
+      delete sheet.tapCount;
+      delete sheet.holdCount;
+      delete sheet.slideCount;
+      delete sheet.touchCount;
+      delete sheet.breakCount;
+      delete sheet.totalCount;
     }
 
     delete song.imageUrl;
