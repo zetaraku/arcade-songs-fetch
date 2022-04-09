@@ -1,6 +1,6 @@
 import axios from 'axios';
 import log4js from 'log4js';
-import { Song, Sheet } from './models';
+import { Song, Sheet, JpSheet } from './models';
 import { hashed } from '../core/utils';
 
 const logger = log4js.getLogger('maimai/fetch-songs');
@@ -106,6 +106,12 @@ export default async function run() {
   logger.info('Updating sheets ...');
   const sheets = rawSongs.flatMap((rawSong) => extractSheets(rawSong));
   await Promise.all(sheets.map((sheet) => Sheet.upsert(sheet)));
+
+  logger.info('Recreating JpSheets table ...');
+  await JpSheet.sync({ force: true });
+
+  logger.info('Inserting sheets ...');
+  JpSheet.bulkCreate(sheets);
 
   logger.info('Done!');
 }

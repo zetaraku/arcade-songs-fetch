@@ -66,11 +66,13 @@ export default async function run() {
     const sheetsOfSong: any[] = await sequelize.query(/* sql */ `
       SELECT
         *,
+        "JpSheets"."title" IS NULL AS "isJpExcluded",
         "IntlSheets"."title" IS NULL AS "isIntlExcluded",
         "CnSheets"."title" IS NULL AS "isCnExcluded"
       FROM "Sheets"
         NATURAL LEFT JOIN "SheetVersions"
         NATURAL LEFT JOIN "SheetExtras"
+        NATURAL LEFT JOIN "JpSheets"
         NATURAL LEFT JOIN "IntlSheets"
         NATURAL LEFT JOIN "CnSheets"
       WHERE "category" = :category AND "title" = :title
@@ -87,6 +89,7 @@ export default async function run() {
       delete sheet.title;
       sheet.levelValue = Number(sheet.level.replace('+', '.5'));
       levelMappings.set(sheet.levelValue, sheet.level);
+      sheet.isJpExcluded = Boolean(sheet.isJpExcluded);
       sheet.isIntlExcluded = Boolean(sheet.isIntlExcluded);
       sheet.isCnExcluded = Boolean(sheet.isCnExcluded);
     }
