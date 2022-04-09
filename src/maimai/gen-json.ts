@@ -24,8 +24,8 @@ const versionMappingList = [
   { version: 'MiLK', abbr: 'MiLK' },
   { version: 'MiLK PLUS', abbr: 'MiLK+' },
   { version: 'FiNALE', abbr: 'FiNALE' },
-  { version: 'でらっくす', abbr: 'でらっくす' },
-  { version: 'でらっくす PLUS', abbr: 'でらっくす+' },
+  { version: 'maimaiでらっくす', abbr: 'でらっくす' },
+  { version: 'maimaiでらっくす PLUS', abbr: 'でらっくす+' },
   { version: 'Splash', abbr: 'Splash' },
   { version: 'Splash PLUS', abbr: 'Splash+' },
   { version: 'UNiVERSE', abbr: 'UNiVERSE' },
@@ -69,6 +69,7 @@ export default async function run() {
         "IntlSheets"."title" IS NULL AS "isIntlExcluded",
         "CnSheets"."title" IS NULL AS "isCnExcluded"
       FROM "Sheets"
+        NATURAL LEFT JOIN "SheetVersions"
         NATURAL LEFT JOIN "SheetExtras"
         NATURAL LEFT JOIN "IntlSheets"
         NATURAL LEFT JOIN "CnSheets"
