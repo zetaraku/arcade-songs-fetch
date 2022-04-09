@@ -66,9 +66,9 @@ export default async function run() {
     const sheetsOfSong: any[] = await sequelize.query(/* sql */ `
       SELECT
         *,
-        "JpSheets"."title" IS NULL AS "isJpExcluded",
-        "IntlSheets"."title" IS NULL AS "isIntlExcluded",
-        "CnSheets"."title" IS NULL AS "isCnExcluded"
+        "JpSheets"."title" IS NOT NULL AS "isJpIncluded",
+        "IntlSheets"."title" IS NOT NULL AS "isIntlIncluded",
+        "CnSheets"."title" IS NOT NULL AS "isCnIncluded"
       FROM "Sheets"
         NATURAL LEFT JOIN "SheetVersions"
         NATURAL LEFT JOIN "SheetExtras"
@@ -87,11 +87,18 @@ export default async function run() {
     for (const sheet of sheetsOfSong) {
       delete sheet.category;
       delete sheet.title;
+
       sheet.levelValue = Number(sheet.level.replace('+', '.5'));
       levelMappings.set(sheet.levelValue, sheet.level);
-      sheet.isJpExcluded = Boolean(sheet.isJpExcluded);
-      sheet.isIntlExcluded = Boolean(sheet.isIntlExcluded);
-      sheet.isCnExcluded = Boolean(sheet.isCnExcluded);
+
+      sheet.regions = {
+        jp: Boolean(sheet.isJpIncluded),
+        intl: Boolean(sheet.isIntlIncluded),
+        cn: Boolean(sheet.isCnIncluded),
+      };
+      delete sheet.isJpIncluded;
+      delete sheet.isIntlIncluded;
+      delete sheet.isCnIncluded;
     }
 
     delete song.imageUrl;
