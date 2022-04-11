@@ -13,7 +13,7 @@ logger.level = log4js.levels.INFO;
 // fix missing certificate
 https.globalAgent.options.ca = fs.readFileSync('node_modules/node_extra_ca_certs_mozilla_bundle/ca_bundle/ca_intermediate_root_bundle.pem');
 
-const IMAGE_DIR_PATH = 'data/maimai/images';
+const IMAGE_DIR_PATH = 'data/maimai/img/cover';
 
 export default async function run() {
   const songs = await Song.findAll<any>();
