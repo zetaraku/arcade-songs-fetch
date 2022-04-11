@@ -10,6 +10,16 @@ logger.level = log4js.levels.INFO;
 
 const DIST_PATH = 'dist/maimai';
 
+const categoryMappingList = [
+  { category: 'POPS＆アニメ' },
+  { category: 'niconico＆ボーカロイド' },
+  { category: '東方Project' },
+  { category: 'ゲーム＆バラエティ' },
+  { category: 'maimai' },
+  { category: 'オンゲキ＆CHUNITHM' },
+  //! add further category here !//
+];
+
 const versionMappingList = [
   { version: 'maimai', abbr: 'maimai' },
   { version: 'maimai PLUS', abbr: 'maimai+' },
@@ -133,6 +143,7 @@ export default async function run() {
   const output = {
     songs,
     levels,
+    categories: categoryMappingList,
     versions: versionMappingList,
     types: typeMappingList,
     difficulties: difficultyMappingList,
