@@ -148,7 +148,7 @@ export default async function run() {
     types: typeMappingList,
     difficulties: difficultyMappingList,
     regions: regionMappingList,
-    updateTime: Date.now(),
+    updateTime: new Date().toISOString(),
   };
 
   logger.info(`Writing output into ${DIST_PATH}/data.json ...`);
