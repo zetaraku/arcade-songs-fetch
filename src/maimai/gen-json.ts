@@ -54,8 +54,9 @@ const difficultyMappingList = [
   { difficulty: 'remaster', name: 'Re:MASTER', color: 'cyan' },
 ];
 const regionMappingList = [
-  { regionCode: 'intl' },
-  { regionCode: 'cn' },
+  { region: 'jp', name: '日本版' },
+  { region: 'intl', name: '海外版 (International ver.)' },
+  { region: 'cn', name: '中国版 (舞萌DX)' },
 ];
 
 export default async function run() {
