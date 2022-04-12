@@ -19,7 +19,6 @@ const categoryMappingList = [
   { category: 'オンゲキ＆CHUNITHM' },
   //! add further category here !//
 ];
-
 const versionMappingList = [
   { version: 'maimai', abbr: 'maimai' },
   { version: 'maimai PLUS', abbr: 'maimai+' },
@@ -59,6 +58,18 @@ const regionMappingList = [
   { region: 'cn', name: '中国版 (舞萌DX)' },
 ];
 
+const typeOrder = {
+  dx: 1,
+  std: 2,
+} as Record<string, number>;
+const difficultyOrder = {
+  basic: 1,
+  advanced: 2,
+  expert: 3,
+  master: 4,
+  remaster: 5,
+} as Record<string, number>;
+
 export default async function run() {
   const levelMappings = new Map();
 
@@ -94,6 +105,11 @@ export default async function run() {
         title: song.title,
       },
     });
+
+    sheetsOfSong.sort((a, b) => (
+      typeOrder[a.type] - typeOrder[b.type]
+      || difficultyOrder[a.difficulty] - difficultyOrder[b.difficulty]
+    ));
 
     for (const sheet of sheetsOfSong) {
       delete sheet.category;
