@@ -1,7 +1,7 @@
 import { DataTypes } from 'sequelize';
 import sequelize from './sequelize';
 
-export default sequelize.define('JpSheet', {
+const JpSheet = sequelize.define('JpSheet', {
   category: {
     type: DataTypes.STRING,
     primaryKey: true,
@@ -19,3 +19,5 @@ export default sequelize.define('JpSheet', {
     primaryKey: true,
   },
 });
+
+export default JpSheet;

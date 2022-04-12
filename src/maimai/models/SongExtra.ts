@@ -1,7 +1,7 @@
 import { DataTypes } from 'sequelize';
 import sequelize from './sequelize';
 
-export default sequelize.define('SongExtra', {
+const SongExtra = sequelize.define('SongExtra', {
   category: {
     type: DataTypes.STRING,
     primaryKey: true,
@@ -13,3 +13,5 @@ export default sequelize.define('SongExtra', {
 
   bpm: DataTypes.REAL,
 });
+
+export default SongExtra;

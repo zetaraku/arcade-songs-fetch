@@ -1,7 +1,7 @@
 import { DataTypes } from 'sequelize';
 import sequelize from './sequelize';
 
-export default sequelize.define('SheetExtra', {
+const SheetExtra = sequelize.define('SheetExtra', {
   category: {
     type: DataTypes.STRING,
     primaryKey: true,
@@ -28,3 +28,5 @@ export default sequelize.define('SheetExtra', {
 
   noteDesigner: DataTypes.STRING,
 });
+
+export default SheetExtra;

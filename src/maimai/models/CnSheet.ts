@@ -1,7 +1,7 @@
 import { DataTypes } from 'sequelize';
 import sequelize from './sequelize';
 
-export default sequelize.define('CnSheet', {
+const CnSheet = sequelize.define('CnSheet', {
   category: {
     type: DataTypes.STRING,
     primaryKey: true,
@@ -19,3 +19,5 @@ export default sequelize.define('CnSheet', {
     primaryKey: true,
   },
 });
+
+export default CnSheet;

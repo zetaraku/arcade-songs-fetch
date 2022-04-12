@@ -1,7 +1,7 @@
 import { DataTypes } from 'sequelize';
 import sequelize from './sequelize';
 
-export default sequelize.define('Song', {
+const Song = sequelize.define('Song', {
   category: {
     type: DataTypes.STRING,
     primaryKey: true,
@@ -26,3 +26,5 @@ export default sequelize.define('Song', {
   isNew: DataTypes.BOOLEAN,
   isLocked: DataTypes.BOOLEAN,
 });
+
+export default Song;

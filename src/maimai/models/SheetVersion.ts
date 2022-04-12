@@ -1,7 +1,7 @@
 import { DataTypes } from 'sequelize';
 import sequelize from './sequelize';
 
-export default sequelize.define('SheetVersion', {
+const SheetVersion = sequelize.define('SheetVersion', {
   category: {
     type: DataTypes.STRING,
     primaryKey: true,
@@ -17,3 +17,5 @@ export default sequelize.define('SheetVersion', {
 
   version: DataTypes.STRING,
 });
+
+export default SheetVersion;
