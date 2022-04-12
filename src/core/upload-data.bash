@@ -7,5 +7,5 @@ aws s3 sync "data/$GAME_CODE/img/" "s3://$S3_BUCKET_NAME/$GAME_CODE/img/" --acl 
 
 # Invalidate CloudFront cache for data (if any)
 if [ -n "$CLOUDFRONT_DIST_ID" ]; then
-  aws cloudfront create-invalidation --distribution-id "$CLOUDFRONT_DIST_ID" --paths "/$GAME_CODE/*.json"
+  aws cloudfront create-invalidation --distribution-id "$CLOUDFRONT_DIST_ID" --paths "/$GAME_CODE/*"
 fi
