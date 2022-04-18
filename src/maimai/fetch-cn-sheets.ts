@@ -60,7 +60,7 @@ export default async function run() {
 
   logger.info('Inserting sheets ...');
   const cnSheets = rawCnSongs.flatMap((rawCnSong) => extractCnSheets(rawCnSong));
-  CnSheet.bulkCreate(cnSheets);
+  await CnSheet.bulkCreate(cnSheets);
 
   logger.info('Done!');
 }

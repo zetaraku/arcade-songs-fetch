@@ -111,7 +111,7 @@ export default async function run() {
   await JpSheet.sync({ force: true });
 
   logger.info('Inserting sheets ...');
-  JpSheet.bulkCreate(sheets);
+  await JpSheet.bulkCreate(sheets);
 
   logger.info('Done!');
 }
