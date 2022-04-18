@@ -5,6 +5,11 @@
 aws s3 cp "dist/$GAME_CODE/data.json" "s3://$S3_BUCKET_NAME/$GAME_CODE/data.json" --acl 'public-read'
 aws s3 sync "data/$GAME_CODE/img/" "s3://$S3_BUCKET_NAME/$GAME_CODE/img/" --acl 'public-read' --cache-control 'public, max-age=31536000, immutable'
 
+# Upload gallery (if any)
+if [ -f "dist/$GAME_CODE/gallery.json" ]; then
+  aws s3 cp "dist/$GAME_CODE/gallery.json" "s3://$S3_BUCKET_NAME/$GAME_CODE/gallery.json" --acl 'public-read'
+fi
+
 # Invalidate CloudFront cache for data (if any)
 if [ -n "$CLOUDFRONT_DIST_ID" ]; then
   aws cloudfront create-invalidation --distribution-id "$CLOUDFRONT_DIST_ID" --paths "/$GAME_CODE/*"
