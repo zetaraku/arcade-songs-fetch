@@ -93,9 +93,9 @@ export default async function run() {
     const sheetsOfSong: any[] = await sequelize.query(/* sql */ `
       SELECT
         *,
-        "JpSheets"."title" IS NOT NULL AS "isJpIncluded",
-        "IntlSheets"."title" IS NOT NULL AS "isIntlIncluded",
-        "CnSheets"."title" IS NOT NULL AS "isCnIncluded"
+        "JpSheets"."title" IS NOT NULL AS "regions.jp",
+        "IntlSheets"."title" IS NOT NULL AS "regions.intl",
+        "CnSheets"."title" IS NOT NULL AS "regions.cn"
       FROM "Sheets"
         NATURAL LEFT JOIN "SheetVersions"
         NATURAL LEFT JOIN "SheetExtras"
@@ -109,6 +109,7 @@ export default async function run() {
         category: song.category,
         title: song.title,
       },
+      nest: true,
     });
 
     sheetsOfSong.sort((a, b) => (
@@ -123,14 +124,10 @@ export default async function run() {
       sheet.levelValue = levelValueOf(sheet.level);
       levelMappings.set(sheet.levelValue, sheet.level);
 
-      sheet.regions = {
-        jp: Boolean(sheet.isJpIncluded),
-        intl: Boolean(sheet.isIntlIncluded),
-        cn: Boolean(sheet.isCnIncluded),
-      };
-      delete sheet.isJpIncluded;
-      delete sheet.isIntlIncluded;
-      delete sheet.isCnIncluded;
+
+      for (const region of Object.keys(sheet.regions)) {
+        sheet.regions[region] = Boolean(sheet.regions[region]);
+      }
 
       sheet.noteCounts = {
         tap: sheet.tapCount,
