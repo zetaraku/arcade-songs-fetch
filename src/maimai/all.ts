@@ -5,6 +5,7 @@ import fetchIntlSheets from './fetch-intl-sheets';
 import fetchCnSheets from './fetch-cn-sheets';
 import fetchExtras from './fetch-extras';
 import genJson from './gen-json';
+import uploadData from './upload-data';
 
 export default async function run() {
   await fetchSongs();
@@ -14,6 +15,7 @@ export default async function run() {
   await fetchCnSheets();
   await fetchExtras();
   await genJson();
+  await uploadData();
 }
 
 if (require.main === module) run();

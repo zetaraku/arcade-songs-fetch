@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "maimai/all": "ts-node src/maimai/all && npm run maimai/upload-data",
+    "maimai/all": "ts-node src/maimai/all",
     "----------------": "----------------",
     "maimai/fetch-songs": "ts-node src/maimai/fetch-songs",
     "maimai/fetch-images": "ts-node src/maimai/fetch-images",
