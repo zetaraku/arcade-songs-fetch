@@ -17,20 +17,20 @@ const categoryMap = new Map([
   //! add further category here !//
 ]);
 
-function extractCnSheets(rawSong: Record<string, any>) {
+function extractCnSheets(rawCnSong: Record<string, any>) {
   return [
-    { type: 'dx', difficulty: 'basic', level: rawSong.dx_lev_bas },
-    { type: 'dx', difficulty: 'advanced', level: rawSong.dx_lev_adv },
-    { type: 'dx', difficulty: 'expert', level: rawSong.dx_lev_exp },
-    { type: 'dx', difficulty: 'master', level: rawSong.dx_lev_mas },
-    { type: 'dx', difficulty: 'remaster', level: rawSong.dx_lev_remas },
-    { type: 'std', difficulty: 'basic', level: rawSong.lev_bas },
-    { type: 'std', difficulty: 'advanced', level: rawSong.lev_adv },
-    { type: 'std', difficulty: 'expert', level: rawSong.lev_exp },
-    { type: 'std', difficulty: 'master', level: rawSong.lev_mas },
-    { type: 'std', difficulty: 'remaster', level: rawSong.lev_remas },
-  ].filter((e) => !!e.level).map((rawSheet) => {
-    let { category, title } = rawSong;
+    { type: 'dx', difficulty: 'basic', level: rawCnSong.dx_lev_bas },
+    { type: 'dx', difficulty: 'advanced', level: rawCnSong.dx_lev_adv },
+    { type: 'dx', difficulty: 'expert', level: rawCnSong.dx_lev_exp },
+    { type: 'dx', difficulty: 'master', level: rawCnSong.dx_lev_mas },
+    { type: 'dx', difficulty: 'remaster', level: rawCnSong.dx_lev_remas },
+    { type: 'std', difficulty: 'basic', level: rawCnSong.lev_bas },
+    { type: 'std', difficulty: 'advanced', level: rawCnSong.lev_adv },
+    { type: 'std', difficulty: 'expert', level: rawCnSong.lev_exp },
+    { type: 'std', difficulty: 'master', level: rawCnSong.lev_mas },
+    { type: 'std', difficulty: 'remaster', level: rawCnSong.lev_remas },
+  ].filter((e) => !!e.level).map((rawCnSheet) => {
+    let { category, title } = rawCnSong;
 
     // map CN category to JP category
     category = categoryMap.get(category) ?? null;
@@ -43,7 +43,7 @@ function extractCnSheets(rawSong: Record<string, any>) {
     return {
       category,
       title,
-      ...rawSheet,
+      ...rawCnSheet,
     };
   });
 }
@@ -52,15 +52,15 @@ export default async function run() {
   logger.info(`Fetching data from: ${DATA_URL} ...`);
   const response = await axios.get(DATA_URL);
 
-  const rawSongs: Record<string, any>[] = response.data;
-  logger.info(`OK, ${rawSongs.length} songs fetched.`);
+  const rawCnSongs: Record<string, any>[] = response.data;
+  logger.info(`OK, ${rawCnSongs.length} songs fetched.`);
 
   logger.info('Recreating CnSheets table ...');
   await CnSheet.sync({ force: true });
 
   logger.info('Inserting sheets ...');
-  const sheets = rawSongs.flatMap((rawSong) => extractCnSheets(rawSong));
-  CnSheet.bulkCreate(sheets);
+  const cnSheets = rawCnSongs.flatMap((rawCnSong) => extractCnSheets(rawCnSong));
+  CnSheet.bulkCreate(cnSheets);
 
   logger.info('Done!');
 }

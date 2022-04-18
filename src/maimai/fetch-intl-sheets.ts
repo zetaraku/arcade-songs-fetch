@@ -86,7 +86,8 @@ async function getIntlSheets(
   }
 
   const sheetBlocks = $(`.music_${difficulty}_score_back`).get();
-  const sheets = sheetBlocks.map((e) => {
+
+  return sheetBlocks.map((e) => {
     let title = $(e).find('.music_name_block').text();
 
     //! hotfix
@@ -110,8 +111,6 @@ async function getIntlSheets(
       difficulty,
     };
   });
-
-  return sheets;
 }
 
 export default async function run() {
@@ -122,7 +121,7 @@ export default async function run() {
     throw new Error('Failed to get the required cookies. (Login Failed)');
   }
 
-  const sheets: Record<string, any>[] = [];
+  const intlSheets: Record<string, any>[] = [];
 
   logger.info(`Fetching data from: ${DATA_URL} ...`);
   for (const category of categoryIdMap.keys()) {
@@ -131,18 +130,18 @@ export default async function run() {
     for (const difficulty of difficultyIdMap.keys()) {
       logger.info(`- difficulty '${difficulty}'`);
 
-      sheets.push(...await getIntlSheets(category, difficulty, cookies));
+      intlSheets.push(...await getIntlSheets(category, difficulty, cookies));
 
       await sleep(500);
     }
   }
-  logger.info(`OK, ${sheets.length} sheets fetched.`);
+  logger.info(`OK, ${intlSheets.length} sheets fetched.`);
 
   logger.info('Recreating IntlSheets table ...');
   await IntlSheet.sync({ force: true });
 
   logger.info('Inserting sheets ...');
-  await IntlSheet.bulkCreate(sheets);
+  await IntlSheet.bulkCreate(intlSheets);
 
   logger.info('Done!');
 }

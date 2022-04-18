@@ -151,25 +151,25 @@ export default async function run() {
     throw new Error('Failed to get the required cookies. (Login Failed)');
   }
 
-  const sheets: Record<string, any>[] = [];
+  const jpSheets: Record<string, any>[] = [];
 
   logger.info(`Fetching data from: ${DATA_URL} ...`);
   for (const version of versionIdMap.keys()) {
     logger.info(`* version '${version}'`);
 
-    sheets.push(...await getJpSheets(version, 'basic', cookies));
+    jpSheets.push(...await getJpSheets(version, 'basic', cookies));
 
     await sleep(500);
   }
-  logger.info(`OK, ${sheets.length} sheets fetched.`);
+  logger.info(`OK, ${jpSheets.length} sheets fetched.`);
 
   logger.info('Preparing SheetVersions table ...');
   await SheetVersion.sync();
 
   logger.info('Updating sheet versions ...');
-  for (const sheet of sheets) {
-    sheet.category = await getCategory(sheet);
-    await SheetVersion.upsert(sheet);
+  for (const jpSheet of jpSheets) {
+    jpSheet.category = await getCategory(jpSheet);
+    await SheetVersion.upsert(jpSheet);
   }
 
   logger.info('Done!');
