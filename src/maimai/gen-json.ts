@@ -70,6 +70,11 @@ const difficultyOrder = {
   remaster: 5,
 } as Record<string, number>;
 
+function levelValueOf(level: string | null) {
+  if (level === null) return null;
+  return Number(level.replace('+', '.5'));
+}
+
 export default async function run() {
   const levelMappings = new Map();
 
@@ -115,7 +120,7 @@ export default async function run() {
       delete sheet.category;
       delete sheet.title;
 
-      sheet.levelValue = Number(sheet.level.replace('+', '.5'));
+      sheet.levelValue = levelValueOf(sheet.level);
       levelMappings.set(sheet.levelValue, sheet.level);
 
       sheet.regions = {
