@@ -13,8 +13,7 @@
     "maimai/fetch-cn-sheets": "ts-node src/maimai/fetch-cn-sheets",
     "maimai/fetch-extras": "ts-node src/maimai/fetch-extras",
     "maimai/gen-json": "ts-node src/maimai/gen-json",
-    "maimai/upload-data": "dotenv -v GAME_CODE=maimai -- bash src/core/upload-data.bash",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "maimai/upload-data": "dotenv -v GAME_CODE=maimai -- bash src/core/upload-data.bash"
   },
   "author": "Raku Zeta <zetaraku@gmail.com>",
   "license": "MIT",
