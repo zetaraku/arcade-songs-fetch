@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "maimai/all": "ts-node src/maimai/all",
-    "----------------": "----------------",
+    "----------------": "",
     "maimai/fetch-songs": "ts-node src/maimai/fetch-songs",
     "maimai/fetch-images": "ts-node src/maimai/fetch-images",
     "maimai/fetch-versions": "ts-node src/maimai/fetch-versions",
@@ -13,7 +13,8 @@
     "maimai/fetch-cn-sheets": "ts-node src/maimai/fetch-cn-sheets",
     "maimai/fetch-extras": "ts-node src/maimai/fetch-extras",
     "maimai/gen-json": "ts-node src/maimai/gen-json",
-    "maimai/upload-data": "ts-node src/maimai/upload-data"
+    "maimai/upload-data": "ts-node src/maimai/upload-data",
+    "--------$--------": ""
   },
   "author": "Raku Zeta <zetaraku@gmail.com>",
   "license": "MIT",
