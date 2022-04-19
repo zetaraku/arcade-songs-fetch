@@ -19,7 +19,7 @@ export default async function run() {
 
   logger.info('Downloading cover image for songs ...');
   for (const [index, song] of songs.entries()) {
-    if (!fs.existsSync(`${IMAGE_DIR_PATH}/${song.imageName}`)) {
+    if (song.imageName && !fs.existsSync(`${IMAGE_DIR_PATH}/${song.imageName}`)) {
       logger.info(`(${1 + index} / ${songs.length}) ${song.title}`);
       await download(song.imageUrl, IMAGE_DIR_PATH, { filename: song.imageName });
 
