@@ -1,5 +1,4 @@
 /* eslint-disable no-await-in-loop */
-/* eslint-disable no-restricted-syntax */
 import axios from 'axios';
 import puppeteer from 'puppeteer';
 import sleep from 'sleep-promise';

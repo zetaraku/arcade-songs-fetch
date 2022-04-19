@@ -1,5 +1,4 @@
 /* eslint-disable no-await-in-loop */
-/* eslint-disable no-restricted-syntax */
 import axios from 'axios';
 import sleep from 'sleep-promise';
 import log4js from 'log4js';

@@ -1,5 +1,4 @@
 /* eslint-disable no-await-in-loop */
-/* eslint-disable no-restricted-syntax */
 import fs from 'fs';
 import log4js from 'log4js';
 import { QueryTypes } from 'sequelize';
