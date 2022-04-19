@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "maimai/all": "ts-node src/maimai/all",
+    "chunithm/all": "ts-node src/chunithm/all",
     "----------------": "",
     "maimai/fetch-songs": "ts-node src/maimai/fetch-songs",
     "maimai/fetch-images": "ts-node src/maimai/fetch-images",
@@ -14,6 +15,11 @@
     "maimai/fetch-extras": "ts-node src/maimai/fetch-extras",
     "maimai/gen-json": "ts-node src/maimai/gen-json",
     "maimai/upload-data": "ts-node src/maimai/upload-data",
+    "chunithm/fetch-songs": "ts-node src/chunithm/fetch-songs",
+    "chunithm/fetch-images": "ts-node src/chunithm/fetch-images",
+    "chunithm/fetch-intl-sheets": "ts-node src/chunithm/fetch-intl-sheets",
+    "chunithm/gen-json": "ts-node src/chunithm/gen-json",
+    "chunithm/upload-data": "ts-node src/chunithm/upload-data",
     "--------$--------": ""
   },
   "author": "Raku Zeta <zetaraku@gmail.com>",
