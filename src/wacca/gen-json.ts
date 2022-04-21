@@ -56,7 +56,7 @@ function levelValueOf(level: string | null) {
 export default async function run() {
   const levelMappings = new Map();
 
-  logger.info('Loading songs and extras from database ...');
+  logger.info('Loading songs from database ...');
   const songs: any[] = await sequelize.query(/* sql */ `
     SELECT * FROM "Songs"
     ORDER BY releaseDate
@@ -64,7 +64,7 @@ export default async function run() {
     type: QueryTypes.SELECT,
   });
 
-  logger.info('Loading sheets and extras from database ...');
+  logger.info('Loading sheets from database ...');
   for (const song of songs) {
     const sheetsOfSong: any[] = await sequelize.query(/* sql */ `
       SELECT * FROM "Sheets"
