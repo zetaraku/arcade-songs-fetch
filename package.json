@@ -6,6 +6,7 @@
   "scripts": {
     "maimai/all": "ts-node src/maimai/all",
     "chunithm/all": "ts-node src/chunithm/all",
+    "wacca/all": "ts-node src/wacca/all",
     "----------------": "",
     "maimai/fetch-songs": "ts-node src/maimai/fetch-songs",
     "maimai/fetch-images": "ts-node src/maimai/fetch-images",
@@ -20,6 +21,10 @@
     "chunithm/fetch-intl-sheets": "ts-node src/chunithm/fetch-intl-sheets",
     "chunithm/gen-json": "ts-node src/chunithm/gen-json",
     "chunithm/upload-data": "ts-node src/chunithm/upload-data",
+    "wacca/fetch-songs": "ts-node src/wacca/fetch-songs",
+    "wacca/fetch-images": "ts-node src/wacca/fetch-images",
+    "wacca/gen-json": "ts-node src/wacca/gen-json",
+    "wacca/upload-data": "ts-node src/wacca/upload-data",
     "--------$--------": ""
   },
   "author": "Raku Zeta <zetaraku@gmail.com>",
