@@ -10,8 +10,8 @@ const DATA_URL = 'https://chunithm.sega.jp/storage/json/music.json';
 const IMAGE_BASE_URL = 'https://new.chunithm-net.com/chuni-mobile/html/mobile/img/';
 
 function extractSong(rawSong: Record<string, any>) {
-  const imageUrl = rawSong.image ? new URL(rawSong.image, IMAGE_BASE_URL).toString() : null;
-  const imageName = imageUrl ? `${hashed(imageUrl)}.png` : null;
+  const imageUrl = new URL(rawSong.image, IMAGE_BASE_URL).toString();
+  const imageName = `${hashed(imageUrl)}.png`;
 
   return {
     songId: Number(rawSong.id),

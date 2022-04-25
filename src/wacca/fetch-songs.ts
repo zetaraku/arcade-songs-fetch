@@ -10,8 +10,8 @@ logger.level = log4js.levels.INFO;
 const DATA_URL = 'https://wacca.marv.jp/music/search.php';
 
 function extractSong(rawSong: Record<string, any>) {
-  const imageUrl = rawSong.jacket ? rawSong.jacket : null;
-  const imageName = imageUrl ? `${hashed(imageUrl)}.png` : null;
+  const imageUrl = rawSong.jacket;
+  const imageName = `${hashed(imageUrl)}.png`;
 
   // const versionId = rawSong.id.split(/[-_]/)[0].trim();
   // const releaseBatchNo = Number(rawSong.id.split(/[-_]/)[1].trim());

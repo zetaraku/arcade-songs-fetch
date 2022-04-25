@@ -33,8 +33,8 @@ const versionMap = new Map([
 ]);
 
 function extractSong(rawSong: Record<string, any>) {
-  const imageUrl = rawSong.image_url ? new URL(rawSong.image_url, IMAGE_BASE_URL).toString() : null;
-  const imageName = imageUrl ? `${hashed(imageUrl)}.png` : null;
+  const imageUrl = new URL(rawSong.image_url, IMAGE_BASE_URL).toString();
+  const imageName = `${hashed(imageUrl)}.png`;
 
   const versionId = Number(rawSong.version.substring(0, 3));
   // const releaseBatchNo = Number(rawSong.version.substring(3, 5));
