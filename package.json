@@ -10,6 +10,7 @@
     "taiko/all": "ts-node src/taiko/all",
     "jubeat/all": "ts-node src/jubeat/all",
     "sdvx/all": "ts-node src/sdvx/all",
+    "ongeki/all": "ts-node src/ongeki/all",
     "----------------": "",
     "maimai/fetch-songs": "ts-node src/maimai/fetch-songs",
     "maimai/fetch-images": "ts-node src/maimai/fetch-images",
@@ -39,6 +40,10 @@
     "sdvx/fetch-images": "ts-node src/sdvx/fetch-images",
     "sdvx/gen-json": "ts-node src/sdvx/gen-json",
     "sdvx/upload-data": "ts-node src/sdvx/upload-data",
+    "ongeki/fetch-songs": "ts-node src/ongeki/fetch-songs",
+    "ongeki/fetch-images": "ts-node src/ongeki/fetch-images",
+    "ongeki/gen-json": "ts-node src/ongeki/gen-json",
+    "ongeki/upload-data": "ts-node src/ongeki/upload-data",
     "--------$--------": ""
   },
   "author": "Raku Zeta <zetaraku@gmail.com>",
