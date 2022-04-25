@@ -8,6 +8,7 @@
     "chunithm/all": "ts-node src/chunithm/all",
     "wacca/all": "ts-node src/wacca/all",
     "taiko/all": "ts-node src/taiko/all",
+    "jubeat/all": "ts-node src/jubeat/all",
     "----------------": "",
     "maimai/fetch-songs": "ts-node src/maimai/fetch-songs",
     "maimai/fetch-images": "ts-node src/maimai/fetch-images",
@@ -29,6 +30,10 @@
     "taiko/fetch-songs": "ts-node src/taiko/fetch-songs",
     "taiko/gen-json": "ts-node src/taiko/gen-json",
     "taiko/upload-data": "ts-node src/taiko/upload-data",
+    "jubeat/fetch-songs": "ts-node src/jubeat/fetch-songs",
+    "jubeat/fetch-images": "ts-node src/jubeat/fetch-images",
+    "jubeat/gen-json": "ts-node src/jubeat/gen-json",
+    "jubeat/upload-data": "ts-node src/jubeat/upload-data",
     "--------$--------": ""
   },
   "author": "Raku Zeta <zetaraku@gmail.com>",
