@@ -94,6 +94,8 @@ export default async function run() {
   }
   logger.info(`OK, ${songs.length} songs fetched.`);
 
+  songs.reverse();
+
   logger.info('Preparing Songs table ...');
   await Song.sync();
 
