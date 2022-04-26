@@ -83,6 +83,7 @@ export default async function run() {
       *
     FROM "Songs"
       NATURAL LEFT JOIN "SongExtras"
+    ORDER BY "releaseId"
   `, {
     type: QueryTypes.SELECT,
   });
@@ -144,6 +145,7 @@ export default async function run() {
     }
 
     delete song.imageUrl;
+    delete song.releaseId;
     song.sheets = sheetsOfSong;
     song.isNew = Boolean(song.isNew);
     song.isLocked = Boolean(song.isLocked);

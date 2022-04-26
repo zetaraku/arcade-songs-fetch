@@ -20,6 +20,7 @@ const Song = sequelize.define('Song', {
   // versionId: DataTypes.INTEGER,
   // releaseBatchNo: DataTypes.INTEGER,
   // sortOrder: DataTypes.INTEGER,
+  releaseId: DataTypes.STRING,
   version: DataTypes.STRING,
   releaseDate: DataTypes.DATEONLY,
 
