@@ -175,9 +175,7 @@ export default async function run() {
       const { songExtra, sheetExtras } = await fetchExtra(song);
 
       await SongExtra.upsert(songExtra);
-      for (const sheetExtra of sheetExtras) {
-        await SheetExtra.upsert(sheetExtra);
-      }
+      await Promise.all(sheetExtras.map((sheetExtra) => SheetExtra.upsert(sheetExtra)));
     } catch (e) {
       logger.error(e);
     } finally {
