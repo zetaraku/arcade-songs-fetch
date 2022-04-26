@@ -171,7 +171,7 @@ export default async function run() {
 
   for (const [index, song] of songsToFetch.entries()) {
     try {
-      logger.info(`(${1 + index} / ${songsToFetch.length}) Fetching & Updating extra: ${song.title} ...`);
+      logger.info(`(${1 + index} / ${songsToFetch.length}) Updating extra for: ${song.title} ...`);
       const { songExtra, sheetExtras } = await fetchExtra(song);
 
       await SongExtra.upsert(songExtra);
