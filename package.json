@@ -50,7 +50,8 @@
     "gc/fetch-sheets": "ts-node src/gc/fetch-sheets",
     "gc/gen-json": "ts-node src/gc/gen-json",
     "gc/upload-data": "ts-node src/gc/upload-data",
-    "--------$--------": ""
+    "--------$--------": "",
+    "lint": "eslint src/ --ext .js,.ts"
   },
   "author": "Raku Zeta <zetaraku@gmail.com>",
   "license": "MIT",
