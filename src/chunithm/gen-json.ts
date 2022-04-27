@@ -3,6 +3,7 @@ import fs from 'fs';
 import log4js from 'log4js';
 import { QueryTypes } from 'sequelize';
 import { sequelize } from './models';
+import { extractLevelMappingList } from '../core/utils';
 
 const logger = log4js.getLogger('chunithm/gen-json');
 logger.level = log4js.levels.INFO;
@@ -71,8 +72,6 @@ function levelValueOf(level: string | null) {
 }
 
 export default async function run() {
-  const levelMappings = new Map();
-
   logger.info('Loading songs from database ...');
   const songs: any[] = await sequelize.query(/* sql */ `
     SELECT * FROM "Songs"
@@ -116,7 +115,6 @@ export default async function run() {
       }
 
       sheet.levelValue = levelValueOf(sheet.level);
-      levelMappings.set(sheet.levelValue, sheet.level);
 
       for (const region of Object.keys(sheet.regions)) {
         sheet.regions[region] = Boolean(sheet.regions[region]);
@@ -135,15 +133,9 @@ export default async function run() {
 
   songs.reverse();
 
-  const levels = (
-    [...levelMappings.entries()]
-      .sort(([aLevelValue], [bLevelValue]) => aLevelValue - bLevelValue)
-      .map(([levelValue, level]) => ({ levelValue, level }))
-  );
-
   const output = {
     songs,
-    levels,
+    levels: extractLevelMappingList(songs),
     categories: categoryMappingList,
     versions: [], // the data source no longer contains version information
     types: typeMappingList,
