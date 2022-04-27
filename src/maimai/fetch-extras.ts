@@ -69,9 +69,9 @@ function extractSheetExtras(
     throw new Error('Unknown type.');
   })();
 
-  const trs = $(table).find('tr').get().slice(2);
+  const trs = $(table).find('tr').toArray().slice(2);
   return trs.map((tr) => {
-    const tds = $(tr).find('td').get();
+    const tds = $(tr).find('td').toArray();
     const tdsData = tds.map((e) => $(e).text().trim());
 
     if (type === 'std') {

@@ -84,7 +84,7 @@ async function getIntlSheets(
     throw new Error('An error occurred while fetching the page.');
   }
 
-  const sheetBlocks = $(`.music_${difficulty}_score_back`).get();
+  const sheetBlocks = $(`.music_${difficulty}_score_back`).toArray();
 
   return sheetBlocks.map((e) => {
     let title = $(e).find('.music_name_block').text();

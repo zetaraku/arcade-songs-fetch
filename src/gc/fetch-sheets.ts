@@ -17,7 +17,7 @@ async function fetchSongExtra(song: Record<string, any>) {
 
   const bpm = Number.parseFloat($('.param-block .details ul .bpm').text()) || null;
 
-  const levels = $('.param-block .difficulty ul li').get()
+  const levels = $('.param-block .difficulty ul li').toArray()
     .map((ul) => $(ul).find('img').attr('src')!.match(/\/img\/music\/img_dif_(\d+).png/)![1]);
 
   return {

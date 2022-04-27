@@ -36,7 +36,7 @@ async function* getSongs(listId: number) {
 
     const $ = cheerio.load(html);
 
-    const songs = $('#music_list .list_data').get()
+    const songs = $('#music_list .list_data').toArray()
       .map((div) => {
         const imagePath = $(div).find('table tr:nth-of-type(1) td:nth-of-type(1) img').attr('src')!
           .replace('/common/images/', '/images/top/');
@@ -49,7 +49,7 @@ async function* getSongs(listId: number) {
         const imageUrl = new URL(imagePath, IMAGE_BASE_URL).toString();
         const imageName = `${hashed(imageUrl)}.png`;
 
-        const levels = $(div).find('table tr:nth-of-type(3) td:nth-of-type(1) ul li:nth-of-type(2n)').get()
+        const levels = $(div).find('table tr:nth-of-type(3) td:nth-of-type(1) ul li:nth-of-type(2n)').toArray()
           .map((e) => $(e).text().trim());
 
         return {

@@ -102,7 +102,7 @@ async function getJpSheets(
     throw new Error('An error occurred while fetching the page.');
   }
 
-  const sheetBlocks = $(`.music_${difficulty}_score_back`).get();
+  const sheetBlocks = $(`.music_${difficulty}_score_back`).toArray();
   const sheets = await Promise.all(sheetBlocks.map(async (e) => {
     const title = $(e).find('.music_name_block').text();
 

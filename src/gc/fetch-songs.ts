@@ -11,7 +11,7 @@ logger.level = log4js.levels.INFO;
 const DATA_URL = 'https://groovecoaster.jp/music/';
 
 function extractCategories($: cheerio.CheerioAPI) {
-  const categories = $('.music-nav nav ul li').get().map((li) => ({
+  const categories = $('.music-nav nav ul li').toArray().map((li) => ({
     category: $(li).find('a').text(),
     selector: $(li).find('a').attr('href')!,
   }));
@@ -20,11 +20,11 @@ function extractCategories($: cheerio.CheerioAPI) {
 }
 
 function extractSongs($: cheerio.CheerioAPI, category: string, selector: string) {
-  const songs = $(`${selector} ul li > a`).get().map((a) => {
+  const songs = $(`${selector} ul li > a`).toArray().map((a) => {
     const [, songId] = $(a).attr('href')!.match(/^\/music\/(.+)\.html$/)!;
 
     const infoTexts = $(a).find('.music').contents()
-      .get()
+      .toArray()
       .map((e) => $(e).text().trim());
 
     //! hotfix

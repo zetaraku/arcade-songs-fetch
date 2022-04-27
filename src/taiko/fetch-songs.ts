@@ -14,7 +14,7 @@ async function fetchCategories() {
   const response = await axios.get(DATA_URL);
   const $ = cheerio.load(response.data);
 
-  const categories = $('#sgnavi ul li').get().map((li) => ({
+  const categories = $('#sgnavi ul li').toArray().map((li) => ({
     category: $(li).find('img').attr('alt'),
     url: new URL($(li).find('a').attr('href')!, DATA_URL).toString(),
   }));
@@ -29,10 +29,10 @@ async function getSongs(url: string) {
   const section = $('#mainCol > section');
 
   const category = section.find('.tit').text().trim();
-  const songs = section.find('tbody tr').get().map((tr) => {
+  const songs = section.find('tbody tr').toArray().map((tr) => {
     const $th = $(tr).find('th');
-    const thChildren = $th.contents().get();
-    const tds = $(tr).find('td').get();
+    const thChildren = $th.contents().toArray();
+    const tds = $(tr).find('td').toArray();
 
     const title = $(thChildren[0]).text().trim();
     const artist = $(thChildren.slice(-2)[0]).text().trim() || null;

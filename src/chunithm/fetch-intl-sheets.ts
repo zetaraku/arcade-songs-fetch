@@ -107,7 +107,7 @@ async function getIntlSheets(
     throw new Error('An error occurred while fetching the page.');
   }
 
-  const sheetBlocks = $('.musiclist_box').get();
+  const sheetBlocks = $('.musiclist_box').toArray();
 
   return sheetBlocks.map((e) => {
     const title = $(e).find('.music_title').text();
@@ -133,7 +133,7 @@ async function getIntlWorldsEndSheets(cookies: Record<string, string>) {
 
   const $ = cheerio.load(response.data);
 
-  const result = $('.musiclist_box').get().map((form) => {
+  const result = $('.musiclist_box').toArray().map((form) => {
     const title = $(form).find('.musiclist_worldsend_title').text();
 
     const weTypeId = $(form).find('.musiclist_worldsend_icon img').attr('src')!

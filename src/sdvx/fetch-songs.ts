@@ -44,14 +44,14 @@ async function* getSongs() {
 
     const $ = cheerio.load(html);
 
-    const songs = $('.music').get()
+    const songs = $('.music').toArray()
       .map((div) => {
         const songId = new URL(
           $(div).find('.jk a').attr('href')!,
           DATA_URL,
         ).searchParams.get('music_id')!;
 
-        const category = $(div).find('.genre').get()
+        const category = $(div).find('.genre').toArray()
           .map((e) => $(e).text().trim())
           .join('|');
 
@@ -62,7 +62,7 @@ async function* getSongs() {
         const imageUrl = new URL(imagePath, IMAGE_BASE_URL).toString();
         const imageName = `${hashed(imageUrl)}.png`;
 
-        const sheets = $(div).find('.inner .level p').get()
+        const sheets = $(div).find('.inner .level p').toArray()
           .map((e) => {
             const difficultyAbbr = $(e).attr('class')!;
             const difficulty = difficultyMap.get(difficultyAbbr);
