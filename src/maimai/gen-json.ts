@@ -42,8 +42,8 @@ const versionMappingList = [
   //! add further version here !//
 ];
 const typeMappingList = [
-  { type: 'std', name: 'STD（スタンダード）', abbr: 'STD', iconUrl: 'type-std.png', iconHeight: 22 },
   { type: 'dx', name: 'DX（でらっくす）', abbr: 'DX', iconUrl: 'type-dx.png', iconHeight: 22 },
+  { type: 'std', name: 'STD（スタンダード）', abbr: 'STD', iconUrl: 'type-std.png', iconHeight: 22 },
 ];
 const difficultyMappingList = [
   { difficulty: 'basic', name: 'BASIC', color: 'lime' },
