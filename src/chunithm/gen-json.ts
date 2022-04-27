@@ -3,7 +3,7 @@ import fs from 'fs';
 import log4js from 'log4js';
 import { QueryTypes } from 'sequelize';
 import { sequelize } from './models';
-import { extractLevelMappingList } from '../core/utils';
+import { getSheetSorter, extractLevelMappingList } from '../core/utils';
 
 const logger = log4js.getLogger('chunithm/gen-json');
 logger.level = log4js.levels.INFO;
@@ -54,17 +54,7 @@ const regionMappingList = [
   { region: 'intl', name: '海外版 (International ver.)' },
 ];
 
-const typeOrder = {
-  std: 1,
-  we: 2,
-} as Record<string, number>;
-const difficultyOrder = {
-  basic: 1,
-  advanced: 2,
-  expert: 3,
-  master: 4,
-  ultima: 5,
-} as Record<string, number>;
+const sheetSorter = getSheetSorter({ typeMappingList, difficultyMappingList });
 
 function levelValueOf(level: string | null) {
   if (level === null) return null;
@@ -83,27 +73,24 @@ export default async function run() {
 
   logger.info('Loading sheets from database ...');
   for (const song of songs) {
-    const sheetsOfSong: any[] = await sequelize.query(/* sql */ `
-      SELECT
-        *,
-        "JpSheets"."title" IS NOT NULL AS "regions.jp",
-        "IntlSheets"."title" IS NOT NULL AS "regions.intl"
-      FROM "Sheets"
-        LEFT JOIN "JpSheets" USING ("category", "title", "type", "difficulty")
-        LEFT JOIN "IntlSheets" USING ("category", "title", "type", "difficulty")
-      WHERE "Sheets"."songId" = :songId
-    `, {
-      type: QueryTypes.SELECT,
-      replacements: {
-        songId: song.songId,
-      },
-      nest: true,
-    });
-
-    sheetsOfSong.sort((a, b) => (
-      typeOrder[a.type] - typeOrder[b.type]
-      || difficultyOrder[a.difficulty] - difficultyOrder[b.difficulty]
-    ));
+    const sheetsOfSong = sheetSorter.sorted(
+      await sequelize.query(/* sql */ `
+        SELECT
+          *,
+          "JpSheets"."title" IS NOT NULL AS "regions.jp",
+          "IntlSheets"."title" IS NOT NULL AS "regions.intl"
+        FROM "Sheets"
+          LEFT JOIN "JpSheets" USING ("category", "title", "type", "difficulty")
+          LEFT JOIN "IntlSheets" USING ("category", "title", "type", "difficulty")
+        WHERE "Sheets"."songId" = :songId
+      `, {
+        type: QueryTypes.SELECT,
+        replacements: {
+          songId: song.songId,
+        },
+        nest: true,
+      }),
+    );
 
     for (const sheet of sheetsOfSong) {
       delete sheet.songId;

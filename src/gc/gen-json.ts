@@ -3,7 +3,7 @@ import fs from 'fs';
 import log4js from 'log4js';
 import { QueryTypes } from 'sequelize';
 import { sequelize } from './models';
-import { extractLevelMappingList } from '../core/utils';
+import { getSheetSorter, extractLevelMappingList } from '../core/utils';
 
 const logger = log4js.getLogger('gc/gen-json');
 logger.level = log4js.levels.INFO;
@@ -44,15 +44,7 @@ const regionMappingList = [
   // empty
 ] as any[];
 
-const typeOrder = {
-  std: 1,
-} as Record<string, number>;
-const difficultyOrder = {
-  simple: 1,
-  normal: 2,
-  hard: 3,
-  extra: 4,
-} as Record<string, number>;
+const sheetSorter = getSheetSorter({ typeMappingList, difficultyMappingList });
 
 function levelValueOf(level: string | null) {
   if (level === null) return null;
@@ -73,21 +65,18 @@ export default async function run() {
 
   logger.info('Loading sheets from database ...');
   for (const song of songs) {
-    const sheetsOfSong: any[] = await sequelize.query(/* sql */ `
-      SELECT * FROM "Sheets"
-      WHERE "songId" = :songId
-    `, {
-      type: QueryTypes.SELECT,
-      replacements: {
-        songId: song.songId,
-      },
-      nest: true,
-    });
-
-    sheetsOfSong.sort((a, b) => (
-      typeOrder[a.type] - typeOrder[b.type]
-      || difficultyOrder[a.difficulty] - difficultyOrder[b.difficulty]
-    ));
+    const sheetsOfSong = sheetSorter.sorted(
+      await sequelize.query(/* sql */ `
+        SELECT * FROM "Sheets"
+        WHERE "songId" = :songId
+      `, {
+        type: QueryTypes.SELECT,
+        replacements: {
+          songId: song.songId,
+        },
+        nest: true,
+      }),
+    );
 
     for (const sheet of sheetsOfSong) {
       delete sheet.songId;

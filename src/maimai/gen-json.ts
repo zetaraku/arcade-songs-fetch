@@ -3,7 +3,7 @@ import fs from 'fs';
 import log4js from 'log4js';
 import { QueryTypes } from 'sequelize';
 import { sequelize } from './models';
-import { extractLevelMappingList } from '../core/utils';
+import { getSheetSorter, extractLevelMappingList } from '../core/utils';
 
 const logger = log4js.getLogger('maimai/gen-json');
 logger.level = log4js.levels.INFO;
@@ -58,17 +58,7 @@ const regionMappingList = [
   { region: 'cn', name: '中国版 (舞萌DX)' },
 ];
 
-const typeOrder = {
-  dx: 1,
-  std: 2,
-} as Record<string, number>;
-const difficultyOrder = {
-  basic: 1,
-  advanced: 2,
-  expert: 3,
-  master: 4,
-  remaster: 5,
-} as Record<string, number>;
+const sheetSorter = getSheetSorter({ typeMappingList, difficultyMappingList });
 
 function levelValueOf(level: string | null) {
   if (level === null) return null;
@@ -89,32 +79,29 @@ export default async function run() {
 
   logger.info('Loading sheets from database ...');
   for (const song of songs) {
-    const sheetsOfSong: any[] = await sequelize.query(/* sql */ `
-      SELECT
-        *,
-        "JpSheets"."title" IS NOT NULL AS "regions.jp",
-        "IntlSheets"."title" IS NOT NULL AS "regions.intl",
-        "CnSheets"."title" IS NOT NULL AS "regions.cn"
-      FROM "Sheets"
-        NATURAL LEFT JOIN "SheetVersions"
-        NATURAL LEFT JOIN "SheetExtras"
-        NATURAL LEFT JOIN "JpSheets"
-        NATURAL LEFT JOIN "IntlSheets"
-        NATURAL LEFT JOIN "CnSheets"
-      WHERE "category" = :category AND "title" = :title
-    `, {
-      type: QueryTypes.SELECT,
-      replacements: {
-        category: song.category,
-        title: song.title,
-      },
-      nest: true,
-    });
-
-    sheetsOfSong.sort((a, b) => (
-      typeOrder[a.type] - typeOrder[b.type]
-      || difficultyOrder[a.difficulty] - difficultyOrder[b.difficulty]
-    ));
+    const sheetsOfSong = sheetSorter.sorted(
+      await sequelize.query(/* sql */ `
+        SELECT
+          *,
+          "JpSheets"."title" IS NOT NULL AS "regions.jp",
+          "IntlSheets"."title" IS NOT NULL AS "regions.intl",
+          "CnSheets"."title" IS NOT NULL AS "regions.cn"
+        FROM "Sheets"
+          NATURAL LEFT JOIN "SheetVersions"
+          NATURAL LEFT JOIN "SheetExtras"
+          NATURAL LEFT JOIN "JpSheets"
+          NATURAL LEFT JOIN "IntlSheets"
+          NATURAL LEFT JOIN "CnSheets"
+        WHERE "category" = :category AND "title" = :title
+      `, {
+        type: QueryTypes.SELECT,
+        replacements: {
+          category: song.category,
+          title: song.title,
+        },
+        nest: true,
+      }),
+    );
 
     for (const sheet of sheetsOfSong) {
       delete sheet.category;
