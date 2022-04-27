@@ -21,15 +21,19 @@ const categoryMappingList = [
   { category: 'その他' },
   //! add further category here !//
 ];
-// const versionMappingList = [
-//   { version_id: 'sv', version: 'BOOTH', abbr: '[I] BOOTH' },
-//   { version_id: 'ii', version: 'INFINITE INFECTION', abbr: '[II] INFINITE INFECTION'},
-//   { version_id: 'iii', version: 'GRAVITY WARS', abbr: '[III] GRAVITY WARS' },
-//   { version_id: 'iv', version: 'HEAVENLY HAVEN', abbr: '[IV] HEAVENLY HAVEN' },
-//   { version_id: 'v', version: 'VIVID WAVE', abbr: '[V] VIVID WAVE' },
-//   { version_id: 'vi', version: 'EXCEED GEAR', abbr: '[VI] EXCEED GEAR' },
-//   //! add further mapping here !//
-// ];
+const versionMappingList = [
+  //! the data source no longer contains version information
+  // { version: 'BOOTH', abbr: '[I] BOOTH' },
+  // { version: 'INFINITE INFECTION', abbr: '[II] INFINITE INFECTION'},
+  // { version: 'GRAVITY WARS', abbr: '[III] GRAVITY WARS' },
+  // { version: 'HEAVENLY HAVEN', abbr: '[IV] HEAVENLY HAVEN' },
+  // { version: 'VIVID WAVE', abbr: '[V] VIVID WAVE' },
+  // { version: 'EXCEED GEAR', abbr: '[VI] EXCEED GEAR' },
+  //! add further mapping here !//
+] as any[];
+const typeMappingList = [
+  // empty
+] as any[];
 const difficultyMappingList = [
   { difficulty: 'novice', name: 'NOVICE', abbr: 'NOV', color: '#5a49fb' },
   { difficulty: 'advanced', name: 'ADVANCED', abbr: 'ADV', color: '#fbb649' },
@@ -41,6 +45,9 @@ const difficultyMappingList = [
   { difficulty: 'vivid', name: 'VIVID', abbr: 'VVD', color: '#ff59cd' },
   { difficulty: 'exceed', name: 'EXCEED', abbr: 'XCD', color: '#187fff' },
 ];
+const regionMappingList = [
+  // empty
+] as any[];
 
 const typeOrder = {
   std: 1,
@@ -107,10 +114,10 @@ export default async function run() {
     songs,
     levels: extractLevelMappingList(songs),
     categories: categoryMappingList,
-    versions: [],
-    types: [],
+    versions: versionMappingList,
+    types: typeMappingList,
     difficulties: difficultyMappingList,
-    regions: [],
+    regions: regionMappingList,
     updateTime: new Date().toISOString(),
   };
 

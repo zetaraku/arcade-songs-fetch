@@ -29,15 +29,18 @@ const versionMappingList = [
   { dateBefore: null, version: 'WACCA Reverse', abbr: 'Reverse' },
   //! add further version here !//
 ];
-// const typeMappingList = [
-//   { type: 'std', name: 'STANDARD', abbr: 'STD', iconUrl: null },
-// ];
+const typeMappingList = [
+  // empty
+] as any[];
 const difficultyMappingList = [
   { difficulty: 'normal', name: 'NORMAL', color: '#009de6' },
   { difficulty: 'hard', name: 'HARD', color: '#fed131' },
   { difficulty: 'expert', name: 'EXPERT', color: '#fc06a3' },
   { difficulty: 'inferno', name: 'INFERNO', color: '#4a004f' },
 ];
+const regionMappingList = [
+  // empty
+] as any[];
 
 const typeOrder = {
   std: 1,
@@ -105,9 +108,9 @@ export default async function run() {
     levels: extractLevelMappingList(songs),
     categories: categoryMappingList,
     versions: versionMappingList,
-    types: [],
+    types: typeMappingList,
     difficulties: difficultyMappingList,
-    regions: [],
+    regions: regionMappingList,
     updateTime: new Date().toISOString(),
   };
 

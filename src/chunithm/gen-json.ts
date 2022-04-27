@@ -20,23 +20,24 @@ const categoryMappingList = [
   { category: 'ORIGINAL' },
   //! add further category here !//
 ];
-// const versionMappingList = [
-//   { dateBefore: '2016-02-04', version: 'CHUNITHM', abbr: 'CHUNITHM' },
-//   { dateBefore: '2016-08-25', version: 'CHUNITHM PLUS', abbr: 'CHUNITHM+' },
-//   { dateBefore: '2017-02-09', version: 'AIR', abbr: 'AIR' },
-//   { dateBefore: '2017-08-24', version: 'AIR PLUS', abbr: 'AIR+' },
-//   { dateBefore: '2018-03-08', version: 'STAR', abbr: 'STAR' },
-//   { dateBefore: '2018-10-25', version: 'STAR PLUS', abbr: 'STAR+' },
-//   { dateBefore: '2019-04-11', version: 'AMAZON', abbr: 'AMAZON' },
-//   { dateBefore: '2019-10-24', version: 'AMAZON PLUS', abbr: 'AMAZON+' },
-//   { dateBefore: '2020-07-16', version: 'CRYSTAL', abbr: 'CRYSTAL' },
-//   { dateBefore: '2021-01-21', version: 'CRYSTAL PLUS', abbr: 'CRYSTAL+' },
-//   { dateBefore: '2021-05-13', version: 'PARADISE', abbr: 'PARADISE' },
-//   { dateBefore: '2021-11-04', version: 'PARADISE LOST', abbr: 'PARADISE+' },
-//   { dateBefore: '2022-04-14', version: 'CHUNITHM NEW', abbr: 'NEW' },
-//   { dateBefore: null, version: 'CHUNITHM NEW PLUS', abbr: 'NEW+' },
-//   //! add further mapping here !//
-// ];
+const versionMappingList = [
+  //! the data source no longer contains version information
+  // { dateBefore: '2016-02-04', version: 'CHUNITHM', abbr: 'CHUNITHM' },
+  // { dateBefore: '2016-08-25', version: 'CHUNITHM PLUS', abbr: 'CHUNITHM+' },
+  // { dateBefore: '2017-02-09', version: 'AIR', abbr: 'AIR' },
+  // { dateBefore: '2017-08-24', version: 'AIR PLUS', abbr: 'AIR+' },
+  // { dateBefore: '2018-03-08', version: 'STAR', abbr: 'STAR' },
+  // { dateBefore: '2018-10-25', version: 'STAR PLUS', abbr: 'STAR+' },
+  // { dateBefore: '2019-04-11', version: 'AMAZON', abbr: 'AMAZON' },
+  // { dateBefore: '2019-10-24', version: 'AMAZON PLUS', abbr: 'AMAZON+' },
+  // { dateBefore: '2020-07-16', version: 'CRYSTAL', abbr: 'CRYSTAL' },
+  // { dateBefore: '2021-01-21', version: 'CRYSTAL PLUS', abbr: 'CRYSTAL+' },
+  // { dateBefore: '2021-05-13', version: 'PARADISE', abbr: 'PARADISE' },
+  // { dateBefore: '2021-11-04', version: 'PARADISE LOST', abbr: 'PARADISE+' },
+  // { dateBefore: '2022-04-14', version: 'CHUNITHM NEW', abbr: 'NEW' },
+  // { dateBefore: null, version: 'CHUNITHM NEW PLUS', abbr: 'NEW+' },
+  //! add further mapping here !//
+] as any[];
 const typeMappingList = [
   { type: 'std', name: 'STANDARD', abbr: 'STD', icon_url: null },
   { type: 'we', name: 'WORLD\'S END', abbr: 'WE', icon_url: null },
@@ -121,9 +122,9 @@ export default async function run() {
       }
     }
 
-    // song.version = versionMappingList.find(
-    //   ({ dateBefore }) => !dateBefore || song.releaseDate < dateBefore,
-    // )?.version;
+    song.version = versionMappingList.find(
+      ({ dateBefore }) => !dateBefore || song.releaseDate < dateBefore,
+    )?.version;
 
     delete song.songId;
     delete song.imageUrl;
@@ -137,7 +138,7 @@ export default async function run() {
     songs,
     levels: extractLevelMappingList(songs),
     categories: categoryMappingList,
-    versions: [], // the data source no longer contains version information
+    versions: versionMappingList,
     types: typeMappingList,
     difficulties: difficultyMappingList,
     regions: regionMappingList,

@@ -31,12 +31,18 @@ const versionMappingList = [
   { dateBefore: null, version: 'DIAMOND GALAXY', abbr: '[4MAX] DIAMOND GALAXY' },
   //! add further mapping here !//
 ];
+const typeMappingList = [
+  // empty
+] as any[];
 const difficultyMappingList = [
   { difficulty: 'simple', name: 'SIMPLE', color: '#20dfb6' },
   { difficulty: 'normal', name: 'NORMAL', color: '#f7bb08' },
   { difficulty: 'hard', name: 'HARD', color: '#ff0000' },
   { difficulty: 'extra', name: 'EXTRA', color: '#808080' },
 ];
+const regionMappingList = [
+  // empty
+] as any[];
 
 const typeOrder = {
   std: 1,
@@ -108,9 +114,9 @@ export default async function run() {
     levels: extractLevelMappingList(songs),
     categories: categoryMappingList,
     versions: versionMappingList,
-    types: [],
+    types: typeMappingList,
     difficulties: difficultyMappingList,
-    regions: [],
+    regions: regionMappingList,
     updateTime: new Date().toISOString(),
   };
 

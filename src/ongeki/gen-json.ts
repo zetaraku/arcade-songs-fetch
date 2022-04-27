@@ -43,6 +43,9 @@ const difficultyMappingList = [
   { difficulty: 'master', name: 'MASTER', color: '#a810ff' },
   { difficulty: 'lunatic', name: 'LUNATIC', color: '#dee600' },
 ];
+const regionMappingList = [
+  // empty
+] as any[];
 
 const typeOrder = {
   std: 1,
@@ -119,7 +122,7 @@ export default async function run() {
     versions: versionMappingList,
     types: typeMappingList,
     difficulties: difficultyMappingList,
-    regions: [],
+    regions: regionMappingList,
     updateTime: new Date().toISOString(),
   };
 

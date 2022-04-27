@@ -21,6 +21,9 @@ const categoryMappingList = [
   { category: 'ナムコオリジナル' },
   //! add further category here !//
 ];
+const versionMappingList = [
+  // empty
+] as any[];
 const typeMappingList = [
   { type: 'std', name: '表譜面', abbr: '表', iconUrl: null },
   { type: 'ura', name: '裏譜面', abbr: '裏', iconUrl: 'type-ura.png', iconHeight: '36px' },
@@ -32,6 +35,9 @@ const difficultyMappingList = [
   { difficulty: 'oni', name: 'おに', color: '#dc1886', iconUrl: 'difficulty-oni.png' },
   { difficulty: 'ura_oni', name: '裏おに', color: '#106479', iconUrl: 'difficulty-ura_oni.png' },
 ];
+const regionMappingList = [
+  // empty
+] as any[];
 
 const typeOrder = {
   std: 1,
@@ -97,10 +103,10 @@ export default async function run() {
     songs,
     levels: extractLevelMappingList(songs),
     categories: categoryMappingList,
-    versions: [],
+    versions: versionMappingList,
     types: typeMappingList,
     difficulties: difficultyMappingList,
-    regions: [],
+    regions: regionMappingList,
     updateTime: new Date().toISOString(),
   };
 

@@ -10,6 +10,12 @@ logger.level = log4js.levels.INFO;
 
 const DIST_PATH = 'dist/jubeat';
 
+const categoryMappingList = [
+  // empty
+] as any[];
+const versionMappingList = [
+  // empty
+] as any[];
 const typeMappingList = [
   { type: 'std', name: '通常譜面', abbr: 'STD', iconUrl: null },
   { type: 'v2', name: 'ホールド譜面', abbr: 'V2', iconUrl: null },
@@ -19,6 +25,9 @@ const difficultyMappingList = [
   { difficulty: 'advanced', name: 'Advanced', color: '#e4862b' },
   { difficulty: 'extreme', name: 'Extreme', color: '#e42b5b' },
 ];
+const regionMappingList = [
+  // empty
+] as any[];
 
 const typeOrder = {
   std: 1,
@@ -79,11 +88,11 @@ export default async function run() {
   const output = {
     songs,
     levels: extractLevelMappingList(songs),
-    categories: [],
-    versions: [],
+    categories: categoryMappingList,
+    versions: versionMappingList,
     types: typeMappingList,
     difficulties: difficultyMappingList,
-    regions: [],
+    regions: regionMappingList,
     updateTime: new Date().toISOString(),
   };
 
