@@ -92,6 +92,7 @@ export default async function run() {
 
     delete song.songId;
     delete song.imageUrl;
+    delete song.hasEx;
     song.sheets = sheetsOfSong;
     song.isNew = Boolean(song.isNew);
   }

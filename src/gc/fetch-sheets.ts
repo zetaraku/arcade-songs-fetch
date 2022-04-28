@@ -64,6 +64,10 @@ export default async function run() {
     SELECT "songId", "Songs"."category", "Songs"."title"
     FROM "Songs" LEFT JOIN "Sheets" USING ("songId")
     WHERE ("Sheets"."songId" IS NULL)
+      UNION
+    SELECT "songId", "Songs"."category", "Songs"."title"
+    FROM "Songs" LEFT JOIN (SELECT * FROM "Sheets" WHERE "difficulty" = 'extra') AS "Sheets" USING ("songId")
+    WHERE ("Songs"."hasEx") AND ("Sheets"."songId" IS NULL)
   `, {
     type: QueryTypes.SELECT,
   });
