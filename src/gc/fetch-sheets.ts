@@ -81,8 +81,8 @@ export default async function run() {
 
       await SongExtra.upsert(songExtra);
       await Promise.all(sheets.map((sheet) => Sheet.upsert(sheet)));
-    } catch (e) {
-      logger.error(e);
+    } catch (e: any) {
+      logger.error(e.message);
     } finally {
       await sleep(500);
     }
