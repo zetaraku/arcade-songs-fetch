@@ -12,6 +12,7 @@
     "sdvx/all": "ts-node src/sdvx/all",
     "ongeki/all": "ts-node src/ongeki/all",
     "gc/all": "ts-node src/gc/all",
+    "diva/all": "ts-node src/diva/all",
     "----------------": "",
     "maimai/fetch-songs": "ts-node src/maimai/fetch-songs",
     "maimai/fetch-images": "ts-node src/maimai/fetch-images",
@@ -50,6 +51,10 @@
     "gc/fetch-sheets": "ts-node src/gc/fetch-sheets",
     "gc/gen-json": "ts-node src/gc/gen-json",
     "gc/upload-data": "ts-node src/gc/upload-data",
+    "diva/fetch-songs": "ts-node src/diva/fetch-songs",
+    "diva/fetch-images": "ts-node src/diva/fetch-images",
+    "diva/gen-json": "ts-node src/diva/gen-json",
+    "diva/upload-data": "ts-node src/diva/upload-data",
     "--------$--------": "",
     "lint": "eslint src/ --ext .js,.ts"
   },
