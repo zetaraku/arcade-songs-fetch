@@ -107,9 +107,9 @@ function extractSheetExtras(
 }
 
 async function fetchExtra(song: Record<string, any>) {
-  const url = getSongWikiUrl(song);
+  const pageUrl = getSongWikiUrl(song);
 
-  const response = await axios.get(url);
+  const response = await axios.get(pageUrl);
   const $ = cheerio.load(response.data);
 
   if ($('.style_message:contains("見つかりませんでした")').length !== 0) {

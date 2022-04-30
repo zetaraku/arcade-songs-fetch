@@ -16,14 +16,14 @@ async function fetchCategories() {
 
   const categories = $('#sgnavi ul li').toArray().map((li) => ({
     category: $(li).find('img').attr('alt'),
-    url: new URL($(li).find('a').attr('href')!, DATA_URL).toString(),
+    pageUrl: new URL($(li).find('a').attr('href')!, DATA_URL).toString(),
   }));
 
   return categories;
 }
 
-async function getSongs(url: string) {
-  const response = await axios.get(url);
+async function getSongs(pageUrl: string) {
+  const response = await axios.get(pageUrl);
   const $ = cheerio.load(response.data);
 
   const section = $('#mainCol > section');
@@ -85,10 +85,10 @@ export default async function run() {
   const songs: Record<string, any>[] = [];
 
   logger.info(`Fetching data from: ${DATA_URL} ...`);
-  for (const { category, url } of categoryMappings) {
+  for (const { category, pageUrl } of categoryMappings) {
     logger.info(`* category '${category}'`);
 
-    songs.push(...await getSongs(url));
+    songs.push(...await getSongs(pageUrl));
 
     await sleep(500);
   }
