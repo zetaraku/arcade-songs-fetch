@@ -58,10 +58,7 @@ function getSongWikiUrl(song: Record<string, any>) {
   return `${DATA_URL}/${encodedTitle}`;
 }
 
-function extractSheetExtras(
-  $: cheerio.CheerioAPI,
-  table: cheerio.Element,
-) {
+function extractSheetExtras($: cheerio.CheerioAPI, table: cheerio.Element) {
   const type = (() => {
     const typeOfNotes = $(table).find('tr').eq(1).find('th').length;
     if (typeOfNotes === 4) return 'std';
