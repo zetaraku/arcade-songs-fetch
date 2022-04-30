@@ -18,7 +18,7 @@ const IMAGE_BASE_URL = 'https://p.eagate.573.jp/';
 const listIds = [1, 2];
 //! add further list here !//
 
-async function* getSongs(listId: number) {
+async function* getPages(listId: number) {
   logger.info(`* list ${listId}`);
 
   const pagePath = `game/jubeat/${VERSION_ID}/information/music_list${listId}.html`;
@@ -103,7 +103,7 @@ export default async function run() {
 
   logger.info(`Fetching data from: ${DATA_URL} ...`);
   for (const listId of listIds) {
-    for await (const pageOfSongs of getSongs(listId)) {
+    for await (const pageOfSongs of getPages(listId)) {
       songs.push(...pageOfSongs);
     }
   }
