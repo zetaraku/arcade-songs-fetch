@@ -113,7 +113,7 @@ async function fetchExtra(song: Record<string, any>) {
     throw new Error(`Page of '${song.title}' not found.`);
   }
 
-  const bpm = Number.parseFloat($('td:contains("BPM")').next().text()) || null;
+  const bpm = Number.parseFloat($('td:contains("BPM")').next().text().trim()) || null;
 
   const songExtra = {
     category: song.category,

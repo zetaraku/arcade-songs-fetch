@@ -59,7 +59,7 @@ function getSongWikiUrl(song: Record<string, any>) {
 
 function extractSheetExtras($: cheerio.CheerioAPI, table: cheerio.Element) {
   const type = (() => {
-    const fourthNoteType = $(table).find('tr').eq(1).find('th').eq(3).text();
+    const fourthNoteType = $(table).find('tr').eq(1).find('th').eq(3).text().trim();
     if (fourthNoteType === 'Break') return 'std';
     if (fourthNoteType === 'Touch') return 'dx';
     throw new Error('Unknown type.');
@@ -91,10 +91,10 @@ function extractSheetExtras($: cheerio.CheerioAPI, table: cheerio.Element) {
       const nodes = $(table).next('span:contains("譜面作者")').contents().toArray();
 
       const extractNoteDesigner = (abbr: string) => {
-        const anchorIndex = nodes.findIndex((node) => $(node).text() === abbr);
+        const anchorIndex = nodes.findIndex((node) => $(node).text().trim() === abbr);
         if (anchorIndex === -1) return null;
 
-        const result = $(nodes[anchorIndex + 1]).text().replace(/^[…]|[、】]$/g, '');
+        const result = $(nodes[anchorIndex + 1]).text().trim().replace(/^[…]|[、】]$/g, '');
         return !!result && result !== '？' ? result : null;
       };
 
@@ -132,7 +132,7 @@ async function fetchExtra(song: Record<string, any>) {
   const response = await axios.get(pageUrl);
   const $ = cheerio.load(response.data);
 
-  const bpm = Number.parseFloat($('th:contains("BPM")').next().text()) || null;
+  const bpm = Number.parseFloat($('th:contains("BPM")').next().text().trim()) || null;
 
   const songExtra = {
     category: song.category,

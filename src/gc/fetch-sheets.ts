@@ -15,7 +15,7 @@ async function fetchSongExtra(song: Record<string, any>) {
   const response = await axios.get(`${DATA_URL}/${song.songId}.html`);
   const $ = cheerio.load(response.data);
 
-  const bpm = Number.parseFloat($('.param-block .details ul .bpm').text()) || null;
+  const bpm = Number.parseFloat($('.param-block .details ul .bpm').text().trim()) || null;
 
   const levels = $('.param-block .difficulty ul li').toArray()
     .map((ul) => $(ul).find('img').attr('src')!.match(/\/img\/music\/img_dif_(\d+).png/)![1]);

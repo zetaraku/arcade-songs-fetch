@@ -110,7 +110,7 @@ async function getIntlSheets(
   const sheetBlocks = $('.musiclist_box').toArray();
 
   return sheetBlocks.map((e) => {
-    const title = $(e).find('.music_title').text();
+    const title = $(e).find('.music_title').text().trim();
 
     return {
       category,
@@ -134,7 +134,7 @@ async function getIntlWorldsEndSheets(cookies: Record<string, string>) {
   const $ = cheerio.load(response.data);
 
   const result = $('.musiclist_box').toArray().map((form) => {
-    const title = $(form).find('.musiclist_worldsend_title').text();
+    const title = $(form).find('.musiclist_worldsend_title').text().trim();
 
     const weTypeId = $(form).find('.musiclist_worldsend_icon img').attr('src')!
       .match(/^https:\/\/chunithm-net-eng.com\/mobile\/images\/icon_we_(\d+).png/)![1];

@@ -46,11 +46,11 @@ async function getSongs(pageUrl: string) {
       imageName: 'default-cover.png',
       imageUrl: null,
 
-      level_easy: Number.parseInt($(tds[1]).text(), 10),
-      level_normal: Number.parseInt($(tds[2]).text(), 10),
-      level_hard: Number.parseInt($(tds[3]).text(), 10),
-      level_oni: Number.parseInt($(tds[4]).text(), 10),
-      level_ura_oni: Number.parseInt($(tds[5]).text(), 10),
+      level_easy: Number.parseInt($(tds[1]).text().trim(), 10),
+      level_normal: Number.parseInt($(tds[2]).text().trim(), 10),
+      level_hard: Number.parseInt($(tds[3]).text().trim(), 10),
+      level_oni: Number.parseInt($(tds[4]).text().trim(), 10),
+      level_ura_oni: Number.parseInt($(tds[5]).text().trim(), 10),
 
       version: null,
       releaseDate: null,

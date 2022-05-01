@@ -53,7 +53,7 @@ async function* fetchPages(cookies: Record<string, string>) {
 
     const songInfos = $('a[href^="/divanet/pv/info/"]').toArray().map((e) => {
       const songId = $(e).attr('href')!.match(/^\/divanet\/pv\/info\/(\w+)\//)![1];
-      const title = $(e).text();
+      const title = $(e).text().trim();
       const pagePath = $(e).attr('href')!;
 
       return { songId, title, pagePath };

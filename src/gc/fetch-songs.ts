@@ -12,7 +12,7 @@ const DATA_URL = 'https://groovecoaster.jp/music/';
 
 function extractCategories($: cheerio.CheerioAPI) {
   const categories = $('.music-nav nav ul li').toArray().map((li) => ({
-    category: $(li).find('a').text(),
+    category: $(li).find('a').text().trim(),
     selector: $(li).find('a').attr('href')!,
   }));
 
