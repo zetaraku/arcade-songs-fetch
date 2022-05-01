@@ -38,7 +38,7 @@ function extractSong(rawSong: Record<string, any>) {
 
 function extractSheets(rawSong: Record<string, any>) {
   const levels = rawSong.level.reduce(
-    (acc: Record<string, any>, e: any) => ({ ...acc, ...e }),
+    (acc: Record<string, any>, e: Record<string, any>) => ({ ...acc, ...e }),
     {},
   );
 

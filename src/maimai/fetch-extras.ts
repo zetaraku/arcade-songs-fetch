@@ -153,7 +153,7 @@ export default async function run() {
   logger.info('Preparing SheetExtras table ...');
   await SheetExtra.sync();
 
-  const songsToFetch: any[] = await sequelize.query(/* sql */ `
+  const songsToFetch: Record<string, any>[] = await sequelize.query(/* sql */ `
     SELECT "category", "title"
     FROM "Songs" LEFT JOIN "SongExtras" USING ("category", "title")
     WHERE ("bpm" IS NULL)

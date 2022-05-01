@@ -56,7 +56,7 @@ function levelValueOf(level: string | null) {
 
 export default async function run() {
   logger.info('Loading songs from database ...');
-  const songs: any[] = await sequelize.query(/* sql */ `
+  const songs: Record<string, any>[] = await sequelize.query(/* sql */ `
     SELECT * FROM "Songs"
     ORDER BY "releaseDate"
   `, {

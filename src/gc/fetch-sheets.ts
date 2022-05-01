@@ -56,7 +56,7 @@ export default async function run() {
   logger.info('Preparing Sheets table ...');
   await Sheet.sync();
 
-  const songsToFetch: any[] = await sequelize.query(/* sql */ `
+  const songsToFetch: Record<string, any>[] = await sequelize.query(/* sql */ `
     SELECT "songId", "category", "title"
     FROM "Songs" LEFT JOIN "SongExtras" USING ("songId")
     WHERE ("SongExtras"."bpm" IS NULL)
