@@ -2,13 +2,14 @@ import { DataTypes } from 'sequelize';
 import sequelize from './sequelize';
 
 const Sheet = sequelize.define('Sheet', {
-  songId: {
+  category: {
     type: DataTypes.STRING,
     primaryKey: true,
   },
-
-  category: DataTypes.STRING,
-  title: DataTypes.STRING,
+  title: {
+    type: DataTypes.STRING,
+    primaryKey: true,
+  },
 
   type: {
     type: DataTypes.STRING,

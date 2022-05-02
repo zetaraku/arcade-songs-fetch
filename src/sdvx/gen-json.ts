@@ -69,25 +69,24 @@ export default async function run() {
     const sheetsOfSong = sheetSorter.sorted(
       await sequelize.query(/* sql */ `
         SELECT * FROM "Sheets"
-        WHERE "songId" = :songId
+        WHERE "category" = :category AND "title" = :title
       `, {
         type: QueryTypes.SELECT,
         replacements: {
-          songId: song.songId,
+          category: song.category,
+          title: song.title,
         },
         nest: true,
       }),
     );
 
     for (const sheet of sheetsOfSong) {
-      delete sheet.songId;
       delete sheet.category;
       delete sheet.title;
 
       sheet.levelValue = levelValueOf(sheet.level);
     }
 
-    delete song.songId;
     delete song.imageUrl;
     song.sheets = sheetsOfSong;
   }

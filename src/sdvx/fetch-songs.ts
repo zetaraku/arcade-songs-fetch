@@ -46,11 +46,6 @@ async function* getSongs() {
 
     const songs = $('.music').toArray()
       .map((div) => {
-        const songId = new URL(
-          $(div).find('.jk a').attr('href')!,
-          DATA_URL,
-        ).searchParams.get('music_id')!;
-
         const category = $(div).find('.genre').toArray()
           .map((e) => $(e).text().trim())
           .join('|');
@@ -78,8 +73,6 @@ async function* getSongs() {
           });
 
         return {
-          songId,
-
           category,
           title,
 
@@ -108,7 +101,6 @@ async function* getSongs() {
 
 function extractSheets(song: Record<string, any>) {
   return song.sheets.map((rawSheet: Record<string, any>) => ({
-    songId: song.songId,
     category: song.category,
     title: song.title,
     ...rawSheet,
