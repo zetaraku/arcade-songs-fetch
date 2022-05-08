@@ -104,7 +104,7 @@ async function getJpSheets(
 
   const sheetBlocks = $(`.music_${difficulty}_score_back`).toArray();
   const sheets = await Promise.all(sheetBlocks.map(async (e) => {
-    const title = $(e).find('.music_name_block').text().trim();
+    const title = $(e).find('.music_name_block').text()/* .trim() */;
 
     const type = (() => {
       const typeButton = $(e).find(`.music_kind_icon, .music_${difficulty}_btn_on`);
