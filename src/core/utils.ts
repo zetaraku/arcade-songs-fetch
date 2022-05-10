@@ -32,15 +32,3 @@ export function getSheetSorter({
     },
   };
 }
-
-export function extractLevelMappingList(songs: Record<string, any>[]) {
-  return [...new Map<number, string>(
-    songs.flatMap(
-      (song) => song.sheets.map(
-        (sheet: Record<string, any>) => [sheet.levelValue, sheet.level],
-      ),
-    ),
-  ).entries()]
-    .sort(([aLevelValue], [bLevelValue]) => aLevelValue - bLevelValue)
-    .map(([levelValue, level]) => ({ level, levelValue }));
-}
