@@ -3,7 +3,7 @@ import fs from 'fs';
 import log4js from 'log4js';
 import { QueryTypes } from 'sequelize';
 import { sequelize } from './models';
-import { getSheetSorter, extractLevelMappingList } from '../core/utils';
+import { getSheetSorter } from '../core/utils';
 
 const logger = log4js.getLogger('jubeat/gen-json');
 logger.level = log4js.levels.INFO;
@@ -76,7 +76,6 @@ export default async function run() {
 
   const output = {
     songs,
-    levels: extractLevelMappingList(songs),
     categories: categoryMappingList,
     versions: versionMappingList,
     types: typeMappingList,
