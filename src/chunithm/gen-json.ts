@@ -39,8 +39,8 @@ const versionMappingList = [
   //! add further mapping here !//
 ] as any[];
 const typeMappingList = [
-  { type: 'std', name: 'STANDARD', abbr: 'STD', icon_url: null },
-  { type: 'we', name: 'WORLD\'S END', abbr: 'WE', icon_url: null },
+  { type: 'std', name: 'STANDARD', abbr: 'STD' },
+  { type: 'we', name: 'WORLD\'S END', abbr: 'WE' },
 ];
 const difficultyMappingList = [
   { difficulty: 'basic', name: 'BASIC', color: 'lime' },

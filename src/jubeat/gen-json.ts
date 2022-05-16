@@ -17,8 +17,8 @@ const versionMappingList = [
   // empty
 ] as any[];
 const typeMappingList = [
-  { type: 'std', name: '通常譜面', abbr: 'STD', iconUrl: null },
-  { type: 'v2', name: 'ホールド譜面', abbr: 'V2', iconUrl: null },
+  { type: 'std', name: '通常譜面', abbr: 'STD' },
+  { type: 'v2', name: 'ホールド譜面', abbr: 'V2' },
 ];
 const difficultyMappingList = [
   { difficulty: 'basic', name: 'Basic', color: '#77c136' },

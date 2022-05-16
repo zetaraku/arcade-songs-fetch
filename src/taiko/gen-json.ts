@@ -25,7 +25,7 @@ const versionMappingList = [
   // empty
 ] as any[];
 const typeMappingList = [
-  { type: 'std', name: '表譜面', abbr: '表', iconUrl: null },
+  { type: 'std', name: '表譜面', abbr: '表' },
   { type: 'ura', name: '裏譜面', abbr: '裏', iconUrl: 'type-ura.png', iconHeight: '36px' },
 ];
 const difficultyMappingList = [

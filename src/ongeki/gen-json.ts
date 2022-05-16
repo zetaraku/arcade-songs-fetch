@@ -33,8 +33,8 @@ const versionMappingList = [
   //! add further mapping here !//
 ];
 const typeMappingList = [
-  { type: 'std', name: 'STANDARD', abbr: 'STD', icon_url: null },
-  { type: 'lun', name: 'LUNATIC', abbr: 'LUN', icon_url: null },
+  { type: 'std', name: 'STANDARD', abbr: 'STD' },
+  { type: 'lun', name: 'LUNATIC', abbr: 'LUN' },
 ];
 const difficultyMappingList = [
   { difficulty: 'basic', name: 'BASIC', color: '#16ff47' },
