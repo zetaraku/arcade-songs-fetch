@@ -84,8 +84,6 @@ export default async function run() {
     song.isLocked = Boolean(song.isLocked);
   }
 
-  songs.reverse();
-
   const output = {
     songs,
     categories: categoryMappingList,

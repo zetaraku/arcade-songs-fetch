@@ -90,8 +90,6 @@ export default async function run() {
     song.isNew = Boolean(song.isNew);
   }
 
-  songs.reverse();
-
   const output = {
     songs,
     categories: categoryMappingList,

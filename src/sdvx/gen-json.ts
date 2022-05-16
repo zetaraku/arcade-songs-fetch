@@ -91,8 +91,6 @@ export default async function run() {
     song.sheets = sheetsOfSong;
   }
 
-  songs.reverse();
-
   const output = {
     songs,
     categories: categoryMappingList,
