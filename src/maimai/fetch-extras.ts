@@ -9,7 +9,8 @@ import { sequelize, SongExtra, SheetExtra } from './models';
 const logger = log4js.getLogger('maimai/fetch-extras');
 logger.level = log4js.levels.INFO;
 
-const DATA_URL = 'http://maimai.wiki.fc2.com/wiki';
+// const DATA_URL = 'http://maimai.wiki.fc2.com/wiki';
+const DATA_URL = 'https://web.archive.org/web/20200718222454/http://maimai.wiki.fc2.com/wiki';
 
 const difficultyMap = new Map([
   ['B', 'basic'],
