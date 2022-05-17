@@ -26,14 +26,14 @@ const versionMappingList = [
 ] as any[];
 const typeMappingList = [
   { type: 'std', name: '表譜面', abbr: '表' },
-  { type: 'ura', name: '裏譜面', abbr: '裏', iconUrl: 'type-ura.png', iconHeight: '36px' },
+  { type: 'ura', name: '裏譜面', abbr: '裏', iconUrl: 'type-ura.png', iconHeight: 36 },
 ];
 const difficultyMappingList = [
-  { difficulty: 'easy', name: 'かんたん', color: '#ff2803', iconUrl: 'difficulty-easy.png', iconHeight: '25px' },
-  { difficulty: 'normal', name: 'ふつう', color: '#8daf51', iconUrl: 'difficulty-normal.png', iconHeight: '25px' },
-  { difficulty: 'hard', name: 'むずかしい', color: '#404a2b', iconUrl: 'difficulty-hard.png', iconHeight: '25px' },
-  { difficulty: 'oni', name: 'おに', color: '#dc1886', iconUrl: 'difficulty-oni.png', iconHeight: '25px' },
-  { difficulty: 'ura_oni', name: '裏おに', color: '#106479', iconUrl: 'difficulty-ura_oni.png', iconHeight: '25px' },
+  { difficulty: 'easy', name: 'かんたん', color: '#ff2803', iconUrl: 'difficulty-easy.png', iconHeight: 25 },
+  { difficulty: 'normal', name: 'ふつう', color: '#8daf51', iconUrl: 'difficulty-normal.png', iconHeight: 25 },
+  { difficulty: 'hard', name: 'むずかしい', color: '#404a2b', iconUrl: 'difficulty-hard.png', iconHeight: 25 },
+  { difficulty: 'oni', name: 'おに', color: '#dc1886', iconUrl: 'difficulty-oni.png', iconHeight: 25 },
+  { difficulty: 'ura_oni', name: '裏おに', color: '#106479', iconUrl: 'difficulty-ura_oni.png', iconHeight: 25 },
 ];
 const regionMappingList = [
   // empty
