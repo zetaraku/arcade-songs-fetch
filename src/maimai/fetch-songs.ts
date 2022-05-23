@@ -10,6 +10,7 @@ const DATA_URL = 'https://maimai.sega.jp/data/maimai_songs.json';
 const IMAGE_BASE_URL = 'https://maimaidx.jp/maimai-mobile/img/Music/';
 
 const versionMap = new Map([
+  [0, null],
   [100, 'maimai'],
   [110, 'maimai PLUS'],
   [120, 'GreeN'],
@@ -49,10 +50,10 @@ function extractSong(rawSong: Record<string, any>) {
   const versionId = Number(rawSong.version.substring(0, 3));
   // const releaseBatchNo = Number(rawSong.version.substring(3, 5));
   // const sortOrder = Number(rawSong.sort);
-  const version = versionMap.get(versionId) ?? null;
+  const version = versionMap.get(versionId);
   const releaseDate = Number(rawSong.release) ? `20${rawSong.release.substring(0, 2)}-${rawSong.release.substring(2, 4)}-${rawSong.release.substring(4, 6)}` : null;
 
-  if (version === null) {
+  if (version === undefined) {
     logger.warn(`Unknown version id: ${versionId}, remember to add new version entry.`);
   }
 
