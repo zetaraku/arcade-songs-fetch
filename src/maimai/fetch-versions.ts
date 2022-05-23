@@ -104,7 +104,12 @@ async function getJpSheets(
 
   const sheetBlocks = $(`.music_${difficulty}_score_back`).toArray();
   const sheets = await Promise.all(sheetBlocks.map(async (e) => {
-    const title = $(e).find('.music_name_block').text()/* .trim() */;
+    let title = $(e).find('.music_name_block').text()/* .trim() */;
+
+    //! hotfix
+    if (title === 'Link' && version === 'ORANGE') {
+      title = 'Link (2)';
+    }
 
     const type = (() => {
       const typeButton = $(e).find(`.music_kind_icon, .music_${difficulty}_btn_on`);
@@ -133,11 +138,6 @@ async function getCategory(sheet: Record<string, any>) {
   } else if (matchedSongs.length === 1) {
     return matchedSongs[0].category;
   } else {
-    //! hotfix
-    if (sheet.title === 'Link') {
-      if (sheet.version === 'ORANGE') return 'niconico＆ボーカロイド';
-      if (sheet.version === 'maimai PLUS') return 'maimai';
-    }
     throw new Error(`Multiple songs found for ${sheet.title}, require manual fix.`);
   }
 }

@@ -30,7 +30,7 @@ const difficultyMap = new Map([
 function getSongWikiUrl(song: Record<string, any>) {
   const title = (() => {
     //! hotfix
-    if (song.title === 'Link' && song.category === 'niconico＆ボーカロイド') {
+    if (song.title === 'Link (2)') {
       return 'Link(Circle of friends)';
     }
     if (song.title === 'YA･DA･YO [Reborn]') {

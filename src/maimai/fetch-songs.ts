@@ -32,6 +32,15 @@ const versionMap = new Map([
   //! add further version here !//
 ]);
 
+function preprocessRawSongs(rawSongs: Record<string, any>[]) {
+  for (const rawSong of rawSongs) {
+    //! hotfix
+    if (rawSong.title === 'Link' && rawSong.catcode === 'niconico＆ボーカロイド') {
+      rawSong.title += ' (2)';
+    }
+  }
+}
+
 function extractSong(rawSong: Record<string, any>) {
   const imageUrl = new URL(rawSong.image_url, IMAGE_BASE_URL).toString();
   const imageName = `${hashed(imageUrl)}.png`;
@@ -93,6 +102,7 @@ export default async function run() {
   const response = await axios.get(DATA_URL);
 
   const rawSongs: Record<string, any>[] = response.data;
+  preprocessRawSongs(rawSongs);
   logger.info(`OK, ${rawSongs.length} songs fetched.`);
 
   logger.info('Preparing Songs table ...');

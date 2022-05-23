@@ -90,6 +90,9 @@ async function getIntlSheets(
     let title = $(e).find('.music_name_block').text()/* .trim() */;
 
     //! hotfix
+    if (title === 'Link' && category === 'niconico＆ボーカロイド') {
+      title = 'Link (2)';
+    }
     if (title === 'GIGANTOMAKHIA') {
       title = 'GIGANTØMAKHIA';
     }

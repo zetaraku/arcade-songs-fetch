@@ -36,6 +36,9 @@ function extractCnSheets(rawCnSong: Record<string, any>) {
     category = categoryMap.get(category) ?? null;
 
     //! hotfix
+    if (title === 'Link' && category === 'niconico＆ボーカロイド') {
+      title = 'Link (2)';
+    }
     if (title === 'D✪N’T ST✪P R✪CKIN’') {
       title = 'D✪N’T  ST✪P  R✪CKIN’';
     }
