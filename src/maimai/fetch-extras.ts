@@ -85,7 +85,7 @@ function extractSheetExtras($: cheerio.CheerioAPI, table: cheerio.Element) {
     const difficulty = difficultyMap.get(difficultyAbbr);
 
     if (difficulty === undefined) {
-      throw new Error(`'${difficultyAbbr}' is not a valid difficulty.`);
+      logger.warn(`'${difficultyAbbr}' is not a valid difficulty.`);
     }
 
     return {
