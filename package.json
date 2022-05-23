@@ -79,6 +79,7 @@
   "dependencies": {
     "axios": "^0.26.1",
     "cheerio": "^1.0.0-rc.10",
+    "csv": "^6.0.5",
     "dotenv": "^16.0.0",
     "download": "^8.0.0",
     "entities": "^4.3.0",
