@@ -59,7 +59,7 @@ export default async function run() {
   const rawSongs: Record<string, any>[] = response.data;
   logger.info(`OK, ${rawSongs.length} songs fetched.`);
 
-  rawSongs.reverse();
+  rawSongs.sort((a, b) => Number(a.id) - Number(b.id));
 
   logger.info('Preparing Songs table ...');
   await Song.sync();
