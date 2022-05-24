@@ -17,6 +17,15 @@ function preprocessRawSongs(rawSongs: Record<string, any>[]) {
     } else if (rawSong.bonus) {
       rawSong.category = 'ボーナストラック';
     }
+    //! hotfix
+    if (rawSong.title === 'Singularity') {
+      if (rawSong.id === '402400') {
+        rawSong.title += ' (2)';
+      }
+      if (rawSong.id === '403700') {
+        rawSong.title += ' (3)';
+      }
+    }
   }
 }
 
