@@ -29,3 +29,20 @@ export function getSheetSorter({
     },
   };
 }
+
+export function checkDuplicatedTitle(songs: Record<string, any>[], logger: log4js.Logger) {
+  const titles = new Set<string>();
+  const duplicateTitles = new Set<string>();
+
+  logger.info('Checking songs with duplicated title ...');
+  for (const song of songs) {
+    if (titles.has(song.title)) {
+      duplicateTitles.add(song.title);
+    }
+    titles.add(song.title);
+  }
+
+  if (duplicateTitles.size > 0) {
+    logger.warn('! Found duplicated titles:', [...duplicateTitles]);
+  }
+}
