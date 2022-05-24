@@ -9,10 +9,15 @@ logger.level = log4js.levels.INFO;
 const DATA_URL = 'https://ongeki.sega.jp/assets/json/music/music.json';
 const IMAGE_BASE_URL = 'https://ongeki-net.com/ongeki-mobile/img/music/';
 
-function extractCategory(rawSong: Record<string, any>) {
-  if (rawSong.lunatic) return 'LUNATIC';
-  if (rawSong.bonus) return 'ボーナストラック';
-  return rawSong.category;
+function preprocessRawSongs(rawSongs: Record<string, any>[]) {
+  for (const rawSong of rawSongs) {
+    if (rawSong.lunatic) {
+      rawSong.category = 'LUNATIC';
+      rawSong.title = `(LUN) ${rawSong.title}`;
+    } else if (rawSong.bonus) {
+      rawSong.category = 'ボーナストラック';
+    }
+  }
 }
 
 function extractSong(rawSong: Record<string, any>) {
@@ -22,7 +27,7 @@ function extractSong(rawSong: Record<string, any>) {
   return {
     songId: rawSong.id,
 
-    category: extractCategory(rawSong),
+    category: rawSong.category,
     title: rawSong.title,
 
     // titleKana: rawSong.title_sort,
@@ -53,7 +58,7 @@ function extractSheets(rawSong: Record<string, any>) {
     { type: 'lun', difficulty: 'lunatic', level: rawSong.lev_lnt },
   ].filter((e) => !!e.level).map((rawSheet) => ({
     songId: rawSong.id,
-    category: extractCategory(rawSong),
+    category: rawSong.category,
     title: rawSong.title,
     ...rawSheet,
   }));
@@ -64,6 +69,7 @@ export default async function run() {
   const response = await axios.get(DATA_URL);
 
   const rawSongs: Record<string, any>[] = response.data;
+  preprocessRawSongs(rawSongs);
   logger.info(`OK, ${rawSongs.length} songs fetched.`);
 
   logger.info('Preparing Songs table ...');
