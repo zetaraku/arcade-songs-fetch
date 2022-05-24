@@ -134,7 +134,7 @@ async function getIntlWorldsEndSheets(cookies: Record<string, string>) {
   const $ = cheerio.load(response.data);
 
   const result = $('.musiclist_box').toArray().map((form) => {
-    const title = $(form).find('.musiclist_worldsend_title').text().trim();
+    let title = $(form).find('.musiclist_worldsend_title').text().trim();
 
     const weTypeId = $(form).find('.musiclist_worldsend_icon img').attr('src')!
       .match(/^https:\/\/chunithm-net-eng.com\/mobile\/images\/icon_we_(\d+).png/)![1];
@@ -144,9 +144,14 @@ async function getIntlWorldsEndSheets(cookies: Record<string, string>) {
     //   .match(/^https:\/\/chunithm-net-eng.com\/mobile\/images\/icon_we_star(\d+).png/)![1];
     // const weStar = '☆'.repeat((Number(weStarId) + 1) / 2);
 
+    //! hotfix
+    if (title === 'G e n g a o z o' && weType === '覚') {
+      title = 'G e n g a o z o (2)';
+    }
+
     return {
       category: 'WORLD\'S END',
-      title,
+      title: `(WE) ${title}`,
       type: 'we',
       difficulty: weType,
     };

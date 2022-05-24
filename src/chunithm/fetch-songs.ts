@@ -9,6 +9,19 @@ logger.level = log4js.levels.INFO;
 const DATA_URL = 'https://chunithm.sega.jp/storage/json/music.json';
 const IMAGE_BASE_URL = 'https://new.chunithm-net.com/chuni-mobile/html/mobile/img/';
 
+function preprocessRawSongs(rawSongs: Record<string, any>[]) {
+  for (const rawSong of rawSongs) {
+    //! hotfix
+    if (rawSong.we_kanji !== '') {
+      rawSong.catname = 'WORLD\'S END';
+      rawSong.title = `(WE) ${rawSong.title}`;
+    }
+    if (rawSong.title === '(WE) G e n g a o z o' && rawSong.id === '8203') {
+      rawSong.title += ' (2)';
+    }
+  }
+}
+
 function extractSong(rawSong: Record<string, any>) {
   const imageUrl = new URL(rawSong.image, IMAGE_BASE_URL).toString();
   const imageName = `${hashed(imageUrl)}.png`;
@@ -16,7 +29,7 @@ function extractSong(rawSong: Record<string, any>) {
   return {
     songId: Number(rawSong.id),
 
-    category: rawSong.we_kanji !== '' ? 'WORLD\'S END' : rawSong.catname,
+    category: rawSong.catname,
     title: rawSong.title,
 
     // titleKana: rawSong.reading,
@@ -46,7 +59,7 @@ function extractSheets(rawSong: Record<string, any>) {
     },
   ].filter((e) => !!e.level).map((rawSheet) => ({
     songId: Number(rawSong.id),
-    category: rawSong.we_kanji !== '' ? 'WORLD\'S END' : rawSong.catname,
+    category: rawSong.catname,
     title: rawSong.title,
     ...rawSheet,
   }));
@@ -57,6 +70,7 @@ export default async function run() {
   const response = await axios.get(DATA_URL);
 
   const rawSongs: Record<string, any>[] = response.data;
+  preprocessRawSongs(rawSongs);
   logger.info(`OK, ${rawSongs.length} songs fetched.`);
 
   rawSongs.sort((a, b) => Number(a.id) - Number(b.id));
