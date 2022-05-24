@@ -64,7 +64,7 @@ const sheetSorter = getSheetSorter({ typeMappingList, difficultyMappingList });
 
 function levelValueOf(level: string | null) {
   if (level === null) return null;
-  if (level === '*') return 99;
+  if (level === '*') return -1;
   return Number(level.replace('+', '.5'));
 }
 
