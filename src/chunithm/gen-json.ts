@@ -36,6 +36,7 @@ const versionMappingList = [
   // { dateBefore: '2021-11-04', version: 'PARADISE LOST', abbr: 'PARADISE+' },
   // { dateBefore: '2022-04-14', version: 'CHUNITHM NEW', abbr: 'NEW' },
   // { dateBefore: null, version: 'CHUNITHM NEW PLUS', abbr: 'NEW+' },
+  { dateBefore: null, version: 'N/A', abbr: 'N/A' },
   //! add further mapping here !//
 ] as any[];
 const typeMappingList = [
