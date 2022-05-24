@@ -63,6 +63,9 @@ export default async function run() {
 
   rawSongs.reverse();
 
+  const songs = rawSongs.map((rawSong) => extractSong(rawSong));
+  const sheets = rawSongs.flatMap((rawSong) => extractSheets(rawSong));
+
   logger.info('Preparing Songs table ...');
   await Song.sync();
 
@@ -70,11 +73,9 @@ export default async function run() {
   await Sheet.sync();
 
   logger.info('Updating songs ...');
-  const songs = rawSongs.map((rawSong) => extractSong(rawSong));
   await Promise.all(songs.map((song) => Song.upsert(song)));
 
   logger.info('Updating sheets ...');
-  const sheets = rawSongs.flatMap((rawSong) => extractSheets(rawSong));
   await Promise.all(sheets.map((sheet) => Sheet.upsert(sheet)));
 
   logger.info('Done!');

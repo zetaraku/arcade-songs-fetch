@@ -128,6 +128,10 @@ export default async function run() {
 
   const allRawSongs = [...rawExtraSongs, ...rawSongs];
 
+  const songs = allRawSongs.map((rawSong) => extractSong(rawSong));
+  const sheets = allRawSongs.flatMap((rawSong) => extractSheets(rawSong));
+  const jpSheets = rawSongs.flatMap((rawSong) => extractSheets(rawSong));
+
   logger.info('Preparing Songs table ...');
   await Song.sync();
 
@@ -135,18 +139,15 @@ export default async function run() {
   await Sheet.sync();
 
   logger.info('Updating songs ...');
-  const songs = allRawSongs.map((rawSong) => extractSong(rawSong));
   await Promise.all(songs.map((song) => Song.upsert(song)));
 
   logger.info('Updating sheets ...');
-  const sheets = allRawSongs.flatMap((rawSong) => extractSheets(rawSong));
   await Promise.all(sheets.map((sheet) => Sheet.upsert(sheet)));
 
   logger.info('Recreating JpSheets table ...');
   await JpSheet.sync({ force: true });
 
   logger.info('Inserting jpSheets ...');
-  const jpSheets = rawSongs.flatMap((rawSong) => extractSheets(rawSong));
   await JpSheet.bulkCreate(jpSheets);
 
   logger.info('Done!');
