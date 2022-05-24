@@ -17,6 +17,7 @@ const categoryMappingList = [
   { category: 'ゲーム＆バラエティ' },
   { category: 'maimai' },
   { category: 'オンゲキ＆CHUNITHM' },
+  { category: '宴会場' },
   //! add further category here !//
 ];
 const versionMappingList = [
@@ -44,6 +45,7 @@ const versionMappingList = [
 const typeMappingList = [
   { type: 'dx', name: 'DX（でらっくす）', abbr: 'DX', iconUrl: 'type-dx.png', iconHeight: 22 },
   { type: 'std', name: 'STD（スタンダード）', abbr: 'STD', iconUrl: 'type-std.png', iconHeight: 22 },
+  { type: 'utage', name: '宴（宴会場）', abbr: '宴' },
 ];
 const difficultyMappingList = [
   { difficulty: 'basic', name: 'BASIC', color: 'lime' },
@@ -62,6 +64,7 @@ const sheetSorter = getSheetSorter({ typeMappingList, difficultyMappingList });
 
 function levelValueOf(level: string | null) {
   if (level === null) return null;
+  if (level === '*') return 99;
   return Number(level.replace('+', '.5'));
 }
 
@@ -106,6 +109,11 @@ export default async function run() {
     for (const sheet of sheetsOfSong) {
       delete sheet.category;
       delete sheet.title;
+
+      if (sheet.type === 'utage') {
+        sheet.difficulty = `【${sheet.difficulty}】`;
+        sheet.isSpecial = true;
+      }
 
       sheet.levelValue = levelValueOf(sheet.level);
 

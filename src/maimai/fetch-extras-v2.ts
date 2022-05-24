@@ -171,7 +171,7 @@ export default async function run() {
   logger.info('Preparing SheetExtras table ...');
   await SheetExtra.sync();
 
-  const songsToFetch: Record<string, any>[] = await sequelize.query(/* sql */ `
+  let songsToFetch: Record<string, any>[] = await sequelize.query(/* sql */ `
     SELECT "category", "title"
     FROM "Songs" LEFT JOIN "SongExtras" USING ("category", "title")
     WHERE ("bpm" IS NULL)
@@ -182,6 +182,7 @@ export default async function run() {
   `, {
     type: QueryTypes.SELECT,
   });
+  songsToFetch = songsToFetch.filter((song) => song.category !== '宴会場');
   logger.info(`Found ${songsToFetch.length} page(s) to fetch.`);
 
   for (const [index, song] of songsToFetch.entries()) {
