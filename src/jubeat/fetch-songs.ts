@@ -5,7 +5,7 @@ import sleep from 'sleep-promise';
 import log4js from 'log4js';
 import * as cheerio from 'cheerio';
 import { Song, Sheet } from './models';
-import { hashed } from '../core/utils';
+import { hashed, checkDuplicatedTitle } from '../core/utils';
 
 const logger = log4js.getLogger('jubeat/fetch-songs');
 logger.level = log4js.levels.INFO;
@@ -112,6 +112,7 @@ export default async function run() {
   songs.reverse();
 
   const sheets = songs.flatMap((song) => extractSheets(song));
+  checkDuplicatedTitle(songs, logger);
 
   logger.info('Preparing Songs table ...');
   await Song.sync();

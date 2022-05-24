@@ -3,7 +3,7 @@ import axios from 'axios';
 import log4js from 'log4js';
 import * as cheerio from 'cheerio';
 import { Song } from './models';
-import { hashed } from '../core/utils';
+import { hashed, checkDuplicatedTitle } from '../core/utils';
 
 const logger = log4js.getLogger('gc/fetch-songs');
 logger.level = log4js.levels.INFO;
@@ -102,6 +102,8 @@ export default async function run() {
   logger.info(`OK, ${songs.length} songs fetched.`);
 
   songs.reverse();
+
+  checkDuplicatedTitle(songs, logger);
 
   logger.info('Preparing Songs table ...');
   await Song.sync();

@@ -1,7 +1,7 @@
 import axios from 'axios';
 import log4js from 'log4js';
 import { Song, Sheet, JpSheet } from './models';
-import { hashed } from '../core/utils';
+import { hashed, checkDuplicatedTitle } from '../core/utils';
 
 const logger = log4js.getLogger('chunithm/fetch-songs');
 logger.level = log4js.levels.INFO;
@@ -77,6 +77,7 @@ export default async function run() {
 
   const songs = rawSongs.map((rawSong) => extractSong(rawSong));
   const sheets = rawSongs.flatMap((rawSong) => extractSheets(rawSong));
+  checkDuplicatedTitle(songs, logger);
 
   logger.info('Preparing Songs table ...');
   await Song.sync();
