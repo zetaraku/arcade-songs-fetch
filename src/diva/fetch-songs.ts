@@ -15,8 +15,8 @@ const DATA_URL = 'https://project-diva-ac.net';
 const IMAGE_BASE_URL = 'https://project-diva-ac.net/';
 
 export async function getCookies() {
-  if (!process.env.JP_SEGA_ID || !process.env.JP_SEGA_PASSWORD) {
-    throw new Error('Please set your JP_SEGA_ID and JP_SEGA_PASSWORD in the .env file');
+  if (!process.env.DIVA_JP_SEGA_ID || !process.env.DIVA_JP_SEGA_PASSWORD) {
+    throw new Error('Please set your DIVA_JP_SEGA_ID and DIVA_JP_SEGA_PASSWORD in the .env file');
   }
 
   const browser = await puppeteer.launch();
@@ -24,8 +24,8 @@ export async function getCookies() {
   const page = await browser.newPage();
   await page.goto('https://project-diva-ac.net/divanet/');
 
-  await page.type('[name=accessCode]', process.env.JP_SEGA_ID);
-  await page.type('[name=password]', process.env.JP_SEGA_PASSWORD);
+  await page.type('[name=accessCode]', process.env.DIVA_JP_SEGA_ID);
+  await page.type('[name=password]', process.env.DIVA_JP_SEGA_PASSWORD);
 
   await Promise.all([
     page.waitForNavigation(),

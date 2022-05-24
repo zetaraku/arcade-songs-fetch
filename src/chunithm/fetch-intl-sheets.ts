@@ -44,8 +44,8 @@ const worldsEndTypeMappings = [
 ];
 
 async function getIntlCookies() {
-  if (!process.env.INTL_SEGA_ID || !process.env.INTL_SEGA_PASSWORD) {
-    throw new Error('Please set your INTL_SEGA_ID and INTL_SEGA_PASSWORD in the .env file');
+  if (!process.env.CHUNITHM_INTL_SEGA_ID || !process.env.CHUNITHM_INTL_SEGA_PASSWORD) {
+    throw new Error('Please set your CHUNITHM_INTL_SEGA_ID and CHUNITHM_INTL_SEGA_PASSWORD in the .env file');
   }
 
   const browser = await puppeteer.launch();
@@ -58,8 +58,8 @@ async function getIntlCookies() {
   await page.goto(url.toString());
 
   await page.click('.c-button--openid--segaId');
-  await page.type('#sid', process.env.INTL_SEGA_ID);
-  await page.type('#password', process.env.INTL_SEGA_PASSWORD);
+  await page.type('#sid', process.env.CHUNITHM_INTL_SEGA_ID);
+  await page.type('#password', process.env.CHUNITHM_INTL_SEGA_PASSWORD);
 
   await Promise.all([
     page.waitForNavigation(),

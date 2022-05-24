@@ -49,8 +49,8 @@ const difficultyIdMap = new Map([
 ]);
 
 async function getJpCookies() {
-  if (!process.env.JP_SEGA_ID || !process.env.JP_SEGA_PASSWORD) {
-    throw new Error('Please set your JP_SEGA_ID and JP_SEGA_PASSWORD in the .env file');
+  if (!process.env.MAIMAI_JP_SEGA_ID || !process.env.MAIMAI_JP_SEGA_PASSWORD) {
+    throw new Error('Please set your MAIMAI_JP_SEGA_ID and MAIMAI_JP_SEGA_PASSWORD in the .env file');
   }
 
   const browser = await puppeteer.launch();
@@ -58,8 +58,8 @@ async function getJpCookies() {
   const page = await browser.newPage();
   await page.goto('https://maimaidx.jp/maimai-mobile/');
 
-  await page.type('input[name="segaId"]', process.env.JP_SEGA_ID);
-  await page.type('input[name="password"]', process.env.JP_SEGA_PASSWORD);
+  await page.type('input[name="segaId"]', process.env.MAIMAI_JP_SEGA_ID);
+  await page.type('input[name="password"]', process.env.MAIMAI_JP_SEGA_PASSWORD);
 
   await Promise.all([
     page.waitForNavigation(),
