@@ -67,7 +67,7 @@ export default async function run() {
   logger.info('Loading songs from database ...');
   const songs: Record<string, any>[] = await sequelize.query(/* sql */ `
     SELECT * FROM "Songs"
-    ORDER BY "songId" % 8000
+    ORDER BY CASE WHEN "songId" < 8000 THEN "songId" ELSE "songId" - 9000 END
   `, {
     type: QueryTypes.SELECT,
   });
