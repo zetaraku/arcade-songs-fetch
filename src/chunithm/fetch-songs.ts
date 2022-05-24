@@ -11,11 +11,11 @@ const IMAGE_BASE_URL = 'https://new.chunithm-net.com/chuni-mobile/html/mobile/im
 
 function preprocessRawSongs(rawSongs: Record<string, any>[]) {
   for (const rawSong of rawSongs) {
-    //! hotfix
     if (rawSong.we_kanji !== '') {
       rawSong.catname = 'WORLD\'S END';
       rawSong.title = `(WE) ${rawSong.title}`;
     }
+    //! hotfix
     if (rawSong.title === '(WE) G e n g a o z o' && rawSong.id === '8203') {
       rawSong.title += ' (2)';
     }

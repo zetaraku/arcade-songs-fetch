@@ -39,10 +39,10 @@ const versionMap = new Map([
 
 function preprocessRawSongs(rawSongs: Record<string, any>[]) {
   for (const rawSong of rawSongs) {
-    //! hotfix
     if (rawSong.catcode === '宴会場') {
       rawSong.title = `(宴) ${rawSong.title}`;
     }
+    //! hotfix
     if (rawSong.title === 'Link' && rawSong.catcode === 'niconico＆ボーカロイド') {
       rawSong.title += ' (2)';
     }
