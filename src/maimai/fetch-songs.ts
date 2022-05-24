@@ -1,4 +1,7 @@
+import fs from 'fs';
 import axios from 'axios';
+// eslint-disable-next-line import/no-unresolved
+import { parse as parseCsv } from 'csv/sync';
 import log4js from 'log4js';
 import { Song, Sheet, JpSheet } from './models';
 import { hashed } from '../core/utils';
@@ -8,6 +11,7 @@ logger.level = log4js.levels.INFO;
 
 const DATA_URL = 'https://maimai.sega.jp/data/maimai_songs.json';
 const IMAGE_BASE_URL = 'https://maimaidx.jp/maimai-mobile/img/Music/';
+const DATA_DIR_PATH = 'data/maimai';
 
 const versionMap = new Map([
   [0, null],
@@ -107,6 +111,20 @@ export default async function run() {
   preprocessRawSongs(rawSongs);
   logger.info(`OK, ${rawSongs.length} songs fetched.`);
 
+  const rawExtraSongs: Record<string, any>[] = (() => {
+    if (fs.existsSync(`${DATA_DIR_PATH}/extra-songs.tsv`)) {
+      logger.info(`Loading extra songs from: ${DATA_DIR_PATH}/extra-songs.tsv ...`);
+      const rawTsv = fs.readFileSync(`${DATA_DIR_PATH}/extra-songs.tsv`, 'utf8');
+      const result = parseCsv(rawTsv, { delimiter: '\t', columns: true });
+      preprocessRawSongs(result);
+      logger.info(`OK, ${result.length} extra songs loaded.`);
+      return result;
+    }
+    return [];
+  })();
+
+  const allRawSongs = [...rawExtraSongs, ...rawSongs];
+
   logger.info('Preparing Songs table ...');
   await Song.sync();
 
@@ -114,18 +132,19 @@ export default async function run() {
   await Sheet.sync();
 
   logger.info('Updating songs ...');
-  const songs = rawSongs.map((rawSong) => extractSong(rawSong));
+  const songs = allRawSongs.map((rawSong) => extractSong(rawSong));
   await Promise.all(songs.map((song) => Song.upsert(song)));
 
   logger.info('Updating sheets ...');
-  const sheets = rawSongs.flatMap((rawSong) => extractSheets(rawSong));
+  const sheets = allRawSongs.flatMap((rawSong) => extractSheets(rawSong));
   await Promise.all(sheets.map((sheet) => Sheet.upsert(sheet)));
 
   logger.info('Recreating JpSheets table ...');
   await JpSheet.sync({ force: true });
 
-  logger.info('Inserting sheets ...');
-  await JpSheet.bulkCreate(sheets);
+  logger.info('Inserting jpSheets ...');
+  const jpSheets = rawSongs.flatMap((rawSong) => extractSheets(rawSong));
+  await JpSheet.bulkCreate(jpSheets);
 
   logger.info('Done!');
 }
