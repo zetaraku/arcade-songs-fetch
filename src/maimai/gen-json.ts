@@ -109,6 +109,7 @@ export default async function run() {
     for (const sheet of sheetsOfSong) {
       delete sheet.category;
       delete sheet.title;
+      if (sheet.version == null) delete sheet.version;
 
       if (sheet.type === 'utage') {
         sheet.difficulty = `【${sheet.difficulty}】`;
