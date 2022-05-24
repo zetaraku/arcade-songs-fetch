@@ -62,7 +62,7 @@ function extractSong(rawSong: Record<string, any>) {
     title: rawSong.title,
 
     // titleKana: rawSong.title_kana,
-    artist: rawSong.artist,
+    artist: rawSong.artist.trim(),
 
     imageName,
     imageUrl,
