@@ -41,6 +41,7 @@ export default async function run() {
           difficulty: gameCode,
           level: null,
           levelValue: null,
+          isSpecial: song.sheets[0].isSpecial,
         },
       ];
       song.imageName = `../../../${gameCode}/img/cover/${song.imageName}`;
