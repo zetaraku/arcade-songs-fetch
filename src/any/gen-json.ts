@@ -46,14 +46,14 @@ export default async function run() {
       song.imageName = `../../../${gameCode}/img/cover/${song.imageName}`;
     }
 
-    songsArray.push(songsOfGame);
+    songsArray.push(songsOfGame.slice().reverse());
   }
 
   const flatZip = (...arrs: any[][]) => [...Array(Math.max(...arrs.map((arr) => arr.length)))]
     .flatMap((_, i) => arrs.map((arr) => arr[i]).filter(Boolean));
 
   const output = {
-    songs: flatZip(...songsArray),
+    songs: flatZip(...songsArray).slice().reverse(),
     levels: [],
     categories: [],
     versions: [],
