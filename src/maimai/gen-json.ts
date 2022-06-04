@@ -86,29 +86,27 @@ export default async function run() {
       await sequelize.query(/* sql */ `
         SELECT
           *,
-          "JpSheets"."title" IS NOT NULL AS "regions.jp",
-          "IntlSheets"."title" IS NOT NULL AS "regions.intl",
-          "CnSheets"."title" IS NOT NULL AS "regions.cn"
+          "JpSheets"."songId" IS NOT NULL AS "regions.jp",
+          "IntlSheets"."songId" IS NOT NULL AS "regions.intl",
+          "CnSheets"."songId" IS NOT NULL AS "regions.cn"
         FROM "Sheets"
           NATURAL LEFT JOIN "SheetVersions"
           NATURAL LEFT JOIN "SheetExtras"
           NATURAL LEFT JOIN "JpSheets"
           NATURAL LEFT JOIN "IntlSheets"
           NATURAL LEFT JOIN "CnSheets"
-        WHERE "category" = :category AND "title" = :title
+        WHERE "songId" = :songId
       `, {
         type: QueryTypes.SELECT,
         replacements: {
-          category: song.category,
-          title: song.title,
+          songId: song.songId,
         },
         nest: true,
       }),
     );
 
     for (const sheet of sheetsOfSong) {
-      delete sheet.category;
-      delete sheet.title;
+      delete sheet.songId;
       if (sheet.version == null) delete sheet.version;
 
       if (sheet.type === 'utage') {

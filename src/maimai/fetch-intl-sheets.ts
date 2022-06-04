@@ -30,6 +30,13 @@ const difficultyIdMap = new Map([
   ['remaster', 4],
 ]);
 
+function getSongId(title: string, category: string) {
+  if (title === 'Link' && category === 'niconico＆ボーカロイド') {
+    return 'Link (2)';
+  }
+  return title;
+}
+
 async function getIntlCookies() {
   if (!process.env.MAIMAI_INTL_SEGA_ID || !process.env.MAIMAI_INTL_SEGA_PASSWORD) {
     throw new Error('Please set your MAIMAI_INTL_SEGA_ID and MAIMAI_INTL_SEGA_PASSWORD in the .env file');
@@ -90,9 +97,6 @@ async function getIntlSheets(
     let title = $(e).find('.music_name_block').text()/* .trim() */;
 
     //! hotfix
-    if (title === 'Link' && category === 'niconico＆ボーカロイド') {
-      title = 'Link (2)';
-    }
     if (title === 'GIGANTOMAKHIA') {
       title = 'GIGANTØMAKHIA';
     }
@@ -107,8 +111,7 @@ async function getIntlSheets(
     })();
 
     return {
-      category,
-      title,
+      songId: getSongId(title, category),
       type,
       difficulty,
     };

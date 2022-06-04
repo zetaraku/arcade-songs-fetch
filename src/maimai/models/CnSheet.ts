@@ -2,11 +2,7 @@ import { DataTypes } from 'sequelize';
 import sequelize from './sequelize';
 
 const CnSheet = sequelize.define('CnSheet', {
-  category: {
-    type: DataTypes.STRING,
-    primaryKey: true,
-  },
-  title: {
+  songId: {
     type: DataTypes.STRING,
     primaryKey: true,
   },

@@ -17,6 +17,13 @@ const categoryMap = new Map([
   //! add further category here !//
 ]);
 
+function getSongId(title: string, category: string) {
+  if (title === 'Link' && category === 'niconico＆ボーカロイド') {
+    return 'Link (2)';
+  }
+  return title;
+}
+
 function extractCnSheets(rawCnSong: Record<string, any>) {
   return [
     { type: 'dx', difficulty: 'basic', level: rawCnSong.dx_lev_bas },
@@ -35,17 +42,17 @@ function extractCnSheets(rawCnSong: Record<string, any>) {
     // map CN category to JP category
     category = categoryMap.get(category) ?? null;
 
-    //! hotfix
-    if (title === 'Link' && category === 'niconico＆ボーカロイド') {
-      title = 'Link (2)';
+    if (category === null) {
+      logger.warn(`Unknown category: ${rawCnSong.category}`);
     }
+
+    //! hotfix
     if (title === 'D✪N’T ST✪P R✪CKIN’') {
       title = 'D✪N’T  ST✪P  R✪CKIN’';
     }
 
     return {
-      category,
-      title,
+      songId: getSongId(title, category),
       ...rawCnSheet,
     };
   });

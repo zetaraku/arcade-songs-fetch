@@ -25,16 +25,16 @@ const difficultyMap = new Map([
 function getSongWikiUrl(song: Record<string, any>) {
   const title = (() => {
     //! hotfix
-    if (song.title === 'Link (2)') {
+    if (song.songId === 'Link (2)') {
       return 'Link（Circle of friends）';
     }
-    if (song.title === 'YA･DA･YO [Reborn]') {
+    if (song.songId === 'YA･DA･YO [Reborn]') {
       return 'YA・DA・YO [Reborn]';
     }
-    if (song.title === 'D✪N’T  ST✪P  R✪CKIN’') {
+    if (song.songId === 'D✪N’T  ST✪P  R✪CKIN’') {
       return 'D✪N’T ST✪P R✪CKIN’';
     }
-    if (song.title === '　') {
+    if (song.songId === '　') {
       return '\u200E';
     }
 
@@ -43,15 +43,32 @@ function getSongWikiUrl(song: Record<string, any>) {
 
   const encodedTitle = encodeURIComponent(
     title
-      .replaceAll('+', '＋')
+      .replaceAll('<', '＜')
+      .replaceAll('>', '＞')
+      .replaceAll('"', '”')
+      .replaceAll('{', '｛')
+      .replaceAll('}', '｝')
+      .replaceAll('|', '｜')
+      .replaceAll('\\', '＼')
+      .replaceAll('^', '︿')
       .replaceAll('[', '［')
       .replaceAll(']', '］')
+      .replaceAll('`', '‵')
       .replaceAll('#', '＃')
-      .replaceAll('&', '＆')
+      .replaceAll('/', '／')
       .replaceAll('?', '？')
-      .replaceAll('>', '＞')
       .replaceAll(':', '：')
-    ,
+      .replaceAll('@', '＠')
+      .replaceAll('&', '＆')
+      .replaceAll('=', '＝')
+      .replaceAll('+', '＋')
+      .replaceAll('$', '＄')
+      .replaceAll(',', '，')
+      .replaceAll("'", '’')
+      .replaceAll('(', '（')
+      .replaceAll(')', '）')
+      .replaceAll('!', '！')
+      .replaceAll('*', '＊'),
   );
 
   return `${DATA_URL}/${encodedTitle}`;
@@ -108,18 +125,21 @@ function extractSheetExtras($: cheerio.CheerioAPI, table: cheerio.Element) {
       return null;
     })();
 
-    const extractNoteCount = (noteCount: string) => Number.parseInt(noteCount.replaceAll(',', ''), 10);
+    const parseNoteCount = (text: string) => {
+      const result = Number.parseInt(text.replaceAll(',', ''), 10);
+      return !Number.isNaN(result) ? result : null;
+    };
 
     return {
       type,
       difficulty,
 
-      tapCount: extractNoteCount(tapCount),
-      holdCount: extractNoteCount(holdCount),
-      slideCount: extractNoteCount(slideCount),
-      touchCount: extractNoteCount(touchCount),
-      breakCount: extractNoteCount(breakCount),
-      totalCount: extractNoteCount(totalCount),
+      tapCount: parseNoteCount(tapCount),
+      holdCount: parseNoteCount(holdCount),
+      slideCount: parseNoteCount(slideCount),
+      touchCount: parseNoteCount(touchCount),
+      breakCount: parseNoteCount(breakCount),
+      totalCount: parseNoteCount(totalCount),
 
       noteDesigner,
     };
@@ -135,9 +155,7 @@ async function fetchExtra(song: Record<string, any>) {
   const bpm = Number.parseFloat($('th:contains("BPM")').next().text().trim()) || null;
 
   const songExtra = {
-    category: song.category,
-    title: song.title,
-
+    songId: song.songId,
     bpm,
   };
 
@@ -147,8 +165,7 @@ async function fetchExtra(song: Record<string, any>) {
   ].filter((e) => e !== undefined).flatMap(
     (table) => extractSheetExtras($, table).map(
       (sheetExtra) => ({
-        category: song.category,
-        title: song.title,
+        songId: song.songId,
         ...sheetExtra,
       }),
     ),
@@ -171,18 +188,21 @@ export default async function run() {
   logger.info('Preparing SheetExtras table ...');
   await SheetExtra.sync();
 
-  let songsToFetch: Record<string, any>[] = await sequelize.query(/* sql */ `
-    SELECT "category", "title"
-    FROM "Songs" LEFT JOIN "SongExtras" USING ("category", "title")
-    WHERE ("bpm" IS NULL)
-      UNION
-    SELECT DISTINCT "category", "title"
-    FROM "Sheets" LEFT JOIN "SheetExtras" USING ("category", "title", "type", "difficulty")
-    WHERE ("totalCount" IS NULL) OR ("noteDesigner" IS NULL)
+  const songsToFetch: Record<string, any>[] = await sequelize.query(/* sql */ `
+    SELECT "songId", "category", "title"
+    FROM (
+      SELECT "songId"
+      FROM "Songs" LEFT JOIN "SongExtras" USING ("songId")
+      WHERE ("bpm" IS NULL)
+        UNION
+      SELECT DISTINCT "songId"
+      FROM "Sheets" LEFT JOIN "SheetExtras" USING ("songId", "type", "difficulty")
+      WHERE ("totalCount" IS NULL) OR ("noteDesigner" IS NULL)
+    ) LEFT JOIN "Songs" USING ("songId")
+    WHERE "category" <> '宴会場'
   `, {
     type: QueryTypes.SELECT,
   });
-  songsToFetch = songsToFetch.filter((song) => song.category !== '宴会場');
   logger.info(`Found ${songsToFetch.length} page(s) to fetch.`);
 
   for (const [index, song] of songsToFetch.entries()) {

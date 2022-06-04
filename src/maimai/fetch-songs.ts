@@ -4,7 +4,7 @@ import axios from 'axios';
 import { parse as parseCsv } from 'csv/sync';
 import log4js from 'log4js';
 import { Song, Sheet, JpSheet } from './models';
-import { hashed, checkDuplicatedTitle } from '../core/utils';
+import { hashed, ensureNoDuplicateEntry } from '../core/utils';
 
 const logger = log4js.getLogger('maimai/fetch-songs');
 logger.level = log4js.levels.INFO;
@@ -37,16 +37,14 @@ const versionMap = new Map([
   //! add further version here !//
 ]);
 
-function preprocessRawSongs(rawSongs: Record<string, any>[]) {
-  for (const rawSong of rawSongs) {
-    if (rawSong.catcode === '宴会場') {
-      rawSong.title = `(宴) ${rawSong.title}`;
-    }
-    //! hotfix
-    if (rawSong.title === 'Link' && rawSong.catcode === 'niconico＆ボーカロイド') {
-      rawSong.title += ' (2)';
-    }
+function getSongId(rawSong: Record<string, any>) {
+  if (rawSong.catcode === '宴会場') {
+    return `(宴) ${rawSong.title}`;
   }
+  if (rawSong.title === 'Link' && rawSong.catcode === 'niconico＆ボーカロイド') {
+    return 'Link (2)';
+  }
+  return rawSong.title;
 }
 
 function extractSong(rawSong: Record<string, any>) {
@@ -65,6 +63,8 @@ function extractSong(rawSong: Record<string, any>) {
   }
 
   return {
+    songId: getSongId(rawSong),
+
     category: rawSong.catcode,
     title: rawSong.title,
 
@@ -100,8 +100,7 @@ function extractSheets(rawSong: Record<string, any>) {
     { type: 'std', difficulty: 'remaster', level: rawSong.lev_remas },
     { type: 'utage', difficulty: rawSong.utage_type, level: rawSong.lev_utage },
   ].filter((e) => !!e.level).map((rawSheet) => ({
-    category: rawSong.catcode,
-    title: rawSong.title,
+    songId: getSongId(rawSong),
     ...rawSheet,
   }));
 }
@@ -111,7 +110,6 @@ export default async function run() {
   const response = await axios.get(DATA_URL);
 
   const rawSongs: Record<string, any>[] = response.data;
-  preprocessRawSongs(rawSongs);
   logger.info(`OK, ${rawSongs.length} songs fetched.`);
 
   const rawExtraSongs: Record<string, any>[] = (() => {
@@ -119,7 +117,6 @@ export default async function run() {
       logger.info(`Loading extra songs from: ${DATA_DIR_PATH}/extra-songs.tsv ...`);
       const rawTsv = fs.readFileSync(`${DATA_DIR_PATH}/extra-songs.tsv`, 'utf8');
       const result = parseCsv(rawTsv, { delimiter: '\t', columns: true });
-      preprocessRawSongs(result);
       logger.info(`OK, ${result.length} extra songs loaded.`);
       return result;
     }
@@ -128,10 +125,12 @@ export default async function run() {
 
   const allRawSongs = [...rawExtraSongs, ...rawSongs];
 
+  logger.info('Ensuring every song has an unique songId ...');
+  ensureNoDuplicateEntry(allRawSongs.map((rawSong) => getSongId(rawSong)));
+
   const songs = allRawSongs.map((rawSong) => extractSong(rawSong));
   const sheets = allRawSongs.flatMap((rawSong) => extractSheets(rawSong));
   const jpSheets = rawSongs.flatMap((rawSong) => extractSheets(rawSong));
-  checkDuplicatedTitle(songs, logger);
 
   logger.info('Preparing Songs table ...');
   await Song.sync();
@@ -139,14 +138,14 @@ export default async function run() {
   logger.info('Preparing Sheets table ...');
   await Sheet.sync();
 
+  logger.info('Recreating JpSheets table ...');
+  await JpSheet.sync({ force: true });
+
   logger.info('Updating songs ...');
   await Promise.all(songs.map((song) => Song.upsert(song)));
 
   logger.info('Updating sheets ...');
   await Promise.all(sheets.map((sheet) => Sheet.upsert(sheet)));
-
-  logger.info('Recreating JpSheets table ...');
-  await JpSheet.sync({ force: true });
 
   logger.info('Inserting jpSheets ...');
   await JpSheet.bulkCreate(jpSheets);

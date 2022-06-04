@@ -6,7 +6,7 @@ import puppeteer from 'puppeteer';
 import sleep from 'sleep-promise';
 import log4js from 'log4js';
 import * as cheerio from 'cheerio';
-import { Song, SheetVersion } from './models';
+import { SheetVersion } from './models';
 import 'dotenv/config';
 
 const logger = log4js.getLogger('maimai/fetch-versions');
@@ -47,6 +47,13 @@ const difficultyIdMap = new Map([
   // ['master', 3],
   // ['remaster', 4],
 ]);
+
+function getSongId(title: string, version: string) {
+  if (title === 'Link' && version === 'ORANGE') {
+    return 'Link (2)';
+  }
+  return title;
+}
 
 async function getJpCookies() {
   if (!process.env.MAIMAI_JP_SEGA_ID || !process.env.MAIMAI_JP_SEGA_PASSWORD) {
@@ -103,13 +110,8 @@ async function getJpSheets(
   }
 
   const sheetBlocks = $(`.music_${difficulty}_score_back`).toArray();
-  const sheets = await Promise.all(sheetBlocks.map(async (e) => {
-    let title = $(e).find('.music_name_block').text()/* .trim() */;
-
-    //! hotfix
-    if (title === 'Link' && version === 'ORANGE') {
-      title = 'Link (2)';
-    }
+  const sheets = sheetBlocks.map((e) => {
+    const title = $(e).find('.music_name_block').text()/* .trim() */;
 
     const type = (() => {
       const typeButton = $(e).find(`.music_kind_icon, .music_${difficulty}_btn_on`);
@@ -121,25 +123,13 @@ async function getJpSheets(
     })();
 
     return {
-      title,
+      songId: getSongId(title, version),
       type,
       version,
     };
-  }));
+  });
 
   return sheets;
-}
-
-async function getCategory(sheet: Record<string, any>) {
-  const matchedSongs = await Song.findAll<any>({ where: { title: sheet.title } });
-
-  if (matchedSongs.length === 0) {
-    throw new Error(`No song found for ${sheet.title}`);
-  } else if (matchedSongs.length === 1) {
-    return matchedSongs[0].category;
-  } else {
-    throw new Error(`Multiple songs found for ${sheet.title}, require manual fix.`);
-  }
 }
 
 export default async function run() {
@@ -166,10 +156,7 @@ export default async function run() {
   await SheetVersion.sync();
 
   logger.info('Updating sheet versions ...');
-  for (const jpSheet of jpSheets) {
-    jpSheet.category = await getCategory(jpSheet);
-    await SheetVersion.upsert(jpSheet);
-  }
+  await Promise.all(jpSheets.map((jpSheet) => SheetVersion.upsert(jpSheet)));
 
   logger.info('Done!');
 }
