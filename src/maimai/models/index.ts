@@ -7,3 +7,4 @@ export { default as IntlSheet } from './IntlSheet';
 export { default as CnSheet } from './CnSheet';
 export { default as SongExtra } from './SongExtra';
 export { default as SheetExtra } from './SheetExtra';
+export { default as SheetInternalLevel } from './SheetInternalLevel';
