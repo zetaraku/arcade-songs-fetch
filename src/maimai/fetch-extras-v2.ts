@@ -112,14 +112,14 @@ function extractSheetExtras($: cheerio.CheerioAPI, table: cheerio.Element) {
         if (anchorIndex === -1) return null;
 
         const result = $(nodes[anchorIndex + 1]).text().trim().replace(/^[…]|[、】]$/g, '');
-        return !!result && result !== '？' ? result : null;
+        return !!result && result !== '？' && result !== '?' ? result : null;
       };
 
       if (difficulty === 'easy') return '-';
       if (difficulty === 'basic') return '-';
       if (difficulty === 'advanced') return '-';
       if (difficulty === 'expert') return extractNoteDesigner('EXP');
-      if (difficulty === 'master') return extractNoteDesigner('MAS');
+      if (difficulty === 'master') return extractNoteDesigner('MAS') ?? extractNoteDesigner('MST');
       if (difficulty === 'remaster') return extractNoteDesigner('Re:M');
 
       return null;
