@@ -83,6 +83,7 @@
     "dotenv": "^16.0.0",
     "download": "^8.0.0",
     "entities": "^4.3.0",
+    "google-spreadsheet": "^3.3.0",
     "iconv-lite": "^0.6.3",
     "log4js": "^6.4.4",
     "node_extra_ca_certs_mozilla_bundle": "^1.0.4",
