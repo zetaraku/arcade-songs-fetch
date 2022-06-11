@@ -5,7 +5,7 @@ import sleep from 'sleep-promise';
 import log4js from 'log4js';
 import * as cheerio from 'cheerio';
 import { Song, Sheet } from './models';
-import { hashed, checkDuplicatedTitle } from '../core/utils';
+import { hashed, ensureNoDuplicateEntry } from '../core/utils';
 
 const logger = log4js.getLogger('sdvx/fetch-songs');
 logger.level = log4js.levels.INFO;
@@ -27,6 +27,10 @@ const difficultyMap = new Map([
   ['xcd', 'exceed'],
   //! add further difficulty here !//
 ]);
+
+function getSongId(rawSong: Record<string, any>) {
+  return rawSong.title;
+}
 
 async function* getSongs() {
   const pagePath = `game/sdvx/${VERSION_ID}/music/index.html`;
@@ -57,6 +61,19 @@ async function* getSongs() {
         const imageUrl = new URL(imagePath, IMAGE_BASE_URL).toString();
         const imageName = `${hashed(imageUrl)}.png`;
 
+        const rawSong = {
+          category,
+          title,
+
+          artist,
+
+          imageName,
+          imageUrl,
+
+          version: null,
+          releaseDate: null,
+        };
+
         const sheets = $(div).find('.inner .level p').toArray()
           .map((e) => {
             const difficultyAbbr = $(e).attr('class')!;
@@ -73,17 +90,8 @@ async function* getSongs() {
           });
 
         return {
-          category,
-          title,
-
-          artist,
-
-          imageName,
-          imageUrl,
-
-          version: null,
-          releaseDate: null,
-
+          songId: getSongId(rawSong),
+          ...rawSong,
           sheets,
         };
       });
@@ -101,8 +109,7 @@ async function* getSongs() {
 
 function extractSheets(song: Record<string, any>) {
   return song.sheets.map((rawSheet: Record<string, any>) => ({
-    category: song.category,
-    title: song.title,
+    songId: song.songId,
     ...rawSheet,
   }));
 }
@@ -118,8 +125,10 @@ export default async function run() {
 
   songs.reverse();
 
+  logger.info('Ensuring every song has an unique songId ...');
+  ensureNoDuplicateEntry(songs.map((song) => getSongId(song)));
+
   const sheets = songs.flatMap((song) => extractSheets(song));
-  checkDuplicatedTitle(songs, logger);
 
   logger.info('Preparing Songs table ...');
   await Song.sync();
