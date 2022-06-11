@@ -35,6 +35,7 @@ export default async function run() {
     const songsOfGame: Record<string, any>[] = JSON.parse(json).songs;
 
     for (const song of songsOfGame) {
+      song.songId = `[${gameCode}] ${song.songId}`;
       song.sheets = [
         {
           type: gameCode,
