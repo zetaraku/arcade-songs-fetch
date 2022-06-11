@@ -3,7 +3,7 @@ import sequelize from './sequelize';
 
 const Song = sequelize.define('Song', {
   songId: {
-    type: DataTypes.INTEGER,
+    type: DataTypes.STRING,
     primaryKey: true,
   },
 

@@ -3,15 +3,6 @@ import sequelize from './sequelize';
 
 const Sheet = sequelize.define('Sheet', {
   songId: {
-    type: DataTypes.INTEGER,
-    primaryKey: true,
-  },
-
-  category: {
-    type: DataTypes.STRING,
-    primaryKey: true,
-  },
-  title: {
     type: DataTypes.STRING,
     primaryKey: true,
   },

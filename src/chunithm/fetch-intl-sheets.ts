@@ -43,6 +43,17 @@ const worldsEndTypeMappings = [
   //! add further type here !//
 ];
 
+function getSongId(title: string, category: string, weType?: string) {
+  if (category === 'WORLD\'S END') {
+    //! hotfix
+    if (title === 'G e n g a o z o' && weType === '覚') {
+      return '(WE) G e n g a o z o (2)';
+    }
+    return `(WE) ${title}`;
+  }
+  return title;
+}
+
 async function getIntlCookies() {
   if (!process.env.CHUNITHM_INTL_SEGA_ID || !process.env.CHUNITHM_INTL_SEGA_PASSWORD) {
     throw new Error('Please set your CHUNITHM_INTL_SEGA_ID and CHUNITHM_INTL_SEGA_PASSWORD in the .env file');
@@ -113,8 +124,7 @@ async function getIntlSheets(
     const title = $(e).find('.music_title').text().trim();
 
     return {
-      category,
-      title,
+      songId: getSongId(title, category),
       type: 'std',
       difficulty,
     };
@@ -134,7 +144,7 @@ async function getIntlWorldsEndSheets(cookies: Record<string, string>) {
   const $ = cheerio.load(response.data);
 
   const result = $('.musiclist_box').toArray().map((form) => {
-    let title = $(form).find('.musiclist_worldsend_title').text().trim();
+    const title = $(form).find('.musiclist_worldsend_title').text().trim();
 
     const weTypeId = $(form).find('.musiclist_worldsend_icon img').attr('src')!
       .match(/^https:\/\/chunithm-net-eng.com\/mobile\/images\/icon_we_(\d+).png/)![1];
@@ -144,14 +154,8 @@ async function getIntlWorldsEndSheets(cookies: Record<string, string>) {
     //   .match(/^https:\/\/chunithm-net-eng.com\/mobile\/images\/icon_we_star(\d+).png/)![1];
     // const weStar = '☆'.repeat((Number(weStarId) + 1) / 2);
 
-    //! hotfix
-    if (title === 'G e n g a o z o' && weType === '覚') {
-      title = 'G e n g a o z o (2)';
-    }
-
     return {
-      category: 'WORLD\'S END',
-      title: `(WE) ${title}`,
+      songId: getSongId(title, 'WORLD\'S END', weType),
       type: 'we',
       difficulty: weType,
     };

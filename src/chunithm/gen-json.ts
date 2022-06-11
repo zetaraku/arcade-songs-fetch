@@ -78,12 +78,12 @@ export default async function run() {
       await sequelize.query(/* sql */ `
         SELECT
           *,
-          "JpSheets"."title" IS NOT NULL AS "regions.jp",
-          "IntlSheets"."title" IS NOT NULL AS "regions.intl"
+          "JpSheets"."songId" IS NOT NULL AS "regions.jp",
+          "IntlSheets"."songId" IS NOT NULL AS "regions.intl"
         FROM "Sheets"
-          LEFT JOIN "JpSheets" USING ("category", "title", "type", "difficulty")
-          LEFT JOIN "IntlSheets" USING ("category", "title", "type", "difficulty")
-        WHERE "Sheets"."songId" = :songId
+          NATURAL LEFT JOIN "JpSheets"
+          NATURAL LEFT JOIN "IntlSheets"
+        WHERE "songId" = :songId
       `, {
         type: QueryTypes.SELECT,
         replacements: {
@@ -95,8 +95,6 @@ export default async function run() {
 
     for (const sheet of sheetsOfSong) {
       delete sheet.songId;
-      delete sheet.category;
-      delete sheet.title;
 
       if (sheet.type === 'we') {
         sheet.difficulty = `【${sheet.difficulty}】`;
@@ -114,7 +112,6 @@ export default async function run() {
       ({ dateBefore }) => !dateBefore || song.releaseDate < dateBefore,
     )?.version;
 
-    delete song.songId;
     delete song.imageUrl;
     delete song.releaseNo;
     song.sheets = sheetsOfSong;

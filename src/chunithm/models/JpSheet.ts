@@ -2,11 +2,7 @@ import { DataTypes } from 'sequelize';
 import sequelize from './sequelize';
 
 const JpSheet = sequelize.define('JpSheet', {
-  category: {
-    type: DataTypes.STRING,
-    primaryKey: true,
-  },
-  title: {
+  songId: {
     type: DataTypes.STRING,
     primaryKey: true,
   },

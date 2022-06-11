@@ -1,7 +1,7 @@
 import axios from 'axios';
 import log4js from 'log4js';
 import { Song, Sheet, JpSheet } from './models';
-import { hashed, checkDuplicatedTitle } from '../core/utils';
+import { hashed, ensureNoDuplicateEntry } from '../core/utils';
 
 const logger = log4js.getLogger('chunithm/fetch-songs');
 logger.level = log4js.levels.INFO;
@@ -9,15 +9,21 @@ logger.level = log4js.levels.INFO;
 const DATA_URL = 'https://chunithm.sega.jp/storage/json/music.json';
 const IMAGE_BASE_URL = 'https://new.chunithm-net.com/chuni-mobile/html/mobile/img/';
 
+function getSongId(rawSong: Record<string, any>) {
+  if (rawSong.catname === 'WORLD\'S END') {
+    //! hotfix
+    if (rawSong.title === 'G e n g a o z o' && rawSong.id === '8203') {
+      return '(WE) G e n g a o z o (2)';
+    }
+    return `(WE) ${rawSong.title}`;
+  }
+  return rawSong.title as string;
+}
+
 function preprocessRawSongs(rawSongs: Record<string, any>[]) {
   for (const rawSong of rawSongs) {
-    if (rawSong.we_kanji !== '') {
+    if (rawSong.we_kanji) {
       rawSong.catname = 'WORLD\'S END';
-      rawSong.title = `(WE) ${rawSong.title}`;
-    }
-    //! hotfix
-    if (rawSong.title === '(WE) G e n g a o z o' && rawSong.id === '8203') {
-      rawSong.title += ' (2)';
     }
   }
 }
@@ -27,7 +33,7 @@ function extractSong(rawSong: Record<string, any>) {
   const imageName = `${hashed(imageUrl)}.png`;
 
   return {
-    songId: Number(rawSong.id),
+    songId: getSongId(rawSong),
 
     category: rawSong.catname,
     title: rawSong.title,
@@ -59,9 +65,7 @@ function extractSheets(rawSong: Record<string, any>) {
       level: rawSong.we_star !== '' ? '☆'.repeat((Number(rawSong.we_star) + 1) / 2) : null,
     },
   ].filter((e) => !!e.level).map((rawSheet) => ({
-    songId: Number(rawSong.id),
-    category: rawSong.catname,
-    title: rawSong.title,
+    songId: getSongId(rawSong),
     ...rawSheet,
   }));
 }
@@ -71,14 +75,15 @@ export default async function run() {
   const response = await axios.get(DATA_URL);
 
   const rawSongs: Record<string, any>[] = response.data;
+  rawSongs.sort((a, b) => Number(a.id) - Number(b.id));
   preprocessRawSongs(rawSongs);
   logger.info(`OK, ${rawSongs.length} songs fetched.`);
 
-  rawSongs.sort((a, b) => Number(a.id) - Number(b.id));
+  logger.info('Ensuring every song has an unique songId ...');
+  ensureNoDuplicateEntry(rawSongs.map((rawSong) => getSongId(rawSong)));
 
   const songs = rawSongs.map((rawSong) => extractSong(rawSong));
   const sheets = rawSongs.flatMap((rawSong) => extractSheets(rawSong));
-  checkDuplicatedTitle(songs, logger);
 
   logger.info('Preparing Songs table ...');
   await Song.sync();
