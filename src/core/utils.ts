@@ -30,6 +30,15 @@ export function getSheetSorter({
   };
 }
 
+export function ensureNoDuplicateEntry(entries: any[]) {
+  const entrySet = new Set<any>();
+
+  for (const entry of entries) {
+    if (entrySet.has(entry)) throw new Error(`! Duplicate entry detected: ${entry}`);
+    entrySet.add(entry);
+  }
+}
+
 export function checkDuplicatedTitle(songs: Record<string, any>[], logger: log4js.Logger) {
   const titles = new Set<string>();
   const duplicateTitles = new Set<string>();
