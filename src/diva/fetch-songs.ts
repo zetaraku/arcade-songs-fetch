@@ -6,13 +6,17 @@ import log4js from 'log4js';
 import * as cheerio from 'cheerio';
 import 'dotenv/config';
 import { Song, Sheet } from './models';
-import { hashed, checkDuplicatedTitle } from '../core/utils';
+import { hashed, ensureNoDuplicateEntry } from '../core/utils';
 
 const logger = log4js.getLogger('diva/fetch-songs');
 logger.level = log4js.levels.INFO;
 
 const DATA_URL = 'https://project-diva-ac.net';
 const IMAGE_BASE_URL = 'https://project-diva-ac.net/';
+
+function getSongId(songInfo: Record<string, any>) {
+  return songInfo.title;
+}
 
 export async function getCookies() {
   if (!process.env.DIVA_JP_SEGA_ID || !process.env.DIVA_JP_SEGA_PASSWORD) {
@@ -52,11 +56,19 @@ async function* fetchPages(cookies: Record<string, string>) {
     const $ = cheerio.load(response.data);
 
     const songInfos = $('a[href^="/divanet/pv/info/"]').toArray().map((e) => {
-      const songId = $(e).attr('href')!.match(/^\/divanet\/pv\/info\/(\w+)\//)![1];
+      // const id = $(e).attr('href')!.match(/^\/divanet\/pv\/info\/(\w+)\//)![1];
       const title = $(e).text().trim();
-      const pagePath = $(e).attr('href')!;
+      const detailUrl = new URL($(e).attr('href')!, DATA_URL).toString();
 
-      return { songId, title, pagePath };
+      const rawSongInfo = {
+        title,
+        detailUrl,
+      };
+
+      return {
+        songId: getSongId(rawSongInfo),
+        ...rawSongInfo,
+      };
     });
 
     yield songInfos;
@@ -71,8 +83,7 @@ async function* fetchPages(cookies: Record<string, string>) {
 }
 
 async function fetchSong(songInfo: Record<string, any>, cookies: Record<string, string>) {
-  const pageUrl = new URL(songInfo.pagePath, DATA_URL).toString();
-  const response = await axios.get(pageUrl, {
+  const response = await axios.get(songInfo.detailUrl, {
     headers: {
       Cookie: `JSESSIONID=${cookies.JSESSIONID};`,
     },
@@ -133,8 +144,6 @@ function extractSheets(song: Record<string, any>) {
     { type: 'std', difficulty: 'ex_extreme', level: song.level_ex_extreme },
   ].filter((e) => !!e.level).map((rawSheet) => ({
     songId: song.songId,
-    category: song.category,
-    title: song.title,
     ...rawSheet,
   }));
 }
@@ -158,7 +167,9 @@ export default async function run() {
   for await (const pageOfSongs of fetchPages(cookies)) {
     songInfos.push(...pageOfSongs);
   }
-  checkDuplicatedTitle(songInfos, logger);
+
+  logger.info('Ensuring every song has an unique songId ...');
+  ensureNoDuplicateEntry(songInfos.map((songInfo) => getSongId(songInfo)));
 
   const existedSongs = await Song.findAll<any>();
   const songsToFetch = songInfos.filter(
