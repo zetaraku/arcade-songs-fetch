@@ -4,12 +4,19 @@ import log4js from 'log4js';
 import sleep from 'sleep-promise';
 import * as cheerio from 'cheerio';
 import { Song, Sheet } from './models';
-import { checkDuplicatedTitle } from '../core/utils';
+import { ensureNoDuplicateEntry } from '../core/utils';
 
 const logger = log4js.getLogger('taiko/fetch-songs');
 logger.level = log4js.levels.INFO;
 
 const DATA_URL = 'https://taiko.namco-ch.net/taiko/songlist/';
+
+function getSongId(rawSong: Record<string, any>) {
+  if (rawSong.title === 'エンジェル ドリーム' && rawSong.category === 'ナムコオリジナル') {
+    return 'エンジェル ドリーム (2)';
+  }
+  return rawSong.title;
+}
 
 async function fetchCategories() {
   const response = await axios.get(DATA_URL);
@@ -38,7 +45,12 @@ async function getSongs(pageUrl: string) {
     const title = $(thChildren[0]).text().trim();
     const artist = $(thChildren.slice(-2)[0]).text().trim() || null;
 
-    return {
+    const parseNoteCount = (text: string) => {
+      const result = Number.parseInt(text, 10);
+      return !Number.isNaN(result) ? result : null;
+    };
+
+    const rawSong = {
       category,
       title,
 
@@ -47,11 +59,11 @@ async function getSongs(pageUrl: string) {
       imageName: 'default-cover.png',
       imageUrl: null,
 
-      level_easy: Number.parseInt($(tds[1]).text().trim(), 10),
-      level_normal: Number.parseInt($(tds[2]).text().trim(), 10),
-      level_hard: Number.parseInt($(tds[3]).text().trim(), 10),
-      level_oni: Number.parseInt($(tds[4]).text().trim(), 10),
-      level_ura_oni: Number.parseInt($(tds[5]).text().trim(), 10),
+      level_easy: parseNoteCount($(tds[1]).text().trim()),
+      level_normal: parseNoteCount($(tds[2]).text().trim()),
+      level_hard: parseNoteCount($(tds[3]).text().trim()),
+      level_oni: parseNoteCount($(tds[4]).text().trim()),
+      level_ura_oni: parseNoteCount($(tds[5]).text().trim()),
 
       version: null,
       releaseDate: null,
@@ -59,9 +71,34 @@ async function getSongs(pageUrl: string) {
       isNew: $th.find('.new').length !== 0,
       isLocked: $th.find('.secrect').length !== 0,
     };
+
+    return {
+      songId: getSongId(rawSong),
+      ...rawSong,
+    };
   });
 
   return songs;
+}
+
+function mergeSongs(songs: Record<string, any>[]) {
+  const mergedSongs = new Map<string, Record<string, any>>();
+
+  for (const song of songs) {
+    if (mergedSongs.has(song.songId)) {
+      const mergedSong = mergedSongs.get(song.songId)!;
+
+      if (song.artist !== mergedSong.artist) {
+        throw new Error(`Same songId with different artist detected: ${song.songId}`);
+      }
+
+      mergedSong.category += `|${song.category}`;
+    } else {
+      mergedSongs.set(song.songId, song);
+    }
+  }
+
+  return Array.from(mergedSongs.values());
 }
 
 function extractSheets(song: Record<string, any>) {
@@ -72,8 +109,7 @@ function extractSheets(song: Record<string, any>) {
     { type: 'std', difficulty: 'oni', level: song.level_oni },
     { type: 'ura', difficulty: 'ura_oni', level: song.level_ura_oni },
   ].filter((e) => !!e.level).map((rawSheet) => ({
-    category: song.category,
-    title: song.title,
+    songId: song.songId,
     ...rawSheet,
   }));
 }
@@ -83,7 +119,7 @@ export default async function run() {
   const categoryMappings = await fetchCategories();
   logger.info(`OK, ${categoryMappings.length} categories found.`);
 
-  const songs: Record<string, any>[] = [];
+  let songs: Record<string, any>[] = [];
 
   logger.info(`Fetching data from: ${DATA_URL} ...`);
   for (const { category, pageUrl } of categoryMappings) {
@@ -95,10 +131,16 @@ export default async function run() {
   }
   logger.info(`OK, ${songs.length} songs fetched.`);
 
+  logger.info('Merging duplicate songs in different categories ...');
+  songs = mergeSongs(songs);
+  logger.info(`OK, merged into ${songs.length} songs.`);
+
   songs.reverse();
 
+  logger.info('Ensuring every song has an unique songId ...');
+  ensureNoDuplicateEntry(songs.map((song) => getSongId(song)));
+
   const sheets = songs.flatMap((song) => extractSheets(song));
-  checkDuplicatedTitle(songs, logger);
 
   logger.info('Preparing Songs table ...');
   await Song.sync();
