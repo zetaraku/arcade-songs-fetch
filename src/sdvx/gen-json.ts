@@ -29,6 +29,7 @@ const versionMappingList = [
   // { version: 'HEAVENLY HAVEN', abbr: '[IV] HEAVENLY HAVEN' },
   // { version: 'VIVID WAVE', abbr: '[V] VIVID WAVE' },
   // { version: 'EXCEED GEAR', abbr: '[VI] EXCEED GEAR' },
+  { dateBefore: null, version: null, abbr: null },
   //! add further mapping here !//
 ] as any[];
 const typeMappingList = [
@@ -84,6 +85,10 @@ export default async function run() {
 
       sheet.levelValue = levelValueOf(sheet.level);
     }
+
+    song.version = versionMappingList.find(
+      ({ dateBefore }) => !dateBefore || song.releaseDate < dateBefore,
+    )?.version;
 
     delete song.imageUrl;
     song.sheets = sheetsOfSong;
