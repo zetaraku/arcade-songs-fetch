@@ -2,12 +2,17 @@ import axios from 'axios';
 import log4js from 'log4js';
 import { decodeHTML } from 'entities';
 import { Song, Sheet } from './models';
-import { hashed, checkDuplicatedTitle } from '../core/utils';
+import { hashed, ensureNoDuplicateEntry } from '../core/utils';
 
 const logger = log4js.getLogger('wacca/fetch-songs');
 logger.level = log4js.levels.INFO;
 
 const DATA_URL = 'https://wacca.marv.jp/music/search.php';
+
+function getSongId(rawSong: Record<string, any>) {
+  const title = decodeHTML(rawSong.title.display.trim());
+  return title;
+}
 
 function extractSong(rawSong: Record<string, any>) {
   const imageUrl = rawSong.jacket;
@@ -18,6 +23,8 @@ function extractSong(rawSong: Record<string, any>) {
   const releaseDate = new Date(rawSong.release_date).toISOString().slice(0, 10);
 
   return {
+    songId: getSongId(rawSong),
+
     category: rawSong.category,
     title: decodeHTML(rawSong.title.display.trim()),
 
@@ -48,8 +55,7 @@ function extractSheets(rawSong: Record<string, any>) {
     { type: 'std', difficulty: 'expert', level: levels.expert },
     { type: 'std', difficulty: 'inferno', level: levels.inferno },
   ].filter((e) => !!e.level).map((rawSheet) => ({
-    category: rawSong.category,
-    title: decodeHTML(rawSong.title.display.trim()),
+    songId: getSongId(rawSong),
     ...rawSheet,
   }));
 }
@@ -63,9 +69,11 @@ export default async function run() {
 
   rawSongs.reverse();
 
+  logger.info('Ensuring every song has an unique songId ...');
+  ensureNoDuplicateEntry(rawSongs.map((rawSong) => getSongId(rawSong)));
+
   const songs = rawSongs.map((rawSong) => extractSong(rawSong));
   const sheets = rawSongs.flatMap((rawSong) => extractSheets(rawSong));
-  checkDuplicatedTitle(songs, logger);
 
   logger.info('Preparing Songs table ...');
   await Song.sync();
