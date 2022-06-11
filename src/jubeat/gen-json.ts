@@ -61,13 +61,10 @@ export default async function run() {
 
     for (const sheet of sheetsOfSong) {
       delete sheet.songId;
-      delete sheet.category;
-      delete sheet.title;
 
       sheet.levelValue = levelValueOf(sheet.level);
     }
 
-    delete song.songId;
     delete song.imageUrl;
     song.sheets = sheetsOfSong;
   }

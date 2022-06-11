@@ -5,7 +5,7 @@ import sleep from 'sleep-promise';
 import log4js from 'log4js';
 import * as cheerio from 'cheerio';
 import { Song, Sheet } from './models';
-import { hashed, checkDuplicatedTitle } from '../core/utils';
+import { hashed, ensureNoDuplicateEntry } from '../core/utils';
 
 const logger = log4js.getLogger('jubeat/fetch-songs');
 logger.level = log4js.levels.INFO;
@@ -17,6 +17,10 @@ const IMAGE_BASE_URL = 'https://p.eagate.573.jp/';
 
 const listIds = [1, 2];
 //! add further list here !//
+
+function getSongId(rawSong: Record<string, any>) {
+  return rawSong.title;
+}
 
 async function* getPages(listId: number) {
   logger.info(`* list ${listId}`);
@@ -41,7 +45,7 @@ async function* getPages(listId: number) {
         const imagePath = $(div).find('table tr:nth-of-type(1) td:nth-of-type(1) img').attr('src')!
           .replace('/common/images/', '/images/top/');
 
-        const [, songId] = imagePath.match(/^(?:.*)\/id(.+)\.(?:.+)$/)!;
+        // const [, id] = imagePath.match(/^(?:.*)\/id(.+)\.(?:.+)$/)!;
 
         const title = $(div).find('table tr:nth-of-type(1) td:nth-of-type(2)').text().trim();
         const artist = $(div).find('table tr:nth-of-type(2) td:nth-of-type(1)').text().trim();
@@ -52,9 +56,7 @@ async function* getPages(listId: number) {
         const levels = $(div).find('table tr:nth-of-type(3) td:nth-of-type(1) ul li:nth-of-type(2n)').toArray()
           .map((e) => $(e).text().trim());
 
-        return {
-          songId,
-
+        const rawSong = {
           category: null,
           title,
 
@@ -69,6 +71,11 @@ async function* getPages(listId: number) {
 
           version: null,
           releaseDate: null,
+        };
+
+        return {
+          songId: getSongId(rawSong),
+          ...rawSong,
         };
       });
 
@@ -92,8 +99,6 @@ function extractSheets(song: Record<string, any>) {
     { type, difficulty: 'extreme', level: song.level_extreme },
   ].filter((e) => !!e.level).map((rawSheet) => ({
     songId: song.songId,
-    category: song.category,
-    title: song.title,
     ...rawSheet,
   }));
 }
@@ -111,8 +116,10 @@ export default async function run() {
 
   songs.reverse();
 
+  logger.info('Ensuring every song has an unique songId ...');
+  ensureNoDuplicateEntry(songs.map((song) => getSongId(song)));
+
   const sheets = songs.flatMap((song) => extractSheets(song));
-  checkDuplicatedTitle(songs, logger);
 
   logger.info('Preparing Songs table ...');
   await Song.sync();
