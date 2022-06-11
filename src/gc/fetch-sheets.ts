@@ -9,10 +9,8 @@ import { sequelize, SongExtra, Sheet } from './models';
 const logger = log4js.getLogger('gc/fetch-sheets');
 logger.level = log4js.levels.INFO;
 
-const DATA_URL = 'https://groovecoaster.jp/music';
-
 async function fetchSongExtra(song: Record<string, any>) {
-  const response = await axios.get(`${DATA_URL}/${song.songId}.html`);
+  const response = await axios.get(song.detailUrl);
   const $ = cheerio.load(response.data);
 
   const bpm = Number.parseFloat($('.param-block .details ul .bpm').text().trim()) || null;
@@ -22,9 +20,6 @@ async function fetchSongExtra(song: Record<string, any>) {
 
   return {
     songId: song.songId,
-
-    category: song.category,
-    title: song.title,
 
     bpm,
 
@@ -43,8 +38,6 @@ function extractSheets(songExtra: Record<string, any>) {
     { type: 'std', difficulty: 'extra', level: songExtra.level_extra },
   ].filter((e) => !!e.level).map((rawSheet) => ({
     songId: songExtra.songId,
-    category: songExtra.category,
-    title: songExtra.title,
     ...rawSheet,
   }));
 }
@@ -57,17 +50,17 @@ export default async function run() {
   await Sheet.sync();
 
   const songsToFetch: Record<string, any>[] = await sequelize.query(/* sql */ `
-    SELECT "songId", "category", "title"
-    FROM "Songs" LEFT JOIN "SongExtras" USING ("songId")
-    WHERE ("SongExtras"."bpm" IS NULL)
-      UNION
-    SELECT "songId", "Songs"."category", "Songs"."title"
-    FROM "Songs" LEFT JOIN "Sheets" USING ("songId")
+    SELECT "songId", "title", "detailUrl"
+    FROM "Songs" NATURAL LEFT JOIN "Sheets"
     WHERE ("Sheets"."songId" IS NULL)
       UNION
-    SELECT "songId", "Songs"."category", "Songs"."title"
-    FROM "Songs" LEFT JOIN (SELECT * FROM "Sheets" WHERE "difficulty" = 'extra') AS "Sheets" USING ("songId")
-    WHERE ("Songs"."hasEx") AND ("Sheets"."songId" IS NULL)
+    SELECT "songId", "title", "detailUrl"
+    FROM "Songs" NATURAL LEFT JOIN (SELECT * FROM "Sheets" WHERE "difficulty" = 'extra') AS "ExSheets"
+    WHERE ("Songs"."hasEx") AND ("ExSheets"."songId" IS NULL)
+      UNION
+    SELECT "songId", "title", "detailUrl"
+    FROM "Songs" NATURAL LEFT JOIN "SongExtras"
+    WHERE ("SongExtras"."bpm" IS NULL)
   `, {
     type: QueryTypes.SELECT,
   });

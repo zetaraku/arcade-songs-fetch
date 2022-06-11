@@ -6,10 +6,6 @@ const Sheet = sequelize.define('Sheet', {
     type: DataTypes.STRING,
     primaryKey: true,
   },
-
-  category: DataTypes.STRING,
-  title: DataTypes.STRING,
-
   type: {
     type: DataTypes.STRING,
     primaryKey: true,

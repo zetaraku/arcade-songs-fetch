@@ -21,6 +21,7 @@ const Song = sequelize.define('Song', {
   isNew: DataTypes.BOOLEAN,
 
   hasEx: DataTypes.BOOLEAN,
+  detailUrl: DataTypes.STRING,
 });
 
 export default Song;

@@ -3,12 +3,16 @@ import axios from 'axios';
 import log4js from 'log4js';
 import * as cheerio from 'cheerio';
 import { Song } from './models';
-import { hashed, checkDuplicatedTitle } from '../core/utils';
+import { hashed, ensureNoDuplicateEntry } from '../core/utils';
 
 const logger = log4js.getLogger('gc/fetch-songs');
 logger.level = log4js.levels.INFO;
 
 const DATA_URL = 'https://groovecoaster.jp/music/';
+
+function getSongId(rawSong: Record<string, any>) {
+  return rawSong.title;
+}
 
 function extractCategories($: cheerio.CheerioAPI) {
   const categories = $('.music-nav nav ul li').toArray().map((li) => ({
@@ -21,7 +25,7 @@ function extractCategories($: cheerio.CheerioAPI) {
 
 function extractSongs($: cheerio.CheerioAPI, category: string, selector: string) {
   const songs = $(`${selector} ul li > a`).toArray().map((a) => {
-    const [, songId] = $(a).attr('href')!.match(/^\/music\/(.+)\.html$/)!;
+    // const [, id] = $(a).attr('href')!.match(/^\/music\/(.+)\.html$/)!;
 
     const infoTexts = $(a).find('.music').contents()
       .toArray()
@@ -60,9 +64,9 @@ function extractSongs($: cheerio.CheerioAPI, category: string, selector: string)
       release[3].padStart(2, '0')
     }` : null;
 
-    return {
-      songId,
+    const detailUrl = new URL($(a).attr('href')!, DATA_URL).toString();
 
+    const rawSong = {
       category,
       title,
 
@@ -77,6 +81,12 @@ function extractSongs($: cheerio.CheerioAPI, category: string, selector: string)
       isNew: $(a).find('.new img').length > 0,
 
       hasEx: $(a).find('img.icon_extra').length > 0,
+      detailUrl,
+    };
+
+    return {
+      songId: getSongId(rawSong),
+      ...rawSong,
     };
   });
 
@@ -103,7 +113,8 @@ export default async function run() {
 
   songs.reverse();
 
-  checkDuplicatedTitle(songs, logger);
+  logger.info('Ensuring every song has an unique songId ...');
+  ensureNoDuplicateEntry(songs.map((song) => getSongId(song)));
 
   logger.info('Preparing Songs table ...');
   await Song.sync();
