@@ -80,8 +80,6 @@ export default async function run() {
 
     for (const sheet of sheetsOfSong) {
       delete sheet.songId;
-      delete sheet.category;
-      delete sheet.title;
 
       if (sheet.type === 'lun') {
         sheet.isSpecial = true;
@@ -94,7 +92,6 @@ export default async function run() {
       ({ dateBefore }) => !dateBefore || song.releaseDate < dateBefore,
     )?.version;
 
-    delete song.songId;
     delete song.imageUrl;
     song.sheets = sheetsOfSong;
     song.isNew = Boolean(song.isNew);

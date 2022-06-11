@@ -1,7 +1,7 @@
 import axios from 'axios';
 import log4js from 'log4js';
 import { Song, Sheet } from './models';
-import { hashed, checkDuplicatedTitle } from '../core/utils';
+import { hashed, ensureNoDuplicateEntry } from '../core/utils';
 
 const logger = log4js.getLogger('ongeki/fetch-songs');
 logger.level = log4js.levels.INFO;
@@ -9,22 +9,25 @@ logger.level = log4js.levels.INFO;
 const DATA_URL = 'https://ongeki.sega.jp/assets/json/music/music.json';
 const IMAGE_BASE_URL = 'https://ongeki-net.com/ongeki-mobile/img/music/';
 
+function getSongId(rawSong: Record<string, any>) {
+  if (rawSong.category === 'LUNATIC') {
+    return `(LUN) ${rawSong.title}`;
+  }
+  if (rawSong.title === 'Singularity' && rawSong.id === '402400') {
+    return 'Singularity (2)';
+  }
+  if (rawSong.title === 'Singularity' && rawSong.id === '403700') {
+    return 'Singularity (3)';
+  }
+  return rawSong.title;
+}
+
 function preprocessRawSongs(rawSongs: Record<string, any>[]) {
   for (const rawSong of rawSongs) {
     if (rawSong.lunatic) {
       rawSong.category = 'LUNATIC';
-      rawSong.title = `(LUN) ${rawSong.title}`;
     } else if (rawSong.bonus) {
       rawSong.category = 'ボーナストラック';
-    }
-    //! hotfix
-    if (rawSong.title === 'Singularity') {
-      if (rawSong.id === '402400') {
-        rawSong.title += ' (2)';
-      }
-      if (rawSong.id === '403700') {
-        rawSong.title += ' (3)';
-      }
     }
   }
 }
@@ -34,7 +37,7 @@ function extractSong(rawSong: Record<string, any>) {
   const imageName = `${hashed(imageUrl)}.png`;
 
   return {
-    songId: rawSong.id,
+    songId: getSongId(rawSong),
 
     category: rawSong.category,
     title: rawSong.title,
@@ -66,9 +69,7 @@ function extractSheets(rawSong: Record<string, any>) {
     { type: 'std', difficulty: 'master', level: rawSong.lev_mas },
     { type: 'lun', difficulty: 'lunatic', level: rawSong.lev_lnt },
   ].filter((e) => !!e.level).map((rawSheet) => ({
-    songId: rawSong.id,
-    category: rawSong.category,
-    title: rawSong.title,
+    songId: getSongId(rawSong),
     ...rawSheet,
   }));
 }
@@ -81,9 +82,11 @@ export default async function run() {
   preprocessRawSongs(rawSongs);
   logger.info(`OK, ${rawSongs.length} songs fetched.`);
 
+  logger.info('Ensuring every song has an unique songId ...');
+  ensureNoDuplicateEntry(rawSongs.map((rawSong) => getSongId(rawSong)));
+
   const songs = rawSongs.map((rawSong) => extractSong(rawSong));
   const sheets = rawSongs.flatMap((rawSong) => extractSheets(rawSong));
-  checkDuplicatedTitle(songs, logger);
 
   logger.info('Preparing Songs table ...');
   await Song.sync();
