@@ -38,6 +38,7 @@ function extractSong(rawSong: Record<string, any>) {
     imageName,
     imageUrl,
 
+    releaseNo: Number(rawSong.id),
     version: null,
     releaseDate: null,
 

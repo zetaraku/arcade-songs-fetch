@@ -67,7 +67,7 @@ export default async function run() {
   logger.info('Loading songs from database ...');
   const songs: Record<string, any>[] = await sequelize.query(/* sql */ `
     SELECT * FROM "Songs"
-    ORDER BY CASE WHEN "songId" < 8000 THEN "songId" ELSE "songId" - 9000 END
+    ORDER BY CASE WHEN "releaseNo" < 8000 THEN "releaseNo" ELSE "releaseNo" - 9000 END
   `, {
     type: QueryTypes.SELECT,
   });
@@ -116,6 +116,7 @@ export default async function run() {
 
     delete song.songId;
     delete song.imageUrl;
+    delete song.releaseNo;
     song.sheets = sheetsOfSong;
     song.isNew = Boolean(song.isNew);
   }

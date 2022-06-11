@@ -16,6 +16,7 @@ const Song = sequelize.define('Song', {
   imageName: DataTypes.STRING,
   imageUrl: DataTypes.STRING,
 
+  releaseNo: DataTypes.INTEGER,
   version: DataTypes.STRING,
   releaseDate: DataTypes.DATEONLY,
 
