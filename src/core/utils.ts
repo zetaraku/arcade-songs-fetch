@@ -1,4 +1,7 @@
+import fs from 'fs';
 import crypto from 'crypto';
+// eslint-disable-next-line import/no-unresolved
+import { parse as parseCsv } from 'csv/sync';
 
 export function hashed(text: string): string {
   return crypto.createHash('sha256').update(text).digest('hex');
@@ -36,4 +39,16 @@ export function ensureNoDuplicateEntry(entries: any[]) {
     if (entrySet.has(entry)) throw new Error(`! Duplicate entry detected: ${entry}`);
     entrySet.add(entry);
   }
+}
+
+export function loadCsv(filePath: string) {
+  if (!fs.existsSync(filePath)) return undefined;
+  const rawTsv = fs.readFileSync(filePath, 'utf8');
+  return parseCsv(rawTsv, { delimiter: ',', columns: true });
+}
+
+export function loadTsv(filePath: string) {
+  if (!fs.existsSync(filePath)) return undefined;
+  const rawTsv = fs.readFileSync(filePath, 'utf8');
+  return parseCsv(rawTsv, { delimiter: '\t', columns: true });
 }
