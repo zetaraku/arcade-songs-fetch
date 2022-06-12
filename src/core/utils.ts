@@ -1,5 +1,4 @@
 import crypto from 'crypto';
-import log4js from 'log4js';
 
 export function hashed(text: string): string {
   return crypto.createHash('sha256').update(text).digest('hex');
@@ -36,22 +35,5 @@ export function ensureNoDuplicateEntry(entries: any[]) {
   for (const entry of entries) {
     if (entrySet.has(entry)) throw new Error(`! Duplicate entry detected: ${entry}`);
     entrySet.add(entry);
-  }
-}
-
-export function checkDuplicatedTitle(songs: Record<string, any>[], logger: log4js.Logger) {
-  const titles = new Set<string>();
-  const duplicateTitles = new Set<string>();
-
-  logger.info('Checking songs with duplicated title ...');
-  for (const song of songs) {
-    if (titles.has(song.title)) {
-      duplicateTitles.add(song.title);
-    }
-    titles.add(song.title);
-  }
-
-  if (duplicateTitles.size > 0) {
-    logger.warn('! Found duplicated titles:', [...duplicateTitles]);
   }
 }
