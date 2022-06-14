@@ -157,7 +157,7 @@ async function getIntlWorldsEndSheets(cookies: Record<string, string>) {
     return {
       songId: getSongId(title, 'WORLD\'S END', weType),
       type: 'we',
-      difficulty: weType,
+      difficulty: `【${weType}】`,
     };
   });
 

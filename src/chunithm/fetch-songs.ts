@@ -60,7 +60,7 @@ function extractSheets(rawSong: Record<string, any>) {
     { type: 'std', difficulty: 'ultima', level: rawSong.lev_ult },
     {
       type: 'we',
-      difficulty: rawSong.we_kanji !== '' ? rawSong.we_kanji : null,
+      difficulty: rawSong.we_kanji !== '' ? `【${rawSong.we_kanji}】` : null,
       level: rawSong.we_star !== '' ? '☆'.repeat((Number(rawSong.we_star) + 1) / 2) : null,
     },
   ].filter((e) => !!e.level).map((rawSheet) => ({

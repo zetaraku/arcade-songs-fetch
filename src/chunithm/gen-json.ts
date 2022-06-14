@@ -97,7 +97,6 @@ export default async function run() {
       delete sheet.songId;
 
       if (sheet.type === 'we') {
-        sheet.difficulty = `【${sheet.difficulty}】`;
         sheet.isSpecial = true;
       }
 
