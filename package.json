@@ -50,7 +50,6 @@
     "ongeki/upload-data": "ts-node src/ongeki/upload-data",
     "gc/fetch-songs": "ts-node src/gc/fetch-songs",
     "gc/fetch-images": "ts-node src/gc/fetch-images",
-    "gc/fetch-sheets": "ts-node src/gc/fetch-sheets",
     "gc/gen-json": "ts-node src/gc/gen-json",
     "gc/upload-data": "ts-node src/gc/upload-data",
     "diva/fetch-songs": "ts-node src/diva/fetch-songs",

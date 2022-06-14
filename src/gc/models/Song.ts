@@ -19,9 +19,6 @@ const Song = sequelize.define('Song', {
   releaseDate: DataTypes.DATEONLY,
 
   isNew: DataTypes.BOOLEAN,
-
-  hasEx: DataTypes.BOOLEAN,
-  detailUrl: DataTypes.STRING,
 });
 
 export default Song;
