@@ -110,7 +110,6 @@ export default async function run() {
       if (sheet.version == null) delete sheet.version;
 
       if (sheet.type === 'utage') {
-        sheet.difficulty = `【${sheet.difficulty}】`;
         sheet.isSpecial = true;
       }
 

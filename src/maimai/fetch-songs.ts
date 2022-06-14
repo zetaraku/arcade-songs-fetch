@@ -89,7 +89,7 @@ function extractSheets(rawSong: Record<string, any>) {
     { type: 'std', difficulty: 'expert', level: rawSong.lev_exp },
     { type: 'std', difficulty: 'master', level: rawSong.lev_mas },
     { type: 'std', difficulty: 'remaster', level: rawSong.lev_remas },
-    { type: 'utage', difficulty: rawSong.utage_type, level: rawSong.lev_utage },
+    { type: 'utage', difficulty: `【${rawSong.utage_type}】`, level: rawSong.lev_utage },
   ].filter((e) => !!e.level).map((rawSheet) => ({
     songId: getSongId(rawSong),
     ...rawSheet,
