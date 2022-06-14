@@ -42,9 +42,9 @@ function extractSong(rawSong: Record<string, any>) {
     imageName,
     imageUrl,
 
-    releaseNo: Number(rawSong.id),
     version: null,
     releaseDate: null,
+    sortOrder: Number(rawSong.id) < 8000 ? Number(rawSong.id) : Number(rawSong.id) - 10000,
 
     isNew: !!Number(rawSong.newflag),
     isLocked: null,
