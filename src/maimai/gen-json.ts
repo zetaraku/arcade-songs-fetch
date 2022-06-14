@@ -119,21 +119,6 @@ export default async function run() {
       for (const region of Object.keys(sheet.regions)) {
         sheet.regions[region] = Boolean(sheet.regions[region]);
       }
-
-      sheet.noteCounts = {
-        tap: sheet.tapCount,
-        hold: sheet.holdCount,
-        slide: sheet.slideCount,
-        touch: sheet.touchCount,
-        break: sheet.breakCount,
-        total: sheet.totalCount,
-      };
-      delete sheet.tapCount;
-      delete sheet.holdCount;
-      delete sheet.slideCount;
-      delete sheet.touchCount;
-      delete sheet.breakCount;
-      delete sheet.totalCount;
     }
 
     delete song.imageUrl;

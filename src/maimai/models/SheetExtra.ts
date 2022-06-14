@@ -15,12 +15,12 @@ const SheetExtra = sequelize.define('SheetExtra', {
     primaryKey: true,
   },
 
-  tapCount: DataTypes.INTEGER,
-  holdCount: DataTypes.INTEGER,
-  slideCount: DataTypes.INTEGER,
-  touchCount: DataTypes.INTEGER,
-  breakCount: DataTypes.INTEGER,
-  totalCount: DataTypes.INTEGER,
+  'noteCounts.tap': DataTypes.INTEGER,
+  'noteCounts.hold': DataTypes.INTEGER,
+  'noteCounts.slide': DataTypes.INTEGER,
+  'noteCounts.touch': DataTypes.INTEGER,
+  'noteCounts.break': DataTypes.INTEGER,
+  'noteCounts.total': DataTypes.INTEGER,
 
   noteDesigner: DataTypes.STRING,
 });

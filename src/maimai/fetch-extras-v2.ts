@@ -134,12 +134,12 @@ function extractSheetExtras($: cheerio.CheerioAPI, table: cheerio.Element) {
       type,
       difficulty,
 
-      tapCount: parseNoteCount(tapCount),
-      holdCount: parseNoteCount(holdCount),
-      slideCount: parseNoteCount(slideCount),
-      touchCount: parseNoteCount(touchCount),
-      breakCount: parseNoteCount(breakCount),
-      totalCount: parseNoteCount(totalCount),
+      'noteCounts.tap': parseNoteCount(tapCount),
+      'noteCounts.hold': parseNoteCount(holdCount),
+      'noteCounts.slide': parseNoteCount(slideCount),
+      'noteCounts.touch': parseNoteCount(touchCount),
+      'noteCounts.break': parseNoteCount(breakCount),
+      'noteCounts.total': parseNoteCount(totalCount),
 
       noteDesigner,
     };
@@ -197,7 +197,7 @@ export default async function run() {
         UNION
       SELECT DISTINCT "songId"
       FROM "Sheets" LEFT JOIN "SheetExtras" USING ("songId", "type", "difficulty")
-      WHERE ("totalCount" IS NULL) OR ("noteDesigner" IS NULL)
+      WHERE ("noteCounts.total" IS NULL) OR ("noteDesigner" IS NULL)
     ) LEFT JOIN "Songs" USING ("songId")
     WHERE "category" <> '宴会場'
   `, {
