@@ -47,6 +47,7 @@ function extractSong(rawSong: Record<string, any>) {
     releaseDate: null,
 
     isNew: !!Number(rawSong.newflag),
+    isLocked: null,
   };
 }
 

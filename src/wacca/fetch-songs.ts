@@ -36,6 +36,7 @@ function extractSong(rawSong: Record<string, any>) {
     releaseDate,
 
     isNew: rawSong.new === 'true',
+    isLocked: null,
   };
 }
 

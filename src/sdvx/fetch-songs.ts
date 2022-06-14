@@ -71,6 +71,9 @@ async function* getSongs() {
 
           version: null,
           releaseDate: null,
+
+          isNew: null,
+          isLocked: null,
         };
 
         const sheets = $(div).find('.inner .level p').toArray()

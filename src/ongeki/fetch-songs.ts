@@ -56,6 +56,7 @@ function extractSong(rawSong: Record<string, any>) {
     }` : null,
 
     isNew: !!rawSong.new,
+    isLocked: null,
   };
 }
 

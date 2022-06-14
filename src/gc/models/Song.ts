@@ -18,6 +18,7 @@ const Song = sequelize.define('Song', {
   releaseDate: DataTypes.DATEONLY,
 
   isNew: DataTypes.BOOLEAN,
+  isLocked: DataTypes.BOOLEAN,
 });
 
 export default Song;

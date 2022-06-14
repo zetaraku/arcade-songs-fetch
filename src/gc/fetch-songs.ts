@@ -79,6 +79,7 @@ function extractSongs($: cheerio.CheerioAPI, category: string, selector: string)
       releaseDate,
 
       isNew: $(a).find('.new img').length > 0,
+      isLocked: null,
 
       hasEx: $(a).find('img.icon_extra').length > 0,
       detailUrl,

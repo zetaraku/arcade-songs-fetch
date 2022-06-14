@@ -70,6 +70,9 @@ async function* getPages(listId: number) {
 
           version: null,
           releaseDate: null,
+
+          isNew: null,
+          isLocked: null,
         };
 
         return {
