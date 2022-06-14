@@ -64,7 +64,6 @@ async function* getSongs() {
         const rawSong = {
           category,
           title,
-
           artist,
 
           imageName,

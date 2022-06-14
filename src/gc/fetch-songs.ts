@@ -70,7 +70,6 @@ function extractSongs($: cheerio.CheerioAPI, category: string, selector: string)
     const rawSong = {
       category,
       title,
-
       artist,
 
       imageName,

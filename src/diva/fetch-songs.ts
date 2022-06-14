@@ -118,7 +118,6 @@ async function fetchSong(songInfo: Record<string, any>, cookies: Record<string, 
 
     category: null,
     title: songInfo.title,
-
     artist,
 
     imageUrl,

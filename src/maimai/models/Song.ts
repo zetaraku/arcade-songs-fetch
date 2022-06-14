@@ -9,16 +9,11 @@ const Song = sequelize.define('Song', {
 
   category: DataTypes.STRING,
   title: DataTypes.STRING,
-
-  // titleKana: DataTypes.STRING,
   artist: DataTypes.STRING,
 
   imageName: DataTypes.STRING,
   imageUrl: DataTypes.STRING,
 
-  // versionId: DataTypes.INTEGER,
-  // releaseBatchNo: DataTypes.INTEGER,
-  // sortOrder: DataTypes.INTEGER,
   releaseNo: DataTypes.INTEGER,
   version: DataTypes.STRING,
   releaseDate: DataTypes.DATEONLY,

@@ -53,7 +53,6 @@ async function getSongs(pageUrl: string) {
     const rawSong = {
       category,
       title,
-
       artist,
 
       imageName: 'default-cover.png',

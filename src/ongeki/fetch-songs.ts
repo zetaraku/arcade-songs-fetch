@@ -41,8 +41,6 @@ function extractSong(rawSong: Record<string, any>) {
 
     category: rawSong.category,
     title: rawSong.title,
-
-    // titleKana: rawSong.title_sort,
     artist: rawSong.artist,
 
     imageName,

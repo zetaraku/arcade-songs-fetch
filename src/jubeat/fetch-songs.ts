@@ -59,7 +59,6 @@ async function* getPages(listId: number) {
         const rawSong = {
           category: null,
           title,
-
           artist,
 
           imageName,

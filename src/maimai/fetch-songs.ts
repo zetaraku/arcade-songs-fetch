@@ -63,16 +63,11 @@ function extractSong(rawSong: Record<string, any>) {
 
     category: rawSong.catcode,
     title: rawSong.title,
-
-    // titleKana: rawSong.title_kana,
     artist: rawSong.artist.trim(),
 
     imageName,
     imageUrl,
 
-    // versionId,
-    // releaseBatchNo,
-    // sortOrder,
     releaseNo,
     version,
     releaseDate,

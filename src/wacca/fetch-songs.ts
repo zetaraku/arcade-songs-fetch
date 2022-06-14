@@ -27,15 +27,11 @@ function extractSong(rawSong: Record<string, any>) {
 
     category: rawSong.category,
     title: decodeHTML(rawSong.title.display.trim()),
-
-    // titleKana: decodeHTML(rawSong.title.ruby.trim()),
     artist: decodeHTML(rawSong.artist.display.trim()),
 
     imageName,
     imageUrl,
 
-    // versionId,
-    // releaseBatchNo,
     version: null,
     releaseDate,
 

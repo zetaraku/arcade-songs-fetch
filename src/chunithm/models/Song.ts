@@ -9,8 +9,6 @@ const Song = sequelize.define('Song', {
 
   category: DataTypes.STRING,
   title: DataTypes.STRING,
-
-  // titleKana: DataTypes.STRING,
   artist: DataTypes.STRING,
 
   imageName: DataTypes.STRING,

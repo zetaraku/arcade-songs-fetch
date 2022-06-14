@@ -37,8 +37,6 @@ function extractSong(rawSong: Record<string, any>) {
 
     category: rawSong.catname,
     title: rawSong.title,
-
-    // titleKana: rawSong.reading,
     artist: rawSong.artist,
 
     imageName,
