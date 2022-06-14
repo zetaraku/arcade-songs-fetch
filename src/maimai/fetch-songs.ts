@@ -47,7 +47,7 @@ function extractSong(rawSong: Record<string, any>) {
   const imageUrl = new URL(rawSong.image_url, IMAGE_BASE_URL).toString();
   const imageName = `${hashed(imageUrl)}.png`;
 
-  const releaseNo = Number(rawSong.version);
+  // const releaseNo = Number(rawSong.version);
   const versionId = Number(rawSong.version.substring(0, 3));
   // const releaseBatchNo = Number(rawSong.version.substring(3, 5));
   // const sortOrder = Number(rawSong.sort);
@@ -68,9 +68,9 @@ function extractSong(rawSong: Record<string, any>) {
     imageName,
     imageUrl,
 
-    releaseNo,
     version,
     releaseDate,
+    sortOrder: Number(rawSong.version),
 
     isNew: !!rawSong.date,
     isLocked: !!rawSong.key,

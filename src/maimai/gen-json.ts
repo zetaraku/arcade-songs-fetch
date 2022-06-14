@@ -75,7 +75,7 @@ export default async function run() {
       *
     FROM "Songs"
       NATURAL LEFT JOIN "SongExtras"
-    ORDER BY "releaseNo"
+    ORDER BY "sortOrder"
   `, {
     type: QueryTypes.SELECT,
   });
