@@ -53,7 +53,7 @@ export default async function run() {
   logger.info('Loading songs from database ...');
   const songs: Record<string, any>[] = await sequelize.query(/* sql */ `
     SELECT * FROM "Songs"
-    ORDER BY releaseDate
+    ORDER BY "releaseDate"
   `, {
     type: QueryTypes.SELECT,
   });
