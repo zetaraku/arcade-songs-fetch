@@ -9,11 +9,11 @@ const DIST_PATH = 'dist/any';
 
 const difficultyMappingList = [
   { difficulty: 'maimai', name: 'maimai', color: '#1976d2' },
-  { difficulty: 'wacca', name: 'WACCA', color: '#e50065' },
   { difficulty: 'chunithm', name: 'CHUNITHM', color: '#f3a607' },
-  { difficulty: 'sdvx', name: 'SOUND VOLTEX', color: '#404040' },
-  { difficulty: 'jubeat', name: 'jubeat', color: '#134c43' },
+  { difficulty: 'wacca', name: 'WACCA', color: '#e50065' },
   { difficulty: 'taiko', name: '太鼓の達人', color: '#f50000' },
+  { difficulty: 'jubeat', name: 'jubeat', color: '#134c43' },
+  { difficulty: 'sdvx', name: 'SOUND VOLTEX', color: '#404040' },
   { difficulty: 'ongeki', name: 'オンゲキ', color: '#32b9cc' },
   { difficulty: 'gc', name: 'GROOVE COASTER', color: '#22125b' },
   { difficulty: 'diva', name: 'Project DIVA Arcade', color: '#6d8c8d' },
