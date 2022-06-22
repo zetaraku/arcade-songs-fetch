@@ -1,0 +1,124 @@
+- title: Reverse 常駐ステージアップ
+  sections:
+    - title: ステージ I
+      description: ❤ 50｜-0/-0/-1｜+20
+      sheets:
+        - sister's noise|std|normal
+        - バレリーコ|std|normal
+        - Scream out!|std|normal
+    - title: ステージ II
+      description: ❤ 40｜-0/-0/-1｜+10
+      sheets:
+        - MAGENTA POTION|std|normal
+        - ATAMA WARUI|std|normal
+        - Night Club Junkie|std|hard
+    - title: ステージ III
+      description: ❤ 100｜-0/-1/-1｜+30
+      sheets:
+        - フィクサー|std|hard
+        - ホイホイ☆幻想ホロイズム|std|hard
+        - Purple Skies|std|hard
+    - title: ステージ IV
+      description: ❤ 80｜-0/-1/-1｜+20
+      sheets:
+        - Destr0yer|std|hard
+        - SHAKE!|std|hard
+        - 患部で止まってすぐ溶ける ～ 狂気の優曇華院|std|hard
+    - title: ステージ V
+      description: ❤ 70｜-0/-1/-1｜+10
+      sheets:
+        - HOT LIMIT|std|expert
+        - Megaton Killer|std|hard
+        - やけにインザレイン feat. 小林私|std|hard
+    - title: ステージ VI
+      description: ❤ 50｜-0/-1/-1｜+10
+      sheets:
+        - sister's noise|std|expert
+        - WHITE|std|expert
+        - お願いマッスル|std|expert
+    - title: ステージ VII
+      description: ❤ 40｜-0/-1/-1｜+5
+      sheets:
+        - ALiVE|std|expert
+        - エピクロスの虹はもう見えない|std|expert
+        - Photon Melodies|std|expert
+    - title: ステージ VIII
+      description: ❤ 30｜-0/-1/-1｜+5
+      sheets:
+        - 進捗WARS feat．ビートまりお|std|expert
+        - おばけのウケねらい|std|expert
+        - テレキャスタービーボーイ|std|expert
+    - title: ステージ IX
+      description: ❤ 100｜-1/-1/-1｜+15
+      sheets:
+        - だれかの心臓になれたなら|std|expert
+        - 物凄い勢いでけーねが物凄いうた|std|expert
+        - LOVE!HUG!GROOVY!!|std|expert
+    - title: ステージ X
+      description: ❤ 90｜-1/-1/-1｜+15
+      sheets:
+        - Traveller feat.moimoi|std|expert
+        - Lhaksha|std|expert
+        - Madwing|std|expert
+    - title: ステージ XI
+      description: ❤ 100｜-1/-1/-1｜+0
+      sheets:
+        - Cauliflower|std|expert
+        - ATAMA WARUI|std|expert
+        - Knight Rider|std|expert
+    - title: ステージ XII
+      description: ❤ 90｜-1/-1/-1｜+0
+      sheets:
+        - BSCS|std|expert
+        - FLVSH OUT|std|expert
+        - Stasis|std|expert
+    - title: ステージ XIII
+      description: ❤ 60｜-1/-1/-1｜+0
+      sheets:
+        - LIN NE KRO NE feat. lasah|std|expert
+        - Animosity|std|expert
+        - HELL FLAME|std|inferno
+    - title: ステージ XIV
+      description: ❤ 40｜-1/-1/-1｜+0
+      sheets:
+        - Invisible Frenzy|std|expert
+        - eden|std|inferno
+        - Silentphobia|std|inferno
+- title: Reverse イベントステージアップ
+  sections:
+    - title: SPURT Re:MIX Vol.1
+      description: ❤ 250｜-1/-1/-1｜+99
+      sheets:
+        - Let you DIVE!|std|expert
+        - GASHATT|std|expert
+        - Knight Rider|std|expert
+    - title: SPURT Re:MIX Vol.2
+      description: ❤ 250｜-1/-1/-1｜+99
+      sheets:
+        - with U|std|expert
+        - フリーフォール|std|expert
+        - EVE|std|expert
+    - title: SPURT Re:MIX Vol.3
+      description: ❤ 250｜-1/-1/-1｜+99
+      sheets:
+        - Ouvertüre|std|expert
+        - Love Kills U|std|expert
+        - DANGEROOOOUS JUNGLE|std|expert
+    - title: BOSS Re:MIX Vol.1
+      description: ❤ 40｜-1/-1/-1｜+0
+      sheets:
+        - XTREME|std|inferno
+        - Exitium|std|expert
+        - 天使光輪|std|inferno
+    - title: BOSS Re:MIX Vol.2
+      description: ❤ 40｜-1/-1/-1｜+0
+      sheets:
+        - eden|std|inferno
+        - GENOCIDER|std|expert
+        - Silentphobia|std|inferno
+    - title: BOSS Re:MIX Vol.3
+      description: ❤ 40｜-1/-1/-1｜+0
+      sheets:
+        - クリムゾン帝王|std|inferno
+        - Meta-Mysteria|std|expert
+        - Möbius|std|inferno
