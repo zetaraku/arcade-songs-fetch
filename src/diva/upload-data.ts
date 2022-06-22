@@ -9,7 +9,7 @@ logger.level = log4js.levels.INFO;
 shell.env['GAME_CODE'] = 'diva';
 
 export default async function run() {
-  logger.info('Uploading data ...');
+  logger.info('Uploading data and images ...');
   shell.exec('bash src/core/upload-data.bash');
 }
 
