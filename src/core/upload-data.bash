@@ -11,14 +11,11 @@ if ! command -v aws >/dev/null 2>&1; then
   exit 2
 fi
 
-# Upload data and images
-aws s3 cp "dist/$GAME_CODE/data.json" "s3://$S3_BUCKET_NAME/$GAME_CODE/data.json" --acl 'public-read'
-aws s3 sync "data/$GAME_CODE/img/" "s3://$S3_BUCKET_NAME/$GAME_CODE/img/" --acl 'public-read'
+# Upload data
+aws s3 cp "dist/$GAME_CODE/" "s3://$S3_BUCKET_NAME/$GAME_CODE/" --recursive --acl 'public-read'
 
-# Upload gallery (if any)
-if [ -f "dist/$GAME_CODE/gallery.json" ]; then
-  aws s3 cp "dist/$GAME_CODE/gallery.json" "s3://$S3_BUCKET_NAME/$GAME_CODE/gallery.json" --acl 'public-read'
-fi
+# Upload images
+aws s3 sync "data/$GAME_CODE/img/" "s3://$S3_BUCKET_NAME/$GAME_CODE/img/" --acl 'public-read'
 
 # Invalidate CloudFront cache for data (if any)
 if [ -n "$CLOUDFRONT_DIST_ID" ]; then
