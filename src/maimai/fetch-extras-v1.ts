@@ -6,7 +6,7 @@ import * as cheerio from 'cheerio';
 import { QueryTypes } from 'sequelize';
 import { sequelize, SongExtra, SheetExtra } from './models';
 
-const logger = log4js.getLogger('maimai/fetch-extras');
+const logger = log4js.getLogger('maimai/fetch-extras-v1');
 logger.level = log4js.levels.INFO;
 
 // const DATA_URL = 'http://maimai.wiki.fc2.com/wiki';

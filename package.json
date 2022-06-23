@@ -20,7 +20,7 @@
     "maimai:fetch-versions": "ts-node src/maimai/fetch-versions",
     "maimai:fetch-intl-sheets": "ts-node src/maimai/fetch-intl-sheets",
     "maimai:fetch-cn-sheets": "ts-node src/maimai/fetch-cn-sheets",
-    "maimai:fetch-extras": "ts-node src/maimai/fetch-extras",
+    "maimai:fetch-extras-v1": "ts-node src/maimai/fetch-extras-v1",
     "maimai:fetch-extras-v2": "ts-node src/maimai/fetch-extras-v2",
     "maimai:gen-json": "ts-node src/maimai/gen-json",
     "maimai:upload-data": "ts-node src/maimai/upload-data",
