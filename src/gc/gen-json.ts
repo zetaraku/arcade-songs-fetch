@@ -10,7 +10,7 @@ logger.level = log4js.levels.INFO;
 
 const DIST_PATH = 'dist/gc';
 
-const categoryMappingList = [
+const categories = [
   { category: 'アニメ・ポップス' },
   { category: 'ボーカロイド' },
   { category: '東方アレンジ' },
@@ -20,7 +20,7 @@ const categoryMappingList = [
   { category: 'オリジナル' },
   //! add further category here !//
 ];
-const versionMappingList = [
+const versions = [
   { dateBefore: '2014-05-26', version: 'GROOVE COASTER', abbr: '[1] GROOVE COASTER' },
   { dateBefore: '2015-01-22', version: 'GROOVE COASTER EX', abbr: '[EX] GROOVE COASTER EX' },
   { dateBefore: '2016-03-10', version: 'HEAVENLY FESTIVAL', abbr: '[2] HEAVENLY FESTIVAL' },
@@ -31,20 +31,20 @@ const versionMappingList = [
   { dateBefore: null, version: 'DIAMOND GALAXY', abbr: '[4MAX] DIAMOND GALAXY' },
   //! add further mapping here !//
 ];
-const typeMappingList = [
+const types = [
   // empty
 ] as any[];
-const difficultyMappingList = [
+const difficulties = [
   { difficulty: 'simple', name: 'SIMPLE', color: '#20dfb6' },
   { difficulty: 'normal', name: 'NORMAL', color: '#f7bb08' },
   { difficulty: 'hard', name: 'HARD', color: '#ff0000' },
   { difficulty: 'extra', name: 'EXTRA', color: '#808080' },
 ];
-const regionMappingList = [
+const regions = [
   // empty
 ] as any[];
 
-const sheetSorter = getSheetSorter({ typeMappingList, difficultyMappingList });
+const sheetSorter = getSheetSorter({ types, difficulties });
 
 function levelValueOf(level: string | null) {
   if (level === null) return null;
@@ -84,7 +84,7 @@ export default async function run() {
       sheet.levelValue = levelValueOf(sheet.level);
     }
 
-    song.version = versionMappingList.find(
+    song.version = versions.find(
       ({ dateBefore }) => !dateBefore || song.releaseDate < dateBefore,
     )?.version;
 
@@ -95,11 +95,11 @@ export default async function run() {
 
   const output = {
     songs,
-    categories: categoryMappingList,
-    versions: versionMappingList,
-    types: typeMappingList,
-    difficulties: difficultyMappingList,
-    regions: regionMappingList,
+    categories,
+    versions,
+    types,
+    difficulties,
+    regions,
     updateTime: new Date().toISOString(),
   };
 

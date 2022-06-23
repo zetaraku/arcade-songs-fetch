@@ -10,7 +10,7 @@ logger.level = log4js.levels.INFO;
 
 const DIST_PATH = 'dist/maimai';
 
-const categoryMappingList = [
+const categories = [
   { category: 'POPS＆アニメ' },
   { category: 'niconico＆ボーカロイド' },
   { category: '東方Project' },
@@ -20,7 +20,7 @@ const categoryMappingList = [
   { category: '宴会場' },
   //! add further category here !//
 ];
-const versionMappingList = [
+const versions = [
   { version: 'maimai', abbr: 'maimai' },
   { version: 'maimai PLUS', abbr: 'maimai+' },
   { version: 'GreeN', abbr: 'GreeN' },
@@ -42,25 +42,25 @@ const versionMappingList = [
   { version: 'UNiVERSE PLUS', abbr: 'UNiVERSE+' },
   //! add further version here !//
 ];
-const typeMappingList = [
+const types = [
   { type: 'dx', name: 'DX（でらっくす）', abbr: 'DX', iconUrl: 'type-dx.png', iconHeight: 22 },
   { type: 'std', name: 'STD（スタンダード）', abbr: 'STD', iconUrl: 'type-std.png', iconHeight: 22 },
   { type: 'utage', name: '宴（宴会場）', abbr: '宴' },
 ];
-const difficultyMappingList = [
+const difficulties = [
   { difficulty: 'basic', name: 'BASIC', color: 'lime' },
   { difficulty: 'advanced', name: 'ADVANCED', color: 'orange' },
   { difficulty: 'expert', name: 'EXPERT', color: 'red' },
   { difficulty: 'master', name: 'MASTER', color: 'darkorchid' },
   { difficulty: 'remaster', name: 'Re:MASTER', color: 'cyan' },
 ];
-const regionMappingList = [
+const regions = [
   { region: 'jp', name: '日本版' },
   { region: 'intl', name: '海外版 (International ver.)' },
   { region: 'cn', name: '中国版 (舞萌DX)' },
 ];
 
-const sheetSorter = getSheetSorter({ typeMappingList, difficultyMappingList });
+const sheetSorter = getSheetSorter({ types, difficulties });
 
 function levelValueOf(level: string | null) {
   if (level === null) return null;
@@ -129,11 +129,11 @@ export default async function run() {
 
   const output = {
     songs,
-    categories: categoryMappingList,
-    versions: versionMappingList,
-    types: typeMappingList,
-    difficulties: difficultyMappingList,
-    regions: regionMappingList,
+    categories,
+    versions,
+    types,
+    difficulties,
+    regions,
     updateTime: new Date().toISOString(),
   };
 

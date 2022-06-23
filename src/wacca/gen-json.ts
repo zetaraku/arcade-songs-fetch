@@ -10,7 +10,7 @@ logger.level = log4js.levels.INFO;
 
 const DIST_PATH = 'dist/wacca';
 
-const categoryMappingList = [
+const categories = [
   { category: 'アニメ／ＰＯＰ' },
   { category: 'ボカロ' },
   { category: '東方アレンジ' },
@@ -21,7 +21,7 @@ const categoryMappingList = [
   { category: 'TANO*C（オリジナル）' },
   //! add further category here !//
 ];
-const versionMappingList = [
+const versions = [
   { dateBefore: '2020-01-22', version: 'WACCA', abbr: 'WACCA' },
   { dateBefore: '2020-09-16', version: 'WACCA S', abbr: 'WACCA S' },
   { dateBefore: '2021-03-10', version: 'WACCA Lily', abbr: 'Lily' },
@@ -29,20 +29,20 @@ const versionMappingList = [
   { dateBefore: null, version: 'WACCA Reverse', abbr: 'Reverse' },
   //! add further version here !//
 ];
-const typeMappingList = [
+const types = [
   // empty
 ] as any[];
-const difficultyMappingList = [
+const difficulties = [
   { difficulty: 'normal', name: 'NORMAL', color: '#009de6' },
   { difficulty: 'hard', name: 'HARD', color: '#fed131' },
   { difficulty: 'expert', name: 'EXPERT', color: '#fc06a3' },
   { difficulty: 'inferno', name: 'INFERNO', color: '#4a004f' },
 ];
-const regionMappingList = [
+const regions = [
   // empty
 ] as any[];
 
-const sheetSorter = getSheetSorter({ typeMappingList, difficultyMappingList });
+const sheetSorter = getSheetSorter({ types, difficulties });
 
 function levelValueOf(level: string | null) {
   if (level === null) return null;
@@ -79,7 +79,7 @@ export default async function run() {
       sheet.levelValue = levelValueOf(sheet.level);
     }
 
-    song.version = versionMappingList.find(
+    song.version = versions.find(
       ({ dateBefore }) => !dateBefore || song.releaseDate < dateBefore,
     )?.version;
 
@@ -90,11 +90,11 @@ export default async function run() {
 
   const output = {
     songs,
-    categories: categoryMappingList,
-    versions: versionMappingList,
-    types: typeMappingList,
-    difficulties: difficultyMappingList,
-    regions: regionMappingList,
+    categories,
+    versions,
+    types,
+    difficulties,
+    regions,
     updateTime: new Date().toISOString(),
   };
 

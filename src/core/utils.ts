@@ -8,16 +8,16 @@ export function hashed(text: string): string {
 }
 
 export function getSheetSorter({
-  typeMappingList,
-  difficultyMappingList,
+  types,
+  difficulties,
 }: {
-  typeMappingList: Record<string, any>[],
-  difficultyMappingList: Record<string, any>[],
+  types: Record<string, any>[],
+  difficulties: Record<string, any>[],
 }) {
-  const typeOrder = new Map(typeMappingList.map(
+  const typeOrder = new Map(types.map(
     ({ type }, index) => [type, index],
   ));
-  const difficultyOrder = new Map(difficultyMappingList.map(
+  const difficultyOrder = new Map(difficulties.map(
     ({ difficulty }, index) => [difficulty, index],
   ));
 

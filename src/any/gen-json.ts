@@ -7,7 +7,7 @@ logger.level = log4js.levels.INFO;
 
 const DIST_PATH = 'dist/any';
 
-const difficultyMappingList = [
+const difficulties = [
   { difficulty: 'maimai', name: 'maimai', color: '#1976d2' },
   { difficulty: 'chunithm', name: 'CHUNITHM', color: '#f3a607' },
   { difficulty: 'wacca', name: 'WACCA', color: '#e50065' },
@@ -23,7 +23,7 @@ export default async function run() {
   const songsArray: Record<string, any>[][] = [];
 
   logger.info('Loading songs from JSON files ...');
-  for (const { difficulty: gameCode } of difficultyMappingList) {
+  for (const { difficulty: gameCode } of difficulties) {
     if (!fs.existsSync(`${DIST_PATH}/../${gameCode}/data.json`)) {
       logger.warn(`- ${gameCode} (not found)`);
       // eslint-disable-next-line no-continue
@@ -60,7 +60,7 @@ export default async function run() {
     categories: [],
     versions: [],
     types: [],
-    difficulties: difficultyMappingList,
+    difficulties,
     regions: [],
     updateTime: new Date().toISOString(),
   };

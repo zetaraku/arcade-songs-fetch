@@ -10,27 +10,27 @@ logger.level = log4js.levels.INFO;
 
 const DIST_PATH = 'dist/diva';
 
-const categoryMappingList = [
+const categories = [
   // empty
 ] as any[];
-const versionMappingList = [
+const versions = [
   // empty
 ] as any[];
-const typeMappingList = [
+const types = [
   // empty
 ] as any[];
-const difficultyMappingList = [
+const difficulties = [
   { difficulty: 'easy', name: 'EASY', color: '#2795ff' },
   { difficulty: 'normal', name: 'NORMAL', color: '#3ec053' },
   { difficulty: 'hard', name: 'HARD', color: '#e2e511' },
   { difficulty: 'extreme', name: 'EXTREME', color: '#d42d1d' },
   { difficulty: 'ex_extreme', name: 'EX EXTREME', color: '#7d45fe' },
 ];
-const regionMappingList = [
+const regions = [
   // empty
 ] as any[];
 
-const sheetSorter = getSheetSorter({ typeMappingList, difficultyMappingList });
+const sheetSorter = getSheetSorter({ types, difficulties });
 
 function levelValueOf(level: string | null) {
   if (level === null) return null;
@@ -73,11 +73,11 @@ export default async function run() {
 
   const output = {
     songs,
-    categories: categoryMappingList,
-    versions: versionMappingList,
-    types: typeMappingList,
-    difficulties: difficultyMappingList,
-    regions: regionMappingList,
+    categories,
+    versions,
+    types,
+    difficulties,
+    regions,
     updateTime: new Date().toISOString(),
   };
 

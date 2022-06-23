@@ -10,7 +10,7 @@ logger.level = log4js.levels.INFO;
 
 const DIST_PATH = 'dist/sdvx';
 
-const categoryMappingList = [
+const categories = [
   { category: 'POPS&アニメ' },
   { category: '東方アレンジ' },
   { category: 'ボーカロイド' },
@@ -21,7 +21,7 @@ const categoryMappingList = [
   { category: 'その他' },
   //! add further category here !//
 ];
-const versionMappingList = [
+const versions = [
   //! the data source no longer contains version information
   // { version: 'BOOTH', abbr: '[I] BOOTH' },
   // { version: 'INFINITE INFECTION', abbr: '[II] INFINITE INFECTION'},
@@ -32,10 +32,10 @@ const versionMappingList = [
   { dateBefore: null, version: null, abbr: null },
   //! add further mapping here !//
 ] as any[];
-const typeMappingList = [
+const types = [
   // empty
 ] as any[];
-const difficultyMappingList = [
+const difficulties = [
   { difficulty: 'novice', name: 'NOVICE', abbr: 'NOV', color: '#5a49fb' },
   { difficulty: 'advanced', name: 'ADVANCED', abbr: 'ADV', color: '#fbb649' },
   { difficulty: 'exhaust', name: 'EXHAUST', abbr: 'EXH', color: '#fb494c' },
@@ -46,11 +46,11 @@ const difficultyMappingList = [
   { difficulty: 'vivid', name: 'VIVID', abbr: 'VVD', color: '#ff59cd' },
   { difficulty: 'exceed', name: 'EXCEED', abbr: 'XCD', color: '#187fff' },
 ];
-const regionMappingList = [
+const regions = [
   // empty
 ] as any[];
 
-const sheetSorter = getSheetSorter({ typeMappingList, difficultyMappingList });
+const sheetSorter = getSheetSorter({ types, difficulties });
 
 function levelValueOf(level: string | null) {
   if (level === null) return null;
@@ -86,7 +86,7 @@ export default async function run() {
       sheet.levelValue = levelValueOf(sheet.level);
     }
 
-    song.version = versionMappingList.find(
+    song.version = versions.find(
       ({ dateBefore }) => !dateBefore || song.releaseDate < dateBefore,
     )?.version;
 
@@ -96,11 +96,11 @@ export default async function run() {
 
   const output = {
     songs,
-    categories: categoryMappingList,
-    versions: versionMappingList,
-    types: typeMappingList,
-    difficulties: difficultyMappingList,
-    regions: regionMappingList,
+    categories,
+    versions,
+    types,
+    difficulties,
+    regions,
     updateTime: new Date().toISOString(),
   };
 

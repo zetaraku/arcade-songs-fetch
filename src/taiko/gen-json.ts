@@ -10,7 +10,7 @@ logger.level = log4js.levels.INFO;
 
 const DIST_PATH = 'dist/taiko';
 
-const categoryMappingList = [
+const categories = [
   { category: 'ポップス' },
   { category: 'キッズ' },
   { category: 'アニメ' },
@@ -21,25 +21,25 @@ const categoryMappingList = [
   { category: 'ナムコオリジナル' },
   //! add further category here !//
 ];
-const versionMappingList = [
+const versions = [
   // empty
 ] as any[];
-const typeMappingList = [
+const types = [
   { type: 'std', name: '表譜面', abbr: '表' },
   { type: 'ura', name: '裏譜面', abbr: '裏', iconUrl: 'type-ura.png', iconHeight: 36 },
 ];
-const difficultyMappingList = [
+const difficulties = [
   { difficulty: 'easy', name: 'かんたん', color: '#ff2803', iconUrl: 'difficulty-easy.png', iconHeight: 25 },
   { difficulty: 'normal', name: 'ふつう', color: '#8daf51', iconUrl: 'difficulty-normal.png', iconHeight: 25 },
   { difficulty: 'hard', name: 'むずかしい', color: '#404a2b', iconUrl: 'difficulty-hard.png', iconHeight: 25 },
   { difficulty: 'oni', name: 'おに', color: '#dc1886', iconUrl: 'difficulty-oni.png', iconHeight: 25 },
   { difficulty: 'ura_oni', name: '裏おに', color: '#106479', iconUrl: 'difficulty-ura_oni.png', iconHeight: 25 },
 ];
-const regionMappingList = [
+const regions = [
   // empty
 ] as any[];
 
-const sheetSorter = getSheetSorter({ typeMappingList, difficultyMappingList });
+const sheetSorter = getSheetSorter({ types, difficulties });
 
 function levelValueOf(level: string | null) {
   if (level === null) return null;
@@ -84,11 +84,11 @@ export default async function run() {
 
   const output = {
     songs,
-    categories: categoryMappingList,
-    versions: versionMappingList,
-    types: typeMappingList,
-    difficulties: difficultyMappingList,
-    regions: regionMappingList,
+    categories,
+    versions,
+    types,
+    difficulties,
+    regions,
     updateTime: new Date().toISOString(),
   };
 

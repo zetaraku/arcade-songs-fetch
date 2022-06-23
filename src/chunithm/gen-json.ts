@@ -10,7 +10,7 @@ logger.level = log4js.levels.INFO;
 
 const DIST_PATH = 'dist/chunithm';
 
-const categoryMappingList = [
+const categories = [
   { category: 'POPS & ANIME' },
   { category: 'niconico' },
   { category: '東方Project' },
@@ -20,7 +20,7 @@ const categoryMappingList = [
   { category: 'ORIGINAL' },
   //! add further category here !//
 ];
-const versionMappingList = [
+const versions = [
   //! the data source no longer contains version information
   // { dateBefore: '2016-02-04', version: 'CHUNITHM', abbr: 'CHUNITHM' },
   // { dateBefore: '2016-08-25', version: 'CHUNITHM PLUS', abbr: 'CHUNITHM+' },
@@ -39,23 +39,23 @@ const versionMappingList = [
   { dateBefore: null, version: null, abbr: null },
   //! add further mapping here !//
 ] as any[];
-const typeMappingList = [
+const types = [
   { type: 'std', name: 'STANDARD', abbr: 'STD' },
   { type: 'we', name: 'WORLD\'S END', abbr: 'WE' },
 ];
-const difficultyMappingList = [
+const difficulties = [
   { difficulty: 'basic', name: 'BASIC', color: 'lime' },
   { difficulty: 'advanced', name: 'ADVANCED', color: 'orange' },
   { difficulty: 'expert', name: 'EXPERT', color: 'red' },
   { difficulty: 'master', name: 'MASTER', color: 'darkorchid' },
   { difficulty: 'ultima', name: 'ULTIMA', color: 'black' },
 ];
-const regionMappingList = [
+const regions = [
   { region: 'jp', name: '日本版' },
   { region: 'intl', name: '海外版 (International ver.)' },
 ];
 
-const sheetSorter = getSheetSorter({ typeMappingList, difficultyMappingList });
+const sheetSorter = getSheetSorter({ types, difficulties });
 
 function levelValueOf(level: string | null) {
   if (level === null) return null;
@@ -107,7 +107,7 @@ export default async function run() {
       }
     }
 
-    song.version = versionMappingList.find(
+    song.version = versions.find(
       ({ dateBefore }) => !dateBefore || song.releaseDate < dateBefore,
     )?.version;
 
@@ -119,11 +119,11 @@ export default async function run() {
 
   const output = {
     songs,
-    categories: categoryMappingList,
-    versions: versionMappingList,
-    types: typeMappingList,
-    difficulties: difficultyMappingList,
-    regions: regionMappingList,
+    categories,
+    versions,
+    types,
+    difficulties,
+    regions,
     updateTime: new Date().toISOString(),
   };
 
