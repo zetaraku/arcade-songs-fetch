@@ -1,5 +1,11 @@
 import { getSheetSorter } from './utils';
 
+function defaultGetInternalLevelValueOf(sheet: Record<string, any>) {
+  if (sheet.internalLevel === undefined) return undefined;
+  if (sheet.internalLevel === null) return null;
+  return Number(sheet.internalLevel.replace('?', ''));
+}
+
 export default async function run({
   songRecords,
   sheetRecords,
@@ -10,6 +16,7 @@ export default async function run({
   regions,
   updateTime = new Date(),
   getLevelValueOf,
+  getInternalLevelValueOf = defaultGetInternalLevelValueOf,
   getIsSpecialOf,
 }: {
   songRecords: Record<string, any>[],
@@ -21,6 +28,7 @@ export default async function run({
   regions: Record<string, any>[],
   updateTime?: Date,
   getLevelValueOf: (sheet: any) => number | null,
+  getInternalLevelValueOf?: (sheet: any) => number | null | undefined,
   getIsSpecialOf: (sheet: any) => boolean | null,
 }) {
   const getSortedSheetsOf = getSheetSorter(
@@ -54,6 +62,9 @@ export default async function run({
 
           level: sheet.level,
           levelValue: getLevelValueOf(sheet),
+
+          internalLevel: sheet.internalLevel,
+          internalLevelValue: getInternalLevelValueOf(sheet),
 
           noteDesigner: sheet.noteDesigner,
           noteCounts: sheet.noteCounts ?? undefined,
