@@ -107,7 +107,7 @@ async function fetchSong(songInfo: Record<string, any>, cookies: Record<string, 
         const nodes = $(e).find('font').contents().toArray();
 
         const difficulty = $(nodes[0]).text().trim();
-        const level = $(nodes[2]).text().trim();
+        const level = $(nodes[2]).text().trim().replace('★', '');
 
         return [difficulty, level];
       }),
