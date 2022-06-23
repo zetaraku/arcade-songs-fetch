@@ -45,9 +45,9 @@ async function getSongs(pageUrl: string) {
     const title = $(thChildren[0]).text().trim();
     const artist = $(thChildren.slice(-2)[0]).text().trim() || null;
 
-    const parseNoteCount = (text: string) => {
-      const result = Number.parseInt(text, 10);
-      return !Number.isNaN(result) ? result : null;
+    const parseLevel = (text: string) => {
+      const levelValue = Number.parseInt(text, 10);
+      return !Number.isNaN(levelValue) ? `★${levelValue}` : null;
     };
 
     const rawSong = {
@@ -58,11 +58,11 @@ async function getSongs(pageUrl: string) {
       imageName: 'default-cover.png',
       imageUrl: null,
 
-      level_easy: parseNoteCount($(tds[1]).text().trim()),
-      level_normal: parseNoteCount($(tds[2]).text().trim()),
-      level_hard: parseNoteCount($(tds[3]).text().trim()),
-      level_oni: parseNoteCount($(tds[4]).text().trim()),
-      level_ura_oni: parseNoteCount($(tds[5]).text().trim()),
+      level_easy: parseLevel($(tds[1]).text().trim()),
+      level_normal: parseLevel($(tds[2]).text().trim()),
+      level_hard: parseLevel($(tds[3]).text().trim()),
+      level_oni: parseLevel($(tds[4]).text().trim()),
+      level_ura_oni: parseLevel($(tds[5]).text().trim()),
 
       version: null,
       releaseDate: null,
