@@ -1,9 +1,8 @@
-/* eslint-disable no-await-in-loop */
 import fs from 'fs';
 import log4js from 'log4js';
 import { QueryTypes } from 'sequelize';
 import { sequelize } from './models';
-import { getSheetSorter } from '../core/utils';
+import genJson from '../core/gen-json';
 
 const logger = log4js.getLogger('jubeat/gen-json');
 logger.level = log4js.levels.INFO;
@@ -12,7 +11,7 @@ const DIST_PATH = 'dist/jubeat';
 
 const categories = [
   { category: null },
-] as any[];
+];
 const versions = [
   // empty
 ] as any[];
@@ -29,59 +28,50 @@ const regions = [
   // empty
 ] as any[];
 
-const sheetSorter = getSheetSorter({ types, difficulties });
-
-function levelValueOf(level: string | null) {
-  if (level === null) return null;
-  return Number(level);
+function getLevelValueOf(sheet: Record<string, any>) {
+  if (sheet.level === null) return null;
+  return Number(sheet.level);
+}
+function getIsSpecialOf(sheet: Record<string, any>) {
+  return false;
 }
 
 export default async function run() {
-  logger.info('Loading songs from database ...');
-  const songs: Record<string, any>[] = await sequelize.query(/* sql */ `
-    SELECT * FROM "Songs"
+  logger.info('Loading songs and sheets from database ...');
+
+  const songRecords = await sequelize.query(/* sql */ `
+    SELECT
+      *
+    FROM "Songs"
   `, {
     type: QueryTypes.SELECT,
+    nest: true,
   });
 
-  logger.info('Loading sheets from database ...');
-  for (const song of songs) {
-    const sheetsOfSong = sheetSorter.sorted(
-      await sequelize.query(/* sql */ `
-        SELECT * FROM "Sheets"
-        WHERE "songId" = :songId
-      `, {
-        type: QueryTypes.SELECT,
-        replacements: {
-          songId: song.songId,
-        },
-        nest: true,
-      }),
-    );
+  const sheetRecords = await sequelize.query(/* sql */ `
+    SELECT
+      *
+    FROM "Sheets"
+  `, {
+    type: QueryTypes.SELECT,
+    nest: true,
+  });
 
-    for (const sheet of sheetsOfSong) {
-      delete sheet.songId;
-
-      sheet.levelValue = levelValueOf(sheet.level);
-    }
-
-    delete song.imageUrl;
-    song.sheets = sheetsOfSong;
-  }
-
-  const output = {
-    songs,
+  const jsonText = await genJson({
+    songRecords,
+    sheetRecords,
     categories,
     versions,
     types,
     difficulties,
     regions,
-    updateTime: new Date().toISOString(),
-  };
+    getLevelValueOf,
+    getIsSpecialOf,
+  });
 
   logger.info(`Writing output into ${DIST_PATH}/data.json ...`);
   fs.mkdirSync(DIST_PATH, { recursive: true });
-  fs.writeFileSync(`${DIST_PATH}/data.json`, JSON.stringify(output, null, '\t'));
+  fs.writeFileSync(`${DIST_PATH}/data.json`, jsonText);
 
   logger.info('Done!');
 }

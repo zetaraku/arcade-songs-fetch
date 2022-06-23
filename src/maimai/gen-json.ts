@@ -1,9 +1,8 @@
-/* eslint-disable no-await-in-loop */
 import fs from 'fs';
 import log4js from 'log4js';
 import { QueryTypes } from 'sequelize';
 import { sequelize } from './models';
-import { getSheetSorter } from '../core/utils';
+import genJson from '../core/gen-json';
 
 const logger = log4js.getLogger('maimai/gen-json');
 logger.level = log4js.levels.INFO;
@@ -60,17 +59,19 @@ const regions = [
   { region: 'cn', name: '中国版 (舞萌DX)' },
 ];
 
-const sheetSorter = getSheetSorter({ types, difficulties });
-
-function levelValueOf(level: string | null) {
-  if (level === null) return null;
-  if (level === '*') return -1;
-  return Number(level.replace('+', '.5'));
+function getLevelValueOf(sheet: Record<string, any>) {
+  if (sheet.level === null) return null;
+  if (sheet.level === '*') return -1;
+  return Number(sheet.level.replace('+', '.5'));
+}
+function getIsSpecialOf(sheet: Record<string, any>) {
+  return sheet.type === 'utage';
 }
 
 export default async function run() {
-  logger.info('Loading songs from database ...');
-  const songs: Record<string, any>[] = await sequelize.query(/* sql */ `
+  logger.info('Loading songs and sheets from database ...');
+
+  const songRecords = await sequelize.query(/* sql */ `
     SELECT
       *
     FROM "Songs"
@@ -78,68 +79,41 @@ export default async function run() {
     ORDER BY "sortOrder"
   `, {
     type: QueryTypes.SELECT,
+    nest: true,
   });
 
-  logger.info('Loading sheets from database ...');
-  for (const song of songs) {
-    const sheetsOfSong = sheetSorter.sorted(
-      await sequelize.query(/* sql */ `
-        SELECT
-          *,
-          "JpSheets"."songId" IS NOT NULL AS "regions.jp",
-          "IntlSheets"."songId" IS NOT NULL AS "regions.intl",
-          "CnSheets"."songId" IS NOT NULL AS "regions.cn"
-        FROM "Sheets"
-          NATURAL LEFT JOIN "SheetVersions"
-          NATURAL LEFT JOIN "SheetExtras"
-          NATURAL LEFT JOIN "JpSheets"
-          NATURAL LEFT JOIN "IntlSheets"
-          NATURAL LEFT JOIN "CnSheets"
-        WHERE "songId" = :songId
-      `, {
-        type: QueryTypes.SELECT,
-        replacements: {
-          songId: song.songId,
-        },
-        nest: true,
-      }),
-    );
+  const sheetRecords = await sequelize.query(/* sql */ `
+    SELECT
+      *,
+      "JpSheets"."songId" IS NOT NULL AS "regions.jp",
+      "IntlSheets"."songId" IS NOT NULL AS "regions.intl",
+      "CnSheets"."songId" IS NOT NULL AS "regions.cn"
+    FROM "Sheets"
+      NATURAL LEFT JOIN "SheetVersions"
+      NATURAL LEFT JOIN "SheetExtras"
+      NATURAL LEFT JOIN "JpSheets"
+      NATURAL LEFT JOIN "IntlSheets"
+      NATURAL LEFT JOIN "CnSheets"
+  `, {
+    type: QueryTypes.SELECT,
+    nest: true,
+  });
 
-    for (const sheet of sheetsOfSong) {
-      delete sheet.songId;
-      if (sheet.version == null) delete sheet.version;
-
-      if (sheet.type === 'utage') {
-        sheet.isSpecial = true;
-      }
-
-      sheet.levelValue = levelValueOf(sheet.level);
-
-      for (const region of Object.keys(sheet.regions)) {
-        sheet.regions[region] = Boolean(sheet.regions[region]);
-      }
-    }
-
-    delete song.imageUrl;
-    delete song.releaseNo;
-    song.sheets = sheetsOfSong;
-    song.isNew = Boolean(song.isNew);
-    song.isLocked = Boolean(song.isLocked);
-  }
-
-  const output = {
-    songs,
+  const jsonText = await genJson({
+    songRecords,
+    sheetRecords,
     categories,
     versions,
     types,
     difficulties,
     regions,
-    updateTime: new Date().toISOString(),
-  };
+    getLevelValueOf,
+    getIsSpecialOf,
+  });
 
   logger.info(`Writing output into ${DIST_PATH}/data.json ...`);
   fs.mkdirSync(DIST_PATH, { recursive: true });
-  fs.writeFileSync(`${DIST_PATH}/data.json`, JSON.stringify(output, null, '\t'));
+  fs.writeFileSync(`${DIST_PATH}/data.json`, jsonText);
 
   logger.info('Done!');
 }

@@ -1,4 +1,3 @@
-/* eslint-disable no-await-in-loop */
 import fs from 'fs';
 import log4js from 'log4js';
 
@@ -56,7 +55,6 @@ export default async function run() {
 
   const output = {
     songs: flatZip(...songsArray).slice().reverse(),
-    levels: [],
     categories: [],
     versions: [],
     types: [],
