@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "maimai:all": "npm-run-all maimai:fetch-songs maimai:fetch-images maimai:fetch-versions maimai:fetch-intl-sheets maimai:fetch-cn-sheets maimai:fetch-extras-v2 maimai:gen-json maimai:upload-data",
+    "maimai:all": "npm-run-all maimai:fetch-songs maimai:fetch-images maimai:fetch-versions maimai:fetch-intl-sheets maimai:fetch-cn-sheets maimai:fetch-extras-v2 maimai:fetch-internal-levels maimai:gen-json maimai:upload-data",
     "chunithm:all": "npm-run-all chunithm:fetch-songs chunithm:fetch-images chunithm:fetch-intl-sheets chunithm:gen-json chunithm:upload-data",
     "wacca:all": "npm-run-all wacca:fetch-songs wacca:fetch-images wacca:gen-json wacca:upload-data",
     "taiko:all": "npm-run-all taiko:fetch-songs taiko:gen-json taiko:upload-data",
@@ -22,6 +22,7 @@
     "maimai:fetch-cn-sheets": "ts-node src/maimai/fetch-cn-sheets",
     "maimai:fetch-extras-v1": "ts-node src/maimai/fetch-extras-v1",
     "maimai:fetch-extras-v2": "ts-node src/maimai/fetch-extras-v2",
+    "maimai:fetch-internal-levels": "ts-node src/maimai/fetch-internal-levels",
     "maimai:gen-json": "ts-node src/maimai/gen-json",
     "maimai:upload-data": "ts-node src/maimai/upload-data",
     "chunithm:fetch-songs": "ts-node src/chunithm/fetch-songs",

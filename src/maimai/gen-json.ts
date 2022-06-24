@@ -91,6 +91,7 @@ export default async function run() {
     FROM "Sheets"
       NATURAL LEFT JOIN "SheetVersions"
       NATURAL LEFT JOIN "SheetExtras"
+      NATURAL LEFT JOIN "SheetInternalLevels"
       NATURAL LEFT JOIN "JpSheets"
       NATURAL LEFT JOIN "IntlSheets"
       NATURAL LEFT JOIN "CnSheets"
