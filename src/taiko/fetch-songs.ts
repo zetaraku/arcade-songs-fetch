@@ -3,8 +3,8 @@ import axios from 'axios';
 import log4js from 'log4js';
 import sleep from 'sleep-promise';
 import * as cheerio from 'cheerio';
+import { ensureNoDuplicateEntry } from '@/core/utils';
 import { Song, Sheet } from './models';
-import { ensureNoDuplicateEntry } from '../core/utils';
 
 const logger = log4js.getLogger('taiko/fetch-songs');
 logger.level = log4js.levels.INFO;

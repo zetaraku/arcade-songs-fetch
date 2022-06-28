@@ -4,8 +4,8 @@ import iconv from 'iconv-lite';
 import sleep from 'sleep-promise';
 import log4js from 'log4js';
 import * as cheerio from 'cheerio';
+import { hashed, ensureNoDuplicateEntry } from '@/core/utils';
 import { Song, Sheet } from './models';
-import { hashed, ensureNoDuplicateEntry } from '../core/utils';
 
 const logger = log4js.getLogger('sdvx/fetch-songs');
 logger.level = log4js.levels.INFO;

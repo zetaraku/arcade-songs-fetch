@@ -1,8 +1,8 @@
 import fs from 'fs';
 import log4js from 'log4js';
 import { QueryTypes } from 'sequelize';
+import genJson from '@/core/gen-json';
 import { sequelize } from './models';
-import genJson from '../core/gen-json';
 
 const logger = log4js.getLogger('gc/gen-json');
 logger.level = log4js.levels.INFO;

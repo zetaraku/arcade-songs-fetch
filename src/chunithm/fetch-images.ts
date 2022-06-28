@@ -1,6 +1,6 @@
 import log4js from 'log4js';
+import fetchImages from '@/core/fetch-images';
 import { Song } from './models';
-import fetchImages from '../core/fetch-images';
 
 const logger = log4js.getLogger('chunithm/fetch-images');
 logger.level = log4js.levels.INFO;

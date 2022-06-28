@@ -1,7 +1,7 @@
 import axios from 'axios';
 import log4js from 'log4js';
+import { hashed, ensureNoDuplicateEntry } from '@/core/utils';
 import { Song, Sheet, JpSheet } from './models';
-import { hashed, ensureNoDuplicateEntry } from '../core/utils';
 
 const logger = log4js.getLogger('maimai/fetch-songs');
 logger.level = log4js.levels.INFO;
