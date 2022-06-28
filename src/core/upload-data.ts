@@ -1,4 +1,3 @@
-/* eslint-disable dot-notation */
 import shell from 'shelljs';
 import log4js from 'log4js';
 import 'dotenv/config';
