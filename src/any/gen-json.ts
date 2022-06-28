@@ -1,4 +1,4 @@
-import fs from 'fs';
+import fs from 'node:fs';
 import log4js from 'log4js';
 
 const logger = log4js.getLogger('any/gen-json');

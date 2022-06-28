@@ -1,5 +1,5 @@
-import fs from 'fs';
-import https from 'https';
+import fs from 'node:fs';
+import https from 'node:https';
 import log4js from 'log4js';
 import fetchImages from '@/core/fetch-images';
 import { Song } from './models';

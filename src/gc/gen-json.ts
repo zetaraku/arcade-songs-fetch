@@ -1,4 +1,4 @@
-import fs from 'fs';
+import fs from 'node:fs';
 import log4js from 'log4js';
 import { QueryTypes } from 'sequelize';
 import genJson from '@/core/gen-json';

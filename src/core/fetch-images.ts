@@ -1,5 +1,5 @@
 /* eslint-disable no-await-in-loop */
-import fs from 'fs';
+import fs from 'node:fs';
 import download from 'download';
 import sleep from 'sleep-promise';
 import log4js from 'log4js';

@@ -1,6 +1,5 @@
-import fs from 'fs';
-import crypto from 'crypto';
-// eslint-disable-next-line import/no-unresolved
+import fs from 'node:fs';
+import crypto from 'node:crypto';
 import { parse as parseCsv } from 'csv/sync';
 
 export function hashed(text: string): string {
