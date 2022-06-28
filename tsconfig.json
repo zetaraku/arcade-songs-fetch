@@ -20,6 +20,10 @@
     // typescript options here
     "baseUrl": ".",
     "target": "ESNext",
-    "module": "NodeNext"
+    "module": "NodeNext",
+    "paths": {
+      "@@/*": ["*"],
+      "@/*": ["src/*"]
+    }
   }
 }
