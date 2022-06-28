@@ -37,4 +37,11 @@ module.exports = {
       ts: 'never',
     }],
   },
+  settings: {
+    'import/resolver': {
+      typescript: {
+        project: '.',
+      },
+    },
+  },
 };
