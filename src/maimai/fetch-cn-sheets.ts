@@ -65,11 +65,12 @@ export default async function run() {
   const rawCnSongs: Record<string, any>[] = response.data;
   logger.info(`OK, ${rawCnSongs.length} songs fetched.`);
 
-  logger.info('Recreating CnSheets table ...');
-  await CnSheet.sync({ force: true });
+  logger.info('Preparing CnSheets table ...');
+  await CnSheet.sync();
 
-  logger.info('Inserting sheets ...');
+  logger.info('Truncating and Inserting cnSheets ...');
   const cnSheets = rawCnSongs.flatMap((rawCnSong) => extractCnSheets(rawCnSong));
+  await CnSheet.truncate();
   await CnSheet.bulkCreate(cnSheets);
 
   logger.info('Done!');

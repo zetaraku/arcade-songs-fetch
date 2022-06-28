@@ -84,11 +84,12 @@ export default async function run() {
   const rawSheets = await fetchSheets();
   logger.info(`OK, ${rawSheets.length} sheets fetched.`);
 
-  logger.info('Recreating SheetInternalLevel table ...');
-  await SheetInternalLevel.sync({ force: true });
+  logger.info('Preparing SheetInternalLevel table ...');
+  await SheetInternalLevel.sync();
 
-  logger.info('Inserting sheets ...');
+  logger.info('Truncating and Inserting sheetInternalLevels ...');
   const sheets = rawSheets.map((rawSheet) => extractSheets(rawSheet));
+  await SheetInternalLevel.truncate();
   await SheetInternalLevel.bulkCreate(sheets, { ignoreDuplicates: true });
 
   logger.info('Done!');

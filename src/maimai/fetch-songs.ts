@@ -115,8 +115,8 @@ export default async function run() {
   logger.info('Preparing Sheets table ...');
   await Sheet.sync();
 
-  logger.info('Recreating JpSheets table ...');
-  await JpSheet.sync({ force: true });
+  logger.info('Preparing JpSheets table ...');
+  await JpSheet.sync();
 
   logger.info('Updating songs ...');
   await Promise.all(songs.map((song) => Song.upsert(song)));
@@ -124,7 +124,8 @@ export default async function run() {
   logger.info('Updating sheets ...');
   await Promise.all(sheets.map((sheet) => Sheet.upsert(sheet)));
 
-  logger.info('Inserting jpSheets ...');
+  logger.info('Truncating and Inserting jpSheets ...');
+  await JpSheet.truncate();
   await JpSheet.bulkCreate(sheets);
 
   logger.info('Done!');
