@@ -76,6 +76,7 @@ function getSongWikiUrl(song: Record<string, any>) {
 
 function extractSheetExtras($: cheerio.CheerioAPI, table: cheerio.Element) {
   const type = (() => {
+    // eslint-disable-next-line newline-per-chained-call
     const fourthNoteType = $(table).find('tr').eq(1).find('th').eq(3).text().trim();
     if (fourthNoteType === 'Break') return 'std';
     if (fourthNoteType === 'Touch') return 'dx';

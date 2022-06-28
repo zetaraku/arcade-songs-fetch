@@ -1,3 +1,4 @@
+/* eslint-disable object-curly-newline */
 import fs from 'node:fs';
 import log4js from 'log4js';
 import { QueryTypes } from 'sequelize';
