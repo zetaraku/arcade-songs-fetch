@@ -32,7 +32,7 @@ function getLevelValueOf(sheet: Record<string, any>) {
   if (sheet.level === null) return null;
   return Number(sheet.level);
 }
-function getIsSpecialOf(sheet: Record<string, any>) {
+function getIsSpecialOf(_sheet: Record<string, any>) {
   return false;
 }
 

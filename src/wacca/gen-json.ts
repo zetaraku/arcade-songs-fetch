@@ -45,7 +45,7 @@ function getLevelValueOf(sheet: Record<string, any>) {
   if (sheet.level === null) return null;
   return Number(sheet.level.replace('+', '.5'));
 }
-function getIsSpecialOf(sheet: Record<string, any>) {
+function getIsSpecialOf(_sheet: Record<string, any>) {
   return false;
 }
 
