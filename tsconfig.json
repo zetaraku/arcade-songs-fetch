@@ -18,5 +18,8 @@
   },
   "compilerOptions": {
     // typescript options here
+    "baseUrl": ".",
+    "target": "ESNext",
+    "module": "NodeNext"
   }
 }
