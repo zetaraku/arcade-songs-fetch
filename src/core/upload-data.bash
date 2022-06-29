@@ -23,7 +23,7 @@ echo "* Uploading data ..."
 aws s3 cp "dist/$GAME_CODE/" "s3://$S3_BUCKET_NAME/$GAME_CODE/" --recursive --acl 'public-read'
 
 echo "* Uploading images ..."
-aws s3 sync "data/$GAME_CODE/img/" "s3://$S3_BUCKET_NAME/$GAME_CODE/img/" --acl 'public-read'
+aws s3 sync "img/$GAME_CODE/" "s3://$S3_BUCKET_NAME/$GAME_CODE/img/" --acl 'public-read'
 
 if [ -n "$CLOUDFRONT_DIST_ID" ]; then
   echo "* Invalidating CloudFront cache ..."
