@@ -44,7 +44,7 @@ export default async function run() {
           isSpecial: song.sheets[0].isSpecial,
         },
       ];
-      song.imageName = `../../../${gameCode}/img/cover/${song.imageName}`;
+      song.imageName = `../../../${gameCode}/img/cover-m/${song.imageName}`;
     }
 
     songsArray.push(songsOfGame.slice().reverse());
