@@ -5,20 +5,20 @@ import sleep from 'sleep-promise';
 import log4js from 'log4js';
 
 export default async function run(
+  gameCode: string,
   songs: Record<string, any>[],
-  imageDir: string,
-  logger: log4js.Logger,
-  headers: Record<string, string> = {},
+  headers?: Record<string, string>,
 ) {
+  const logger = log4js.getLogger(`${gameCode}/fetch-images`);
+  logger.level = log4js.levels.INFO;
+
+  const imageDir = `data/${gameCode}/img/cover`;
+
   logger.info('Downloading cover image for songs ...');
   for (const [index, song] of songs.entries()) {
     if (song.imageName && !fs.existsSync(`${imageDir}/${song.imageName}`)) {
       logger.info(`(${1 + index} / ${songs.length}) ${song.title}`);
-      await download(song.imageUrl, imageDir, {
-        filename: song.imageName,
-        headers,
-      });
-
+      await download(song.imageUrl, imageDir, { filename: song.imageName, headers });
       await sleep(100);
     }
   }
