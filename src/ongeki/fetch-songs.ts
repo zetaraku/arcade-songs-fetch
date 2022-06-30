@@ -1,7 +1,7 @@
 import axios from 'axios';
 import log4js from 'log4js';
 import { hashed, ensureNoDuplicateEntry } from '@/core/utils';
-import { Song, Sheet } from './models';
+import { Song, Sheet } from '@@/db/ongeki/models';
 
 const logger = log4js.getLogger('ongeki/fetch-songs');
 logger.level = log4js.levels.INFO;
