@@ -4,7 +4,7 @@ import log4js from 'log4js';
 import sleep from 'sleep-promise';
 import * as cheerio from 'cheerio';
 import { hashed, ensureNoDuplicateEntry } from '@/core/utils';
-import { Song, Sheet, SongExtra } from './models';
+import { Song, Sheet, SongExtra } from '@@/db/gc/models';
 
 const logger = log4js.getLogger('gc/fetch-songs');
 logger.level = log4js.levels.INFO;
