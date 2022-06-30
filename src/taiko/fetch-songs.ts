@@ -4,7 +4,7 @@ import log4js from 'log4js';
 import sleep from 'sleep-promise';
 import * as cheerio from 'cheerio';
 import { ensureNoDuplicateEntry } from '@/core/utils';
-import { Song, Sheet } from './models';
+import { Song, Sheet } from '@@/db/taiko/models';
 
 const logger = log4js.getLogger('taiko/fetch-songs');
 logger.level = log4js.levels.INFO;
