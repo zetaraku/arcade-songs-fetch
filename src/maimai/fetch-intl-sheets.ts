@@ -4,7 +4,7 @@ import puppeteer from 'puppeteer';
 import sleep from 'sleep-promise';
 import log4js from 'log4js';
 import * as cheerio from 'cheerio';
-import { IntlSheet } from './models';
+import { IntlSheet } from '@@/db/maimai/models';
 import 'dotenv/config';
 
 const logger = log4js.getLogger('maimai/fetch-intl-sheets');

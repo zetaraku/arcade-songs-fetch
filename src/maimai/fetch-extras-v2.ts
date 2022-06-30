@@ -4,7 +4,7 @@ import sleep from 'sleep-promise';
 import log4js from 'log4js';
 import * as cheerio from 'cheerio';
 import { QueryTypes } from 'sequelize';
-import { sequelize, SongExtra, SheetExtra } from './models';
+import { sequelize, SongExtra, SheetExtra } from '@@/db/maimai/models';
 
 const logger = log4js.getLogger('maimai/fetch-extras-v2');
 logger.level = log4js.levels.INFO;

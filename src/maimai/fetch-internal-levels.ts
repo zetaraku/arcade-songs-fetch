@@ -1,6 +1,6 @@
 import log4js from 'log4js';
 import { GoogleSpreadsheet } from 'google-spreadsheet';
-import { SheetInternalLevel } from './models';
+import { SheetInternalLevel } from '@@/db/maimai/models';
 import 'dotenv/config';
 
 const logger = log4js.getLogger('maimai/fetch-internal-levels');
