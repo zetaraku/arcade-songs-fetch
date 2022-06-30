@@ -2,7 +2,7 @@ import fs from 'node:fs';
 import log4js from 'log4js';
 import { QueryTypes } from 'sequelize';
 import genJson from '@/core/gen-json';
-import { sequelize } from './models';
+import { sequelize } from '@@/db/wacca/models';
 
 const logger = log4js.getLogger('wacca/gen-json');
 logger.level = log4js.levels.INFO;

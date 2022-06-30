@@ -2,7 +2,7 @@ import axios from 'axios';
 import log4js from 'log4js';
 import { decodeHTML } from 'entities';
 import { hashed, ensureNoDuplicateEntry } from '@/core/utils';
-import { Song, Sheet } from './models';
+import { Song, Sheet } from '@@/db/wacca/models';
 
 const logger = log4js.getLogger('wacca/fetch-songs');
 logger.level = log4js.levels.INFO;

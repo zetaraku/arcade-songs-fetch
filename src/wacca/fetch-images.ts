@@ -1,5 +1,5 @@
 import fetchImages from '@/core/fetch-images';
-import { Song } from './models';
+import { Song } from '@@/db/wacca/models';
 
 export default async function run() {
   const gameCode = 'wacca';
