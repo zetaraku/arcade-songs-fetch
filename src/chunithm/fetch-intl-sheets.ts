@@ -5,7 +5,7 @@ import puppeteer from 'puppeteer';
 import sleep from 'sleep-promise';
 import log4js from 'log4js';
 import * as cheerio from 'cheerio';
-import { IntlSheet } from './models';
+import { IntlSheet } from '@@/db/chunithm/models';
 import 'dotenv/config';
 
 const logger = log4js.getLogger('chunithm/fetch-intl-sheets');
