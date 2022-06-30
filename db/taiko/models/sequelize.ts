@@ -1,8 +1,4 @@
 import { Sequelize } from 'sequelize';
+import configs from '../config/config';
 
-export default new Sequelize('sqlite:data/taiko/db.sqlite3', {
-  logging: false,
-  define: {
-    timestamps: false,
-  },
-});
+export default new Sequelize(configs.development);
