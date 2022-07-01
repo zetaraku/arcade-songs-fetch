@@ -1,21 +1,6 @@
-import { DataTypes } from 'sequelize';
+import { defineSheet } from '@@/db/_shared/models';
 import sequelize from './sequelize';
 
-const Sheet = sequelize.define('Sheet', {
-  songId: {
-    type: DataTypes.STRING,
-    primaryKey: true,
-  },
-  type: {
-    type: DataTypes.STRING,
-    primaryKey: true,
-  },
-  difficulty: {
-    type: DataTypes.STRING,
-    primaryKey: true,
-  },
-
-  level: DataTypes.STRING,
-});
+const Sheet = defineSheet(sequelize);
 
 export default Sheet;
