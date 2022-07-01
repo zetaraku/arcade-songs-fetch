@@ -16,7 +16,6 @@ const Song = sequelize.define('Song', {
 
   version: DataTypes.STRING,
   releaseDate: DataTypes.DATEONLY,
-  sortOrder: DataTypes.INTEGER,
 
   isNew: DataTypes.BOOLEAN,
   isLocked: DataTypes.BOOLEAN,

@@ -70,6 +70,7 @@ export default async function run() {
     SELECT
       *
     FROM "Songs"
+      NATURAL LEFT JOIN "SongOrders"
     ORDER BY "sortOrder"
   `, {
     type: QueryTypes.SELECT,
