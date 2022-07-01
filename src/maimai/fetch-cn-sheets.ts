@@ -65,9 +65,6 @@ export default async function run() {
   const rawCnSongs: Record<string, any>[] = response.data;
   logger.info(`OK, ${rawCnSongs.length} songs fetched.`);
 
-  logger.info('Preparing CnSheets table ...');
-  await CnSheet.sync();
-
   logger.info('Truncating and Inserting cnSheets ...');
   const cnSheets = rawCnSongs.flatMap((rawCnSong) => extractCnSheets(rawCnSong));
   await CnSheet.truncate();

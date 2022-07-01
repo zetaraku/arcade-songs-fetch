@@ -151,12 +151,6 @@ function extractSheets(song: Record<string, any>) {
 }
 
 export default async function run() {
-  logger.info('Preparing Songs table ...');
-  await Song.sync();
-
-  logger.info('Preparing Sheets table ...');
-  await Sheet.sync();
-
   logger.info('Logging in to get the required cookies ...');
   const cookies = await getCookies();
 

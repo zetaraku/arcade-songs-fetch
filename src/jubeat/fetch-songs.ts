@@ -123,12 +123,6 @@ export default async function run() {
 
   const sheets = songs.flatMap((song) => extractSheets(song));
 
-  logger.info('Preparing Songs table ...');
-  await Song.sync();
-
-  logger.info('Preparing Sheets table ...');
-  await Sheet.sync();
-
   logger.info('Updating songs ...');
   await Promise.all(songs.map((song) => Song.upsert(song)));
 

@@ -150,12 +150,6 @@ async function fetchExtra(song: Record<string, any>) {
 }
 
 export default async function run() {
-  logger.info('Preparing SongExtras table ...');
-  await SongExtra.sync();
-
-  logger.info('Preparing SheetExtras table ...');
-  await SheetExtra.sync();
-
   const songsToFetch: Record<string, any>[] = await sequelize.query(/* sql */ `
     SELECT "songId", "category", "title"
     FROM (

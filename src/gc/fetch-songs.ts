@@ -150,17 +150,8 @@ export default async function run() {
   logger.info('Ensuring every song has an unique songId ...');
   ensureNoDuplicateEntry(songs.map((song) => getSongId(song)));
 
-  logger.info('Preparing Songs table ...');
-  await Song.sync();
-
   logger.info('Updating songs ...');
   await Promise.all(songs.map((song) => Song.upsert(song)));
-
-  logger.info('Preparing SongExtras table ...');
-  await SongExtra.sync();
-
-  logger.info('Preparing Sheets table ...');
-  await Sheet.sync();
 
   const existedSheets = await Sheet.findAll<any>();
   const existedExSheets = await Sheet.findAll<any>({ where: { difficulty: 'extra' } });

@@ -109,16 +109,6 @@ export default async function run() {
   const songs = rawSongs.map((rawSong) => extractSong(rawSong));
   const sheets = rawSongs.flatMap((rawSong) => extractSheets(rawSong));
 
-  logger.info('Preparing Songs table ...');
-  await Song.sync();
-  await SongOrder.sync();
-
-  logger.info('Preparing Sheets table ...');
-  await Sheet.sync();
-
-  logger.info('Preparing JpSheets table ...');
-  await JpSheet.sync();
-
   logger.info('Updating songs ...');
   await Promise.all(songs.map((song) => Song.upsert(song)));
   await SongOrder.truncate();

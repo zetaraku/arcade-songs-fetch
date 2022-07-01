@@ -152,9 +152,6 @@ export default async function run() {
   }
   logger.info(`OK, ${jpSheets.length} sheets fetched.`);
 
-  logger.info('Preparing SheetVersions table ...');
-  await SheetVersion.sync();
-
   logger.info('Updating sheet versions ...');
   await Promise.all(jpSheets.map((jpSheet) => SheetVersion.upsert(jpSheet)));
 

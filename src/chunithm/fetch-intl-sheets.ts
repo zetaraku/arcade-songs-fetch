@@ -192,9 +192,6 @@ export default async function run() {
 
   logger.info(`OK, ${intlSheets.length} sheets fetched.`);
 
-  logger.info('Preparing IntlSheets table ...');
-  await IntlSheet.sync();
-
   logger.info('Truncating and Inserting intlSheets ...');
   await IntlSheet.truncate();
   await IntlSheet.bulkCreate(intlSheets);

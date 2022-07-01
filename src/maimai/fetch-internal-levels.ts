@@ -84,9 +84,6 @@ export default async function run() {
   const rawSheets = await fetchSheets();
   logger.info(`OK, ${rawSheets.length} sheets fetched.`);
 
-  logger.info('Preparing SheetInternalLevel table ...');
-  await SheetInternalLevel.sync();
-
   logger.info('Truncating and Inserting sheetInternalLevels ...');
   const sheets = rawSheets.map((rawSheet) => extractSheets(rawSheet));
   await SheetInternalLevel.truncate();
