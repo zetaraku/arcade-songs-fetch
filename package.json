@@ -64,7 +64,8 @@
     "lint": "eslint src/ --ext .js,.ts",
     "# database": "",
     "db:migrate:all": "bash db-migrate-all.bash",
-    "db:backup:all": "bash db-backup-all.bash"
+    "db:backup:all": "bash db-backup-all.bash",
+    "db:restore:all": "bash db-restore-all.bash"
   },
   "author": "Raku Zeta <zetaraku@gmail.com>",
   "license": "MIT",
