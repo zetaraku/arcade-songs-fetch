@@ -1,21 +1,6 @@
-import { DataTypes } from 'sequelize';
+import { defineSheetInternalLevel } from '@@/db/_shared/models';
 import sequelize from './sequelize';
 
-const SheetInternalLevel = sequelize.define('SheetInternalLevel', {
-  songId: {
-    type: DataTypes.STRING,
-    primaryKey: true,
-  },
-  type: {
-    type: DataTypes.STRING,
-    primaryKey: true,
-  },
-  difficulty: {
-    type: DataTypes.STRING,
-    primaryKey: true,
-  },
-
-  internalLevel: DataTypes.STRING,
-});
+const SheetInternalLevel = defineSheetInternalLevel(sequelize);
 
 export default SheetInternalLevel;
