@@ -61,7 +61,9 @@
     "any:gen-json": "ts-node src/any/gen-json",
     "any:upload-data": "ts-node src/core/upload-data any",
     "# linting": "",
-    "lint": "eslint src/ --ext .js,.ts"
+    "lint": "eslint src/ --ext .js,.ts",
+    "# database": "",
+    "db:migrate:all": "bash migrate-all.bash"
   },
   "author": "Raku Zeta <zetaraku@gmail.com>",
   "license": "MIT",
