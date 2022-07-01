@@ -1,19 +1,6 @@
-import { DataTypes } from 'sequelize';
+import { defineRegionSheet } from '@@/db/_shared/models';
 import sequelize from './sequelize';
 
-const IntlSheet = sequelize.define('IntlSheet', {
-  songId: {
-    type: DataTypes.STRING,
-    primaryKey: true,
-  },
-  type: {
-    type: DataTypes.STRING,
-    primaryKey: true,
-  },
-  difficulty: {
-    type: DataTypes.STRING,
-    primaryKey: true,
-  },
-});
+const IntlSheet = defineRegionSheet(sequelize, 'IntlSheet');
 
 export default IntlSheet;

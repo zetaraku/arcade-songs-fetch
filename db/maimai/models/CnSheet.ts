@@ -1,19 +1,6 @@
-import { DataTypes } from 'sequelize';
+import { defineRegionSheet } from '@@/db/_shared/models';
 import sequelize from './sequelize';
 
-const CnSheet = sequelize.define('CnSheet', {
-  songId: {
-    type: DataTypes.STRING,
-    primaryKey: true,
-  },
-  type: {
-    type: DataTypes.STRING,
-    primaryKey: true,
-  },
-  difficulty: {
-    type: DataTypes.STRING,
-    primaryKey: true,
-  },
-});
+const CnSheet = defineRegionSheet(sequelize, 'CnSheet');
 
 export default CnSheet;

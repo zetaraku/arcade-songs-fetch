@@ -1,19 +1,6 @@
-import { DataTypes } from 'sequelize';
+import { defineRegionSheet } from '@@/db/_shared/models';
 import sequelize from './sequelize';
 
-const JpSheet = sequelize.define('JpSheet', {
-  songId: {
-    type: DataTypes.STRING,
-    primaryKey: true,
-  },
-  type: {
-    type: DataTypes.STRING,
-    primaryKey: true,
-  },
-  difficulty: {
-    type: DataTypes.STRING,
-    primaryKey: true,
-  },
-});
+const JpSheet = defineRegionSheet(sequelize, 'JpSheet');
 
 export default JpSheet;
