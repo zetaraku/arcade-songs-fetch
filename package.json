@@ -63,8 +63,8 @@
     "# linting": "",
     "lint": "eslint src/ --ext .js,.ts",
     "# database": "",
-    "db:migrate:all": "bash migrate-all.bash",
-    "db:backup:all": "bash backup-all.bash"
+    "db:migrate:all": "bash db-migrate-all.bash",
+    "db:backup:all": "bash db-backup-all.bash"
   },
   "author": "Raku Zeta <zetaraku@gmail.com>",
   "license": "MIT",
