@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "# run-all scripts": "",
     "maimai:all": "npm-run-all maimai:fetch-songs maimai:fetch-images maimai:fetch-versions maimai:fetch-intl-sheets maimai:fetch-cn-sheets maimai:fetch-extras-v2 maimai:fetch-internal-levels maimai:gen-json maimai:upload-data",
     "chunithm:all": "npm-run-all chunithm:fetch-songs chunithm:fetch-images chunithm:fetch-intl-sheets chunithm:gen-json chunithm:upload-data",
     "wacca:all": "npm-run-all wacca:fetch-songs wacca:fetch-images wacca:gen-json wacca:upload-data",
@@ -14,7 +15,7 @@
     "gc:all": "npm-run-all gc:fetch-songs gc:fetch-images gc:gen-json gc:upload-data",
     "diva:all": "npm-run-all diva:fetch-songs diva:fetch-images diva:gen-json diva:upload-data",
     "any:all": "npm-run-all any:gen-json any:upload-data",
-    "----------------": "",
+    "# individual scripts": "",
     "maimai:fetch-songs": "ts-node src/maimai/fetch-songs",
     "maimai:fetch-images": "ts-node src/maimai/fetch-images",
     "maimai:fetch-versions": "ts-node src/maimai/fetch-versions",
@@ -59,7 +60,7 @@
     "diva:upload-data": "ts-node src/core/upload-data diva",
     "any:gen-json": "ts-node src/any/gen-json",
     "any:upload-data": "ts-node src/core/upload-data any",
-    "--------$--------": "",
+    "# linting": "",
     "lint": "eslint src/ --ext .js,.ts"
   },
   "author": "Raku Zeta <zetaraku@gmail.com>",
