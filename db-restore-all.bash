@@ -3,8 +3,7 @@
 timestamp=$1
 
 if [ -z "$timestamp" ]; then
-  echo "Usage: $0 <timestamp>"
-  exit 1
+  read -p "Enter the backup timestamp: " timestamp
 fi
 
 for path in data/*; do
@@ -13,15 +12,18 @@ for path in data/*; do
   (
     cd "$path"
 
-    if [ -f "db.sqlite3" ]; then
-      echo "Cannot restore '$gamecode' (Database already exists.)"
+    if [ ! -f "backup/$timestamp.sql" ]; then
+      echo "No backup found for '$gamecode'"
       exit 1
     fi
 
-    if [ -f "backup/$timestamp.sql" ]; then
-      echo -n "Restoring '$gamecode' ..."
-      sqlite3 "db.sqlite3" < "backup/$timestamp.sql"
-      echo " OK"
+    if [ -f "db.sqlite3" ]; then
+      echo "Cannot restore '$gamecode' (Database already exists.)"
+      exit 2
     fi
+
+    echo -n "Restoring '$gamecode' ..."
+    sqlite3 "db.sqlite3" < "backup/$timestamp.sql"
+    echo " OK"
   )
 done
