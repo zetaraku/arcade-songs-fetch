@@ -1,7 +1,7 @@
 import axios from 'axios';
 import log4js from 'log4js';
 import { hashed, ensureNoDuplicateEntry } from '@/core/utils';
-import { Song, Sheet, JpSheet } from '@@/db/maimai/models';
+import { Song, SongOrder, Sheet, JpSheet } from '@@/db/maimai/models';
 
 const logger = log4js.getLogger('maimai/fetch-songs');
 logger.level = log4js.levels.INFO;
@@ -111,6 +111,7 @@ export default async function run() {
 
   logger.info('Preparing Songs table ...');
   await Song.sync();
+  await SongOrder.sync();
 
   logger.info('Preparing Sheets table ...');
   await Sheet.sync();
@@ -120,6 +121,8 @@ export default async function run() {
 
   logger.info('Updating songs ...');
   await Promise.all(songs.map((song) => Song.upsert(song)));
+  await SongOrder.truncate();
+  await Promise.all(songs.map((song) => SongOrder.upsert(song)));
 
   logger.info('Updating sheets ...');
   await Promise.all(sheets.map((sheet) => Sheet.upsert(sheet)));

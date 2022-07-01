@@ -76,6 +76,7 @@ export default async function run() {
     SELECT
       *
     FROM "Songs"
+      NATURAL LEFT JOIN "SongOrders"
       NATURAL LEFT JOIN "SongExtras"
     ORDER BY "sortOrder"
   `, {
