@@ -29,9 +29,9 @@ export default async function run(
 
   logger.info('* Converting images into .webp format ...');
   fs.mkdirSync(coverImgWebpDir, { recursive: true });
-  for (const [index, song] of songs.entries()) {
+  for (const [, song] of songs.entries()) {
     if (song.imageName && !fs.existsSync(`${coverImgWebpDir}/${song.imageName}`)) {
-      logger.info(`(${1 + index} / ${songs.length}) ${song.title}`);
+      // logger.info(`(${1 + index} / ${songs.length}) ${song.title}`);
       childProcess.execFileSync(cwebpBinPath, [`${coverImgDir}/${song.imageName}`, '-o', `${coverImgWebpDir}/${song.imageName}`, '-quiet']);
     }
   }
