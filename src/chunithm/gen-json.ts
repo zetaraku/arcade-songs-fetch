@@ -83,6 +83,7 @@ export default async function run() {
       "JpSheets"."songId" IS NOT NULL AS "regions.jp",
       "IntlSheets"."songId" IS NOT NULL AS "regions.intl"
     FROM "Sheets"
+      NATURAL LEFT JOIN "SheetInternalLevels"
       NATURAL LEFT JOIN "JpSheets"
       NATURAL LEFT JOIN "IntlSheets"
   `, {
