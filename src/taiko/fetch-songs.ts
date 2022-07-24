@@ -68,7 +68,7 @@ async function getSongs(pageUrl: string) {
       releaseDate: null,
 
       isNew: $th.find('.new').length !== 0,
-      isLocked: $th.find('.secrect').length !== 0,
+      isLocked: $th.find('.icoMedal, .icoAi, .icoCampaign, .icoCode, .icoSecrect').length !== 0,
     };
 
     return {
