@@ -11,7 +11,7 @@ export default async function run(gameCode: string) {
   logger.level = log4js.levels.INFO;
 
   logger.info('Uploading data and images ...');
-  shell.exec('bash src/core/upload-data.bash', {
+  shell.exec('bash src/_core/upload-data.bash', {
     env: {
       ...process.env,
       GAME_CODE: gameCode,

@@ -1,4 +1,4 @@
-import { getSheetSorter } from '@/core/utils';
+import { getSheetSorter } from '@/_core/utils';
 
 function defaultGetInternalLevelValueOf(sheet: Record<string, any>) {
   if (sheet.internalLevel === undefined) return undefined;

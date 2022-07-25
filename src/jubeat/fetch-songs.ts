@@ -4,7 +4,7 @@ import iconv from 'iconv-lite';
 import sleep from 'sleep-promise';
 import log4js from 'log4js';
 import * as cheerio from 'cheerio';
-import { hashed, ensureNoDuplicateEntry } from '@/core/utils';
+import { hashed, ensureNoDuplicateEntry } from '@/_core/utils';
 import { Song, Sheet } from '@@/db/jubeat/models';
 
 const logger = log4js.getLogger('jubeat/fetch-songs');

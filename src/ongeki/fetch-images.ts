@@ -1,4 +1,4 @@
-import fetchImages from '@/core/fetch-images';
+import fetchImages from '@/_core/fetch-images';
 import { Song } from '@@/db/ongeki/models';
 
 export default async function run() {

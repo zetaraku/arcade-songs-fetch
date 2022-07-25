@@ -1,6 +1,6 @@
 import fs from 'node:fs';
 import https from 'node:https';
-import fetchImages from '@/core/fetch-images';
+import fetchImages from '@/_core/fetch-images';
 import { Song } from '@@/db/maimai/models';
 
 // fix missing certificate

@@ -1,5 +1,5 @@
 import log4js from 'log4js';
-import fetchImages from '@/core/fetch-images';
+import fetchImages from '@/_core/fetch-images';
 import { getCookies } from './fetch-songs';
 import { Song } from '@@/db/diva/models';
 

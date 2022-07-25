@@ -3,7 +3,7 @@ import axios from 'axios';
 import log4js from 'log4js';
 import sleep from 'sleep-promise';
 import * as cheerio from 'cheerio';
-import { ensureNoDuplicateEntry } from '@/core/utils';
+import { ensureNoDuplicateEntry } from '@/_core/utils';
 import { Song, Sheet } from '@@/db/taiko/models';
 
 const logger = log4js.getLogger('taiko/fetch-songs');
