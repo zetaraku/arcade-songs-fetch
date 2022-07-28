@@ -1,6 +1,5 @@
 /* eslint-disable no-await-in-loop */
 import axios from 'axios';
-import iconv from 'iconv-lite';
 import sleep from 'sleep-promise';
 import log4js from 'log4js';
 import * as cheerio from 'cheerio';
@@ -38,15 +37,13 @@ async function* getSongs() {
   async function* startFetchPage(pageNo = 1): AsyncGenerator<Record<string, any>[]> {
     logger.info(`- page ${pageNo}`);
 
-    const html = await axios.get(`${DATA_URL}/${pagePath}`, {
+    const response = await axios.get(`${DATA_URL}/${pagePath}`, {
       params: {
         page: pageNo,
       },
-      responseType: 'arraybuffer',
-    })
-      .then((response) => iconv.decode(response.data, 'Windows-31j'));
+    });
 
-    const $ = cheerio.load(html);
+    const $ = cheerio.load(response.data);
 
     const songs = $('.music').toArray()
       .map((div) => {
