@@ -4,7 +4,7 @@ Data fetching scripts for [arcade-songs](https://github.com/zetaraku/arcade-song
 
 ## Prerequisites
 
-- [Node.js](https://nodejs.org/)
+- [Node.js](https://nodejs.org/) (LTS version or above)
 - [AWS CLI v2](https://aws.amazon.com/cli/) (optional)
 
 ## Setup
