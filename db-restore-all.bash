@@ -7,10 +7,10 @@ if [ -z "$timestamp" ]; then
 fi
 
 for path in data/*; do
-  gamecode=$(basename $path)
+  gamecode=$(basename "$path")
 
   (
-    cd "$path"
+    cd "$path" || exit
 
     if [ ! -f "backup/$timestamp.sql" ]; then
       echo "No backup found for '$gamecode'"

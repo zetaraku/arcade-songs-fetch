@@ -2,7 +2,7 @@
 # Install AWS CLI version 2 first (https://aws.amazon.com/cli/)
 
 # Disable AWS output paging
-AWS_PAGER=''
+export AWS_PAGER=''
 
 if [ -z "$GAME_CODE" ]; then
   echo "GAME_CODE is not set, aborted."
