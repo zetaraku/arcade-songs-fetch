@@ -13,8 +13,8 @@ export default async function run(
   const logger = log4js.getLogger(`${gameCode}/fetch-images`);
   logger.level = log4js.levels.INFO;
 
-  const coverImgDir = `data/${gameCode}/img/cover`;
-  const coverImgWebpDir = `data/${gameCode}/img/cover-m`;
+  const coverImgDir = `dist/${gameCode}/img/cover`;
+  const coverImgWebpDir = `dist/${gameCode}/img/cover-m`;
 
   logger.info('* Downloading cover image for songs ...');
   for (const [index, song] of songs.entries()) {
