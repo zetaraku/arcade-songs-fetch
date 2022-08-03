@@ -9,22 +9,22 @@ import { Song, Sheet } from '@@/db/jubeat/models';
 const logger = log4js.getLogger('jubeat/fetch-songs');
 logger.level = log4js.levels.INFO;
 
-const VERSION_ID = 'festo';
+const VERSION_ID = 'ave';
 
 const DATA_URL = 'https://p.eagate.573.jp';
 const IMAGE_BASE_URL = 'https://p.eagate.573.jp/';
 
-const listIds = [1, 2];
+const listIds = ['index', 'original'];
 //! add further list here !//
 
 function getSongId(rawSong: Record<string, any>) {
   return rawSong.title;
 }
 
-async function* getPages(listId: number) {
-  logger.info(`* list ${listId}`);
+async function* getPages(listId: string) {
+  logger.info(`* list '${listId}'`);
 
-  const pagePath = `game/jubeat/${VERSION_ID}/information/music_list${listId}.html`;
+  const pagePath = `game/jubeat/${VERSION_ID}/music/${listId}.html`;
 
   async function* startFetchPage(pageNo = 1): AsyncGenerator<Record<string, any>[]> {
     logger.info(`- page ${pageNo}`);
@@ -39,18 +39,17 @@ async function* getPages(listId: number) {
 
     const songs = $('#music_list .list_data').toArray()
       .map((div) => {
-        const imagePath = $(div).find('table tr:nth-of-type(1) td:nth-of-type(1) img').attr('src')!
-          .replace('/common/images/', '/images/top/');
+        const imagePath = $(div).find('.list_data > p > img').attr('src')!;
 
         // const [, id] = imagePath.match(/^(?:.*)\/id(.+)\.(?:.+)$/)!;
 
-        const title = $(div).find('table tr:nth-of-type(1) td:nth-of-type(2)').text().trim();
-        const artist = $(div).find('table tr:nth-of-type(2) td:nth-of-type(1)').text().trim();
+        const title = $(div).find('.list_data > ul > li:nth-of-type(1)').text().trim();
+        const artist = $(div).find('.list_data > ul > li:nth-of-type(2)').text().trim();
 
         const imageUrl = new URL(imagePath, IMAGE_BASE_URL).toString();
         const imageName = `${hashed(imageUrl)}.png`;
 
-        const levels = $(div).find('table tr:nth-of-type(3) td:nth-of-type(1) ul li:nth-of-type(2n)').toArray()
+        const levels = $(div).find('.list_data > ul > li:nth-of-type(3) > ul > li:nth-of-type(2n)').toArray()
           .map((e) => $(e).text().trim());
 
         const rawSong = {
