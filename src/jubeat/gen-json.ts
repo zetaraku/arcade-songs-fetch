@@ -17,7 +17,7 @@ const versions = [
 ] as any[];
 const types = [
   { type: 'std', name: '通常譜面', abbr: 'STD' },
-  { type: 'v2', name: 'ホールド譜面', abbr: 'V2' },
+  { type: 'v2', name: '[2] 譜面', abbr: 'V2' },
 ];
 const difficulties = [
   { difficulty: 'basic', name: 'Basic', color: '#77c136' },
