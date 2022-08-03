@@ -147,6 +147,155 @@
         - Our Wrenally|std|master
         - 躯樹の墓守|dx|master
         - PANDORA PARADOXXX|std|master
+- title: UNiVERSE PLUS 段位認定（海外版）
+  sections:
+    - title: 【初段】
+      description: ❤ 350｜-0/-2/-5｜+20
+      sheets:
+        - ゴーストルール|dx|basic
+        - 林檎華憐歌|std|basic
+        - ロキ|std|basic
+        - インビジブル|std|basic
+    - title: 【二段】
+      description: ❤ 350｜-0/-2/-5｜+20
+      sheets:
+        - メルト|dx|advanced
+        - 幽闇に目醒めしは|std|advanced
+        - 砂の惑星 feat. HATSUNE MIKU|std|advanced
+        - 人生リセットボタン|std|advanced
+    - title: 【三段】
+      description: ❤ 600｜-1/-2/-5｜+50
+      sheets:
+        - 乙女解剖|dx|advanced
+        - テレキャスタービーボーイ|dx|advanced
+        - Bad Apple!! feat.nomico (REDALiCE Remix)|dx|advanced
+        - conflict|dx|advanced
+    - title: 【四段】
+      description: ❤ 700｜-2/-2/-5｜+50
+      sheets:
+        - シアワセうさぎ|std|expert
+        - ネガティブ進化論|dx|expert
+        - フォルテシモBELL|std|expert
+        - wheel|dx|expert
+    - title: 【五段】
+      description: ❤ 700｜-2/-2/-5｜+50
+      sheets:
+        - 表裏一体|dx|expert
+        - 絶対にチョコミントを食べるアオイチャン|dx|expert
+        - ヤミツキ|dx|expert
+        - DETARAME ROCK&ROLL THEORY|std|expert
+    - title: 【六段】
+      description: ❤ 700｜-2/-2/-5｜+50
+      sheets:
+        - 天狗の落とし文 feat. ｙｔｒ|std|expert
+        - Signature|std|expert
+        - YA･DA･YO [Reborn]|std|expert
+        - ≠彡"/了→|dx|expert
+    - title: 【七段】
+      description: ❤ 700｜-2/-2/-5｜+50
+      sheets:
+        - メルティランドナイトメア|dx|master
+        - ナミダと流星|std|master
+        - 天狗の落とし文 feat. ｙｔｒ|std|master
+        - Lionheart|std|master
+    - title: 【八段】
+      description: ❤ 700｜-2/-2/-5｜+20
+      sheets:
+        - スローアライズ|dx|master
+        - Kinda Way|std|master
+        - Stardust Memories|dx|master
+        - Revive The Rave|std|master
+    - title: 【九段】
+      description: ❤ 800｜-2/-2/-5｜+20
+      sheets:
+        - My My My|dx|master
+        - energy trixxx|dx|master
+        - Reach For The Stars|std|master
+        - 幻想のサテライト|std|master
+    - title: 【十段】
+      description: ❤ 900｜-2/-2/-5｜+20
+      sheets:
+        - パラボラ|dx|master
+        - Like the Wind [Reborn]|std|master
+        - Starry Colors|dx|master
+        - チエルカ／エソテリカ|dx|master
+    - title: 【真初段】
+      description: ❤ 50｜-2/-3/-5｜+10
+      sheets:
+        - STARTLINER|dx|master
+        - 色は匂へど散りぬるを|std|master
+        - BLACK ROSE|dx|master
+        - Streak|std|expert
+    - title: 【真二段】
+      description: ❤ 50｜-2/-3/-5｜+10
+      sheets:
+        - アポカリプスに反逆の焔を焚べろ|dx|expert
+        - Witches night|dx|master
+        - Dreampainter|std|master
+        - 待チ人ハ来ズ。|std|master
+    - title: 【真三段】
+      description: ❤ 50｜-2/-3/-5｜+10
+      sheets:
+        - フラグメンツ -T.V. maimai edit-|std|master
+        - KING|dx|master
+        - BIRTH|dx|expert
+        - 絶え間なく藍色|dx|master
+    - title: 【真四段】
+      description: ❤ 50｜-2/-3/-5｜+10
+      sheets:
+        - ガラテアの螺旋|std|expert
+        - Terminal Storm|std|master
+        - Boys O’Clock|dx|master
+        - 炭★坑★節|std|master
+    - title: 【真五段】
+      description: ❤ 50｜-2/-3/-5｜+10
+      sheets:
+        - 生命不詳|dx|master
+        - KISS CANDY FLAVOR|std|master
+        - Jörqer|dx|master
+        - After Burner|std|master
+    - title: 【真六段】
+      description: ❤ 50｜-2/-3/-5｜+10
+      sheets:
+        - みんなのマイマイマー|std|master
+        - 空威張りビヘイビア|std|master
+        - Komplexe|dx|master
+        - LANCE|std|master
+    - title: 【真七段】
+      description: ❤ 50｜-2/-3/-5｜+10
+      sheets:
+        - Upshift|dx|master
+        - Doll Judgment|std|master
+        - Selector|std|master
+        - Nerverakes|std|master
+    - title: 【真八段】
+      description: ❤ 50｜-2/-3/-5｜+10
+      sheets:
+        - 蒼穹舞楽|dx|master
+        - Sun Dance|std|remaster
+        - GRÄNDIR|dx|master
+        - Outlaw's Lullaby|std|master
+    - title: 【真九段】
+      description: ❤ 50｜-2/-3/-5｜+10
+      sheets:
+        - UniTas|dx|master
+        - Calamity Fortune|std|master
+        - Beat Of Mind|std|remaster
+        - Axeria|std|master
+    - title: 【真十段】
+      description: ❤ 50｜-2/-3/-5｜+10
+      sheets:
+        - ガラテアの螺旋|std|master
+        - BLACK SWAN|dx|master
+        - Valsqotch|dx|master
+        - SILENT BLUE|std|master
+    - title: 【真皆伝】
+      description: ❤ 50｜-2/-3/-5｜+5
+      sheets:
+        - Lia=Fail|dx|master
+        - Our Wrenally|std|master
+        - 躯樹の墓守|dx|master
+        - PANDORA PARADOXXX|std|master
 - title: UNiVERSE PLUS オトモダチ対戦
   sections:
     - title: 【A5~A1】
@@ -168,6 +317,60 @@
         - TRUST|std|master
         - ダンスロボットダンス|std|master
         - ミラクルペイント|std|master
+        - トランスダンスアナーキー|dx|master
+      sheetDescriptions:
+        - SS
+        - SS
+        - SS+
+        - SS+
+        - SSS
+    - title: 【SS5~SS1】
+      sheets:
+        - L9|std|master
+        - TwisteD! XD|dx|master
+        - Sound Chimera|dx|master
+        - マツヨイナイトバグ|dx|master
+        - 華の集落、秋のお届け|dx|master
+      sheetDescriptions:
+        - SSS
+        - SSS
+        - SSS+
+        - SSS+
+        - SSS+
+    - title: 【SSS5~SSS1】
+      sheets:
+        - ワンダーシャッフェンの法則|dx|master
+        - BLACK SWAN|dx|master
+        - 怒槌|std|master
+        - 封焔の135秒|dx|master
+        - sølips|dx|master
+      sheetDescriptions:
+        - SSS+
+        - SSS+
+        - SSS+
+        - MAX
+        - MAX
+- title: UNiVERSE PLUS オトモダチ対戦（海外版）
+  sections:
+    - title: 【A5~A1】
+      sheets:
+        - STARTLINER|dx|expert
+        - テレキャスタービーボーイ|dx|expert
+        - 美しく燃える森|std|master
+        - クレイジークレイジーダンサーズ|std|master
+        - StargazeR|std|master
+      sheetDescriptions:
+        - N/A
+        - N/A
+        - N/A
+        - N/A
+        - N/A
+    - title: 【S5~S1】
+      sheets:
+        - Backyun! －悪い女－|std|master
+        - TRUST|std|master
+        - ダンスロボットダンス|std|master
+        - Limit Break|std|master
         - トランスダンスアナーキー|dx|master
       sheetDescriptions:
         - SS
