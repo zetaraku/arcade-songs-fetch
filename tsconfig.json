@@ -23,6 +23,7 @@
     "baseUrl": ".",
     "target": "ESNext",
     "module": "NodeNext",
+    "resolveJsonModule": true,
     "paths": {
       "@@/*": ["*"],
       "@/*": ["src/*"]
