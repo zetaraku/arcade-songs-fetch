@@ -3,6 +3,8 @@ import log4js from 'log4js';
 import { QueryTypes } from 'sequelize';
 import genJson from '@/_core/gen-json';
 import { sequelize } from '@@/db/wacca/models';
+import removedSongList from '@@/data/wacca/removed-song-list.json';
+import offlineSongList from '@@/data/wacca/offline-song-list.json';
 
 const logger = log4js.getLogger('wacca/gen-json');
 logger.level = log4js.levels.INFO;
@@ -38,7 +40,8 @@ const difficulties = [
   { difficulty: 'inferno', name: 'INFERNO', color: '#4a004f' },
 ];
 const regions = [
-  // empty
+  { region: 'jp', name: '日本版' },
+  { region: 'offline', name: 'オフライン版 (Offline ver.)' },
 ] as any[];
 
 function getLevelValueOf(sheet: Record<string, any>) {
@@ -70,6 +73,13 @@ export default async function run() {
     type: QueryTypes.SELECT,
     nest: true,
   });
+
+  for (const sheetRecord of sheetRecords as Record<string, any>[]) {
+    sheetRecord.regions = {
+      jp: !removedSongList.includes(sheetRecord.songId),
+      offline: offlineSongList.includes(sheetRecord.songId),
+    };
+  }
 
   const jsonText = await genJson({
     songRecords,
