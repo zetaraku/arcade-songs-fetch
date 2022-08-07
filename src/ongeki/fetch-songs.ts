@@ -11,8 +11,12 @@ const IMAGE_BASE_URL = 'https://ongeki-net.com/ongeki-mobile/img/music/';
 
 function getSongId(rawSong: Record<string, any>) {
   if (rawSong.category === 'LUNATIC') {
+    if (rawSong.title === 'Perfect Shining!!' && rawSong.id === '900960') {
+      return '(LUN) Perfect Shining!! (2)';
+    }
     return `(LUN) ${rawSong.title}`;
   }
+
   if (rawSong.title === 'Singularity' && rawSong.id === '402400') {
     return 'Singularity (2)';
   }
