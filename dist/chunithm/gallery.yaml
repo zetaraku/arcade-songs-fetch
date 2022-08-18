@@ -273,6 +273,38 @@
         - (WE) G e n g a o z o (2)|we|【覚】
         - (WE) 董卓討つべし|we|【覚】
         - (WE) Devastating Blaster|we|【覚】
+    - description: |-
+        【期間限定】
+        「KING of Performai The 3rd 予選①」コース
+        ❤ 50｜+50/+50/-1｜+0
+      sheets:
+        - Destination|std|master
+        - BlazinG AIR|std|master
+        - 暗晦にハイライト|std|master
+    - description: |-
+        【期間限定】
+        「KING of Performai The 3rd 予選②」コース
+        ❤ 50｜+50/+50/-1｜+0
+      sheets:
+        - folern|std|master
+        - 8-EM|std|master
+        - the EmpErroR|std|master
+    - description: |-
+        【期間限定】
+        「The Greek Myths EXPERT」コース
+        ❤ 50｜-0/-0/-1｜+0
+      sheets:
+        - ZEUS|std|expert
+        - SON OF SUN|std|expert
+        - ENDYMION|std|expert
+    - description: |-
+        【期間限定】
+        「The Greek Myths CHALLENGE」コース
+        ❤ 4｜-0/-0/-1｜+2
+      sheets:
+        - ZEUS|std|master
+        - SON OF SUN|std|master
+        - ENDYMION|std|master
 - title: NEW クラス認定（海外版）
   sections:
     - title: 【CLASS Ⅰ】
@@ -548,3 +580,35 @@
         - (WE) G e n g a o z o (2)|we|【覚】
         - (WE) 董卓討つべし|we|【覚】
         - (WE) Devastating Blaster|we|【覚】
+    # - description: |-
+    #     【期間限定】
+    #     「KING of Performai The 3rd 予選①」コース
+    #     ❤ 50｜+50/+50/-1｜+0
+    #   sheets:
+    #     - Destination|std|master
+    #     - BlazinG AIR|std|master
+    #     - 暗晦にハイライト|std|master
+    # - description: |-
+    #     【期間限定】
+    #     「KING of Performai The 3rd 予選②」コース
+    #     ❤ 50｜+50/+50/-1｜+0
+    #   sheets:
+    #     - folern|std|master
+    #     - 8-EM|std|master
+    #     - the EmpErroR|std|master
+    # - description: |-
+    #     【期間限定】
+    #     「The Greek Myths EXPERT」コース
+    #     ❤ 50｜-0/-0/-1｜+0
+    #   sheets:
+    #     - ZEUS|std|expert
+    #     - SON OF SUN|std|expert
+    #     - ENDYMION|std|expert
+    # - description: |-
+    #     【期間限定】
+    #     「The Greek Myths CHALLENGE」コース
+    #     ❤ 4｜-0/-0/-1｜+2
+    #   sheets:
+    #     - ZEUS|std|master
+    #     - SON OF SUN|std|master
+    #     - ENDYMION|std|master
