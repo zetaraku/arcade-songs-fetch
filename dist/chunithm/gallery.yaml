@@ -1,4 +1,4 @@
-- title: NEW クラス認定
+- title: NEW PLUS クラス認定
   sections:
     - title: 【CLASS Ⅰ】
     - description: |-
@@ -305,7 +305,7 @@
         - ZEUS|std|master
         - SON OF SUN|std|master
         - ENDYMION|std|master
-- title: NEW クラス認定（海外版）
+- title: NEW PLUS クラス認定（海外版）
   sections:
     - title: 【CLASS Ⅰ】
     - description: |-
@@ -465,13 +465,13 @@
         - 花たちに希望を|std|master
         - 《運命》 ～ Ray of Hope|std|master
         - エンドマークに希望と涙を添えて|std|master
-    # - description: |-
-    #     「INNOVATIONS」コース
-    #     ❤ 80｜-0/-1/-1｜+0
-    #   sheets:
-    #     - DAZZLING♡SEASON|std|master
-    #     - 電脳少女は歌姫の夢を見るか？|std|master
-    #     - Satellite System ft.Diana Chiaki|std|master
+    - description: |-
+        「INNOVATIONS」コース
+        ❤ 80｜-0/-1/-1｜+0
+      sheets:
+        - DAZZLING♡SEASON|std|master
+        - 電脳少女は歌姫の夢を見るか？|std|master
+        - Satellite System ft.Diana Chiaki|std|master
     - description: |-
         「クラス認定 - Ⅳ - Random」コース
         ❤ 500｜-1/-1/-1｜+0
@@ -508,13 +508,13 @@
         - Last Celebration|std|master
         - Hainuwele|std|master
         - ANU|std|master
-    # - description: |-
-    #     「8888」コース
-    #     ❤ 300｜-1/-1/-1｜+0
-    #   sheets:
-    #     - 88D|std|master
-    #     - 8OROCHI|std|master
-    #     - 8-EM|std|master
+    - description: |-
+        「8888」コース
+        ❤ 300｜-1/-1/-1｜+0
+      sheets:
+        - 88D|std|master
+        - 8OROCHI|std|master
+        - 8-EM|std|master
     - description: |-
         「クラス認定 - Ⅴ - Random」コース
         ❤ 300｜-1/-1/-1｜+0
@@ -596,19 +596,19 @@
     #     - folern|std|master
     #     - 8-EM|std|master
     #     - the EmpErroR|std|master
-    # - description: |-
-    #     【期間限定】
-    #     「The Greek Myths EXPERT」コース
-    #     ❤ 50｜-0/-0/-1｜+0
-    #   sheets:
-    #     - ZEUS|std|expert
-    #     - SON OF SUN|std|expert
-    #     - ENDYMION|std|expert
-    # - description: |-
-    #     【期間限定】
-    #     「The Greek Myths CHALLENGE」コース
-    #     ❤ 4｜-0/-0/-1｜+2
-    #   sheets:
-    #     - ZEUS|std|master
-    #     - SON OF SUN|std|master
-    #     - ENDYMION|std|master
+    - description: |-
+        【期間限定】
+        「The Greek Myths EXPERT」コース
+        ❤ 50｜-0/-0/-1｜+0
+      sheets:
+        - ZEUS|std|expert
+        - SON OF SUN|std|expert
+        - ENDYMION|std|expert
+    - description: |-
+        【期間限定】
+        「The Greek Myths CHALLENGE」コース
+        ❤ 4｜-0/-0/-1｜+2
+      sheets:
+        - ZEUS|std|master
+        - SON OF SUN|std|master
+        - ENDYMION|std|master
