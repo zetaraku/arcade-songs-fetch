@@ -51,3 +51,45 @@ export function loadTsv(filePath: string) {
   const rawTsv = fs.readFileSync(filePath, 'utf8');
   return parseCsv(rawTsv, { delimiter: '\t', columns: true });
 }
+
+export function fc2WikiTitleEscape(title: string) {
+  return title
+    .replaceAll('+', '＋')
+    .replaceAll('[', '［')
+    .replaceAll(']', '］')
+    .replaceAll('#', '＃')
+    .replaceAll('&', '＆')
+    .replaceAll('?', '？')
+    .replaceAll('>', '＞')
+    .replaceAll(':', '：');
+}
+
+export function gamerchWikiTitleEscape(title: string) {
+  return title
+    .replaceAll('<', '＜')
+    .replaceAll('>', '＞')
+    .replaceAll('"', '”')
+    .replaceAll('{', '｛')
+    .replaceAll('}', '｝')
+    .replaceAll('|', '｜')
+    .replaceAll('\\', '＼')
+    .replaceAll('^', '︿')
+    .replaceAll('[', '［')
+    .replaceAll(']', '］')
+    .replaceAll('`', '‵')
+    .replaceAll('#', '＃')
+    .replaceAll('/', '／')
+    .replaceAll('?', '？')
+    .replaceAll(':', '：')
+    .replaceAll('@', '＠')
+    .replaceAll('&', '＆')
+    .replaceAll('=', '＝')
+    .replaceAll('+', '＋')
+    .replaceAll('$', '＄')
+    .replaceAll(',', '，')
+    .replaceAll("'", '’')
+    .replaceAll('(', '（')
+    .replaceAll(')', '）')
+    .replaceAll('!', '！')
+    .replaceAll('*', '＊');
+}
