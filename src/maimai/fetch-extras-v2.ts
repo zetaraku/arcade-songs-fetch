@@ -160,13 +160,13 @@ export default async function run() {
     SELECT "songId", "category", "title"
     FROM (
       SELECT "songId"
-      FROM "Songs" LEFT JOIN "SongExtras" USING ("songId")
+      FROM "Songs" NATURAL LEFT JOIN "SongExtras"
       WHERE ("bpm" IS NULL)
         UNION
       SELECT DISTINCT "songId"
-      FROM "Sheets" LEFT JOIN "SheetExtras" USING ("songId", "type", "difficulty")
+      FROM "Sheets" NATURAL LEFT JOIN "SheetExtras"
       WHERE ("noteCounts.total" IS NULL) OR ("noteDesigner" IS NULL)
-    ) LEFT JOIN "Songs" USING ("songId")
+    ) NATURAL LEFT JOIN "Songs"
     WHERE "category" <> '宴会場'
   `, {
     type: QueryTypes.SELECT,
