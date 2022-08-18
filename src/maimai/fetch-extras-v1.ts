@@ -4,6 +4,7 @@ import sleep from 'sleep-promise';
 import log4js from 'log4js';
 import * as cheerio from 'cheerio';
 import { QueryTypes } from 'sequelize';
+import { fc2WikiTitleEscape } from '@/_core/utils';
 import { sequelize, SongExtra, SheetExtra } from '@@/db/maimai/models';
 
 const logger = log4js.getLogger('maimai/fetch-extras-v1');
@@ -43,18 +44,7 @@ function getSongWikiUrl(song: Record<string, any>) {
     return song.title;
   })();
 
-  const encodedTitle = encodeURIComponent(
-    title
-      .replaceAll('+', '＋')
-      .replaceAll('[', '［')
-      .replaceAll(']', '］')
-      .replaceAll('#', '＃')
-      .replaceAll('&', '＆')
-      .replaceAll('?', '？')
-      .replaceAll('>', '＞')
-      .replaceAll(':', '：')
-    ,
-  );
+  const encodedTitle = encodeURIComponent(fc2WikiTitleEscape(title));
 
   return `${DATA_URL}/${encodedTitle}`;
 }
