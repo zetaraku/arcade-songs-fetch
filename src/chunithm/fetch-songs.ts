@@ -15,6 +15,9 @@ function getSongId(rawSong: Record<string, any>) {
     if (rawSong.title === 'G e n g a o z o' && rawSong.id === '8203') {
       return '(WE) G e n g a o z o (2)';
     }
+    if (rawSong.title === 'Aragami' && rawSong.id === '8241') {
+      return '(WE) Aragami (2)';
+    }
     return `(WE) ${rawSong.title}`;
   }
   return rawSong.title as string;

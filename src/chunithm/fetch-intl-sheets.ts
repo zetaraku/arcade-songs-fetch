@@ -49,6 +49,9 @@ function getSongId(title: string, category: string, weType?: string) {
     if (title === 'G e n g a o z o' && weType === '覚') {
       return '(WE) G e n g a o z o (2)';
     }
+    if (title === 'Aragami' && weType === '光') {
+      return '(WE) Aragami (2)';
+    }
     return `(WE) ${title}`;
   }
   return title;
