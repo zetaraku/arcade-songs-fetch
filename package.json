@@ -104,6 +104,7 @@
     "sequelize": "^6.21.1",
     "shelljs": "^0.8.5",
     "sleep-promise": "^9.1.0",
-    "sqlite3": "^5.0.8"
+    "sqlite3": "^5.0.8",
+    "yaml": "^2.1.1"
   }
 }
