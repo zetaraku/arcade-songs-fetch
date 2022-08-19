@@ -21,21 +21,20 @@ const categories = [
 ];
 const versions = [
   //! the data source no longer contains version information
-  // { dateBefore: '2016-02-04', version: 'CHUNITHM', abbr: 'CHUNITHM' },
-  // { dateBefore: '2016-08-25', version: 'CHUNITHM PLUS', abbr: 'CHUNITHM+' },
-  // { dateBefore: '2017-02-09', version: 'AIR', abbr: 'AIR' },
-  // { dateBefore: '2017-08-24', version: 'AIR PLUS', abbr: 'AIR+' },
-  // { dateBefore: '2018-03-08', version: 'STAR', abbr: 'STAR' },
-  // { dateBefore: '2018-10-25', version: 'STAR PLUS', abbr: 'STAR+' },
-  // { dateBefore: '2019-04-11', version: 'AMAZON', abbr: 'AMAZON' },
-  // { dateBefore: '2019-10-24', version: 'AMAZON PLUS', abbr: 'AMAZON+' },
-  // { dateBefore: '2020-07-16', version: 'CRYSTAL', abbr: 'CRYSTAL' },
-  // { dateBefore: '2021-01-21', version: 'CRYSTAL PLUS', abbr: 'CRYSTAL+' },
-  // { dateBefore: '2021-05-13', version: 'PARADISE', abbr: 'PARADISE' },
-  // { dateBefore: '2021-11-04', version: 'PARADISE LOST', abbr: 'PARADISE+' },
-  // { dateBefore: '2022-04-14', version: 'CHUNITHM NEW', abbr: 'NEW' },
-  // { dateBefore: null, version: 'CHUNITHM NEW PLUS', abbr: 'NEW+' },
-  { dateBefore: null, version: null, abbr: null },
+  { dateBefore: '2016-02-04', version: 'CHUNITHM', abbr: 'CHUNITHM' },
+  { dateBefore: '2016-08-25', version: 'CHUNITHM PLUS', abbr: 'CHUNITHM+' },
+  { dateBefore: '2017-02-09', version: 'AIR', abbr: 'AIR' },
+  { dateBefore: '2017-08-24', version: 'AIR PLUS', abbr: 'AIR+' },
+  { dateBefore: '2018-03-08', version: 'STAR', abbr: 'STAR' },
+  { dateBefore: '2018-10-25', version: 'STAR PLUS', abbr: 'STAR+' },
+  { dateBefore: '2019-04-11', version: 'AMAZON', abbr: 'AMAZON' },
+  { dateBefore: '2019-10-24', version: 'AMAZON PLUS', abbr: 'AMAZON+' },
+  { dateBefore: '2020-07-16', version: 'CRYSTAL', abbr: 'CRYSTAL' },
+  { dateBefore: '2021-01-21', version: 'CRYSTAL PLUS', abbr: 'CRYSTAL+' },
+  { dateBefore: '2021-05-13', version: 'PARADISE', abbr: 'PARADISE' },
+  { dateBefore: '2021-11-04', version: 'PARADISE LOST', abbr: 'PARADISE+' },
+  { dateBefore: '2022-04-14', version: 'CHUNITHM NEW', abbr: 'NEW' },
+  { dateBefore: null, version: 'CHUNITHM NEW PLUS', abbr: 'NEW+' },
   //! add further mapping here !//
 ];
 const types = [
@@ -71,7 +70,9 @@ export default async function run() {
       *
     FROM "Songs"
       NATURAL LEFT JOIN "SongOrders"
-    ORDER BY "sortOrder"
+      LEFT JOIN "SongExtras" USING ("songId")
+      -- must not use NATURAL LEFT JOIN "SongExtras" here because we're overriding the "releaseDate" column
+    ORDER BY "releaseDate", "sortOrder"
   `, {
     type: QueryTypes.SELECT,
     nest: true,
