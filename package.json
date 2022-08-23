@@ -46,6 +46,7 @@
     "jubeat:upload-data": "ts-node src/_core/upload-data jubeat",
     "sdvx:fetch-songs": "ts-node src/sdvx/fetch-songs",
     "sdvx:fetch-images": "ts-node src/sdvx/fetch-images",
+    "sdvx:fetch-gallery": "ts-node src/sdvx/fetch-gallery",
     "sdvx:gen-json": "ts-node src/sdvx/gen-json",
     "sdvx:upload-data": "ts-node src/_core/upload-data sdvx",
     "ongeki:fetch-songs": "ts-node src/ongeki/fetch-songs",

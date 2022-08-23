@@ -14,7 +14,7 @@ const VERSION_ID = 'vi';
 const DATA_URL = 'https://p.eagate.573.jp';
 const IMAGE_BASE_URL = 'https://p.eagate.573.jp/';
 
-const difficultyMap = new Map([
+export const difficultyMap = new Map([
   ['nov', 'novice'],
   ['adv', 'advanced'],
   ['exh', 'exhaust'],
