@@ -40,7 +40,7 @@ const difficulties = [
   { difficulty: 'inferno', name: 'INFERNO', color: '#4a004f' },
 ];
 const regions = [
-  { region: 'jp', name: '日本版' },
+  // { region: 'jp', name: '日本版' },
   { region: 'offline', name: 'オフライン版 (Offline ver.)' },
 ] as any[];
 
