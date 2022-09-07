@@ -94,12 +94,7 @@ async function getIntlSheets(
   const sheetBlocks = $(`.music_${difficulty}_score_back`).toArray();
 
   return sheetBlocks.map((e) => {
-    let title = $(e).find('.music_name_block').text()/* .trim() */;
-
-    //! hotfix
-    if (title === 'GIGANTOMAKHIA') {
-      title = 'GIGANTØMAKHIA';
-    }
+    const title = $(e).find('.music_name_block').text()/* .trim() */;
 
     const type = (() => {
       const typeButton = $(e).siblings(`.music_kind_icon, .music_${difficulty}_btn_on`);
