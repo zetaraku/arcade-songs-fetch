@@ -40,6 +40,7 @@ const versions = [
   { version: 'Splash PLUS', abbr: 'Splash+' },
   { version: 'UNiVERSE', abbr: 'UNiVERSE' },
   { version: 'UNiVERSE PLUS', abbr: 'UNiVERSE+' },
+  { version: 'FESTiVAL', abbr: 'FESTiVAL' },
   //! add further version here !//
 ];
 const types = [

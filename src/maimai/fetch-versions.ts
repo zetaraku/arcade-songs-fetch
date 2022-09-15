@@ -37,6 +37,7 @@ const versionIdMap = new Map([
   ['Splash PLUS', 16],
   ['UNiVERSE', 17],
   ['UNiVERSE PLUS', 18],
+  ['FESTiVAL', 19],
   //! add further version here !//
 ]);
 

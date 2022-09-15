@@ -30,6 +30,7 @@ const versionMap = new Map([
   [215, 'Splash PLUS'],
   [220, 'UNiVERSE'],
   [225, 'UNiVERSE PLUS'],
+  [230, 'FESTiVAL'],
   //! add further version here !//
 ]);
 
