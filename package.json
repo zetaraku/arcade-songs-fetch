@@ -51,6 +51,7 @@
     "sdvx:upload-data": "ts-node src/_core/upload-data sdvx",
     "ongeki:fetch-songs": "ts-node src/ongeki/fetch-songs",
     "ongeki:fetch-images": "ts-node src/ongeki/fetch-images",
+    "ongeki:fetch-internal-levels": "ts-node src/ongeki/fetch-internal-levels",
     "ongeki:gen-json": "ts-node src/ongeki/gen-json",
     "ongeki:upload-data": "ts-node src/_core/upload-data ongeki",
     "gc:fetch-songs": "ts-node src/gc/fetch-songs",
