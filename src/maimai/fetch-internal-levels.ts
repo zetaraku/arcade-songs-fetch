@@ -34,6 +34,9 @@ const manualMappings = new Map([
   ['Caliburne ～Story of the Legendary Sword～', 'Caliburne ～Story of the Legendary sword～'],
   ['Mjolnir', 'Mjölnir'],
   ['Love’s Theme of BADASS ～バッド・アス 愛のテーマ～', 'Love\'s Theme of BADASS ～バッド・アス 愛のテーマ～'],
+  // Dummy entries:
+  ['(  Ꙭ)ﾌﾞｯｺﾛﾘ食べよう', undefined],
+  ['実験', undefined],
 ]);
 
 function getSongId(title: string) {
@@ -85,7 +88,9 @@ export default async function run() {
   logger.info(`OK, ${rawSheets.length} sheets fetched.`);
 
   logger.info('Updating sheetInternalLevels ...');
-  const sheets = rawSheets.map((rawSheet) => extractSheet(rawSheet));
+  const sheets = rawSheets
+    .map((rawSheet) => extractSheet(rawSheet))
+    .filter((rawSheet) => rawSheet.songId !== undefined);
   await Promise.all(sheets.map((sheet) => SheetInternalLevel.upsert(sheet)));
 
   logger.info('Done!');
