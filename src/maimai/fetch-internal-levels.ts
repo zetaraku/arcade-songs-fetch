@@ -47,7 +47,7 @@ function getSongId(title: string) {
   return String(title);
 }
 
-function extractSheets(rawSheet: Record<string, any>) {
+function extractSheet(rawSheet: Record<string, any>) {
   return {
     songId: getSongId(rawSheet.title),
     ...rawSheet,
@@ -85,7 +85,7 @@ export default async function run() {
   logger.info(`OK, ${rawSheets.length} sheets fetched.`);
 
   logger.info('Updating sheetInternalLevels ...');
-  const sheets = rawSheets.map((rawSheet) => extractSheets(rawSheet));
+  const sheets = rawSheets.map((rawSheet) => extractSheet(rawSheet));
   await Promise.all(sheets.map((sheet) => SheetInternalLevel.upsert(sheet)));
 
   logger.info('Done!');
