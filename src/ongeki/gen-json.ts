@@ -71,6 +71,7 @@ export default async function run() {
     SELECT
       *
     FROM "Sheets"
+      NATURAL LEFT JOIN "SheetInternalLevels"
   `, {
     type: QueryTypes.SELECT,
     nest: true,
