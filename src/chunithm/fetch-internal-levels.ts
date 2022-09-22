@@ -47,10 +47,9 @@ export default async function run() {
   const rawSongs = await fetchSongs();
   logger.info(`OK, ${rawSongs.length} songs fetched.`);
 
-  logger.info('Truncating and Inserting sheetInternalLevels ...');
+  logger.info('Updating sheetInternalLevels ...');
   const sheets = rawSongs.flatMap((rawSong) => extractSheets(rawSong));
-  await SheetInternalLevel.truncate();
-  await SheetInternalLevel.bulkCreate(sheets, { ignoreDuplicates: true });
+  await Promise.all(sheets.map((sheet) => SheetInternalLevel.upsert(sheet)));
 
   logger.info('Done!');
 }
