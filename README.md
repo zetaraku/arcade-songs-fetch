@@ -1,4 +1,6 @@
 # arcade-songs-fetch
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fzetaraku%2Farcade-songs-fetch.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fzetaraku%2Farcade-songs-fetch?ref=badge_shield)
+
 
 Data fetching scripts for [arcade-songs](https://github.com/zetaraku/arcade-songs) website.
 
@@ -45,3 +47,6 @@ npm run <game-code>:<script-name>
 Copyright © 2022 Raku Zeta.
 
 Licensed under the [MIT License](./LICENSE).
+
+
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fzetaraku%2Farcade-songs-fetch.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fzetaraku%2Farcade-songs-fetch?ref=badge_large)
