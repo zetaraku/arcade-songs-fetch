@@ -1,9 +1,9 @@
 /* eslint-disable no-await-in-loop */
 import axios from 'axios';
+import Sequelize from 'sequelize';
 import sleep from 'sleep-promise';
 import log4js from 'log4js';
 import * as cheerio from 'cheerio';
-import { QueryTypes } from 'sequelize';
 import { fc2WikiTitleEscape } from '@/_core/utils';
 import { sequelize, SongExtra, SheetExtra } from '@@/db/maimai/models';
 
@@ -153,7 +153,7 @@ export default async function run() {
     ) NATURAL LEFT JOIN "Songs"
     WHERE "category" <> '宴会場'
   `, {
-    type: QueryTypes.SELECT,
+    type: Sequelize.QueryTypes.SELECT,
   });
   logger.info(`Found ${songsToFetch.length} page(s) to fetch.`);
 

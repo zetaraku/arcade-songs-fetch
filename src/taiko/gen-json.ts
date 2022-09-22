@@ -1,7 +1,7 @@
 /* eslint-disable object-curly-newline */
 import fs from 'node:fs';
+import Sequelize from 'sequelize';
 import log4js from 'log4js';
-import { QueryTypes } from 'sequelize';
 import genJson from '@/_core/gen-json';
 import { sequelize } from '@@/db/taiko/models';
 
@@ -55,7 +55,7 @@ export default async function run() {
       *
     FROM "Songs"
   `, {
-    type: QueryTypes.SELECT,
+    type: Sequelize.QueryTypes.SELECT,
     nest: true,
   });
 
@@ -64,7 +64,7 @@ export default async function run() {
       *
     FROM "Sheets"
   `, {
-    type: QueryTypes.SELECT,
+    type: Sequelize.QueryTypes.SELECT,
     nest: true,
   });
 

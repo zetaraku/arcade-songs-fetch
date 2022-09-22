@@ -1,6 +1,6 @@
 import fs from 'node:fs';
+import Sequelize from 'sequelize';
 import log4js from 'log4js';
-import { QueryTypes } from 'sequelize';
 import genJson from '@/_core/gen-json';
 import { sequelize } from '@@/db/chunithm/models';
 
@@ -74,7 +74,7 @@ export default async function run() {
       -- must not use NATURAL LEFT JOIN "SongExtras" here because we're overriding the "releaseDate" column
     ORDER BY "releaseDate", "sortOrder"
   `, {
-    type: QueryTypes.SELECT,
+    type: Sequelize.QueryTypes.SELECT,
     nest: true,
   });
 
@@ -88,7 +88,7 @@ export default async function run() {
       NATURAL LEFT JOIN "JpSheets"
       NATURAL LEFT JOIN "IntlSheets"
   `, {
-    type: QueryTypes.SELECT,
+    type: Sequelize.QueryTypes.SELECT,
     nest: true,
   });
 

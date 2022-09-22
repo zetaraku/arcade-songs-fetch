@@ -1,7 +1,7 @@
 /* eslint-disable no-await-in-loop */
 import axios from 'axios';
-import log4js from 'log4js';
 import sleep from 'sleep-promise';
+import log4js from 'log4js';
 import * as cheerio from 'cheerio';
 import { ensureNoDuplicateEntry } from '@/_core/utils';
 import { Song, Sheet } from '@@/db/taiko/models';

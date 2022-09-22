@@ -1,7 +1,7 @@
 import log4js from 'log4js';
 import fetchImages from '@/_core/fetch-images';
-import { getCookies } from './fetch-songs';
 import { Song } from '@@/db/diva/models';
+import { getCookies } from './fetch-songs';
 
 const logger = log4js.getLogger('diva/fetch-images');
 logger.level = log4js.levels.INFO;

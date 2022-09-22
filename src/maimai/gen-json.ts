@@ -1,7 +1,7 @@
 /* eslint-disable object-curly-newline */
 import fs from 'node:fs';
+import Sequelize from 'sequelize';
 import log4js from 'log4js';
-import { QueryTypes } from 'sequelize';
 import genJson from '@/_core/gen-json';
 import { sequelize } from '@@/db/maimai/models';
 
@@ -81,7 +81,7 @@ export default async function run() {
       NATURAL LEFT JOIN "SongExtras"
     ORDER BY "sortOrder"
   `, {
-    type: QueryTypes.SELECT,
+    type: Sequelize.QueryTypes.SELECT,
     nest: true,
   });
 
@@ -99,7 +99,7 @@ export default async function run() {
       NATURAL LEFT JOIN "IntlSheets"
       NATURAL LEFT JOIN "CnSheets"
   `, {
-    type: QueryTypes.SELECT,
+    type: Sequelize.QueryTypes.SELECT,
     nest: true,
   });
 
