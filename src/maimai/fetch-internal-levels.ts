@@ -34,6 +34,9 @@ const manualMappings = new Map([
   ['Caliburne ～Story of the Legendary Sword～', 'Caliburne ～Story of the Legendary sword～'],
   ['Mjolnir', 'Mjölnir'],
   ['Love’s Theme of BADASS ～バッド・アス 愛のテーマ～', 'Love\'s Theme of BADASS ～バッド・アス 愛のテーマ～'],
+  ['Baban!!  ー甘い罠ー', 'BaBan!! －甘い罠－'],
+  ['スカーレット警察のゲットーパトロール２４時', 'スカーレット警察のゲットーパトロール24時'],
+  ['ファンタジーゾーンOPA!-OPA! -GMT remix-', 'ファンタジーゾーン OPA-OPA! -GMT remix-'],
   // Dummy entries:
   ['(  Ꙭ)ﾌﾞｯｺﾛﾘ食べよう', undefined],
   ['実験', undefined],
@@ -57,7 +60,7 @@ function extractSheet(rawSheet: Record<string, any>) {
   };
 }
 
-async function fetchSheets() {
+async function fetchSheetsV6() {
   if (!process.env.GOOGLE_API_KEY) {
     throw new Error('Please set your GOOGLE_API_KEY in the .env file');
   }
@@ -82,9 +85,37 @@ async function fetchSheets() {
   return result;
 }
 
+async function fetchSheetsV7() {
+  if (!process.env.GOOGLE_API_KEY) {
+    throw new Error('Please set your GOOGLE_API_KEY in the .env file');
+  }
+
+  const spreadsheet = new GoogleSpreadsheet('1xbDMo-36bGL_d435Oy8TTVq4ADFmxl9sYFqhTXiJYRg');
+  spreadsheet.useApiKey(process.env.GOOGLE_API_KEY!);
+  await spreadsheet.loadInfo();
+
+  // eslint-disable-next-line dot-notation
+  const sheet = spreadsheet.sheetsByTitle['Tmai'];
+  await sheet.loadCells();
+
+  const result = [...Array(sheet.rowCount).keys()]
+    .filter((i) => typeof sheet.getCell(i, 7).value === 'number' && sheet.getCell(i, 7).value > 0)
+    .map((i) => ({
+      title: sheet.getCell(i, 1).value,
+      type: typeMapping.get(sheet.getCell(i, 2).value as string),
+      difficulty: difficultyMapping.get(sheet.getCell(i, 3).value as string),
+      internalLevel: (sheet.getCell(i, 7).value as number).toFixed(1),
+    }));
+
+  return result;
+}
+
 export default async function run() {
   logger.info('Fetching data from RCMF Google Sheets ...');
-  const rawSheets = await fetchSheets();
+  const rawSheets = [
+    ...await fetchSheetsV6(),
+    ...await fetchSheetsV7(),
+  ];
   logger.info(`OK, ${rawSheets.length} sheets fetched.`);
 
   logger.info('Updating sheetInternalLevels ...');
