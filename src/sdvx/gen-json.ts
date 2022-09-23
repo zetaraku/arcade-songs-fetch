@@ -71,9 +71,9 @@ export default async function run() {
   });
 
   const sheetRecords = await sequelize.query(/* sql */ `
-     SELECT
+    SELECT
       *
-     FROM "Sheets"
+    FROM "Sheets"
   `, {
     type: Sequelize.QueryTypes.SELECT,
     nest: true,
