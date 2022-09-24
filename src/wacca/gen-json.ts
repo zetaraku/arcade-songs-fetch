@@ -3,7 +3,6 @@ import Sequelize from 'sequelize';
 import log4js from 'log4js';
 import genJson from '@/_core/gen-json';
 import { sequelize } from '@@/db/wacca/models';
-import removedSongList from '@@/data/wacca/removed-song-list.json';
 import offlineSongList from '@@/data/wacca/offline-song-list.json';
 
 const logger = log4js.getLogger('wacca/gen-json');
@@ -40,7 +39,6 @@ const difficulties = [
   { difficulty: 'inferno', name: 'INFERNO', color: '#4a004f' },
 ];
 const regions = [
-  // { region: 'jp', name: '日本版' },
   { region: 'offline', name: 'オフライン版 (Offline ver.)' },
 ] as any[];
 
@@ -76,7 +74,6 @@ export default async function run() {
 
   for (const sheetRecord of sheetRecords as Record<string, any>[]) {
     sheetRecord.regions = {
-      jp: !removedSongList.includes(sheetRecord.songId),
       offline: offlineSongList.includes(sheetRecord.songId),
     };
   }
