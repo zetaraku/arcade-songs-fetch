@@ -72,7 +72,8 @@ export default async function run() {
       NATURAL LEFT JOIN "SongOrders"
       LEFT JOIN "SongExtras" USING ("songId")
       -- must not use NATURAL LEFT JOIN "SongExtras" here because we're overriding the "releaseDate" column
-    ORDER BY "releaseDate", "sortOrder"
+    ORDER BY "SongExtras"."releaseDate", "sortOrder"
+      -- must specify the "releaseDate" in "SongExtras" otherwise "Songs"."releaseDate" will be used
   `, {
     type: Sequelize.QueryTypes.SELECT,
     nest: true,
