@@ -1,3 +1,240 @@
+- title: FESTiVAL 段位認定
+  sections:
+    - title: 【初段】
+      description: ❤ 350｜-0/-2/-5｜+20
+      sheets:
+        - ヴァンパイア|dx|basic
+        - ベノム|dx|basic
+        - 林檎華憐歌|std|basic
+        - ドーナツホール|std|basic
+    - title: 【二段】
+      description: ❤ 350｜-0/-2/-5｜+20
+      sheets:
+        - メルト|dx|advanced
+        - 幽闇に目醒めしは|std|advanced
+        - 砂の惑星 feat. HATSUNE MIKU|std|advanced
+        - 六兆年と一夜物語|dx|advanced
+    - title: 【三段】
+      description: ❤ 600｜-1/-2/-5｜+50
+      sheets:
+        - シャルル|std|advanced
+        - 初音天地開闢神話|dx|advanced
+        - 花と、雪と、ドラムンベース。|std|advanced
+        - エンドマークに希望と涙を添えて|std|advanced
+    - title: 【四段】
+      description: ❤ 700｜-2/-2/-5｜+50
+      sheets:
+        - とりあえずアナタがいなくなるまえに|dx|expert
+        - Dive into The Sky ～initialized～|dx|expert
+        - フォルテシモBELL|std|expert
+        - wheel|dx|expert
+    - title: 【五段】
+      description: ❤ 700｜-2/-2/-5｜+50
+      sheets:
+        - KING|dx|expert
+        - ヤミツキ|dx|expert
+        - Money Money|std|expert
+        - DETARAME ROCK&ROLL THEORY|std|expert
+    - title: 【六段】
+      description: ❤ 700｜-2/-2/-5｜+50
+      sheets:
+        - UniTas|dx|expert
+        - Signature|std|expert
+        - チエルカ／エソテリカ|dx|expert
+        - BREaK! BREaK! BREaK!|dx|expert
+    - title: 【七段】
+      description: ❤ 700｜-2/-2/-5｜+50
+      sheets:
+        - メルティランドナイトメア|dx|master
+        - 洗脳|std|master
+        - 悪戯センセーション|dx|master
+        - Lionheart|std|master
+    - title: 【八段】
+      description: ❤ 700｜-2/-2/-5｜+20
+      sheets:
+        - さんさーら！|dx|master
+        - Stardust Memories|dx|master
+        - トランスダンスアナーキー|dx|master
+        - Revive The Rave|std|master
+    - title: 【九段】
+      description: ❤ 800｜-2/-2/-5｜+20
+      sheets:
+        - My My My|dx|master
+        - -OutsideR:RequieM-|std|master
+        - Upshift|dx|master
+        - Reach For The Stars|std|master
+    - title: 【十段】
+      description: ❤ 900｜-2/-2/-5｜+50
+      sheets:
+        - 蒼穹舞楽|dx|master
+        - 天火明命|std|master
+        - HECATONCHEIR|dx|master
+        - Alea jacta est!|std|master
+    - title: 【真初段】
+      description: ❤ 50｜-2/-3/-5｜+10
+      sheets:
+        - STARTLINER|dx|master
+        - 色は匂へど散りぬるを|std|master
+        - SHOW TIME|std|master
+        - Streak|std|expert
+    - title: 【真二段】
+      description: ❤ 50｜-2/-3/-5｜+10
+      sheets:
+        - Ultranova|std|expert
+        - 怪盗Rのテーマ|std|master
+        - Quartet Theme [Reborn]|std|master
+        - Paranoia|dx|master
+    - title: 【真三段】
+      description: ❤ 50｜-2/-3/-5｜+10
+      sheets:
+        - フラグメンツ -T.V. maimai edit-|std|master
+        - エンヴィーベイビー|dx|master
+        - スピカの天秤|dx|expert
+        - 絶え間なく藍色|dx|master
+    - title: 【真四段】
+      description: ❤ 50｜-2/-3/-5｜+10
+      sheets:
+        - 人里に下ったアタイがいつの間にか社畜になっていた件|std|expert
+        - キャプテン・ムラサのケツアンカー|std|master
+        - No Routine|std|master
+        - 炭★坑★節|std|master
+    - title: 【真五段】
+      description: ❤ 50｜-2/-3/-5｜+10
+      sheets:
+        - 春嵐|dx|master
+        - Round Round Spinning Around|dx|master
+        - Jörqer|dx|master
+        - After Burner|std|master
+    - title: 【真六段】
+      description: ❤ 50｜-2/-3/-5｜+10
+      sheets:
+        - We Gonna Party|std|master
+        - カラッポ・ノンフィクション|dx|master
+        - Irresistible|dx|master
+        - LANCE|std|master
+    - title: 【真七段】
+      description: ❤ 50｜-2/-3/-5｜+10
+      sheets:
+        - 華の集落、秋のお届け|dx|master
+        - Doll Judgment|std|master
+        - Scars of FAUNA|std|master
+        - Nerverakes|std|master
+    - title: 【真八段】
+      description: ❤ 50｜-2/-3/-5｜+10
+      sheets:
+        - HAGAKIRI|dx|master
+        - Sun Dance|std|remaster
+        - First Dance|dx|master
+        - keep hopping|std|master
+    - title: 【真九段】
+      description: ❤ 50｜-2/-3/-5｜+10
+      sheets:
+        - Calamity Fortune|std|master
+        - Swift Swing|dx|master
+        - Beat of getting entangled|std|remaster
+        - Strive against fate|dx|master
+    - title: 【真十段】
+      description: ❤ 50｜-2/-3/-5｜+10
+      sheets:
+        - Yorugao|dx|master
+        - Metamorphosism|dx|master
+        - AMAZING MIGHTYYYY!!!!|std|master
+        - Excalibur ～Revived resolution～|std|master
+    - title: 【真皆伝】
+      description: ❤ 50｜-2/-3/-5｜+5
+      sheets:
+        - Heavenly Blast|dx|master
+        - Our Wrenally|std|master
+        - World's end loneliness|dx|master
+        - sølips|dx|master
+    - title: 【裏皆伝】
+      description: ❤ 10｜-1/-3/-10｜+0
+      sheets:
+        - the EmpErroR|std|remaster
+        - Schwarzschild|std|remaster
+        - QZKago Requiem|std|remaster
+        - PANDORA PARADOXXX|std|remaster
+- title: FESTiVAL オトモダチ対戦
+  sections:
+    - title: 【A5~A1】
+      sheets:
+        - アルティメットセンパイ|dx|expert
+        - Limits|dx|expert
+        - JACKY [Remix]|std|expert
+        - ロキ|std|master
+        - バラライカ|std|master
+      sheetDescriptions:
+        - S+
+        - S+
+        - S+
+        - SS
+        - SS
+    - title: 【S5~S1】
+      sheets:
+        - アルカリレットウセイ|std|master
+        - バレリーコ|std|master
+        - 源平大戦絵巻テーマソング|std|master
+        - Paranoia|dx|master
+        - ぱくぱく☆がーる|dx|master
+      sheetDescriptions:
+        - SS
+        - SS
+        - SS+
+        - SS+
+        - SSS
+    - title: 【SS5~SS1】
+      sheets:
+        - 四次元跳躍機関|std|master
+        - ヴァンパイア|dx|remaster
+        - スーパーシンメトリー|dx|master
+        - LANCE|std|master
+        - METATRON|std|master
+      sheetDescriptions:
+        - SSS
+        - SSS+
+        - SSS+
+        - SSS+
+        - SSS+
+    - title: 【SSS5~SSS1】
+      sheets:
+        - Good bye, Merry-Go-Round.|dx|master
+        - 脳天直撃|dx|master
+        - ARAIS|dx|master
+        - 躯樹の墓守|dx|master
+        - mystique as iris|dx|master
+      sheetDescriptions:
+        - MAX
+        - MAX
+        - MAX
+        - MAX
+        - MAX
+- title: 10週連続「Re:MASTER」譜面追加！
+  description: 10週連続で、歴代バージョン楽曲のRe:MASTER譜面が続々と追加！
+  sections:
+    - sheets:
+        - 源平大戦絵巻テーマソング|std|remaster
+        - 記憶、記録|std|remaster
+        - FLOWER|std|remaster
+        - Revive The Rave|std|remaster
+        - Limit Break|std|remaster
+        - SPILL OVER COLORS|std|remaster
+        - 超常マイマイン|dx|remaster
+        - シエルブルーマルシェ|dx|remaster
+        - ぼくたちいつでも　しゅわっしゅわ！|dx|remaster
+        - 星めぐり、果ての君へ。|dx|remaster
+        - みんなのマイマイマー|std|remaster
+      sheetDescriptions:
+        - maimai
+        - GreeN
+        - ORANGE
+        - PiNK
+        - MURASAKi
+        - MiLK
+        - maimaiでらっくす
+        - maimaiでらっくす PLUS
+        - Splash
+        - Splash PLUS
+        - (生放送)
 - title: UNiVERSE PLUS 段位認定
   sections:
     - title: 【初段】
@@ -1218,7 +1455,7 @@
         - MAX
 - title: ALL PERFECT COLLECTION 発売記念イベント
   sections:
-    - title: ALL PERFECT COLLECTION 発売記念イベント 第1弾
+    - title: 《第1弾》
       sheets:
         - JACKY [Remix]|std|remaster
         - We Gonna Party|std|remaster
@@ -1226,14 +1463,14 @@
         - air's gravity|std|remaster
         - Beat of getting entangled|std|remaster
         - DADDY MULK -Groove remix-|std|remaster
-    - title: ALL PERFECT COLLECTION 発売記念イベント 第2弾
+    - title: 《第2弾》
       sheets:
         - Death Scythe|std|remaster
         - Sky High [Reborn]|std|remaster
         - 泣き虫O'clock|std|remaster
         - Night Fly|std|remaster
         - Backyun! －悪い女－|std|remaster
-    - title: ALL PERFECT COLLECTION 発売記念イベント 第3弾
+    - title: 《第3弾》
       sheets:
         - System “Z”|std|remaster
         - D✪N’T  ST✪P  R✪CKIN’|std|remaster
