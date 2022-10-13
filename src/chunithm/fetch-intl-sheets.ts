@@ -43,18 +43,20 @@ const worldsEndTypeMappings = [
   //! add further type here !//
 ];
 
-function getSongId(title: string, category: string, weType?: string) {
-  if (category === 'WORLD\'S END') {
+function getSongId(rawSong: Record<string, any>): string {
+  if (rawSong.catname === 'WORLD\'S END') {
     //! hotfix
-    if (title === 'G e n g a o z o' && weType === '覚') {
-      return '(WE) G e n g a o z o (2)';
+    if (rawSong.title === 'G e n g a o z o') {
+      if (rawSong.id === '8108') return '(WE) G e n g a o z o';
+      if (rawSong.id === '8203') return '(WE) G e n g a o z o (2)';
     }
-    if (title === 'Aragami' && weType === '光') {
-      return '(WE) Aragami (2)';
+    if (rawSong.title === 'Aragami') {
+      if (rawSong.id === '8164') return '(WE) Aragami';
+      if (rawSong.id === '8241') return '(WE) Aragami (2)';
     }
-    return `(WE) ${title}`;
+    return `(WE) ${rawSong.title}`;
   }
-  return title;
+  return rawSong.title;
 }
 
 async function getIntlCookies() {
@@ -125,9 +127,10 @@ async function getIntlSheets(
 
   return sheetBlocks.map((e) => {
     const title = $(e).find('.music_title').text().trim();
+    const id = $(e).find('input[name="idx"]').val();
 
     return {
-      songId: getSongId(title, category),
+      songId: getSongId({ catname: category, title, id }),
       type: 'std',
       difficulty,
     };
@@ -150,6 +153,8 @@ async function getIntlWorldsEndSheets(cookies: Record<string, string>) {
 
   return sheetBlocks.map((e) => {
     const title = $(e).find('.musiclist_worldsend_title').text().trim();
+    const id = $(e).siblings('input[name="idx"]').val();
+    // Note: Unlike normal songs, the id of WORLD'S END songs is placed outside of the music box!
 
     const weTypeId = $(e).find('.musiclist_worldsend_icon img').attr('src')!
       .match(/^https:\/\/chunithm-net-eng.com\/mobile\/images\/icon_we_(\d+).png/)![1];
@@ -160,7 +165,7 @@ async function getIntlWorldsEndSheets(cookies: Record<string, string>) {
     // const weStar = '☆'.repeat((Number(weStarId) + 1) / 2);
 
     return {
-      songId: getSongId(title, 'WORLD\'S END', weType),
+      songId: getSongId({ catname: 'WORLD\'S END', title, id }),
       type: 'we',
       difficulty: `【${weType}】`,
     };
