@@ -9,18 +9,20 @@ logger.level = log4js.levels.INFO;
 const DATA_URL = 'https://chunithm.sega.jp/storage/json/music.json';
 const IMAGE_BASE_URL = 'https://new.chunithm-net.com/chuni-mobile/html/mobile/img/';
 
-function getSongId(rawSong: Record<string, any>) {
+function getSongId(rawSong: Record<string, any>): string {
   if (rawSong.catname === 'WORLD\'S END') {
     //! hotfix
-    if (rawSong.title === 'G e n g a o z o' && rawSong.id === '8203') {
-      return '(WE) G e n g a o z o (2)';
+    if (rawSong.title === 'G e n g a o z o') {
+      if (rawSong.id === '8108') return '(WE) G e n g a o z o';
+      if (rawSong.id === '8203') return '(WE) G e n g a o z o (2)';
     }
-    if (rawSong.title === 'Aragami' && rawSong.id === '8241') {
-      return '(WE) Aragami (2)';
+    if (rawSong.title === 'Aragami') {
+      if (rawSong.id === '8164') return '(WE) Aragami';
+      if (rawSong.id === '8241') return '(WE) Aragami (2)';
     }
     return `(WE) ${rawSong.title}`;
   }
-  return rawSong.title as string;
+  return rawSong.title;
 }
 
 function preprocessRawSongs(rawSongs: Record<string, any>[]) {
