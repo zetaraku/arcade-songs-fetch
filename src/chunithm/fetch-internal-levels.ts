@@ -26,6 +26,13 @@ function getSongId(rawSong: Record<string, any>): string {
   return title;
 }
 
+function getWeType(rawSong: Record<string, any>) {
+  if (rawSong.data.WE === undefined) return undefined;
+  const match = (rawSong.meta.title as string).match(/【(?<weType>[^【】]+)】$/);
+  if (match === null) return undefined;
+  return `【${match.groups!.weType[0]}】`;
+}
+
 function extractSheets(rawSong: Record<string, any>) {
   return [
     { type: 'std', difficulty: 'basic', data: rawSong.data.BAS },
