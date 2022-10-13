@@ -146,14 +146,16 @@ async function getIntlWorldsEndSheets(cookies: Record<string, string>) {
 
   const $ = cheerio.load(response.data);
 
-  const result = $('.musiclist_box').toArray().map((form) => {
-    const title = $(form).find('.musiclist_worldsend_title').text().trim();
+  const sheetBlocks = $('.musiclist_box').toArray();
 
-    const weTypeId = $(form).find('.musiclist_worldsend_icon img').attr('src')!
+  return sheetBlocks.map((e) => {
+    const title = $(e).find('.musiclist_worldsend_title').text().trim();
+
+    const weTypeId = $(e).find('.musiclist_worldsend_icon img').attr('src')!
       .match(/^https:\/\/chunithm-net-eng.com\/mobile\/images\/icon_we_(\d+).png/)![1];
     const weType = worldsEndTypeMappings[Number(weTypeId)];
 
-    // const weStarId = $(form).find('.musiclist_worldsend_star img').attr('src')!
+    // const weStarId = $(e).find('.musiclist_worldsend_star img').attr('src')!
     //   .match(/^https:\/\/chunithm-net-eng.com\/mobile\/images\/icon_we_star(\d+).png/)![1];
     // const weStar = '☆'.repeat((Number(weStarId) + 1) / 2);
 
@@ -163,8 +165,6 @@ async function getIntlWorldsEndSheets(cookies: Record<string, string>) {
       difficulty: `【${weType}】`,
     };
   });
-
-  return result;
 }
 
 export default async function run() {
