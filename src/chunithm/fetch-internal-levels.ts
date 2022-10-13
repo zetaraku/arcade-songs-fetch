@@ -40,7 +40,8 @@ function extractSheets(rawSong: Record<string, any>) {
     { type: 'std', difficulty: 'expert', data: rawSong.data.EXP },
     { type: 'std', difficulty: 'master', data: rawSong.data.MAS },
     { type: 'std', difficulty: 'ultima', data: rawSong.data.ULT },
-  ].filter((e) => !!e.data && !e.data.is_const_unknown && e.data.const !== 0).map((rawSheet) => ({
+    { type: 'we', difficulty: getWeType(rawSong), data: rawSong.data.WE },
+  ].filter((e) => !!e.data && !e.data.is_const_unknown).map((rawSheet) => ({
     songId: getSongId(rawSong),
     type: rawSheet.type,
     difficulty: rawSheet.difficulty,
