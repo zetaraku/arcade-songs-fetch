@@ -34,7 +34,8 @@ const versions = [
   { dateBefore: '2021-05-13', version: 'PARADISE', abbr: 'PARADISE' },
   { dateBefore: '2021-11-04', version: 'PARADISE LOST', abbr: 'PARADISE+' },
   { dateBefore: '2022-04-14', version: 'CHUNITHM NEW', abbr: 'NEW' },
-  { dateBefore: null, version: 'CHUNITHM NEW PLUS', abbr: 'NEW+' },
+  { dateBefore: '2022-10-13', version: 'CHUNITHM NEW PLUS', abbr: 'NEW+' },
+  { dateBefore: null, version: 'SUN', abbr: 'SUN' },
   //! add further mapping here !//
 ];
 const types = [
