@@ -6,18 +6,18 @@ import 'dotenv/config';
 const logger = log4js.getLogger('chunithm/fetch-extras');
 logger.level = log4js.levels.INFO;
 
-function getSongId(rawSong: Record<string, any>) {
-  if (rawSong.meta.genre === 'WORLD\'S END') {
+function getSongId(rawSong: Record<string, any>): string {
+  const genre = rawSong.meta.genre as string;
+  const title = rawSong.meta.title as string;
+  if (genre === 'WORLD\'S END') {
     //! hotfix
-    if (rawSong.meta.title === 'G e n g a o z o【覚】') {
-      return '(WE) G e n g a o z o (2)';
-    }
-    if (rawSong.meta.title === 'Aragami【光】') {
-      return '(WE) Aragami (2)';
-    }
-    return `(WE) ${(rawSong.meta.title as string).replace(/【.】$/, '')}`;
+    if (title === 'G e n g a o z o【狂】') return '(WE) G e n g a o z o';
+    if (title === 'G e n g a o z o【覚】') return '(WE) G e n g a o z o (2)';
+    if (title === 'Aragami【蔵】') return '(WE) Aragami';
+    if (title === 'Aragami【光】') return '(WE) Aragami (2)';
+    return `(WE) ${title.replace(/【.】$/, '')}`;
   }
-  return rawSong.meta.title as string;
+  return title;
 }
 
 function extractSongExtra(rawSong: Record<string, any>) {
