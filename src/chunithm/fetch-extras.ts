@@ -15,6 +15,12 @@ function getSongId(rawSong: Record<string, any>): string {
     if (title === 'G e n g a o z o【覚】') return '(WE) G e n g a o z o (2)';
     if (title === 'Aragami【蔵】') return '(WE) Aragami';
     if (title === 'Aragami【光】') return '(WE) Aragami (2)';
+    if (title === 'Random【分A】') return '(WE) Random';
+    if (title === 'Random【分B】') return '(WE) Random (2)';
+    if (title === 'Random【分C】') return '(WE) Random (3)';
+    if (title === 'Random【分D】') return '(WE) Random (4)';
+    if (title === 'Random【分E】') return '(WE) Random (5)';
+    if (title === 'Random【分F】') return '(WE) Random (6)';
     return `(WE) ${title.replace(/【.】$/, '')}`;
   }
   return title;

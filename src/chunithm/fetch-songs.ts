@@ -20,6 +20,14 @@ function getSongId(rawSong: Record<string, any>): string {
       if (rawSong.id === '8164') return '(WE) Aragami';
       if (rawSong.id === '8241') return '(WE) Aragami (2)';
     }
+    if (rawSong.title === 'Random') {
+      if (rawSong.id === '8244') return '(WE) Random';
+      if (rawSong.id === '8245') return '(WE) Random (2)';
+      if (rawSong.id === '8246') return '(WE) Random (3)';
+      if (rawSong.id === '8247') return '(WE) Random (4)';
+      if (rawSong.id === '8248') return '(WE) Random (5)';
+      if (rawSong.id === '8249') return '(WE) Random (6)';
+    }
     return `(WE) ${rawSong.title}`;
   }
   return rawSong.title;
