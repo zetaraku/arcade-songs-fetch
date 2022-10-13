@@ -6,8 +6,18 @@ import 'dotenv/config';
 const logger = log4js.getLogger('chunithm/fetch-internal-levels');
 logger.level = log4js.levels.INFO;
 
-function getSongId(rawSong: Record<string, any>) {
-  return String(rawSong.meta.title);
+function getSongId(rawSong: Record<string, any>): string {
+  const genre = rawSong.meta.genre as string;
+  const title = rawSong.meta.title as string;
+  if (genre === 'WORLD\'S END') {
+    //! hotfix
+    if (title === 'G e n g a o z o【狂】') return '(WE) G e n g a o z o';
+    if (title === 'G e n g a o z o【覚】') return '(WE) G e n g a o z o (2)';
+    if (title === 'Aragami【蔵】') return '(WE) Aragami';
+    if (title === 'Aragami【光】') return '(WE) Aragami (2)';
+    return `(WE) ${title.replace(/【.】$/, '')}`;
+  }
+  return title;
 }
 
 function extractSheets(rawSong: Record<string, any>) {
