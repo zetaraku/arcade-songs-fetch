@@ -45,9 +45,13 @@ export default async function run({
 
     imageName: song.imageName,
 
-    version: song.version ?? versions.find(
-      ({ dateBefore }) => dateBefore === null || song.releaseDate < dateBefore,
-    )?.version ?? null,
+    version: (
+      song.version ?? (
+        song.releaseDate !== null ? versions.find(
+          ({ dateBefore }) => dateBefore === null || song.releaseDate < dateBefore,
+        )?.version : null
+      ) ?? null
+    ),
     releaseDate: song.releaseDate,
 
     isNew: song.isNew != null ? Boolean(song.isNew) : undefined,
