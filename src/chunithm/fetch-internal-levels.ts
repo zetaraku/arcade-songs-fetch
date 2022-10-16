@@ -23,6 +23,9 @@ function getSongId(rawSong: Record<string, any>): string {
     if (title === 'Random【分F】') return '(WE) Random (6)';
     return `(WE) ${title.replace(/【.】$/, '')}`;
   }
+  //! hotfix
+  if (title === 'Reach for the Stars') return 'Reach For The Stars';
+  if (title === 'まっすぐ→→→ストリーム!') return 'まっすぐ→→→ストリーム！';
   return title;
 }
 

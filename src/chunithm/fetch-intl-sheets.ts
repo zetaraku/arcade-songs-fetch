@@ -64,6 +64,9 @@ function getSongId(rawSong: Record<string, any>): string {
     }
     return `(WE) ${rawSong.title}`;
   }
+  //! hotfix
+  if (rawSong.title === 'Reach for the Stars') return 'Reach For The Stars';
+  if (rawSong.title === 'まっすぐ→→→ストリーム!') return 'まっすぐ→→→ストリーム！';
   return rawSong.title;
 }
 
