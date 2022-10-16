@@ -56,10 +56,9 @@ export default async function run() {
   const rawSongs = await fetchSongs();
   logger.info(`OK, ${rawSongs.length} songs fetched.`);
 
-  logger.info('Truncating and Inserting songExtras ...');
+  logger.info('Updating songExtras ...');
   const songExtras = rawSongs.map((rawSong) => extractSongExtra(rawSong));
-  await SongExtra.truncate();
-  await SongExtra.bulkCreate(songExtras, { ignoreDuplicates: true });
+  await Promise.all(songExtras.map((songExtra) => SongExtra.upsert(songExtra)));
 
   logger.info('Done!');
 }
