@@ -111,7 +111,8 @@ async function getJpSheets(
   }
 
   const sheetBlocks = $(`.music_${difficulty}_score_back`).toArray();
-  const sheets = sheetBlocks.map((e) => {
+
+  return sheetBlocks.map((e) => {
     const title = $(e).find('.music_name_block').text()/* .trim() */;
 
     const type = (() => {
@@ -129,8 +130,6 @@ async function getJpSheets(
       version,
     };
   });
-
-  return sheets;
 }
 
 export default async function run() {
