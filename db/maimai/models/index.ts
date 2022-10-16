@@ -3,6 +3,7 @@ export { default as Song } from './Song';
 export { default as SongOrder } from './SongOrder';
 export { default as Sheet } from './Sheet';
 export { default as SheetVersion } from './SheetVersion';
+export { default as IntlSheetVersion } from './IntlSheetVersion';
 export { default as JpSheet } from './JpSheet';
 export { default as IntlSheet } from './IntlSheet';
 export { default as CnSheet } from './CnSheet';
