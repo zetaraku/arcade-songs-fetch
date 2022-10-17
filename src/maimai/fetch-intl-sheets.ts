@@ -37,7 +37,7 @@ function getSongId(title: string, category: string) {
   return title;
 }
 
-async function getIntlCookies() {
+export async function getIntlCookies() {
   if (!process.env.MAIMAI_INTL_SEGA_ID || !process.env.MAIMAI_INTL_SEGA_PASSWORD) {
     throw new Error('Please set your MAIMAI_INTL_SEGA_ID and MAIMAI_INTL_SEGA_PASSWORD in the .env file');
   }
