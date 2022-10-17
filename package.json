@@ -19,6 +19,7 @@
     "maimai:fetch-songs": "ts-node src/maimai/fetch-songs",
     "maimai:fetch-images": "ts-node src/maimai/fetch-images",
     "maimai:fetch-versions": "ts-node src/maimai/fetch-versions",
+    "maimai:fetch-intl-versions": "ts-node src/maimai/fetch-intl-versions",
     "maimai:fetch-intl-sheets": "ts-node src/maimai/fetch-intl-sheets",
     "maimai:fetch-cn-sheets": "ts-node src/maimai/fetch-cn-sheets",
     "maimai:fetch-extras-v1": "ts-node src/maimai/fetch-extras-v1",
