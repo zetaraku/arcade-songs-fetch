@@ -8,6 +8,7 @@ const SongExtra = sequelize.define('SongExtra', {
   },
 
   bpm: DataTypes.REAL,
+  releaseDate: DataTypes.DATEONLY,
 });
 
 export default SongExtra;
