@@ -78,7 +78,7 @@ export default async function run() {
       *
     FROM "Songs"
       NATURAL LEFT JOIN "SongOrders"
-      NATURAL LEFT JOIN "SongExtras"
+      LEFT JOIN "SongExtras" USING ("songId")
     ORDER BY "sortOrder"
   `, {
     type: Sequelize.QueryTypes.SELECT,

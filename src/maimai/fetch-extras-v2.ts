@@ -160,7 +160,7 @@ export default async function run() {
     SELECT "songId", "category", "title"
     FROM (
       SELECT "songId"
-      FROM "Songs" NATURAL LEFT JOIN "SongExtras"
+      FROM "Songs" LEFT JOIN "SongExtras" USING ("songId")
       WHERE ("bpm" IS NULL)
         UNION
       SELECT DISTINCT "songId"
