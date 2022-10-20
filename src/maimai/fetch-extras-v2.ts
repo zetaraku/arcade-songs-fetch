@@ -48,6 +48,9 @@ function getSongWikiUrl(song: Record<string, any>) {
 }
 
 function extractSheetExtras($: cheerio.CheerioAPI, table: cheerio.Element) {
+  // eslint-disable-next-line newline-per-chained-call
+  const noInternalLevel = ($(table).find('tr').eq(0).find('th').eq(1).text().trim() === '総数');
+
   const type = (() => {
     // eslint-disable-next-line newline-per-chained-call
     const fourthNoteType = $(table).find('tr').eq(1).find('th').eq(3).text().trim();
@@ -61,6 +64,9 @@ function extractSheetExtras($: cheerio.CheerioAPI, table: cheerio.Element) {
     const tds = $(tr).find('th, td').toArray();
     const tdsData = tds.map((e) => $(e).text().trim());
 
+    if (noInternalLevel) {
+      tdsData.splice(1, 0, '');
+    }
     if (type === 'std') {
       tdsData.splice(6, 0, '');
     }
@@ -139,6 +145,7 @@ async function fetchExtra(song: Record<string, any>) {
   };
 
   const sheetExtras = [
+    $('.ui_anchor_container:contains("譜面データ") + table').get(0),
     $('.ui_anchor_container:contains("スタンダード譜面") + table').get(0),
     $('.ui_anchor_container:contains("でらっくす譜面") + table').get(0),
   ].filter((e) => e !== undefined).flatMap(
