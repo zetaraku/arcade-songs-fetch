@@ -127,10 +127,15 @@ async function fetchExtra(song: Record<string, any>) {
   const $ = cheerio.load(response.data);
 
   const bpm = Number.parseFloat($('th:contains("BPM")').next().text().trim()) || null;
+  const date = $('th:contains("配信日")').next().text().trim() || '';
+
+  const dateMatch = date.match(/^(\d{4})\/(\d{2})\/(\d{2})/);
+  const releaseDate = dateMatch !== null ? `${dateMatch[1]}-${dateMatch[2]}-${dateMatch[3]}` : null;
 
   const songExtra = {
     songId: song.songId,
     bpm,
+    releaseDate,
   };
 
   const sheetExtras = [
