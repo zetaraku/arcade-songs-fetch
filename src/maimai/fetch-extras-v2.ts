@@ -26,17 +26,72 @@ const difficultyMap = new Map([
 function getSongWikiUrl(song: Record<string, any>) {
   const title = (() => {
     //! hotfix
-    if (song.songId === 'Link (2)') {
-      return 'Link（Circle of friends）';
-    }
-    if (song.songId === 'YA･DA･YO [Reborn]') {
-      return 'YA・DA・YO [Reborn]';
-    }
-    if (song.songId === 'D✪N’T  ST✪P  R✪CKIN’') {
-      return 'D✪N’T ST✪P R✪CKIN’';
-    }
-    if (song.songId === '　') {
-      return '\u200E';
+    if (song.songId === 'Link (2)') return 'Link（Circle of friends）';
+    if (song.songId === 'YA･DA･YO [Reborn]') return 'YA・DA・YO [Reborn]';
+    if (song.songId === 'D✪N’T  ST✪P  R✪CKIN’') return 'D✪N’T ST✪P R✪CKIN’';
+    if (song.songId === 'ウッーウッーウマウマ(ﾟ∀ﾟ)') return 'ウッーウッーウマウマ';
+    if (song.songId === 'トルコ行進曲 - オワタ＼(^o^)／') return 'トルコ行進曲 - オワタ';
+    if (song.songId === '+♂') return '♂';
+    if (song.songId === '　') return '\u200E';
+
+    if ([
+      'AMAZING MIGHTYYYY!!!!',
+      'Alea jacta est!',
+      'BREAK YOU!!',
+      'BREaK! BREaK! BREaK!',
+      'BaBan!! －甘い罠－',
+      'Backyun! －悪い女－',
+      'Bad Apple!! feat nomico',
+      'Bang Babang Bang!!!',
+      'CALL HEAVEN!!',
+      'CHOCOLATE BOMB!!!!',
+      'Endless, Sleepless Night',
+      'FREEDOM DiVE (tpz Overcute Remix)',
+      'GET!! 夢&DREAM',
+      'H-A-J-I-M-A-R-I-U-T-A-!!',
+      'Help me, ERINNNNNN!!',
+      'Help me, あーりん！',
+      'I\'m with you',
+      'JUMPIN\' JUMPIN\'',
+      'Jump!! Jump!! Jump!!',
+      'Jumping!!',
+      'KING is BACK!!',
+      'Let\'s Go Away',
+      'Never Give Up!',
+      'Now Loading!!!!',
+      'Oshama Scramble!',
+      'Scream out! -maimai SONIC WASHER Edit-',
+      'Signs Of Love (“Never More” ver.)',
+      'Splash Dance!!',
+      'Time To Make History (AKIRA YAMAOKA Remix)',
+      'TwisteD! XD',
+      'WORLD\'S END UMBRELLA',
+      'YATTA!',
+      'air\'s gravity',
+      'magician\'s operation',
+      'shake it!',
+      'specialist (“Never More” ver.)',
+      'welcome to maimai!! with マイマイマー',
+      'あ・え・い・う・え・お・あお!!',
+      'おジャ魔女カーニバル!!',
+      'ちがう!!!',
+      'でらっくmaimai♪てんてこまい!',
+      'オパ! オパ! RACER -GMT mashup-',
+      'ドキドキDREAM!!!',
+      'ナイト・オブ・ナイツ (Cranky Remix)',
+      'ファンタジーゾーン OPA-OPA! -GMT remix-',
+      'ラブリー☆えんじぇる!!',
+      'リッジでリッジでGO!GO!GO! -GMT mashup-',
+      '全力☆Summer!',
+      '教えて!! 魔法のLyric',
+      '最強 the サマータイム!!!!!',
+      '泣き虫O\'clock',
+      '無敵We are one!!',
+      '電車で電車でGO!GO!GO!GC! -GMT remix-',
+      '電車で電車でOPA!OPA!OPA! -GMT mashup-',
+      '響け！CHIREI MY WAY!',
+    ].includes(song.title)) {
+      return song.title.replaceAll(/[!,'()]/g, '');
     }
 
     return song.title;
