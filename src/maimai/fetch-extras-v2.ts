@@ -13,13 +13,13 @@ logger.level = log4js.levels.INFO;
 const DATA_URL = 'https://maimai.gamerch.com';
 
 const difficultyMap = new Map([
-  ['#00ced1', 'easy'],
+  ['#00ced1', null], // 'easy'
   ['#98fb98', 'basic'],
   ['#ffa500', 'advanced'],
   ['#fa8080', 'expert'],
   ['#ee82ee', 'master'],
   ['#ffceff', 'remaster'],
-  ['#ff5296', 'utage'],
+  ['#ff5296', null], // 'utage'
   //! add further difficulty here !//
 ]);
 
@@ -184,7 +184,7 @@ function extractSheetExtras($: cheerio.CheerioAPI, table: cheerio.Element) {
 
       noteDesigner,
     };
-  });
+  }).filter((e) => e.difficulty !== null);
 }
 
 async function fetchExtra(song: Record<string, any>) {
