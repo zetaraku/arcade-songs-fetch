@@ -1,12 +1,3 @@
-const path = require('node:path');
+const defineConfigs = require('../../_shared/config/config');
 
-module.exports = {
-  development: {
-    dialect: 'sqlite',
-    storage: path.resolve(__dirname, '../../../data/sdvx/db.sqlite3'),
-    logging: false,
-    define: {
-      timestamps: false,
-    },
-  },
-};
+module.exports = defineConfigs('sdvx');
