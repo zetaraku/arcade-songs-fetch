@@ -177,15 +177,32 @@ export default async function run() {
   const songsToFetch: Record<string, any>[] = await sequelize.query(/* sql */ `
     SELECT "songId", "category", "title"
     FROM (
-      SELECT "songId"
+      SELECT DISTINCT "songId"
       FROM "Songs" LEFT JOIN "SongExtras" USING ("songId")
-      WHERE ("bpm" IS NULL)
+      WHERE (FALSE
+        OR "SongExtras"."bpm" IS NULL
+        OR "SongExtras"."releaseDate" IS NULL
+      ) AND "category" <> '宴会場'
         UNION
       SELECT DISTINCT "songId"
-      FROM "Sheets" NATURAL LEFT JOIN "SheetExtras"
-      WHERE ("noteCounts.total" IS NULL) OR ("noteDesigner" IS NULL)
+      FROM "Sheets" LEFT JOIN "SheetExtras" USING ("songId", "type", "difficulty")
+      WHERE (FALSE
+        OR "noteCounts.tap" IS NULL
+        OR "noteCounts.hold" IS NULL
+        OR "noteCounts.slide" IS NULL
+        OR ("noteCounts.touch" IS NULL AND "type" = 'dx')
+        OR "noteCounts.break" IS NULL
+        OR "noteCounts.total" IS NULL
+        OR (0
+          + "noteCounts.tap"
+          + "noteCounts.hold"
+          + "noteCounts.slide"
+          + COALESCE("noteCounts.touch", 0)
+          + "noteCounts.break"
+        ) <> "noteCounts.total"
+        OR ("noteDesigner" IS NULL)
+      ) AND "type" <> 'utage'
     ) NATURAL LEFT JOIN "Songs"
-    WHERE "category" <> '宴会場'
   `, {
     type: Sequelize.QueryTypes.SELECT,
   });
