@@ -11,6 +11,10 @@ Data fetching scripts for [arcade-songs](https://github.com/zetaraku/arcade-song
 
 ## Setup
 
+- **(required)** Make a copy of the `.env.example` file as `.env` and fill out the required fields.
+
+- **(required)** Make a copy of the `dbconfig.example.js` file as `dbconfig.js` and customize it if you are using other databases (SQLite is used as the default)
+
 - Run the following commands:
 
   ```sh
@@ -18,7 +22,7 @@ Data fetching scripts for [arcade-songs](https://github.com/zetaraku/arcade-song
   npm run db:migrate:all
   ```
 
-- Make a copy of the `.env.example` file as `.env` and fill out the required fields.
+- You might need to re-run the `npm run db:migrate:all` command when the database schema is changed.
 
 ## Usage
 
