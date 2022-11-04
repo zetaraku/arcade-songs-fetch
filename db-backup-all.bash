@@ -3,7 +3,7 @@
 timestamp=$(date +"%Y%m%d%H%M%S")
 
 for path in data/*; do
-  if [ -f "$path/db.sqlite3" ]; then
+  if [[ -f "$path/db.sqlite3" ]]; then
     echo "Backing up '$(basename "$path")' ..."
     (
       cd "$path" || exit
