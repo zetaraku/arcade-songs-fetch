@@ -9,6 +9,8 @@ fi
 for path in data/*; do
   gamecode=$(basename "$path")
 
+  [[ "$gamecode" =~ ^_ ]] && continue
+
   (
     cd "$path" || exit
 
