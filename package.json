@@ -68,6 +68,7 @@
     "# linting": "",
     "lint": "eslint src/ --ext .js,.ts",
     "# database": "",
+    "db:create:all": "bash db-create-all.bash",
     "db:migrate:all": "bash db-migrate-all.bash",
     "db:backup:all": "bash db-backup-all.bash",
     "db:restore:all": "bash db-restore-all.bash"

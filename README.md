@@ -19,6 +19,7 @@ Data fetching scripts for [arcade-songs](https://github.com/zetaraku/arcade-song
 
   ```sh
   npm install
+  npm run db:create:all  # run this only if you're using a database other than SQLite
   npm run db:migrate:all
   ```
 
