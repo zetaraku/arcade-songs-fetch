@@ -55,21 +55,22 @@ async function* fetchPages(cookies: Record<string, string>) {
 
     const $ = cheerio.load(response.data);
 
-    const songInfos = $('a[href^="/divanet/pv/info/"]').toArray().map((e) => {
-      // const id = $(e).attr('href')!.match(/^\/divanet\/pv\/info\/(\w+)\//)![1];
-      const title = $(e).text().trim();
-      const detailUrl = new URL($(e).attr('href')!, DATA_URL).toString();
+    const songInfos = $('a[href^="/divanet/pv/info/"]').toArray()
+      .map((e) => {
+        // const id = $(e).attr('href')!.match(/^\/divanet\/pv\/info\/(\w+)\//)![1];
+        const title = $(e).text().trim();
+        const detailUrl = new URL($(e).attr('href')!, DATA_URL).toString();
 
-      const rawSongInfo = {
-        title,
-        detailUrl,
-      };
+        const rawSongInfo = {
+          title,
+          detailUrl,
+        };
 
-      return {
-        songId: getSongId(rawSongInfo),
-        ...rawSongInfo,
-      };
-    });
+        return {
+          songId: getSongId(rawSongInfo),
+          ...rawSongInfo,
+        };
+      });
 
     yield songInfos;
 

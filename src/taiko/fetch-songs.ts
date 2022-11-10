@@ -22,10 +22,11 @@ async function fetchCategories() {
   const response = await axios.get(DATA_URL);
   const $ = cheerio.load(response.data);
 
-  const categories = $('#sgnavi ul li').toArray().map((li) => ({
-    category: $(li).find('img').attr('alt'),
-    pageUrl: new URL($(li).find('a').attr('href')!, DATA_URL).toString(),
-  }));
+  const categories = $('#sgnavi ul li').toArray()
+    .map((li) => ({
+      category: $(li).find('img').attr('alt'),
+      pageUrl: new URL($(li).find('a').attr('href')!, DATA_URL).toString(),
+    }));
 
   return categories;
 }
@@ -37,45 +38,46 @@ async function getSongs(pageUrl: string) {
   const section = $('#mainCol > section');
 
   const category = section.find('.tit').text().trim();
-  const songs = section.find('tbody tr').toArray().map((tr) => {
-    const $th = $(tr).find('th');
-    const thChildren = $th.contents().toArray();
-    const tds = $(tr).find('td').toArray();
+  const songs = section.find('tbody tr').toArray()
+    .map((tr) => {
+      const $th = $(tr).find('th');
+      const thChildren = $th.contents().toArray();
+      const tds = $(tr).find('td').toArray();
 
-    const title = $(thChildren[0]).text().trim();
-    const artist = $(thChildren.slice(-2)[0]).text().trim() || null;
+      const title = $(thChildren[0]).text().trim();
+      const artist = $(thChildren.slice(-2)[0]).text().trim() || null;
 
-    const parseLevel = (text: string) => {
-      const levelValue = Number.parseInt(text, 10);
-      return !Number.isNaN(levelValue) ? `★${levelValue}` : null;
-    };
+      const parseLevel = (text: string) => {
+        const levelValue = Number.parseInt(text, 10);
+        return !Number.isNaN(levelValue) ? `★${levelValue}` : null;
+      };
 
-    const rawSong = {
-      category,
-      title,
-      artist,
+      const rawSong = {
+        category,
+        title,
+        artist,
 
-      imageName: 'default-cover.png',
-      imageUrl: null,
+        imageName: 'default-cover.png',
+        imageUrl: null,
 
-      level_easy: parseLevel($(tds[1]).text().trim()),
-      level_normal: parseLevel($(tds[2]).text().trim()),
-      level_hard: parseLevel($(tds[3]).text().trim()),
-      level_oni: parseLevel($(tds[4]).text().trim()),
-      level_ura_oni: parseLevel($(tds[5]).text().trim()),
+        level_easy: parseLevel($(tds[1]).text().trim()),
+        level_normal: parseLevel($(tds[2]).text().trim()),
+        level_hard: parseLevel($(tds[3]).text().trim()),
+        level_oni: parseLevel($(tds[4]).text().trim()),
+        level_ura_oni: parseLevel($(tds[5]).text().trim()),
 
-      version: null,
-      releaseDate: null,
+        version: null,
+        releaseDate: null,
 
-      isNew: $th.find('.new').length !== 0,
-      isLocked: $th.find('.icoMedal, .icoAi, .icoCampaign, .icoCode, .icoSecrect').length !== 0,
-    };
+        isNew: $th.find('.new').length !== 0,
+        isLocked: $th.find('.icoMedal, .icoAi, .icoCampaign, .icoCode, .icoSecrect').length !== 0,
+      };
 
-    return {
-      songId: getSongId(rawSong),
-      ...rawSong,
-    };
-  });
+      return {
+        songId: getSongId(rawSong),
+        ...rawSong,
+      };
+    });
 
   return songs;
 }

@@ -16,80 +16,82 @@ function getSongId(rawSong: Record<string, any>) {
 }
 
 function extractCategories($: cheerio.CheerioAPI) {
-  const categories = $('.music-nav nav ul li').toArray().map((li) => ({
-    category: $(li).find('a').text().trim(),
-    selector: $(li).find('a').attr('href')!,
-  }));
+  const categories = $('.music-nav nav ul li').toArray()
+    .map((li) => ({
+      category: $(li).find('a').text().trim(),
+      selector: $(li).find('a').attr('href')!,
+    }));
 
   return categories;
 }
 
 function extractSongs($: cheerio.CheerioAPI, category: string, selector: string) {
-  const songs = $(`${selector} ul li > a`).toArray().map((a) => {
-    // const [, id] = $(a).attr('href')!.match(/^\/music\/(.+)\.html$/)!;
+  const songs = $(`${selector} ul li > a`).toArray()
+    .map((a) => {
+      // const [, id] = $(a).attr('href')!.match(/^\/music\/(.+)\.html$/)!;
 
-    const infoTexts = $(a).find('.music').contents()
-      .toArray()
-      .map((e) => $(e).text().trim());
+      const infoTexts = $(a).find('.music').contents()
+        .toArray()
+        .map((e) => $(e).text().trim());
 
-    //! hotfix
-    if ([
-      '電車で電車でOPA!OPA!OPA! -GMT mashup-／mashup by Yuji Masubuchi(BNSI)',
-      'Soul Evolution／上高治己(Jimmy Weckl) vocal by 織田かおり／「ガンスリンガー ストラトス2」第十七極東帝都管理区・NEO SHIBUYAステージBGM',
-      '瞳のLAZhWARD ／山崎良 vocal by メイリア(GARNiDELiA)／「ガンスリンガー ストラトス2」フロンティアS・旧渋谷荒廃地区ステージBGM',
-    ].includes(infoTexts[0])) {
-      const [realTitle, realArtist] = infoTexts[0].split('／', 2).map((s) => s.trim());
-      infoTexts.splice(0, 2, realTitle, '', realArtist, '');
-    }
-    if (infoTexts[0] === 'Shooting Star') {
-      infoTexts.splice(2, 4, 'Masashi Hamauzu / Mina', '');
-    }
-    if (infoTexts[0] === 'Invader Disco') infoTexts[4] = '2013.11.5';
-    if (infoTexts[0] === 'Crystal tears') infoTexts[4] = '2013.12.18';
-    if (infoTexts[0] === 'Extreme MGG★★★') infoTexts[4] = '2013.12.26';
-    if (infoTexts[0] === 'Captain NEO -Confusion Mix-') infoTexts[4] = '2014.1.10';
-    if (infoTexts[0] === 'I, SCREAM') infoTexts[4] = '2014.8.27';
+      //! hotfix
+      if ([
+        '電車で電車でOPA!OPA!OPA! -GMT mashup-／mashup by Yuji Masubuchi(BNSI)',
+        'Soul Evolution／上高治己(Jimmy Weckl) vocal by 織田かおり／「ガンスリンガー ストラトス2」第十七極東帝都管理区・NEO SHIBUYAステージBGM',
+        '瞳のLAZhWARD ／山崎良 vocal by メイリア(GARNiDELiA)／「ガンスリンガー ストラトス2」フロンティアS・旧渋谷荒廃地区ステージBGM',
+      ].includes(infoTexts[0])) {
+        const [realTitle, realArtist] = infoTexts[0].split('／', 2).map((s) => s.trim());
+        infoTexts.splice(0, 2, realTitle, '', realArtist, '');
+      }
+      if (infoTexts[0] === 'Shooting Star') {
+        infoTexts.splice(2, 4, 'Masashi Hamauzu / Mina', '');
+      }
+      if (infoTexts[0] === 'Invader Disco') infoTexts[4] = '2013.11.5';
+      if (infoTexts[0] === 'Crystal tears') infoTexts[4] = '2013.12.18';
+      if (infoTexts[0] === 'Extreme MGG★★★') infoTexts[4] = '2013.12.26';
+      if (infoTexts[0] === 'Captain NEO -Confusion Mix-') infoTexts[4] = '2014.1.10';
+      if (infoTexts[0] === 'I, SCREAM') infoTexts[4] = '2014.8.27';
 
-    const title = infoTexts[0];
-    const artist = infoTexts[2];
+      const title = infoTexts[0];
+      const artist = infoTexts[2];
 
-    const imageUrl = encodeURI($(a).find('.photo img').attr('src')!);
-    const imageName = `${hashed(imageUrl)}.png`;
+      const imageUrl = encodeURI($(a).find('.photo img').attr('src')!);
+      const imageName = `${hashed(imageUrl)}.png`;
 
-    const release = infoTexts[4]?.match(/^(\d+)\.(\d+)\.(\d+)$/);
-    const releaseDate = release ? `${
-      release[1].padStart(4, '0')
-    }-${
-      release[2].padStart(2, '0')
-    }-${
-      release[3].padStart(2, '0')
-    }` : null;
+      const release = infoTexts[4]?.match(/^(\d+)\.(\d+)\.(\d+)$/);
+      const releaseDate = release ? `${
+        release[1].padStart(4, '0')
+      }-${
+        release[2].padStart(2, '0')
+      }-${
+        release[3].padStart(2, '0')
+      }` : null;
 
-    const detailUrl = new URL($(a).attr('href')!, DATA_URL).toString();
+      const detailUrl = new URL($(a).attr('href')!, DATA_URL).toString();
 
-    const rawSong = {
-      category,
-      title,
-      artist,
+      const rawSong = {
+        category,
+        title,
+        artist,
 
-      imageName,
-      imageUrl,
+        imageName,
+        imageUrl,
 
-      version: null,
-      releaseDate,
+        version: null,
+        releaseDate,
 
-      isNew: $(a).find('.new img').length > 0,
-      isLocked: null,
+        isNew: $(a).find('.new img').length > 0,
+        isLocked: null,
 
-      hasEx: $(a).find('img.icon_extra').length > 0,
-      detailUrl,
-    };
+        hasEx: $(a).find('img.icon_extra').length > 0,
+        detailUrl,
+      };
 
-    return {
-      songId: getSongId(rawSong),
-      ...rawSong,
-    };
-  });
+      return {
+        songId: getSongId(rawSong),
+        ...rawSong,
+      };
+    });
 
   return songs;
 }
