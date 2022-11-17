@@ -3,7 +3,6 @@ import axios from 'axios';
 import sleep from 'sleep-promise';
 import log4js from 'log4js';
 import * as cheerio from 'cheerio';
-import { ensureNoDuplicateEntry } from '@/_core/utils';
 import { Song, Sheet } from '@@/db/taiko/models';
 
 const logger = log4js.getLogger('taiko/fetch-songs');
@@ -137,9 +136,6 @@ export default async function run() {
   logger.info(`OK, merged into ${songs.length} songs.`);
 
   songs.reverse();
-
-  logger.info('Ensuring every song has an unique songId ...');
-  ensureNoDuplicateEntry(songs.map((song) => getSongId(song)));
 
   const sheets = songs.flatMap((song) => extractSheets(song));
 
