@@ -70,7 +70,6 @@ async function parseLevelSheet(sheet: GoogleSpreadsheetWorksheet) {
       const cell = sheet.getCell(row, col);
       const chartConstantCell = sheet.getCell(row, col + 5);
 
-      // backgroundColor notes the start of a new difficulty/category group
       if (cell.value !== null
           && !chartConstantCell.formulaError
           && !Number.isNaN(parseFloat(chartConstantCell.value as string))
