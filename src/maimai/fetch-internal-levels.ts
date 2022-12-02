@@ -1,11 +1,12 @@
 import log4js from 'log4js';
-import { GoogleSpreadsheet } from 'google-spreadsheet';
+import { GoogleSpreadsheet, GoogleSpreadsheetWorksheet } from 'google-spreadsheet';
 import { SheetInternalLevel } from '@@/db/maimai/models';
 import 'dotenv/config';
 
 const logger = log4js.getLogger('maimai/fetch-internal-levels');
 logger.level = log4js.levels.INFO;
 
+const levelSheetNames = ['14以上', '13+', '13', '12+', '12'];
 const typeMapping = new Map([
   ['STD', 'std'],
   ['DX', 'dx'],
@@ -60,6 +61,33 @@ function extractSheet(rawSheet: Record<string, any>) {
   };
 }
 
+async function parseLevelSheet(sheet: GoogleSpreadsheetWorksheet) {
+  await sheet.loadCells();
+  const result = [];
+
+  for (let col = 0; col + 5 < sheet.columnCount; col += 7) {
+    for (let row = 3; row < sheet.rowCount; row += 1) {
+      const cell = sheet.getCell(row, col);
+      const chartConstantCell = sheet.getCell(row, col + 5);
+
+      // backgroundColor notes the start of a new difficulty/category group
+      if (cell.value !== null
+          && !chartConstantCell.formulaError
+          && !Number.isNaN(parseFloat(chartConstantCell.value as string))
+      ) {
+        result.push({
+          title: cell.value,
+          type: typeMapping.get(sheet.getCell(row, col + 2).value as string),
+          difficulty: difficultyMapping.get(sheet.getCell(row, col + 3).value as string),
+          internalLevel: (chartConstantCell.value as number).toFixed(1),
+        });
+      }
+    }
+  }
+
+  return result;
+}
+
 async function fetchSheetsV6() {
   if (!process.env.GOOGLE_API_KEY) {
     throw new Error('Please set your GOOGLE_API_KEY in the .env file');
@@ -81,6 +109,11 @@ async function fetchSheetsV6() {
       difficulty: difficultyMapping.get(sheet.getCell(i, 11).value as string),
       internalLevel: (sheet.getCell(i, 18).value as number).toFixed(1),
     }));
+
+  const extra = await Promise.all(
+    levelSheetNames.map((name) => parseLevelSheet(spreadsheet.sheetsByTitle[name])),
+  );
+  result.push(...extra.flat());
 
   return result;
 }
@@ -106,6 +139,11 @@ async function fetchSheetsV7() {
       difficulty: difficultyMapping.get(sheet.getCell(i, 3).value as string),
       internalLevel: (sheet.getCell(i, 7).value as number).toFixed(1),
     }));
+
+  const extra = await Promise.all(
+    levelSheetNames.map((name) => parseLevelSheet(spreadsheet.sheetsByTitle[name])),
+  );
+  result.push(...extra.flat());
 
   return result;
 }

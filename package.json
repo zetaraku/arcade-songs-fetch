@@ -76,8 +76,10 @@
   "author": "Raku Zeta <zetaraku@gmail.com>",
   "license": "MIT",
   "devDependencies": {
+    "@tsconfig/node16": "^1.0.3",
     "@types/download": "^8.0.1",
     "@types/google-spreadsheet": "^3.2.2",
+    "@types/node": "^16.18.4",
     "@types/shelljs": "^0.8.11",
     "@typescript-eslint/eslint-plugin": "^5.29.0",
     "@typescript-eslint/parser": "^5.29.0",
