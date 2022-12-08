@@ -16,6 +16,7 @@ const difficulties = [
   { difficulty: 'ongeki', name: 'オンゲキ', color: '#32b9cc' },
   { difficulty: 'gc', name: 'GROOVE COASTER', color: '#22125b' },
   { difficulty: 'diva', name: 'Project DIVA Arcade', color: '#6d8c8d' },
+  { difficulty: 'popn', name: 'pop\'n music', color: '#ffaa00' },
 ];
 
 export default async function run() {

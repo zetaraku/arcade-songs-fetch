@@ -43,6 +43,7 @@ npm run <game-code>:<script-name>
   - `ongeki` (オンゲキ)
   - `gc` (GROOVE COASTER)
   - `diva` (Project DIVA Arcade)
+  - `popn` (pop'n music)
 
 - Available `<script-name>`:
   - See `package.json`.
