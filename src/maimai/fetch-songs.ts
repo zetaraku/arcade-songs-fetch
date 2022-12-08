@@ -112,6 +112,7 @@ export default async function run() {
 
   logger.info('Updating songs ...');
   await Promise.all(songs.map((song) => Song.upsert(song)));
+
   await SongOrder.truncate();
   await Promise.all(songs.map((song) => SongOrder.upsert(song)));
 
