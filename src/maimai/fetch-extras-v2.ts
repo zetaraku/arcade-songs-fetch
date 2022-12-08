@@ -10,7 +10,7 @@ import { sequelize, SongExtra, SheetExtra } from '@@/db/maimai/models';
 const logger = log4js.getLogger('maimai/fetch-extras-v2');
 logger.level = log4js.levels.INFO;
 
-const DATA_URL = 'https://maimai.gamerch.com';
+const SONG_LIST_URL = 'https://gamerch.com/maimai/entry/545589';
 
 const difficultyMap = new Map([
   ['#00ced1', null], // 'easy'
@@ -23,7 +23,7 @@ const difficultyMap = new Map([
   //! add further difficulty here !//
 ]);
 
-function getSongWikiUrl(song: Record<string, any>) {
+function getSongWikiTitle(song: Record<string, any>) {
   const title = (() => {
     //! hotfix
     if (song.songId === 'Link (2)') return 'Link（Circle of friends）';
@@ -97,9 +97,7 @@ function getSongWikiUrl(song: Record<string, any>) {
     return song.title;
   })();
 
-  const encodedTitle = encodeURIComponent(gamerchWikiTitleEscape(title));
-
-  return `${DATA_URL}/${encodedTitle}`;
+  return gamerchWikiTitleEscape(title);
 }
 
 function extractSheetExtras($: cheerio.CheerioAPI, table: cheerio.Element) {
@@ -188,9 +186,17 @@ function extractSheetExtras($: cheerio.CheerioAPI, table: cheerio.Element) {
   }).filter((e) => e.difficulty !== null);
 }
 
-async function fetchExtra(song: Record<string, any>) {
-  const pageUrl = getSongWikiUrl(song);
+async function fetchSongPageUrlMap() {
+  const response = await axios.get(SONG_LIST_URL);
+  const $ = cheerio.load(response.data);
 
+  return new Map(
+    $('.markup.mu > ul > li > a').toArray()
+      .map((e) => [$(e).attr('title'), $(e).attr('href')]),
+  );
+}
+
+async function fetchExtra(song: Record<string, any>, pageUrl: string) {
   const response = await axios.get(pageUrl);
   const $ = cheerio.load(response.data);
 
@@ -230,6 +236,10 @@ async function fetchExtra(song: Record<string, any>) {
 }
 
 export default async function run() {
+  logger.info('Fetching song page url list ...');
+  const songPageUrlMap = await fetchSongPageUrlMap();
+  logger.info(`OK, ${songPageUrlMap.size} song page url fetched.`);
+
   const songsToFetch: Record<string, any>[] = await sequelize.query(/* sql */ `
     SELECT "songId", "category", "title"
     FROM (
@@ -267,7 +277,11 @@ export default async function run() {
   for (const [index, song] of songsToFetch.entries()) {
     try {
       logger.info(`(${1 + index} / ${songsToFetch.length}) Fetching & Updating extra: ${song.title} ...`);
-      const { songExtra, sheetExtras } = await fetchExtra(song);
+      const pageUrl = songPageUrlMap.get(getSongWikiTitle(song));
+
+      if (pageUrl === undefined) throw new Error(`Song page url not found on ${SONG_LIST_URL}`);
+
+      const { songExtra, sheetExtras } = await fetchExtra(song, pageUrl);
 
       await SongExtra.upsert(songExtra);
       await Promise.all(sheetExtras.map((sheetExtra) => SheetExtra.upsert(sheetExtra)));
