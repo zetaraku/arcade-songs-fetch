@@ -126,7 +126,7 @@ function extractSheetExtras($: cheerio.CheerioAPI, table: cheerio.Element) {
       tdsData.splice(6, 0, '');
     }
 
-    const difficultyColor = tds[0].attribs.style.match('background:(#[0-9a-f]+)')![1];
+    const difficultyColor = tds[0].attribs.style.match('background-color:(#[0-9a-f]+)')![1];
 
     const [
       /* level */, /* internalLevel */,
@@ -140,7 +140,8 @@ function extractSheetExtras($: cheerio.CheerioAPI, table: cheerio.Element) {
     }
 
     const noteDesigner = (() => {
-      const nodes = $(table).next('span:contains("譜面作者")').contents().toArray();
+      // eslint-disable-next-line newline-per-chained-call
+      const nodes = $(table).parent().next('p:contains("譜面作者")').find('span').contents().toArray();
 
       const extractNoteDesigner = (abbr: string) => {
         const anchorIndex = nodes.findIndex((node) => $(node).text().trim() === abbr);
@@ -206,9 +207,9 @@ async function fetchExtra(song: Record<string, any>) {
   };
 
   const sheetExtras = [
-    $('.ui_anchor_container:contains("譜面データ") + table').get(0),
-    $('.ui_anchor_container:contains("スタンダード譜面") + table').get(0),
-    $('.ui_anchor_container:contains("でらっくす譜面") + table').get(0),
+    $('h3:contains("譜面データ") + .mu__table > table').get(0),
+    $('h4:contains("スタンダード譜面") + .mu__table > table').get(0),
+    $('h4:contains("でらっくす譜面") + .mu__table > table').get(0),
   ].filter((e) => e !== undefined).flatMap(
     (table) => extractSheetExtras($, table).map(
       (sheetExtra) => ({
