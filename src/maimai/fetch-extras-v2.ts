@@ -23,7 +23,7 @@ const difficultyMap = new Map([
   //! add further difficulty here !//
 ]);
 
-function getSongWikiTitle(song: Record<string, any>) {
+export function getSongWikiTitle(song: Record<string, any>) {
   const title = (() => {
     //! hotfix
     if (song.songId === 'Link (2)') return 'Link（Circle of friends）';
