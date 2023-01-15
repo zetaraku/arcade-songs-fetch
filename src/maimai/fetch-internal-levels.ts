@@ -111,7 +111,7 @@ async function fetchSheetsV7() {
 }
 
 export default async function run() {
-  logger.info('Fetching data from RCMF Google Sheets ...');
+  logger.info('Fetching data from internal level source ...');
   const rawSheets = [
     ...await fetchSheetsV6(),
     ...await fetchSheetsV7(),
