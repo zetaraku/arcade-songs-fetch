@@ -94,6 +94,17 @@ export default async function run() {
     nest: true,
   });
 
+  /*
+    Levels lower than 10 have a known internal level relationship.
+    Source: [レーティング・OVER POWER - チュウニズム攻略Wiki | Gamerch](https://gamerch.com/chunithm/entry/489232)
+  */
+  for (const sheetRecord of sheetRecords as Record<string, any>[]) {
+    const levelValue = getLevelValueOf(sheetRecord);
+    if (levelValue !== null && levelValue >= 1 && levelValue < 10) {
+      sheetRecord.internalLevel = levelValue.toFixed(1);
+    }
+  }
+
   const jsonText = await genJson({
     songRecords,
     sheetRecords,
