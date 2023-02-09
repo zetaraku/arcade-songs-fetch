@@ -37,6 +37,8 @@ const manualMappings = new Map([
   ['Baban!!  ー甘い罠ー', 'BaBan!! －甘い罠－'],
   ['スカーレット警察のゲットーパトロール２４時', 'スカーレット警察のゲットーパトロール24時'],
   ['ファンタジーゾーンOPA!-OPA! -GMT remix-', 'ファンタジーゾーン OPA-OPA! -GMT remix-'],
+  ['Save This World νMix', 'Save This World νMIX'],
+  ['“411Ψ892”', '"411Ψ892"'],
   // Dummy entries:
   ['(  Ꙭ)ﾌﾞｯｺﾛﾘ食べよう', undefined],
   ['実験', undefined],
