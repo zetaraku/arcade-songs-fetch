@@ -1,3 +1,142 @@
+- title: SUN クラス認定
+  sections:
+    - title: 【CLASS Ⅰ】
+    - description: |-
+        「First Step」コース
+        ❤ 50｜-0/-0/-1｜+10
+      sheets:
+        - STARTLINER|std|master
+        - ぽかぽかの星|std|master
+        - Virtual to LIVE|std|master
+    - description: |-
+        「クラス認定 - I - Random」コース
+        ❤ 50｜-0/-0/-1｜+10
+      sheets:
+        - ランダムで選曲されます|rnd|random|10
+        - ランダムで選曲されます|rnd|random|10+
+        - ランダムで選曲されます|rnd|random|11
+    - title: 【CLASS Ⅱ】
+    - description: |-
+        「○○○○ー○○○」コース
+        ❤ 50｜-0/-0/-1｜+10
+      sheets:
+        - テリトリーバトル|std|master
+        - 光線チューニング|std|master
+        - 特定楽曲から選曲されます|rnd|random|-
+    - description: |-
+        「クラス認定 - Ⅱ - Random」コース
+        ❤ 50｜-0/-0/-1｜+0
+      sheets:
+        - ランダムで選曲されます|rnd|random|11+
+        - ランダムで選曲されます|rnd|random|12
+        - ランダムで選曲されます|rnd|random|12+
+    - title: 【CLASS Ⅲ】
+    - description: |-
+        「言ノ葉 Collection」コース
+        ❤ 50｜-0/-1/-1｜+10
+      sheets:
+        - ヤミツキ|std|master
+        - Secret Sleuth|std|master
+        - 分からない|std|master
+    - description: |-
+        「クラス認定 - Ⅲ - Random」コース
+        ❤ 30｜-0/-0/-1｜+0
+      sheets:
+        - ランダムで選曲されます|rnd|random|12+
+        - ランダムで選曲されます|rnd|random|13
+        - ランダムで選曲されます|rnd|random|13+
+    - title: 【CLASS Ⅳ】
+    - description: |-
+        「PPPPPPPPPPPack」コース
+        ❤ 80｜-0/-1/-1｜+0
+      sheets:
+        - Pump!n|std|master
+        - P！P！P！P！がおー!!|std|master
+        - Pre Paid Pog Punk Panic|std|master
+    - description: |-
+        「クラス認定 - Ⅳ - Random」コース
+        ❤ 500｜-1/-1/-1｜+0
+      sheets:
+        - ランダムで選曲されます|rnd|random|13+
+        - ランダムで選曲されます|rnd|random|14
+        - ランダムで選曲されます|rnd|random|14+
+    - title: 【CLASS Ⅴ】
+    - description: |-
+        「TAG CHALLENGE」コース
+        ❤ 100｜-0/-1/-1｜+0
+      sheets:
+        - アルストロメリア|std|ultima
+        - GERBERA|std|master
+        - POTENTIAL|std|master
+    - description: |-
+        「クラス認定 - Ⅴ - Random」コース
+        ❤ 300｜-1/-1/-1｜+0
+      sheets:
+        - ランダムで選曲されます|rnd|random|14
+        - ランダムで選曲されます|rnd|random|14+
+        - ランダムで選曲されます|rnd|random|14+
+    - title: 【CLASS ∞】
+    - description: |-
+        「aWEsome!!!!」コース
+        ❤ 30｜-0/-1/-1｜+10
+      sheets:
+        - (WE) Trackless wilderness|we|【狂】
+        - (WE) folern|we|【狂】
+        - (WE) Trrricksters!!|we|【狂】
+    - description: |-
+        「クラス認定 - ∞ - Random」コース
+        ❤ 150｜-1/-1/-1｜+0
+      sheets:
+        - ランダムで選曲されます|rnd|random|14
+        - ランダムで選曲されます|rnd|random|14+
+        - ランダムで選曲されます|rnd|random|15
+    - title: 【CLASS EXTRA】
+    - description: |-
+        「RANDOM」コース
+        ❤ 50｜-0/-0/-1｜+0
+      sheets:
+        - ランダムで選曲されます|rnd|random|12
+        - ランダムで選曲されます|rnd|random|13
+        - (WE) Random|we|【分】
+    - description: |-
+        「Wall Panic!」コース
+        ❤ 400｜(+1)/-1/-1/-1｜+0
+      sheets:
+        - ランダムで選曲されます|rnd|random|10+
+        - ランダムで選曲されます|rnd|random|11
+        - ランダムで選曲されます|rnd|random|11+
+    - description: |-
+        【期間限定】
+        「KING of Performai The 4th 予選① EXPERT」コース
+        ❤ 50｜(+50)/+50/+50/-1｜+0
+      sheets:
+        - Don't Fight The Music|std|expert
+        - GIGA DRIVE|std|expert
+        - Trrricksters!!|std|expert
+    - description: |-
+        【期間限定】
+        「KING of Performai The 4th 予選② EXPERT」コース
+        ❤ 50｜(+50)/+50/+50/-1｜+0
+      sheets:
+        - エンドマークに希望と涙を添えて|std|expert
+        - Glorious Crown (tpz over-Over-OVERCUTE REMIX)|std|expert
+        - Rebellion|std|expert
+    - description: |-
+        【期間限定】
+        「KING of Performai The 4th 予選① MASTER」コース
+        ❤ 20｜(+20)/+20/+20/-1｜+0
+      sheets:
+        - Don't Fight The Music|std|master
+        - GIGA DRIVE|std|master
+        - Trrricksters!!|std|master
+    - description: |-
+        【期間限定】
+        「KING of Performai The 4th 予選② MASTER」コース
+        ❤ 20｜(+20)/+20/+20/-1｜+0
+      sheets:
+        - エンドマークに希望と涙を添えて|std|master
+        - Glorious Crown (tpz over-Over-OVERCUTE REMIX)|std|master
+        - Rebellion|std|master
 - title: NEW クラス認定
   sections:
     - title: 【CLASS Ⅰ】
@@ -696,3 +835,35 @@
         - ZEUS|std|master
         - SON OF SUN|std|master
         - ENDYMION|std|master
+    - description: |-
+        【期間限定】
+        「KING of Performai The 4th 予選① EXPERT」コース
+        ❤ 50｜(+50)/+50/+50/-1｜+0
+      sheets:
+        - Don't Fight The Music|std|expert
+        - GIGA DRIVE|std|expert
+        - Trrricksters!!|std|expert
+    - description: |-
+        【期間限定】
+        「KING of Performai The 4th 予選② EXPERT」コース
+        ❤ 50｜(+50)/+50/+50/-1｜+0
+      sheets:
+        - エンドマークに希望と涙を添えて|std|expert
+        - Glorious Crown (tpz over-Over-OVERCUTE REMIX)|std|expert
+        - Rebellion|std|expert
+    - description: |-
+        【期間限定】
+        「KING of Performai The 4th 予選① MASTER」コース
+        ❤ 20｜(+20)/+20/+20/-1｜+0
+      sheets:
+        - Don't Fight The Music|std|master
+        - GIGA DRIVE|std|master
+        - Trrricksters!!|std|master
+    - description: |-
+        【期間限定】
+        「KING of Performai The 4th 予選② MASTER」コース
+        ❤ 20｜(+20)/+20/+20/-1｜+0
+      sheets:
+        - エンドマークに希望と涙を添えて|std|master
+        - Glorious Crown (tpz over-Over-OVERCUTE REMIX)|std|master
+        - Rebellion|std|master
