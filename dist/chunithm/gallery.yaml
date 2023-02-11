@@ -37,6 +37,13 @@
         - Lemon|std|master
         - 猫 ～THE FIRST TAKE ver.～|std|master
     - description: |-
+        「IDOL Set」コース
+        ❤ 100｜-0/-0/-1｜+0
+      sheets:
+        - Yes! Party Time!!|std|master
+        - アイドル活動！オンパレード！ver.|std|master
+        - ＧＯ！ＧＯ！ラブリズム♥|std|master
+    - description: |-
         「クラス認定 - I - Random」コース
         ❤ 50｜-0/-0/-1｜+10
       sheets:
@@ -79,6 +86,13 @@
         - BURST THE GRAVITY|std|master
         - 月に叢雲華に風|std|master
         - イカサマライフゲイム|std|master
+    - description: |-
+        「TOHO EURO BEATS」コース
+        ❤ 100｜-0/-1/-1｜+20
+      sheets:
+        - Spring of Dreams|std|master
+        - Earthquake Super Shock|std|master
+        - Scream out! -CHUNITHM Tuning-|std|master
     - description: |-
         「クラス認定 - Ⅱ - Random」コース
         ❤ 50｜-0/-0/-1｜+0
@@ -123,6 +137,13 @@
         - サクリファイス|std|master
         - 輪廻転生|std|master
     - description: |-
+        「ひれ伏 Set」コース
+        ❤ 50｜-0/-0/-1｜+0
+      sheets:
+        - とーきょー全域★アキハバラ？|std|master
+        - ひれ伏せ愚民どもっ！|std|master
+        - Rule the World!!|std|master
+    - description: |-
         「クラス認定 - Ⅲ - Random」コース
         ❤ 30｜-0/-0/-1｜+0
       sheets:
@@ -165,6 +186,13 @@
         - DAZZLING♡SEASON|std|master
         - 電脳少女は歌姫の夢を見るか？|std|master
         - Satellite System ft.Diana Chiaki|std|master
+    - description: |-
+        「ななひら Collection」コース
+        ❤ 80｜-0/-1/-1｜+10
+      sheets:
+        - 萌豚♥功夫♥大乱舞|std|master
+        - キラメケ→Shoot it Now!|std|master
+        - ベースラインやってる？笑|std|master
     - description: |-
         「クラス認定 - Ⅳ - Random」コース
         ❤ 500｜-1/-1/-1｜+0
@@ -209,6 +237,13 @@
         - 8OROCHI|std|master
         - 8-EM|std|master
     - description: |-
+        「Red Rush」コース
+        ❤ 100｜-0/-1/-1｜+0
+      sheets:
+        - REDRAVE|std|master
+        - 紅|std|master
+        - 赤壁、大炎上！！|std|master
+    - description: |-
         「クラス認定 - Ⅴ - Random」コース
         ❤ 300｜-1/-1/-1｜+0
       sheets:
@@ -237,6 +272,13 @@
         - 宿星審判|std|master
         - Rebellion|std|master
         - World Vanquisher|std|master
+    - description: |-
+        「creation and destruction」コース
+        ❤ 30｜-0/-1/-1｜+10
+      sheets:
+        - 混沌を越えし我らが神聖なる調律主を讃えよ|std|master
+        - 業 -善なる神とこの世の悪について-|std|master
+        - The Metaverse -First story of the SeelischTact-|std|master
     - description: |-
         「クラス認定 - ∞ - Random」コース
         ❤ 150｜-1/-1/-1｜+0
@@ -343,6 +385,13 @@
     #     - 香水|std|master
     #     - Lemon|std|master
     #     - 猫 ～THE FIRST TAKE ver.～|std|master
+    # - description: |-
+    #     「IDOL Set」コース
+    #     ❤ 100｜-0/-0/-1｜+0
+    #   sheets:
+    #     - Yes! Party Time!!|std|master
+    #     - アイドル活動！オンパレード！ver.|std|master
+    #     - ＧＯ！ＧＯ！ラブリズム♥|std|master
     - description: |-
         「クラス認定 - I - Random」コース
         ❤ 50｜-0/-0/-1｜+10
@@ -387,6 +436,13 @@
     #     - 月に叢雲華に風|std|master
     #     - イカサマライフゲイム|std|master
     - description: |-
+        「TOHO EURO BEATS」コース
+        ❤ 100｜-0/-1/-1｜+20
+      sheets:
+        - Spring of Dreams|std|master
+        - Earthquake Super Shock|std|master
+        - Scream out! -CHUNITHM Tuning-|std|master
+    - description: |-
         「クラス認定 - Ⅱ - Random」コース
         ❤ 50｜-0/-0/-1｜+0
       sheets:
@@ -429,6 +485,13 @@
     #     - 拝啓、桜舞い散るこの日に|std|master
     #     - サクリファイス|std|master
     #     - 輪廻転生|std|master
+    # - description: |-
+    #     「ひれ伏 Set」コース
+    #     ❤ 50｜-0/-0/-1｜+0
+    #   sheets:
+    #     - とーきょー全域★アキハバラ？|std|master
+    #     - ひれ伏せ愚民どもっ！|std|master
+    #     - Rule the World!!|std|master
     - description: |-
         「クラス認定 - Ⅲ - Random」コース
         ❤ 30｜-0/-0/-1｜+0
@@ -473,6 +536,13 @@
         - 電脳少女は歌姫の夢を見るか？|std|master
         - Satellite System ft.Diana Chiaki|std|master
     - description: |-
+        「ななひら Collection」コース
+        ❤ 80｜-0/-1/-1｜+10
+      sheets:
+        - 萌豚♥功夫♥大乱舞|std|master
+        - キラメケ→Shoot it Now!|std|master
+        - ベースラインやってる？笑|std|master
+    - description: |-
         「クラス認定 - Ⅳ - Random」コース
         ❤ 500｜-1/-1/-1｜+0
       sheets:
@@ -516,6 +586,13 @@
         - 8OROCHI|std|master
         - 8-EM|std|master
     - description: |-
+        「Red Rush!!」コース
+        ❤ 100｜-0/-1/-1｜+0
+      sheets:
+        - REDRAVE|std|master
+        - 夕焼けのRed Parade|std|master
+        - 赤壁、大炎上！！|std|master
+    - description: |-
         「クラス認定 - Ⅴ - Random」コース
         ❤ 300｜-1/-1/-1｜+0
       sheets:
@@ -544,6 +621,13 @@
         - 宿星審判|std|master
         - Rebellion|std|master
         - World Vanquisher|std|master
+    - description: |-
+        「creation and destruction」コース
+        ❤ 30｜-0/-1/-1｜+10
+      sheets:
+        - 混沌を越えし我らが神聖なる調律主を讃えよ|std|master
+        - 業 -善なる神とこの世の悪について-|std|master
+        - The Metaverse -First story of the SeelischTact-|std|master
     - description: |-
         「クラス認定 - ∞ - Random」コース
         ❤ 150｜-1/-1/-1｜+0
