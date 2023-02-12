@@ -18,21 +18,21 @@ https.globalAgent.options.ca = fs.readFileSync('node_modules/node_extra_ca_certs
 const DATA_URL = 'https://maimaidx-eng.com/maimai-mobile/record/musicVersion/search/';
 
 export const versionIdMap = new Map([
-  // ['maimai', 0],
-  // ['maimai PLUS', 1],
-  // ['GreeN', 2],
-  // ['GreeN PLUS', 3],
-  // ['ORANGE', 4],
-  // ['ORANGE PLUS', 5],
-  // ['PiNK', 6],
-  // ['PiNK PLUS', 7],
-  // ['MURASAKi', 8],
-  // ['MURASAKi PLUS', 9],
-  // ['MiLK', 10],
-  // ['MiLK PLUS', 11],
-  // ['FiNALE', 12],
-  // ['maimaiでらっくす', 13],
-  // ['maimaiでらっくす PLUS', 14],
+  ['maimai', 0],
+  ['maimai PLUS', 1],
+  ['GreeN', 2],
+  ['GreeN PLUS', 3],
+  ['ORANGE', 4],
+  ['ORANGE PLUS', 5],
+  ['PiNK', 6],
+  ['PiNK PLUS', 7],
+  ['MURASAKi', 8],
+  ['MURASAKi PLUS', 9],
+  ['MiLK', 10],
+  ['MiLK PLUS', 11],
+  ['FiNALE', 12],
+  ['maimaiでらっくす', 13],
+  ['maimaiでらっくす PLUS', 14],
   ['Splash', 15],
   ['Splash PLUS', 16],
   ['UNiVERSE', 17],
@@ -43,10 +43,10 @@ export const versionIdMap = new Map([
 
 const difficultyIdMap = new Map([
   ['basic', 0],
-  // ['advanced', 1],
-  // ['expert', 2],
-  // ['master', 3],
-  // ['remaster', 4],
+  ['advanced', 1],
+  ['expert', 2],
+  ['master', 3],
+  ['remaster', 4],
 ]);
 
 export function getSongId(title: string, version: string) {
@@ -122,8 +122,9 @@ export default async function run() {
   }
   logger.info(`OK, ${intlSheets.length} sheets fetched.`);
 
-  logger.info('Updating sheet versions ...');
-  await Promise.all(intlSheets.map((intlSheet) => IntlSheetVersion.upsert(intlSheet)));
+  logger.info('Truncating and Inserting intlSheetVersions ...');
+  await IntlSheetVersion.truncate();
+  await IntlSheetVersion.bulkCreate(intlSheets);
 
   logger.info('Done!');
 }
