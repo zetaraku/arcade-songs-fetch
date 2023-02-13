@@ -33,10 +33,16 @@ export function getSheetSorter({
 
 export function ensureNoDuplicateEntry(entries: any[]) {
   const entrySet = new Set<any>();
+  const duplicateEntrySet = new Set<any>();
 
   for (const entry of entries) {
-    if (entrySet.has(entry)) throw new Error(`! Duplicate entry detected: ${entry}`);
+    if (entrySet.has(entry)) duplicateEntrySet.add(entry);
     entrySet.add(entry);
+  }
+
+  if (duplicateEntrySet.size > 0) {
+    console.error([...duplicateEntrySet]);
+    throw new Error(`! Duplicate entries detected`);
   }
 }
 
