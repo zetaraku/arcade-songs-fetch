@@ -43,10 +43,10 @@ const versionIdMap = new Map([
 
 const difficultyIdMap = new Map([
   ['basic', 0],
-  // ['advanced', 1],
-  // ['expert', 2],
-  // ['master', 3],
-  // ['remaster', 4],
+  ['advanced', 1],
+  ['expert', 2],
+  ['master', 3],
+  ['remaster', 4],
 ]);
 
 function getSongId(title: string, version: string) {
