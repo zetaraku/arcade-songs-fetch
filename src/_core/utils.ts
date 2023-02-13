@@ -40,6 +40,19 @@ export function ensureNoDuplicateEntry(entries: any[]) {
   }
 }
 
+export function checkUnmatchedEntries(entries: any[], validEntries: any[]) {
+  const validEntrySet = new Set<any>(validEntries);
+  const unmatchedEntrySet = new Set<any>();
+
+  for (const entry of entries) {
+    if (!validEntrySet.has(entry)) unmatchedEntrySet.add(entry);
+  }
+
+  if (unmatchedEntrySet.size > 0) {
+    console.warn('! Unmatched entries detected:', [...unmatchedEntrySet]);
+  }
+}
+
 export function loadCsv(filePath: string) {
   if (!fs.existsSync(filePath)) return undefined;
   const rawTsv = fs.readFileSync(filePath, 'utf8');
