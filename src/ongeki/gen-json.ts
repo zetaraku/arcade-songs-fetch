@@ -50,6 +50,11 @@ function getLevelValueOf(sheet: Record<string, any>) {
   if (sheet.level === null) return null;
   return Number(sheet.level.replace('+', '.5'));
 }
+function getInternalLevelValueOf(sheet: Record<string, any>) {
+  if (sheet.internalLevel != null) return Number(sheet.internalLevel);
+  if (sheet.level != null) return Number(sheet.level.replace('+', '.7'));
+  return null;
+}
 function getIsSpecialOf(sheet: Record<string, any>) {
   return sheet.type === 'lun';
 }
@@ -88,6 +93,7 @@ export default async function run() {
     difficulties,
     regions,
     getLevelValueOf,
+    getInternalLevelValueOf,
     getIsSpecialOf,
   });
 

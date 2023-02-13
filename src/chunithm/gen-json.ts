@@ -59,6 +59,12 @@ function getLevelValueOf(sheet: Record<string, any>) {
   if (sheet.level.includes('☆')) return 100 + [...sheet.level].length;
   return Number(sheet.level.replace('+', '.5'));
 }
+function getInternalLevelValueOf(sheet: Record<string, any>) {
+  if (sheet.internalLevel != null) return Number(sheet.internalLevel);
+  if (sheet.level.includes('☆')) return 0;
+  if (sheet.level != null) return Number(sheet.level.replace('+', '.5'));
+  return null;
+}
 function getIsSpecialOf(sheet: Record<string, any>) {
   return sheet.type === 'we';
 }
@@ -114,6 +120,7 @@ export default async function run() {
     difficulties,
     regions,
     getLevelValueOf,
+    getInternalLevelValueOf,
     getIsSpecialOf,
   });
 
