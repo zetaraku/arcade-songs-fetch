@@ -1,6 +1,7 @@
 import log4js from 'log4js';
 import { GoogleSpreadsheet } from 'google-spreadsheet';
-import { SheetInternalLevel } from '@@/db/maimai/models';
+import { Song, SheetInternalLevel } from '@@/db/maimai/models';
+import { checkUnmatchedEntries } from '@/_core/utils';
 import 'dotenv/config';
 
 const logger = log4js.getLogger('maimai/fetch-internal-levels');
@@ -125,6 +126,12 @@ export default async function run() {
     .map((rawSheet) => extractSheet(rawSheet))
     .filter((rawSheet) => rawSheet.songId !== undefined);
   await Promise.all(sheets.map((sheet) => SheetInternalLevel.upsert(sheet)));
+
+  logger.info('Checking unmatched songIds ...');
+  checkUnmatchedEntries(
+    (await SheetInternalLevel.findAll<any>()).map((sheet) => sheet.songId),
+    (await Song.findAll<any>()).map((song) => song.songId),
+  );
 
   logger.info('Done!');
 }

@@ -1,7 +1,8 @@
 import axios from 'axios';
 import log4js from 'log4js';
 import * as cheerio from 'cheerio';
-import { SheetInternalLevel } from '@@/db/ongeki/models';
+import { Song, SheetInternalLevel } from '@@/db/ongeki/models';
+import { checkUnmatchedEntries } from '@/_core/utils';
 import 'dotenv/config';
 
 const logger = log4js.getLogger('ongeki/fetch-internal-levels');
@@ -61,6 +62,12 @@ export default async function run() {
 
   logger.info('Updating sheetInternalLevels ...');
   await Promise.all(sheets.map((sheet) => SheetInternalLevel.upsert(sheet)));
+
+  logger.info('Checking unmatched songIds ...');
+  checkUnmatchedEntries(
+    (await SheetInternalLevel.findAll<any>()).map((sheet) => sheet.songId),
+    (await Song.findAll<any>()).map((song) => song.songId),
+  );
 
   logger.info('Done!');
 }
