@@ -64,7 +64,7 @@ const regions = [
 function getLevelValueOf(sheet: Record<string, any>) {
   if (sheet.level === null) return null;
   if (sheet.level === '*') return -1;
-  return Number(sheet.level.replace('+', '.5'));
+  return Number(sheet.level.replace('+', '.7'));
 }
 function getInternalLevelValueOf(sheet: Record<string, any>) {
   if (sheet.internalLevel != null) return Number(sheet.internalLevel);
