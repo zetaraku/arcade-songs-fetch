@@ -31,6 +31,19 @@ export default async function run({
   getInternalLevelValueOf?: (sheet: any) => number | null | undefined,
   getIsSpecialOf: (sheet: any) => boolean | null,
 }) {
+  const getSongVersion = (song: Record<string, any>) => {
+    if (song.version != null) {
+      return song.version;
+    }
+    if (song.releaseDate != null) {
+      const versionFromReleaseDate = versions.find(
+        ({ dateBefore }) => dateBefore === null || song.releaseDate < dateBefore,
+      );
+      return versionFromReleaseDate?.version;
+    }
+    return undefined;
+  };
+
   const getSortedSheetsOf = getSheetSorter(
     { types, difficulties },
   ).sorted;
@@ -45,13 +58,7 @@ export default async function run({
 
     imageName: song.imageName,
 
-    version: (
-      song.version ?? (
-        song.releaseDate !== null ? versions.find(
-          ({ dateBefore }) => dateBefore === null || song.releaseDate < dateBefore,
-        )?.version : null
-      ) ?? null
-    ),
+    version: getSongVersion(song) ?? null,
     releaseDate: song.releaseDate,
 
     isNew: song.isNew != null ? Boolean(song.isNew) : undefined,
