@@ -86,6 +86,10 @@ export default async function run({
     ),
   }));
 
+  versions.forEach((e) => {
+    delete e.dateBefore;
+  });
+
   const output = {
     songs,
     categories,
