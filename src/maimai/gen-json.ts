@@ -81,7 +81,8 @@ export default async function run() {
 
   const songRecords = await sequelize.query(/* sql */ `
     SELECT
-      *
+      *,
+      COALESCE("SongExtras"."releaseDate", "Songs"."releaseDate") AS "releaseDate"
     FROM "Songs"
       NATURAL LEFT JOIN "SongOrders"
       LEFT JOIN "SongExtras" USING ("songId")
