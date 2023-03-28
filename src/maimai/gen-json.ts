@@ -40,7 +40,8 @@ const versions = [
   { dateBefore: '2021-09-16', version: 'Splash PLUS', abbr: 'Splash+ (煌)' },
   { dateBefore: '2022-03-24', version: 'UNiVERSE', abbr: 'UNiVERSE (宙)' },
   { dateBefore: '2022-09-15', version: 'UNiVERSE PLUS', abbr: 'UNiVERSE+ (星)' },
-  { dateBefore: null, version: 'FESTiVAL', abbr: 'FESTiVAL' },
+  { dateBefore: '2023-03-23', version: 'FESTiVAL', abbr: 'FESTiVAL (祭)' },
+  { dateBefore: null, version: 'FESTiVAL PLUS', abbr: 'FESTiVAL+' },
   //! add further version here !//
 ];
 const types = [
