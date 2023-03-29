@@ -4,7 +4,7 @@ import Sequelize from 'sequelize';
 import sleep from 'sleep-promise';
 import log4js from 'log4js';
 import * as cheerio from 'cheerio';
-import { gamerchWikiTitleEscape } from '@/_core/utils';
+import { gamerchWikiV2TitleEscape } from '@/_core/utils';
 import { sequelize, SongExtra, SheetExtra } from '@@/db/maimai/models';
 
 const logger = log4js.getLogger('maimai/fetch-extras-v2');
@@ -26,15 +26,30 @@ const difficultyMap = new Map([
 export function getSongWikiTitle(song: Record<string, any>) {
   const title = (() => {
     //! hotfix
-    if (song.songId === 'Link (2)') return 'Link（Circle of friends）';
-    if (song.songId === 'YA･DA･YO [Reborn]') return 'YA・DA・YO [Reborn]';
-    if (song.songId === 'D✪N’T  ST✪P  R✪CKIN’') return 'D✪N’T ST✪P R✪CKIN’';
-    if (song.songId === 'ウッーウッーウマウマ(ﾟ∀ﾟ)') return 'ウッーウッーウマウマ';
-    if (song.songId === 'トルコ行進曲 - オワタ＼(^o^)／') return 'トルコ行進曲 - オワタ';
-    if (song.songId === '+♂') return '♂';
-    if (song.songId === '　') return '\u200E';
-
-    if ([
+    const manualMappings = new Map([
+      ['+♂', '♂'],
+      ['BOUNCE & DANCE', 'BOUNCE ＆ DANCE'],
+      ['Bad Apple!! feat.nomico (REDALiCE Remix)', 'Bad Apple！！ feat.nomico （REDALiCE Remix）'],
+      ['DETARAME ROCK&ROLL THEORY', 'DETARAME ROCK＆ROLL THEORY'],
+      ['D✪N’T  ST✪P  R✪CKIN’', 'D✪N’T ST✪P R✪CKIN’'],
+      ['GET!! 夢&DREAM', 'GET 夢＆DREAM'],
+      ['GO MY WAY!!', 'GO MY WAY！！'],
+      ['GO!!!', 'GO！！！'],
+      ['L4TS:2018 (feat. あひる & KTA)', 'L4TS：2018 （feat. あひる ＆ KTA）'],
+      ['Link (2)', 'Link（Circle of friends）'],
+      ['Soul-ride ON!', 'Soul-ride ON！'],
+      ['Sqlupp (Camellia\'s "Sqleipd*Hiytex" Remix)', 'Sqlupp （Camellia’s ”Sqleipd＊Hiytex” Remix）'],
+      ['THE IDOLM@STER 2nd-mix', 'THE IDOLM＠STER 2nd-mix'],
+      ['The world is all one !!', 'The world is all one ！！'],
+      ['YA･DA･YO [Reborn]', 'YA・DA・YO [Reborn]'],
+      ['galaxias!', 'galaxias！'],
+      ['　', '\u200E'],
+      ['ウッーウッーウマウマ(ﾟ∀ﾟ)', 'ウッーウッーウマウマ'],
+      ['ガチャガチャきゅ～と・ふぃぎゅ@メイト', 'ガチャガチャきゅ～と・ふぃぎゅ＠メイト'],
+      ['トルコ行進曲 - オワタ＼(^o^)／', 'トルコ行進曲 - オワタ'],
+      ['大輪の魂 (feat. AO, 司芭扶)', '大輪の魂 （feat. AO， 司芭扶）'],
+    ]);
+    const autoMappings = new Set([
       'AMAZING MIGHTYYYY!!!!',
       'Alea jacta est!',
       'BREAK YOU!!',
@@ -47,7 +62,6 @@ export function getSongWikiTitle(song: Record<string, any>) {
       'CHOCOLATE BOMB!!!!',
       'Endless, Sleepless Night',
       'FREEDOM DiVE (tpz Overcute Remix)',
-      'GET!! 夢&DREAM',
       'H-A-J-I-M-A-R-I-U-T-A-!!',
       'Help me, ERINNNNNN!!',
       'Help me, あーりん！',
@@ -90,14 +104,19 @@ export function getSongWikiTitle(song: Record<string, any>) {
       '電車で電車でGO!GO!GO!GC! -GMT remix-',
       '電車で電車でOPA!OPA!OPA! -GMT mashup-',
       '響け！CHIREI MY WAY!',
-    ].includes(song.title)) {
+    ])
+
+    if (manualMappings.has(song.songId)) {
+      return manualMappings.get(song.songId);
+    }
+    if (autoMappings.has(song.title)) {
       return song.title.replaceAll(/[!,'()]/g, '');
     }
 
     return song.title;
   })();
 
-  return gamerchWikiTitleEscape(title);
+  return gamerchWikiV2TitleEscape(title);
 }
 
 function extractSheetExtras($: cheerio.CheerioAPI, table: cheerio.Element) {
