@@ -26,6 +26,7 @@
     "maimai:fetch-extras-v1": "ts-node src/maimai/fetch-extras-v1",
     "maimai:fetch-extras-v2": "ts-node src/maimai/fetch-extras-v2",
     "maimai:fetch-internal-levels": "ts-node src/maimai/fetch-internal-levels",
+    "maimai:gen-wiki-list": "ts-node src/maimai/gen-wiki-list",
     "maimai:gen-json": "ts-node src/maimai/gen-json",
     "maimai:upload-data": "ts-node src/_core/upload-data maimai",
     "chunithm:fetch-songs": "ts-node src/chunithm/fetch-songs",
