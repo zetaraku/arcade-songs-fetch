@@ -112,3 +112,25 @@ export function gamerchWikiTitleEscape(title: string) {
     .replaceAll('!', '！')
     .replaceAll('*', '＊');
 }
+
+export function gamerchWikiV2TitleEscape(title: string) {
+  return title
+    .replaceAll('<', '＜')
+    .replaceAll('>', '＞')
+    .replaceAll('"', '”')
+    .replaceAll('{', '｛')
+    .replaceAll('}', '｝')
+    .replaceAll('|', '｜')
+    .replaceAll('^', '︿')
+    .replaceAll('[', '［')
+    .replaceAll(']', '］')
+    .replaceAll('`', '‵')
+    .replaceAll('#', '＃')
+    .replaceAll('%', '％')
+    .replaceAll('/', '／')
+    .replaceAll('?', '？')
+    .replaceAll("'", '’')
+    .replaceAll('(', '（')
+    .replaceAll(')', '）')
+    .replaceAll('\\', '＼');
+  }
