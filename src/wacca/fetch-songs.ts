@@ -1,3 +1,4 @@
+import { URLSearchParams } from 'node:url';
 import axios from 'axios';
 import log4js from 'log4js';
 import { decodeHTML } from 'entities';
@@ -59,7 +60,9 @@ function extractSheets(rawSong: Record<string, any>) {
 
 export default async function run() {
   logger.info(`Fetching data from: ${DATA_URL} ...`);
-  const response = await axios.post(DATA_URL, 'cat=all');
+  const response = await axios.post(DATA_URL, new URLSearchParams({
+    cat: 'all',
+  }));
 
   const rawSongs: Record<string, any>[] = response.data;
   logger.info(`OK, ${rawSongs.length} songs fetched.`);

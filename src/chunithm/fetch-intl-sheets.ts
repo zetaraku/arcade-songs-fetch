@@ -1,5 +1,6 @@
 /* eslint-disable no-underscore-dangle */
 /* eslint-disable no-await-in-loop */
+import { URLSearchParams } from 'node:url';
 import axios from 'axios';
 import puppeteer from 'puppeteer';
 import sleep from 'sleep-promise';
@@ -109,15 +110,14 @@ async function getIntlSheets(
   const difficultyApi = difficultyApiMap.get(difficulty);
 
   // request to change the category
-  await axios.post(
-    `${DATA_URL}/musicGenre/${difficultyApi}`,
-    `genre=${categoryId}&token=${cookies._t}`,
-    {
-      headers: {
-        Cookie: `userId=${cookies.userId}; _t=${cookies._t};`,
-      },
+  await axios.post(`${DATA_URL}/musicGenre/${difficultyApi}`, new URLSearchParams({
+    genre: String(categoryId),
+    token: cookies._t,
+  }), {
+    headers: {
+      Cookie: `userId=${cookies.userId}; _t=${cookies._t};`,
     },
-  );
+  });
 
   const response = await axios.get(
     `${DATA_URL}/musicGenre/${difficulty}`,
