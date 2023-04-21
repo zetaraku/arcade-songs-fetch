@@ -44,6 +44,7 @@ npm run <game-code>:<script-name>
   - `gc` (GROOVE COASTER)
   - `diva` (Project DIVA Arcade)
   - `popn` (pop'n music)
+  - `drs` (DANCERUSH STARDOM)
 
 - Available `<script-name>`:
   - See `package.json`.
