@@ -50,11 +50,11 @@ const types = [
   { type: 'utage', name: '宴（宴会場）', abbr: '宴' },
 ];
 const difficulties = [
-  { difficulty: 'basic', name: 'BASIC', color: 'lime' },
-  { difficulty: 'advanced', name: 'ADVANCED', color: 'orange' },
-  { difficulty: 'expert', name: 'EXPERT', color: 'red' },
-  { difficulty: 'master', name: 'MASTER', color: 'darkorchid' },
-  { difficulty: 'remaster', name: 'Re:MASTER', color: 'cyan' },
+  { difficulty: 'basic', name: 'BASIC', color: '#22bb5b' },
+  { difficulty: 'advanced', name: 'ADVANCED', color: '#fb9c2d' },
+  { difficulty: 'expert', name: 'EXPERT', color: '#f64861' },
+  { difficulty: 'master', name: 'MASTER', color: '#9e45e2' },
+  { difficulty: 'remaster', name: 'Re:MASTER', color: '#ba67f8' },
 ];
 const regions = [
   { region: 'jp', name: '日本版' },
