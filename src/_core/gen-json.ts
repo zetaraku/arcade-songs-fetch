@@ -46,20 +46,20 @@ export default async function run({
   ).sorted;
 
   const songs = songRecords.map((song) => ({
-    songId: song.songId,
+    songId: song.songId ?? null,
 
-    category: song.category,
-    title: song.title,
-    artist: song.artist,
-    bpm: song.bpm,
+    category: song.category ?? null,
+    title: song.title ?? null,
+    artist: song.artist ?? null,
+    bpm: song.bpm ?? null,
 
-    imageName: song.imageName,
+    imageName: song.imageName ?? null,
 
     version: getSongVersion(song) ?? null,
-    releaseDate: song.releaseDate,
+    releaseDate: song.releaseDate ?? null,
 
-    isNew: song.isNew != null ? Boolean(song.isNew) : undefined,
-    isLocked: song.isLocked != null ? Boolean(song.isLocked) : undefined,
+    isNew: song.isNew != null ? Boolean(song.isNew) : null,
+    isLocked: song.isLocked != null ? Boolean(song.isLocked) : null,
 
     sheets: getSortedSheetsOf(
       sheetRecords
