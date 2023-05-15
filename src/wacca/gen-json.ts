@@ -22,11 +22,11 @@ const categories = [
   //! add further category here !//
 ];
 const versions = [
-  { dateBefore: '2020-01-22', version: 'WACCA', abbr: 'WACCA' },
-  { dateBefore: '2020-09-16', version: 'WACCA S', abbr: 'WACCA S' },
-  { dateBefore: '2021-03-10', version: 'WACCA Lily', abbr: 'Lily' },
-  { dateBefore: '2021-08-09', version: 'WACCA Lily R', abbr: 'Lily R' },
-  { dateBefore: null, version: 'WACCA Reverse', abbr: 'Reverse' },
+  { releaseDate: '2019-07-18', version: 'WACCA', abbr: 'WACCA' },
+  { releaseDate: '2020-01-23', version: 'WACCA S', abbr: 'WACCA S' },
+  { releaseDate: '2020-09-17', version: 'WACCA Lily', abbr: 'Lily' },
+  { releaseDate: '2021-03-11', version: 'WACCA Lily R', abbr: 'Lily R' },
+  { releaseDate: '2021-08-10', version: 'WACCA Reverse', abbr: 'Reverse' },
   //! add further version here !//
 ];
 const types = [

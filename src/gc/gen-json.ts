@@ -20,14 +20,14 @@ const categories = [
   //! add further category here !//
 ];
 const versions = [
-  { dateBefore: '2014-05-26', version: 'GROOVE COASTER', abbr: '[1] GROOVE COASTER' },
-  { dateBefore: '2015-01-22', version: 'GROOVE COASTER EX', abbr: '[EX] GROOVE COASTER EX' },
-  { dateBefore: '2016-03-10', version: 'HEAVENLY FESTIVAL', abbr: '[2] HEAVENLY FESTIVAL' },
-  { dateBefore: '2017-03-16', version: 'LINK FEVER', abbr: '[3] LINK FEVER' },
-  { dateBefore: '2018-03-29', version: 'DREAM PARTY', abbr: '[3EX] DREAM PARTY' },
-  { dateBefore: '2019-03-28', version: 'STARLIGHT ROAD', abbr: '[4] STARLIGHT ROAD' },
-  { dateBefore: '2020-04-09', version: 'INFINITY∞HIGHWAY', abbr: '[4EX] INFINITY∞HIGHWAY' },
-  { dateBefore: null, version: 'DIAMOND GALAXY', abbr: '[4MAX] DIAMOND GALAXY' },
+  { releaseDate: '2013-11-05', version: 'GROOVE COASTER', abbr: '[1] GROOVE COASTER' },
+  { releaseDate: '2014-05-26', version: 'GROOVE COASTER EX', abbr: '[EX] GROOVE COASTER EX' },
+  { releaseDate: '2015-01-22', version: 'HEAVENLY FESTIVAL', abbr: '[2] HEAVENLY FESTIVAL' },
+  { releaseDate: '2016-03-10', version: 'LINK FEVER', abbr: '[3] LINK FEVER' },
+  { releaseDate: '2017-03-16', version: 'DREAM PARTY', abbr: '[3EX] DREAM PARTY' },
+  { releaseDate: '2018-03-29', version: 'STARLIGHT ROAD', abbr: '[4] STARLIGHT ROAD' },
+  { releaseDate: '2019-03-28', version: 'INFINITY∞HIGHWAY', abbr: '[4EX] INFINITY∞HIGHWAY' },
+  { releaseDate: '2020-04-09', version: 'DIAMOND GALAXY', abbr: '[4MAX] DIAMOND GALAXY' },
   //! add further mapping here !//
 ];
 const types = [

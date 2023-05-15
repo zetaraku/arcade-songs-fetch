@@ -36,10 +36,7 @@ export default async function run({
       return song.version;
     }
     if (song.releaseDate != null) {
-      const versionFromReleaseDate = versions.find(
-        ({ dateBefore }) => dateBefore === null || song.releaseDate < dateBefore,
-      );
-      return versionFromReleaseDate?.version;
+      return versions.findLast(({ releaseDate }) => releaseDate <= song.releaseDate)?.version;
     }
     return undefined;
   };
@@ -94,7 +91,7 @@ export default async function run({
   }));
 
   versions.forEach((e) => {
-    delete e.dateBefore;
+    delete e.releaseDate;
   });
 
   const output = {

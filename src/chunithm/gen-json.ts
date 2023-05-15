@@ -20,23 +20,22 @@ const categories = [
   //! add further category here !//
 ];
 const versions = [
-  //! the data source no longer contains version information
-  { dateBefore: '2016-02-04', version: 'CHUNITHM', abbr: 'CHUNITHM' },
-  { dateBefore: '2016-08-25', version: 'CHUNITHM PLUS', abbr: 'CHUNITHM+' },
-  { dateBefore: '2017-02-09', version: 'AIR', abbr: 'AIR' },
-  { dateBefore: '2017-08-24', version: 'AIR PLUS', abbr: 'AIR+' },
-  { dateBefore: '2018-03-08', version: 'STAR', abbr: 'STAR' },
-  { dateBefore: '2018-10-25', version: 'STAR PLUS', abbr: 'STAR+' },
-  { dateBefore: '2019-04-11', version: 'AMAZON', abbr: 'AMAZON' },
-  { dateBefore: '2019-10-24', version: 'AMAZON PLUS', abbr: 'AMAZON+' },
-  { dateBefore: '2020-07-16', version: 'CRYSTAL', abbr: 'CRYSTAL' },
-  { dateBefore: '2021-01-21', version: 'CRYSTAL PLUS', abbr: 'CRYSTAL+' },
-  { dateBefore: '2021-05-13', version: 'PARADISE', abbr: 'PARADISE' },
-  { dateBefore: '2021-11-04', version: 'PARADISE LOST', abbr: 'PARADISE+' },
-  { dateBefore: '2022-04-14', version: 'CHUNITHM NEW', abbr: 'NEW' },
-  { dateBefore: '2022-10-13', version: 'CHUNITHM NEW PLUS', abbr: 'NEW+' },
-  { dateBefore: '2023-05-11', version: 'SUN', abbr: 'SUN' },
-  { dateBefore: null, version: 'SUN PLUS', abbr: 'SUN+' },
+  { releaseDate: '2015-07-16', version: 'CHUNITHM', abbr: 'CHUNITHM' },
+  { releaseDate: '2016-02-04', version: 'CHUNITHM PLUS', abbr: 'CHUNITHM+' },
+  { releaseDate: '2016-08-25', version: 'AIR', abbr: 'AIR' },
+  { releaseDate: '2017-02-09', version: 'AIR PLUS', abbr: 'AIR+' },
+  { releaseDate: '2017-08-24', version: 'STAR', abbr: 'STAR' },
+  { releaseDate: '2018-03-08', version: 'STAR PLUS', abbr: 'STAR+' },
+  { releaseDate: '2018-10-25', version: 'AMAZON', abbr: 'AMAZON' },
+  { releaseDate: '2019-04-11', version: 'AMAZON PLUS', abbr: 'AMAZON+' },
+  { releaseDate: '2019-10-24', version: 'CRYSTAL', abbr: 'CRYSTAL' },
+  { releaseDate: '2020-07-16', version: 'CRYSTAL PLUS', abbr: 'CRYSTAL+' },
+  { releaseDate: '2021-01-21', version: 'PARADISE', abbr: 'PARADISE' },
+  { releaseDate: '2021-05-13', version: 'PARADISE LOST', abbr: 'PARADISE+' },
+  { releaseDate: '2021-11-04', version: 'CHUNITHM NEW', abbr: 'NEW' },
+  { releaseDate: '2022-04-14', version: 'CHUNITHM NEW PLUS', abbr: 'NEW+' },
+  { releaseDate: '2022-10-13', version: 'SUN', abbr: 'SUN' },
+  { releaseDate: '2023-05-11', version: 'SUN PLUS', abbr: 'SUN+' },
   //! add further mapping here !//
 ];
 const types = [

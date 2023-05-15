@@ -21,14 +21,14 @@ const categories = [
   //! add further category here !//
 ];
 const versions = [
-  { dateBefore: '2019-02-07', version: 'オンゲキ', abbr: 'オンゲキ' },
-  { dateBefore: '2019-08-22', version: 'オンゲキ PLUS', abbr: 'オンゲキ+' },
-  { dateBefore: '2020-02-20', version: 'SUMMER', abbr: 'SUMMER' },
-  { dateBefore: '2020-09-30', version: 'SUMMER PLUS', abbr: 'SUMMER+' },
-  { dateBefore: '2021-03-31', version: 'R.E.D.', abbr: 'R.E.D.' },
-  { dateBefore: '2021-10-21', version: 'R.E.D. PLUS', abbr: 'R.E.D.+' },
-  { dateBefore: '2022-03-03', version: 'bright', abbr: 'bright' },
-  { dateBefore: null, version: 'bright MEMORY', abbr: 'bright+' },
+  { releaseDate: '2018-07-26', version: 'オンゲキ', abbr: 'オンゲキ' },
+  { releaseDate: '2019-02-07', version: 'オンゲキ PLUS', abbr: 'オンゲキ+' },
+  { releaseDate: '2019-08-22', version: 'SUMMER', abbr: 'SUMMER' },
+  { releaseDate: '2020-02-20', version: 'SUMMER PLUS', abbr: 'SUMMER+' },
+  { releaseDate: '2020-09-30', version: 'R.E.D.', abbr: 'R.E.D.' },
+  { releaseDate: '2021-03-31', version: 'R.E.D. PLUS', abbr: 'R.E.D.+' },
+  { releaseDate: '2021-10-21', version: 'bright', abbr: 'bright' },
+  { releaseDate: '2022-03-03', version: 'bright MEMORY', abbr: 'bright+' },
   //! add further mapping here !//
 ];
 const types = [

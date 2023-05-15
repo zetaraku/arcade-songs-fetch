@@ -29,7 +29,7 @@ const versions = [
   // { version: 'HEAVENLY HAVEN', abbr: '[IV] HEAVENLY HAVEN' },
   // { version: 'VIVID WAVE', abbr: '[V] VIVID WAVE' },
   // { version: 'EXCEED GEAR', abbr: '[VI] EXCEED GEAR' },
-  { dateBefore: null, version: null, abbr: null },
+  { version: null, abbr: null },
   //! add further mapping here !//
 ];
 const types = [
