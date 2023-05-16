@@ -100,7 +100,7 @@
     "sequelize-cli": "^6.4.1",
     "ts-node": "^10.8.1",
     "tsconfig-paths": "^4.0.0",
-    "typescript": "^4.7.4"
+    "typescript": "^5.0.4"
   },
   "dependencies": {
     "axios": "^0.27.2",
