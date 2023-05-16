@@ -298,8 +298,8 @@ export default async function run() {
 
   logger.info('Fetching data from internal level source ...');
   const rawSheets = [
-    ...await fetchSheetsV6(),
-    ...await fetchSheetsV7(),
+    // ...await fetchSheetsV6(),
+    // ...await fetchSheetsV7(),
     ...await fetchSheetsV8(),
   ];
   logger.info(`OK, ${rawSheets.length} sheets fetched.`);
