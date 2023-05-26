@@ -9,6 +9,34 @@
         - ぽかぽかの星|std|master
         - Virtual to LIVE|std|master
     - description: |-
+        「奏坂入門テスト」コース
+        ❤ 50｜-0/-0/-1｜+10
+      sheets:
+        - Rule the World!!|std|expert
+        - トリドリ⇒モリモリ! Lovely fruits☆|std|expert
+        - みんな Happy!!|std|master
+    - description: |-
+        「TOHO Starter Set」コース
+        ❤ 50｜-0/-0/-1｜+10
+      sheets:
+        - No Life Queen [DJ Command Remix]|std|expert
+        - 星色夜空|std|master
+        - ナイト・オブ・ナイツ (かめりあ’s“ワンス・アポン・ア・ナイト”Remix)|std|expert
+    - description: |-
+        「Low Tempo Set」コース
+        ❤ 50｜-0/-0/-1｜+10
+      sheets:
+        - こころここから|std|master
+        - ドライヴ・オン・ザ・レインボー|std|expert
+        - 桜ノ雨|std|master
+    - description: |-
+        「Melty Songs」コース
+        ❤ 50｜-0/-0/-1｜+10
+      sheets:
+        - MELtin' 17|std|expert
+        - メルト|std|master
+        - メルティランドナイトメア|std|master
+    - description: |-
         「クラス認定 - I - Random」コース
         ❤ 50｜-0/-0/-1｜+10
       sheets:
@@ -24,6 +52,34 @@
         - 光線チューニング|std|master
         - 特定楽曲から選曲されます|rnd|random|-
     - description: |-
+        「NEW!!リレイション Vocal」コース
+        ❤ 50｜-0/-0/-1｜+0
+      sheets:
+        - Ring|std|master
+        - 夢路拍子|std|master
+        - タイムカプセル|std|master
+    - description: |-
+        「VARIETY EXPERT CHALLENGE」コース
+        ❤ 100｜-0/-0/-1｜+0
+      sheets:
+        - FREEDOM DiVE|std|expert
+        - felys -final remix-|std|expert
+        - Love & Justice|std|expert
+    - description: |-
+        「イロドリミドリ Random」コース
+        ❤ 50｜-0/-0/-1｜+10
+      sheets:
+        - 特定楽曲から選曲されます|rnd|random|-
+        - 特定楽曲から選曲されます|rnd|random|-
+        - 特定楽曲から選曲されます|rnd|random|-
+    - description: |-
+        「☆」コース
+        ❤ 50｜-0/-0/-1｜+0
+      sheets:
+        - どうぶつ☆パラダイス|std|master
+        - 人生攻略☆Tips|std|master
+        - トリドリ⇒モリモリ! Lovely fruits☆|std|master
+    - description: |-
         「クラス認定 - Ⅱ - Random」コース
         ❤ 50｜-0/-0/-1｜+0
       sheets:
@@ -33,11 +89,39 @@
     - title: 【CLASS Ⅲ】
     - description: |-
         「言ノ葉 Collection」コース
-        ❤ 50｜-0/-1/-1｜+10
+        ❤ 50｜-0/-0/-1｜+10
       sheets:
         - ヤミツキ|std|master
         - Secret Sleuth|std|master
         - 分からない|std|master
+    - description: |-
+        「ハァ～～～～～」コース
+        ❤ 80｜-0/-1/-1｜+0
+      sheets:
+        - 俺ら東京さ行ぐだ|std|master
+        - 回レ！雪月花|std|master
+        - うっせぇわ|std|master
+    - description: |-
+        「夏だ！海だ！」コース
+        ❤ 50｜-0/-0/-1｜+0
+      sheets:
+        - Splash Dance!!|std|master
+        - 最強 the サマータイム!!!!!|std|master
+        - 光線チューニング ～なずな妄想海フェスイメージトレーニングVer.～|std|master
+    - description: |-
+        「Cosmic Scramble!!」コース
+        ❤ 50｜-0/-0/-1｜+0
+      sheets:
+        - Cosmic Magic Shooter|std|master
+        - Cosmic twinkle star|std|master
+        - とびだせ！TO THE COSMIC!!|std|master
+    - description: |-
+        「DDDDDDDDDeck」コース
+        ❤ 50｜-0/-0/-1｜+0
+      sheets:
+        - Dark Diver|std|master
+        - ドキドキDREAM!!!|std|master
+        - DDDD|std|master
     - description: |-
         「クラス認定 - Ⅲ - Random」コース
         ❤ 30｜-0/-0/-1｜+0
@@ -54,6 +138,34 @@
         - P！P！P！P！がおー!!|std|master
         - Pre Paid Pog Punk Panic|std|master
     - description: |-
+        「CRITICAL HARD CHALLENGE」コース
+        ❤ 16｜-1/-1/-1｜+0
+      sheets:
+        - DDDD|std|advanced
+        - ユメキキョウ|std|advanced
+        - 幾望の月|std|advanced
+    - description: |-
+        「Satellite Set」コース
+        ❤ 80｜-0/-1/-1｜+0
+      sheets:
+        - 逃げろ！サテライトキャンパス！！|std|master
+        - 幻想のサテライト|std|master
+        - Satellite System ft.Diana Chiaki|std|master
+    - description: |-
+        「Arcaea Collection」コース
+        ❤ 80｜-0/-1/-1｜+0
+      sheets:
+        - Axium Crisis|std|master
+        - Arcahv|std|master
+        - Cyaegha|std|master
+    - description: |-
+        「Absolutely.」コース
+        ❤ 80｜-0/-1/-1｜+0
+      sheets:
+        - 絶対トキメキデリバリー|std|master
+        - 絶対にチョコミントを食べるアオイチャン|std|master
+        - absolute rightness|std|master
+    - description: |-
         「クラス認定 - Ⅳ - Random」コース
         ❤ 500｜-1/-1/-1｜+0
       sheets:
@@ -69,6 +181,34 @@
         - GERBERA|std|master
         - POTENTIAL|std|master
     - description: |-
+        「CRITICAL EX CHALLENGE」コース
+        ❤ 12｜-1/-1/-1｜+0
+      sheets:
+        - ラグトレイン|std|expert
+        - 寡黙なるフォール|std|expert
+        - CHAOS|std|expert
+    - description: |-
+        「Hi-Speed Selection」コース
+        ❤ 100｜-0/-1/-1｜+0
+      sheets:
+        - Paqqin (tpz Despair Remix)|std|master
+        - Blackmagik Blazing|std|master
+        - otorii INNOVATED -[i]3-|std|master
+    - description: |-
+        「ゲキマイ Random」コース
+        ❤ 300｜-1/-1/-1｜+0
+      sheets:
+        - 特定楽曲から選曲されます|rnd|random|-
+        - 特定楽曲から選曲されます|rnd|random|-
+        - 特定楽曲から選曲されます|rnd|random|-
+    - description: |-
+        「Peaky Set」コース
+        ❤ 100｜-0/-1/-1｜+0
+      sheets:
+        - Memories of Sun and Moon|std|master
+        - DRAGONLADY|std|master
+        - Finite|std|master
+    - description: |-
         「クラス認定 - Ⅴ - Random」コース
         ❤ 300｜-1/-1/-1｜+0
       sheets:
@@ -83,6 +223,20 @@
         - (WE) Trackless wilderness|we|【狂】
         - (WE) folern|we|【狂】
         - (WE) Trrricksters!!|we|【狂】
+    - description: |-
+        「CRITICAL JUSTICE CHALLENGE」コース
+        ❤ 8｜-1/-1/-1｜+0
+      sheets:
+        - 電脳少女は歌姫の夢を見るか？|std|master
+        - Twice up Scenery|std|master
+        - volcanic|std|master
+    - description: |-
+        「infinite technique」コース
+        ❤ 30｜-0/-1/-1｜+10
+      sheets:
+        - X7124|std|master
+        - 玩具狂奏曲 -終焉-|std|master
+        - macrocosmos|std|master
     - description: |-
         「クラス認定 - ∞ - Random」コース
         ❤ 150｜-1/-1/-1｜+0
@@ -101,10 +255,25 @@
     - description: |-
         「Wall Panic!」コース
         ❤ 400｜(+1)/-1/-1/-1｜+0
+        ※スピードが5.5になる、LIFEに応じてフィールドウォールが変動
       sheets:
         - ランダムで選曲されます|rnd|random|10+
         - ランダムで選曲されます|rnd|random|11
         - ランダムで選曲されます|rnd|random|11+
+    - description: |-
+        「IRODORI LUNATIC!!」コース
+        ❤ 3000｜-1/-1/-1｜+0
+      sheets:
+        - (WE) イロドリミドリ杯花映塚全一決定戦公式テーマソング『ウソテイ』|we|【嘘】
+        - (WE) あねぺったん|we|【嘘】
+        - (WE) Help me, あーりん！|we|【嘘】
+    - description: |-
+        「Pianistest...」コース
+        ❤ 100｜-0/-1/-1｜+50
+      sheets:
+        - L'épisode|std|master
+        - (WE) アルストロメリア|we|【蔵】
+        - (WE) やらなきゃいけないことばかり|we|【狂】
     - description: |-
         【期間限定】
         「KING of Performai The 4th 予選① EXPERT」コース
