@@ -113,7 +113,6 @@
     "google-spreadsheet": "^3.3.0",
     "iconv-lite": "^0.6.3",
     "log4js": "^6.5.2",
-    "node_extra_ca_certs_mozilla_bundle": "^1.0.5",
     "puppeteer": "^15.1.1",
     "sequelize": "^6.21.1",
     "shelljs": "^0.8.5",
