@@ -1,6 +1,4 @@
 /* eslint-disable no-await-in-loop */
-import fs from 'node:fs';
-import https from 'node:https';
 import axios from 'axios';
 import puppeteer from 'puppeteer';
 import sleep from 'sleep-promise';
@@ -11,9 +9,6 @@ import 'dotenv/config';
 
 const logger = log4js.getLogger('maimai/fetch-versions');
 logger.level = log4js.levels.INFO;
-
-// fix missing certificate
-https.globalAgent.options.ca = fs.readFileSync('node_modules/node_extra_ca_certs_mozilla_bundle/ca_bundle/ca_intermediate_root_bundle.pem');
 
 const DATA_URL = 'https://maimaidx.jp/maimai-mobile/record/musicVersion/search/';
 
