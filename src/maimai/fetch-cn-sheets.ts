@@ -9,7 +9,7 @@ const DATA_URL = 'https://raw.githubusercontent.com/CrazyKidCN/maimaiDX-CN-songs
 
 const categoryMap = new Map([
   ['流行&动漫', 'POPS＆アニメ'],
-  ['niconico＆VOCALOID', 'niconico＆ボーカロイド'],
+  ['niconico＆VOCALOID™', 'niconico＆ボーカロイド'],
   ['东方Project', '東方Project'],
   ['其他游戏', 'ゲーム＆バラエティ'],
   ['舞萌', 'maimai'],
