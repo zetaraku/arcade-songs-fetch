@@ -18,6 +18,9 @@ const listIds = ['index', 'original'];
 //! add further list here !//
 
 function getSongId(rawSong: Record<string, any>) {
+  if (rawSong.title === '凛として咲く花の如く' && rawSong.artist === '大神ミオ') {
+    return '凛として咲く花の如く (2)';
+  }
   return rawSong.title;
 }
 
