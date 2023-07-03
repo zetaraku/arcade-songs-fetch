@@ -45,6 +45,7 @@ npm run <game-code>:<script-name>
   - `diva` (Project DIVA Arcade)
   - `popn` (pop'n music)
   - `drs` (DANCERUSH STARDOM)
+  - `ddr` (DanceDanceRevolution)
 
 - Available `<script-name>`:
   - See `package.json`.
