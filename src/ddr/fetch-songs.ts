@@ -127,7 +127,7 @@ async function* getPages(versionId: number) {
         const imagePath = $(tr).find('.jk > img').attr('src')!;
 
         const title = $(tr).find('.music_tit').text().trim();
-        const artist = $(tr).find('.artist_nam').text().trim();
+        const artist = $(tr).find('.artist_nam').text().trim() || null;
 
         const urlObj = new URL(imagePath, IMAGE_BASE_URL);
         urlObj.searchParams.set('kind', '1'); // use large image
