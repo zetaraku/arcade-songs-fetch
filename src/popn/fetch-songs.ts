@@ -1,6 +1,5 @@
 /* eslint-disable no-await-in-loop */
 import axios from 'axios';
-import puppeteer from 'puppeteer';
 import sleep from 'sleep-promise';
 import log4js from 'log4js';
 import * as cheerio from 'cheerio';
@@ -62,30 +61,7 @@ export async function getCookies() {
     return { M573SSID: process.env.POPN_JP_KONAMI_SESSION_TOKEN };
   }
 
-  if (!process.env.POPN_JP_KONAMI_ID || !process.env.POPN_JP_KONAMI_PASSWORD) {
-    throw new Error('Please set your POPN_JP_KONAMI_ID and POPN_JP_KONAMI_PASSWORD in the .env file');
-  }
-
-  //! The following process requires user to solve captcha and submit the form manually !//
-
-  const browser = await puppeteer.launch({ headless: false });
-
-  const page = await browser.newPage();
-  await page.goto('https://p.eagate.573.jp/gate/p/login.html');
-
-  await page.type('#login-form-id', process.env.POPN_JP_KONAMI_ID);
-  await page.type('#login-form-password', process.env.POPN_JP_KONAMI_PASSWORD);
-
-  await Promise.all([
-    page.waitForNavigation(),
-    // page.click('#submit'),
-  ]);
-
-  const cookies = await page.cookies();
-
-  await browser.close();
-
-  return Object.fromEntries(cookies.map((cookie) => [cookie.name, cookie.value]));
+  throw new Error('Please set your POPN_JP_KONAMI_SESSION_TOKEN in the .env file');
 }
 
 async function* fetchSongs(versionId: number, cookies: Record<string, string>) {
