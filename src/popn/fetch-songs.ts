@@ -1,4 +1,5 @@
 /* eslint-disable no-await-in-loop */
+/* eslint-disable newline-per-chained-call */
 import axios from 'axios';
 import sleep from 'sleep-promise';
 import log4js from 'log4js';
@@ -153,7 +154,6 @@ async function* fetchSheets(levelValue: number, cookies: Record<string, string>)
         const title = $(li).find('.col_music_lv > a').text().trim();
         // const genre = $(li).find('.col_music_lv > div').text().trim();
 
-        // eslint-disable-next-line newline-per-chained-call
         const difficulty = $(li).find('.col_normal_lv').text().trim().toLowerCase();
         const level = $(li).find('.col_hyper_lv').text().trim();
 

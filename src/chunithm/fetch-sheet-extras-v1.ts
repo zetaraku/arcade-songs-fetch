@@ -1,4 +1,5 @@
 /* eslint-disable no-await-in-loop */
+/* eslint-disable newline-per-chained-call */
 import axios from 'axios';
 import Sequelize from 'sequelize';
 import sleep from 'sleep-promise';
@@ -110,7 +111,6 @@ function extractSheetExtras($: cheerio.CheerioAPI, table: cheerio.Element) {
     }
 
     const noteDesigner = (() => {
-      // eslint-disable-next-line newline-per-chained-call
       const nodes = $(table).parent().next('p:contains("譜面作者")').find('span').contents().toArray();
 
       const extractNoteDesigner = (abbr: string) => {

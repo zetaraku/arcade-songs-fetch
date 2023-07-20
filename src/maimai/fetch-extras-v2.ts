@@ -1,4 +1,5 @@
 /* eslint-disable no-await-in-loop */
+/* eslint-disable newline-per-chained-call */
 import axios from 'axios';
 import Sequelize from 'sequelize';
 import sleep from 'sleep-promise';
@@ -120,11 +121,9 @@ export function getSongWikiTitle(song: Record<string, any>) {
 }
 
 function extractSheetExtras($: cheerio.CheerioAPI, table: cheerio.Element) {
-  // eslint-disable-next-line newline-per-chained-call
   const noInternalLevel = ($(table).find('tr').eq(0).find('th').eq(1).text().trim() === '総数');
 
   const type = (() => {
-    // eslint-disable-next-line newline-per-chained-call
     const fourthNoteType = $(table).find('tr').eq(1).find('th').eq(3).text().trim();
     if (fourthNoteType === 'Break') return 'std';
     if (fourthNoteType === 'Touch') return 'dx';
@@ -157,7 +156,6 @@ function extractSheetExtras($: cheerio.CheerioAPI, table: cheerio.Element) {
     }
 
     const noteDesigner = (() => {
-      // eslint-disable-next-line newline-per-chained-call
       const nodes = $(table).parent().next('p:contains("譜面作者")').find('span').contents().toArray();
 
       const extractNoteDesigner = (abbr: string) => {
