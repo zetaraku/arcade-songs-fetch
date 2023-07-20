@@ -133,4 +133,4 @@ export function gamerchWikiV2TitleEscape(title: string) {
     .replaceAll('(', '（')
     .replaceAll(')', '）')
     .replaceAll('\\', '＼');
-  }
+}
