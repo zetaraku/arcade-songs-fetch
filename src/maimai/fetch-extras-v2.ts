@@ -164,12 +164,12 @@ function extractSheetExtras($: cheerio.CheerioAPI, table: cheerio.Element) {
         const anchorIndex = nodes.findIndex((node) => $(node).text().trim() === abbr);
         if (anchorIndex === -1) return null;
 
-        let result = $(nodes[anchorIndex + 1]).text().trim().replace(/^[…]|[、】]$/g, '');
+        let result = $(nodes[anchorIndex + 1]).text().trim().replace(/^[…]|[、】]$/g, '').trim();
 
         //! hotfix
-        if (result === 'ロシェ@ペンギン') result = 'ロシェ＠ペンギン';
-        if (result === 'チャン＠DP皆伝') result = 'チャン@DP皆伝';
-        if (result === 'Revo＠LC') result = 'Revo@LC';
+        result = result.replace('ロシェ@', 'ロシェ＠');
+        result = result.replace('チャン＠', 'チャン@');
+        result = result.replace('Revo＠', 'Revo@');
 
         return !!result && result !== '？' && result !== '?' ? result : null;
       };
