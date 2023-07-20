@@ -9,20 +9,18 @@ const logger = log4js.getLogger('ongeki/fetch-internal-levels');
 logger.level = log4js.levels.INFO;
 
 function getSongId(rawSheet: Record<string, any>) {
-  if (rawSheet.type === 'lun') {
-    if (rawSheet.title === 'Perfect Shining!!(ロケテスト譜面)') {
-      return '(LUN) Perfect Shining!! (2)';
-    }
-    return `(LUN) ${rawSheet.title}`;
+  const { type, title, id } = rawSheet;
+  if (type === 'lun') {
+    if (title === 'Perfect Shining!!') return '(LUN) Perfect Shining!!';
+    if (title === 'Perfect Shining!!(ロケテスト譜面)') return '(LUN) Perfect Shining!! (2)';
+    return `(LUN) ${title}`;
   }
-
-  if (rawSheet.title === 'Singularity' && rawSheet.id === '425') {
-    return 'Singularity (2)';
+  if (title === 'Singularity') {
+    if (id === '362') return 'Singularity';
+    if (id === '425') return 'Singularity (2)';
+    if (id === '487') return 'Singularity (3)';
   }
-  if (rawSheet.title === 'Singularity' && rawSheet.id === '487') {
-    return 'Singularity (3)';
-  }
-  return rawSheet.title;
+  return title;
 }
 
 async function fetchSheets() {

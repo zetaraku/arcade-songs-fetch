@@ -11,8 +11,7 @@ logger.level = log4js.levels.INFO;
 const DATA_URL = 'https://wacca.marv.jp/music/search.php';
 
 function getSongId(rawSong: Record<string, any>) {
-  const title = decodeHTML(rawSong.title.display.trim());
-  return title;
+  return decodeHTML(rawSong.title.display.trim());
 }
 
 function extractSong(rawSong: Record<string, any>) {

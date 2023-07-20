@@ -45,9 +45,10 @@ const difficultyIdMap = new Map([
   ['remaster', 4],
 ]);
 
-function getSongId(title: string, version: string) {
-  if (title === 'Link' && version === 'ORANGE') {
-    return 'Link (2)';
+export function getSongId(title: string, version: string) {
+  if (title === 'Link') {
+    if (version === 'maimai PLUS') return 'Link';
+    if (version === 'ORANGE') return 'Link (2)';
   }
   return title;
 }

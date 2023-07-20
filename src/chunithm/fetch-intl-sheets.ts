@@ -7,6 +7,7 @@ import sleep from 'sleep-promise';
 import log4js from 'log4js';
 import * as cheerio from 'cheerio';
 import { IntlSheet } from '@@/db/chunithm/models';
+import { getSongId } from './fetch-songs';
 import 'dotenv/config';
 
 const logger = log4js.getLogger('chunithm/fetch-intl-sheets');
@@ -43,33 +44,6 @@ const worldsEndTypeMappings = [
   '俺', '蔵', '覚',
   //! add further type here !//
 ];
-
-function getSongId(rawSong: Record<string, any>): string {
-  if (rawSong.catname === 'WORLD\'S END') {
-    //! hotfix
-    if (rawSong.title === 'G e n g a o z o') {
-      if (rawSong.id === '8108') return '(WE) G e n g a o z o';
-      if (rawSong.id === '8203') return '(WE) G e n g a o z o (2)';
-    }
-    if (rawSong.title === 'Aragami') {
-      if (rawSong.id === '8164') return '(WE) Aragami';
-      if (rawSong.id === '8241') return '(WE) Aragami (2)';
-    }
-    if (rawSong.title === 'Random') {
-      if (rawSong.id === '8244') return '(WE) Random';
-      if (rawSong.id === '8245') return '(WE) Random (2)';
-      if (rawSong.id === '8246') return '(WE) Random (3)';
-      if (rawSong.id === '8247') return '(WE) Random (4)';
-      if (rawSong.id === '8248') return '(WE) Random (5)';
-      if (rawSong.id === '8249') return '(WE) Random (6)';
-    }
-    return `(WE) ${rawSong.title}`;
-  }
-  //! hotfix
-  if (rawSong.title === 'Reach for the Stars') return 'Reach For The Stars';
-  if (rawSong.title === 'まっすぐ→→→ストリーム!') return 'まっすぐ→→→ストリーム！';
-  return rawSong.title;
-}
 
 async function getIntlCookies() {
   if (!process.env.CHUNITHM_INTL_SEGA_ID || !process.env.CHUNITHM_INTL_SEGA_PASSWORD) {

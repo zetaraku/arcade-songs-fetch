@@ -18,8 +18,9 @@ const categoryMap = new Map([
 ]);
 
 function getSongId(title: string, category: string) {
-  if (title === 'Link' && category === 'niconico＆ボーカロイド') {
-    return 'Link (2)';
+  if (title === 'Link') {
+    if (category === 'maimai') return 'Link';
+    if (category === 'niconico＆ボーカロイド') return 'Link (2)';
   }
   return title;
 }

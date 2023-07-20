@@ -28,7 +28,12 @@ export const difficultyMap = new Map([
 ]);
 
 function getSongId(rawSong: Record<string, any>) {
-  return rawSong.title;
+  const { title, artist } = rawSong;
+  if (title === 'Prayer') {
+    if (artist === 'ぺのれり') return 'Prayer';
+    if (artist === '溝口ゆうま feat. 大瀬良あい') return 'Prayer (2)';
+  }
+  return title;
 }
 
 async function* getSongs() {

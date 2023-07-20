@@ -9,31 +9,28 @@ logger.level = log4js.levels.INFO;
 const DATA_URL = 'https://chunithm.sega.jp/storage/json/music.json';
 const IMAGE_BASE_URL = 'https://new.chunithm-net.com/chuni-mobile/html/mobile/img/';
 
-function getSongId(rawSong: Record<string, any>): string {
-  if (rawSong.catname === 'WORLD\'S END') {
-    //! hotfix
-    if (rawSong.title === 'G e n g a o z o') {
-      if (rawSong.id === '8108') return '(WE) G e n g a o z o';
-      if (rawSong.id === '8203') return '(WE) G e n g a o z o (2)';
+export function getSongId(rawSong: Record<string, any>): string {
+  const { catname, title, id } = rawSong;
+  if (catname === 'WORLD\'S END') {
+    if (title === 'G e n g a o z o') {
+      if (id === '8108') return '(WE) G e n g a o z o';
+      if (id === '8203') return '(WE) G e n g a o z o (2)';
     }
-    if (rawSong.title === 'Aragami') {
-      if (rawSong.id === '8164') return '(WE) Aragami';
-      if (rawSong.id === '8241') return '(WE) Aragami (2)';
+    if (title === 'Aragami') {
+      if (id === '8164') return '(WE) Aragami';
+      if (id === '8241') return '(WE) Aragami (2)';
     }
-    if (rawSong.title === 'Random') {
-      if (rawSong.id === '8244') return '(WE) Random';
-      if (rawSong.id === '8245') return '(WE) Random (2)';
-      if (rawSong.id === '8246') return '(WE) Random (3)';
-      if (rawSong.id === '8247') return '(WE) Random (4)';
-      if (rawSong.id === '8248') return '(WE) Random (5)';
-      if (rawSong.id === '8249') return '(WE) Random (6)';
+    if (title === 'Random') {
+      if (id === '8244') return '(WE) Random';
+      if (id === '8245') return '(WE) Random (2)';
+      if (id === '8246') return '(WE) Random (3)';
+      if (id === '8247') return '(WE) Random (4)';
+      if (id === '8248') return '(WE) Random (5)';
+      if (id === '8249') return '(WE) Random (6)';
     }
-    return `(WE) ${rawSong.title}`;
+    return `(WE) ${title}`;
   }
-  //! hotfix
-  if (rawSong.title === 'Reach for the Stars') return 'Reach For The Stars';
-  if (rawSong.title === 'まっすぐ→→→ストリーム!') return 'まっすぐ→→→ストリーム！';
-  return rawSong.title;
+  return title;
 }
 
 function preprocessRawSongs(rawSongs: Record<string, any>[]) {

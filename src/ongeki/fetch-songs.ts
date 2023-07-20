@@ -10,20 +10,20 @@ const DATA_URL = 'https://ongeki.sega.jp/assets/json/music/music.json';
 const IMAGE_BASE_URL = 'https://ongeki-net.com/ongeki-mobile/img/music/';
 
 function getSongId(rawSong: Record<string, any>) {
-  if (rawSong.category === 'LUNATIC') {
-    if (rawSong.title === 'Perfect Shining!!' && rawSong.id === '900960') {
-      return '(LUN) Perfect Shining!! (2)';
+  const { category, title, id } = rawSong;
+  if (category === 'LUNATIC') {
+    if (title === 'Perfect Shining!!') {
+      if (id === '901100') return '(LUN) Perfect Shining!!';
+      if (id === '900960') return '(LUN) Perfect Shining!! (2)';
     }
-    return `(LUN) ${rawSong.title}`;
+    return `(LUN) ${title}`;
   }
-
-  if (rawSong.title === 'Singularity' && rawSong.id === '402400') {
-    return 'Singularity (2)';
+  if (title === 'Singularity') {
+    if (id === '615400') return 'Singularity';
+    if (id === '402400') return 'Singularity (2)';
+    if (id === '403700') return 'Singularity (3)';
   }
-  if (rawSong.title === 'Singularity' && rawSong.id === '403700') {
-    return 'Singularity (3)';
-  }
-  return rawSong.title;
+  return title;
 }
 
 function preprocessRawSongs(rawSongs: Record<string, any>[]) {

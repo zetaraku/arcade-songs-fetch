@@ -36,13 +36,15 @@ const versionMap = new Map([
 ]);
 
 function getSongId(rawSong: Record<string, any>) {
-  if (rawSong.catcode === '宴会場') {
-    return `(宴) ${rawSong.title}`;
+  const { catcode, title } = rawSong;
+  if (catcode === '宴会場') {
+    return `(宴) ${title}`;
   }
-  if (rawSong.title === 'Link' && rawSong.catcode === 'niconico＆ボーカロイド') {
-    return 'Link (2)';
+  if (title === 'Link') {
+    if (catcode === 'maimai') return 'Link';
+    if (catcode === 'niconico＆ボーカロイド') return 'Link (2)';
   }
-  return rawSong.title;
+  return title;
 }
 
 function extractSong(rawSong: Record<string, any>) {

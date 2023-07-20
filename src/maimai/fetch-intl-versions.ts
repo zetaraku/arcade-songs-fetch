@@ -5,6 +5,7 @@ import log4js from 'log4js';
 import * as cheerio from 'cheerio';
 import { IntlSheetVersion } from '@@/db/maimai/models';
 import { getIntlCookies } from './fetch-intl-sheets';
+import { getSongId } from './fetch-versions';
 import 'dotenv/config';
 
 const logger = log4js.getLogger('maimai/fetch-intl-versions');
@@ -44,14 +45,7 @@ const difficultyIdMap = new Map([
   ['remaster', 4],
 ]);
 
-export function getSongId(title: string, version: string) {
-  if (title === 'Link' && version === 'ORANGE') {
-    return 'Link (2)';
-  }
-  return title;
-}
-
-export async function getIntlSheets(
+async function getIntlSheets(
   version: string,
   difficulty: string,
   cookies: Record<string, string>,

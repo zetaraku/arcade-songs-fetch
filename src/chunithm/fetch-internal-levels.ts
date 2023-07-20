@@ -2,30 +2,11 @@ import axios from 'axios';
 import log4js from 'log4js';
 import { Song, SheetInternalLevel } from '@@/db/chunithm/models';
 import { checkUnmatchedEntries } from '@/_core/utils';
+import { getSongId } from './fetch-extras';
 import 'dotenv/config';
 
 const logger = log4js.getLogger('chunithm/fetch-internal-levels');
 logger.level = log4js.levels.INFO;
-
-function getSongId(rawSong: Record<string, any>): string {
-  const genre = rawSong.meta.genre as string;
-  const title = rawSong.meta.title as string;
-  if (genre === 'WORLD\'S END') {
-    //! hotfix
-    if (title === 'G e n g a o z o【狂】') return '(WE) G e n g a o z o';
-    if (title === 'G e n g a o z o【覚】') return '(WE) G e n g a o z o (2)';
-    if (title === 'Aragami【蔵】') return '(WE) Aragami';
-    if (title === 'Aragami【光】') return '(WE) Aragami (2)';
-    if (title === 'Random【分A】') return '(WE) Random';
-    if (title === 'Random【分B】') return '(WE) Random (2)';
-    if (title === 'Random【分C】') return '(WE) Random (3)';
-    if (title === 'Random【分D】') return '(WE) Random (4)';
-    if (title === 'Random【分E】') return '(WE) Random (5)';
-    if (title === 'Random【分F】') return '(WE) Random (6)';
-    return `(WE) ${title.replace(/【.】$/, '')}`;
-  }
-  return title;
-}
 
 function getWeType(rawSong: Record<string, any>) {
   if (rawSong.data.WE === undefined) return undefined;

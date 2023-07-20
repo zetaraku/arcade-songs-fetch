@@ -84,14 +84,9 @@ const manualMappings = new Map([
 ]);
 
 function getSongId(title: string) {
-  //! hotfix
-  if (title === 'Link') {
-    throw new Error(`Title required manual resolve: ${title}`);
-  }
-  if (manualMappings.has(title)) {
-    return manualMappings.get(title);
-  }
-  return String(title);
+  if (title === 'Link') throw new Error(`Title required manual resolve: ${title}`);
+  if (manualMappings.has(title)) return manualMappings.get(title);
+  return title;
 }
 
 function extractSheet(rawSheet: Record<string, any>) {

@@ -11,10 +11,12 @@ logger.level = log4js.levels.INFO;
 const DATA_URL = 'https://taiko.namco-ch.net/taiko/songlist/';
 
 function getSongId(rawSong: Record<string, any>) {
-  if (rawSong.title === 'エンジェル ドリーム' && rawSong.category === 'ナムコオリジナル') {
-    return 'エンジェル ドリーム (2)';
+  const { title, artist, category } = rawSong;
+  if (title === 'エンジェル ドリーム') {
+    if (artist === '「アイドルマスター シンデレラガールズ」より') return 'エンジェル ドリーム';
+    if (category === 'ナムコオリジナル') return 'エンジェル ドリーム (2)';
   }
-  return rawSong.title;
+  return title;
 }
 
 async function fetchCategories() {
