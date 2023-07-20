@@ -205,8 +205,8 @@ function extractSheetExtras($: cheerio.CheerioAPI, table: cheerio.Element) {
   }).filter((e) => e.difficulty !== null);
 }
 
-async function fetchSongPageUrlMap() {
-  const response = await axios.get(SONG_LIST_URL);
+async function fetchSongPageUrlMap(songListUrl: string) {
+  const response = await axios.get(songListUrl);
   const $ = cheerio.load(response.data);
 
   return new Map(
@@ -256,7 +256,7 @@ async function fetchExtra(song: Record<string, any>, pageUrl: string) {
 
 export default async function run() {
   logger.info('Fetching song page url list ...');
-  const songPageUrlMap = await fetchSongPageUrlMap();
+  const songPageUrlMap = await fetchSongPageUrlMap(SONG_LIST_URL);
   logger.info(`OK, ${songPageUrlMap.size} song page url fetched.`);
 
   const songsToFetch: Record<string, any>[] = await sequelize.query(/* sql */ `
