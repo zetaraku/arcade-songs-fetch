@@ -6,7 +6,7 @@
   "scripts": {
     "# run-all scripts": "",
     "maimai:all": "npm-run-all maimai:fetch-songs maimai:fetch-images maimai:fetch-versions maimai:fetch-intl-sheets maimai:fetch-cn-sheets maimai:fetch-extras-v2 maimai:fetch-internal-levels maimai:gen-json maimai:upload-data",
-    "chunithm:all": "npm-run-all chunithm:fetch-songs chunithm:fetch-images chunithm:fetch-intl-sheets chunithm:fetch-extras chunithm:fetch-internal-levels chunithm:gen-json chunithm:upload-data",
+    "chunithm:all": "npm-run-all chunithm:fetch-songs chunithm:fetch-images chunithm:fetch-intl-sheets chunithm:fetch-extras chunithm:fetch-sheet-extras-v2 chunithm:fetch-internal-levels chunithm:gen-json chunithm:upload-data",
     "wacca:all": "npm-run-all wacca:fetch-songs wacca:fetch-images wacca:gen-json wacca:upload-data",
     "taiko:all": "npm-run-all taiko:fetch-songs taiko:gen-json taiko:upload-data",
     "jubeat:all": "npm-run-all jubeat:fetch-songs jubeat:fetch-images jubeat:gen-json jubeat:upload-data",
@@ -37,6 +37,7 @@
     "chunithm:fetch-intl-sheets": "ts-node src/chunithm/fetch-intl-sheets",
     "chunithm:fetch-extras": "ts-node src/chunithm/fetch-extras",
     "chunithm:fetch-sheet-extras-v1": "ts-node src/chunithm/fetch-sheet-extras-v1",
+    "chunithm:fetch-sheet-extras-v2": "ts-node src/chunithm/fetch-sheet-extras-v2",
     "chunithm:fetch-internal-levels": "ts-node src/chunithm/fetch-internal-levels",
     "chunithm:gen-wiki-list": "ts-node src/chunithm/gen-wiki-list",
     "chunithm:gen-json": "ts-node src/chunithm/gen-json",
