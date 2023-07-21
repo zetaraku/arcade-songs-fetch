@@ -134,3 +134,15 @@ export function gamerchWikiV2TitleEscape(title: string) {
     .replaceAll(')', '）')
     .replaceAll('\\', '＼');
 }
+
+export function wikiwikiWikiTitleEscape(title: string) {
+  return title
+    .replaceAll('"', '”')
+    .replaceAll('#', '＃')
+    .replaceAll('&', '＆')
+    .replaceAll('<', '＜')
+    .replaceAll('>', '＞')
+    .replaceAll('[', '［')
+    .replaceAll(']', '］')
+    .replaceAll(':', '：');
+}
