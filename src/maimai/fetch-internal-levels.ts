@@ -42,6 +42,7 @@ const manualMappings = new Map([
   ['Party 4U "holy nite mix"', 'Party 4U ”holy nite mix”'],
   ['REVIVER オルタンシア･サーガ-蒼の騎士団- オリジナルVer.', 'REVIVER オルタンシア・サーガ -蒼の騎士団- オリジナルVer.'],
   ['Re:End of a Dream', 'Re：End of a Dream'],
+  ['Rooftop Run: Act１', 'Rooftop Run: Act1'],
   ['Rooftop Run:Act1', 'Rooftop Run: Act1'],
   ['Save This World νMix', 'Save This World νMIX'],
   ['Seclet Sleuth', 'Secret Sleuth'],
