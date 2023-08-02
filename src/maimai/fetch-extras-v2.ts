@@ -105,7 +105,7 @@ export function getSongWikiTitle(song: Record<string, any>) {
       '電車で電車でGO!GO!GO!GC! -GMT remix-',
       '電車で電車でOPA!OPA!OPA! -GMT mashup-',
       '響け！CHIREI MY WAY!',
-    ])
+    ]);
 
     if (manualMappings.has(song.songId)) {
       return manualMappings.get(song.songId);

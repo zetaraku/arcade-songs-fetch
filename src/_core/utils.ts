@@ -42,7 +42,7 @@ export function ensureNoDuplicateEntry(entries: any[]) {
 
   if (duplicateEntrySet.size > 0) {
     console.error([...duplicateEntrySet]);
-    throw new Error(`! Duplicate entries detected`);
+    throw new Error('! Duplicate entries detected');
   }
 }
 
