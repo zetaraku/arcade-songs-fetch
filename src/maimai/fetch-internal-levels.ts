@@ -113,13 +113,13 @@ async function extractRecords({
 
   logger.info(`Reading data from ${sheetName} at column ${dataIndexes} ...`);
 
-  return dataIndexes.flatMap(dataIndex => {
+  return dataIndexes.flatMap((dataIndex) => {
     const [
       titleIndex,
       typeIndex,
       difficultyIndex,
       internalLevelIndex,
-    ] = dataOffsets.map(offset => dataIndex + offset);
+    ] = dataOffsets.map((offset) => dataIndex + offset);
 
     return [...Array(sheet.rowCount).keys()]
       .filter((rowIndex) => {

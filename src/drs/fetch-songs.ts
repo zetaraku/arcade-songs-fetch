@@ -11,6 +11,7 @@ const DATA_URL = 'https://p.eagate.573.jp/game/dan/1st/json/musiclist_getdata.ht
 const IMAGE_BASE_URL = 'https://p.eagate.573.jp/game/dan/1st/img/jacket.html';
 
 const categoryMasks = [
+  /* eslint-disable no-bitwise */
   { mask: 1 << 0, category: 'LICENSE' },
   { mask: 1 << 1, category: 'レッスン' },
   { mask: 1 << 2, category: 'おすすめ' },
@@ -18,6 +19,7 @@ const categoryMasks = [
   { mask: 1 << 4, category: 'EDM' },
   { mask: 1 << 5, category: 'SPINNIN’ RECORDS' },
   { mask: 1 << 6, category: 'BEMANI' },
+  /* eslint-enable no-bitwise */
 ];
 
 function getSongId(rawSong: Record<string, any>) {
@@ -33,7 +35,9 @@ function extractSong(rawSong: Record<string, any>) {
   return {
     songId: getSongId(rawSong),
 
-    category: categoryMasks.filter((e) => (Number(rawSong.info.genre) & e.mask) !== 0)
+    category: categoryMasks
+      // eslint-disable-next-line no-bitwise
+      .filter((e) => (Number(rawSong.info.genre) & e.mask) !== 0)
       .map((e) => e.category).join('|'),
     title: rawSong.info.title_name,
     artist: rawSong.info.artist_name,
