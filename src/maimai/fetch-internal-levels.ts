@@ -35,6 +35,7 @@ const manualMappings = new Map([
   ['Imperishable Night 2006(2016 Refine)', 'Imperishable Night 2006 (2016 Refine)'],
   ['Jack-the-Ripper♦', 'Jack-the-Ripper◆'],
   ['Jorqer', 'Jörqer'],
+  ['L4TS:2018 (feat. あひる ＆ KTA)', 'L4TS:2018 (feat. あひる & KTA)'],
   ['L4TS:2018(feat.あひる＆KTA)', 'L4TS:2018 (feat. あひる & KTA)'],
   ['L\'epilogue', 'L\'épilogue'],
   ['Love’s Theme of BADASS ～バッド・アス 愛のテーマ～', 'Love\'s Theme of BADASS ～バッド・アス 愛のテーマ～'],
@@ -77,6 +78,7 @@ const manualMappings = new Map([
   ['管弦楽組曲 第3番 ニ長調「第2曲(G線上のアリア)」BWV.1068-2', '管弦楽組曲 第3番 ニ長調「第2曲（G線上のアリア）」BWV.1068-2'],
   ['紅星ミゼラブル〜廃憶編', '紅星ミゼラブル～廃憶編'],
   ['赤心性:カマトト荒療治', '赤心性：カマトト荒療治'],
+  ['超熊猫的周遊記(ワンダーパンダートラベラー)', '超熊猫的周遊記（ワンダーパンダートラベラー）'],
   ['雷切 -RAIKIRI-', '雷切-RAIKIRI-'],
   // Dummy entries:
   ['(  Ꙭ)ﾌﾞｯｺﾛﾘ食べよう', undefined],
