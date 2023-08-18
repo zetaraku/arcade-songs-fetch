@@ -46,6 +46,11 @@
         - 灼熱Beach Side Bunny|std|novice
         - 十面相（フリーダムver.）(EXIT TUNES)|std|advanced
         - 取り残された美術(Arranged:HiZuMi)|std|advanced
+    - description: 第6回
+      sheets:
+        - 怪盗Ｆの台本～消えたダイヤの謎～(EXIT TUNES)|std|novice
+        - 待チ人ハ来ズ。|std|advanced
+        - Future MUSiC|std|advanced
     - title: 【Lv.02 流星】
     - description: 第1回 Aコース
       sheets:
@@ -92,6 +97,12 @@
         - Arcadia|std|advanced
         - FIRE IN MY HEART|std|advanced
         - シアワセうさぎ|std|advanced
+    - description: 第6回
+      sheets:
+        - Virtual Sunrise (nana's Festival EDM Remix) feat. Kanae
+          Asaba|std|advanced
+        - 隅田川夏恋歌 (I/O Angel mix)|std|advanced
+        - 深海シティアンダーグラウンド(EXIT TUNES)|std|advanced
     - title: 【Lv.03 月衝】
     - description: 第1回 Aコース
       sheets:
@@ -138,6 +149,11 @@
         - 碧の疾風|std|advanced
         - 8 -eight-|std|advanced
         - The Wind of Gold -HΔPPY MIX-|std|advanced
+    - description: 第6回
+      sheets:
+        - 星の器 feat. らっぷびと|std|advanced
+        - Second Heaven GravityPfArrange|std|advanced
+        - BEAT MAGIC|std|advanced
     - title: 【Lv.04 瞬光】
     - description: 第1回 Aコース
       sheets:
@@ -184,6 +200,11 @@
         - WAVE WAVE WAVE|std|advanced
         - Junk Mania|std|advanced
         - scary night|std|advanced
+    - description: 第6回
+      sheets:
+        - concon (picom'n'bass rmx)|std|advanced
+        - 私の恋色。|std|advanced
+        - 終点(EXIT TUNES)|std|advanced
     - title: 【Lv.05 天極】
     - description: 第1回 Aコース
       sheets:
@@ -230,6 +251,11 @@
         - 透明な記憶の風穴|std|exhaust
         - Mysterious Nights|std|exhaust
         - Sakura Reflection 音頭 -盆踊Remix-|std|exhaust
+    - description: 第6回
+      sheets:
+        - それは花火のような恋|std|advanced
+        - She Turns Me On|std|advanced
+        - .59 -BOOTH BOOST REMIX-|std|exhaust
     - title: 【Lv.06 烈風】
     - description: 第1回 Aコース
       sheets:
@@ -276,6 +302,11 @@
         - Still Lonesome|std|exhaust
         - Love Love Scarlet|std|exhaust
         - relegation grimoire|std|exhaust
+    - description: 第6回
+      sheets:
+        - 近未来百鬼夜行譚～死返之巻～|std|exhaust
+        - インビジブル(EXIT TUNES)|std|exhaust
+        - 零の位相|std|exhaust
     - title: 【Lv.07 雷電】
     - description: 第1回 Aコース
       sheets:
@@ -322,6 +353,11 @@
         - 神にした彼女が示す世界線|std|exhaust
         - LEMON SUMMER|std|exhaust
         - 創世ノート|std|exhaust
+    - description: 第6回
+      sheets:
+        - 過去に囚われている|std|exhaust
+        - Jailbreaker|std|exhaust
+        - SprrRush!!|std|maximum
     - title: 【Lv.08 麗華】
     - description: 第1回 Aコース
       sheets:
@@ -368,6 +404,11 @@
         - Enchanté|std|exhaust
         - ナミカレ|std|exhaust
         - Onigo|std|exhaust
+    - description: 第6回
+      sheets:
+        - Lieselotte|std|exhaust
+        - crêpe suzette|std|exhaust
+        - ゜*。Chantilly Fille。*°|std|maximum
     - title: 【Lv.09 魔騎士】
     - description: 第1回 Aコース
       sheets:
@@ -414,6 +455,11 @@
         - rainbow flyer -gratitude remix-|std|exhaust
         - スピーカーガール！|std|gravity
         - Apex of the World|std|exhaust
+    - description: 第6回
+      sheets:
+        - トキメキストリーム|std|maximum
+        - Never Ending Future|std|exhaust
+        - β(EXIT TUNES)|std|maximum
     - title: 【Lv.10 剛力羅】
     - description: 第1回 Aコース
       sheets:
@@ -460,6 +506,11 @@
         - Fun walk!!|std|maximum
         - Royal Action|std|maximum
         - Destroy|std|gravity
+    - description: 第6回
+      sheets:
+        - 斑咲花|std|maximum
+        - NEON LOVE♥POTION!!!|std|maximum
+        - Candy Colored Hearts|std|exhaust
     - title: 【Lv.11 或帝滅斗】
     - description: 第1回 Aコース
       sheets:
@@ -501,6 +552,11 @@
         - EGOISM 440 (Ange;art remix)|std|maximum
         - MODEL FT4|std|maximum
         - For UltraPlayers|std|exhaust
+    - description: 第6回
+      sheets:
+        - Touch My Body|std|maximum
+        - 蝕|std|maximum
+        - trea→journey|std|maximum
     - title: 【Lv.∞ 暴龍天】
     - description: 第1回 Aコース
       sheets:
@@ -542,6 +598,11 @@
         - ラクガキスト(EXIT TUNES)|std|vivid
         - 色を喪った街|std|maximum
         - いまきみに|std|maximum
+    - description: 第6回
+      sheets:
+        - Elemental Creation|std|maximum
+        - Absolute Domination|std|maximum
+        - APØCALYPSE RAY|std|maximum
 - title: "[VIVID WAVE] SKILL ANALYZER（スキルアナライザー）"
   sections:
     - title: 【Lv.01 岳翔】
