@@ -165,7 +165,7 @@ function extractSheetExtras($: cheerio.CheerioAPI, table: cheerio.Element) {
         let result = $(nodes[anchorIndex + 1]).text().trim().replace(/^[…]|[、】]$/g, '').trim();
 
         //! hotfix
-        result = result.replace('ロシェ@', 'ロシェ＠');
+        result = result.replace('ロシェ＠', 'ロシェ@');
         result = result.replace('チャン＠', 'チャン@');
         result = result.replace('Revo＠', 'Revo@');
 
