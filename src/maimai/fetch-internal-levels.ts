@@ -259,7 +259,7 @@ async function fetchSheetsV8() {
     }),
     ...await extractRecords({
       spreadsheet, sheetName: '13',
-      dataIndexes: [0, 7, 14, 21, 28, 35, 42, 50],
+      dataIndexes: [0, 7, 14, 21, 28, 35],
       dataOffsets: [0, 2, 3, 5],
     }),
     ...await extractRecords({
