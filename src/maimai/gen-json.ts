@@ -41,7 +41,8 @@ const versions = [
   { releaseDate: '2021-09-16', version: 'UNiVERSE', abbr: 'UNiVERSE (宙)' },
   { releaseDate: '2022-03-24', version: 'UNiVERSE PLUS', abbr: 'UNiVERSE+ (星)' },
   { releaseDate: '2022-09-15', version: 'FESTiVAL', abbr: 'FESTiVAL (祭)' },
-  { releaseDate: '2023-03-23', version: 'FESTiVAL PLUS', abbr: 'FESTiVAL+' },
+  { releaseDate: '2023-03-23', version: 'FESTiVAL PLUS', abbr: 'FESTiVAL+ (祝)' },
+  { releaseDate: '2023-09-14', version: 'BUDDiES', abbr: 'BUDDiES' },
   //! add further version here !//
 ];
 const types = [
@@ -64,14 +65,15 @@ const regions = [
 
 function getLevelValueOf(sheet: Record<string, any>) {
   if (sheet.level === null) return null;
-  if (sheet.level === '*') return -1;
+  if (sheet.level === '*') return 0;
+  if (sheet.level.endsWith('?')) return Number(sheet.level.replace('?', '').replace('+', '.7'));
   return Number(sheet.level.replace('+', '.7'));
 }
 function getInternalLevelValueOf(sheet: Record<string, any>) {
   if (sheet.internalLevel != null) return Number(sheet.internalLevel);
   if (sheet.level === '*') return 0;
-  if (sheet.level != null) return Number(sheet.level.replace('+', '.7'));
-  return null;
+  if (sheet.level.endsWith('?')) return Number(sheet.level.replace('?', '').replace('+', '.7'));
+  return Number(sheet.level.replace('+', '.7'));
 }
 function getIsSpecialOf(sheet: Record<string, any>) {
   return sheet.type === 'utage';

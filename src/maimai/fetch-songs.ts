@@ -32,13 +32,18 @@ const versionMap = new Map([
   [225, 'UNiVERSE PLUS'],
   [230, 'FESTiVAL'],
   [235, 'FESTiVAL PLUS'],
+  [240, 'BUDDiES'],
   //! add further version here !//
 ]);
 
 function getSongId(rawSong: Record<string, any>) {
-  const { catcode, title } = rawSong;
+  const { catcode, title, comment } = rawSong;
   if (catcode === '宴会場') {
-    return `(宴) ${title}`;
+    if (title === '[協]青春コンプレックス') {
+      if (comment === 'バンドメンバーを集めて楽しもう！（入門編）') return '[協]青春コンプレックス（入門編）';
+      if (comment === 'バンドメンバーを集めて挑め！（ヒーロー級）') return '[協]青春コンプレックス（ヒーロー級）';
+    }
+    return `${title}`;
   }
   if (title === 'Link') {
     if (catcode === 'maimai') return 'Link';
@@ -82,6 +87,8 @@ function extractSong(rawSong: Record<string, any>) {
 }
 
 function extractSheets(rawSong: Record<string, any>) {
+  const utageType = rawSong.utage_type ?? (rawSong.title as string).match(/^\[(.+)\]/)?.[1] ?? undefined;
+
   return [
     { type: 'dx', difficulty: 'basic', level: rawSong.dx_lev_bas },
     { type: 'dx', difficulty: 'advanced', level: rawSong.dx_lev_adv },
@@ -93,7 +100,7 @@ function extractSheets(rawSong: Record<string, any>) {
     { type: 'std', difficulty: 'expert', level: rawSong.lev_exp },
     { type: 'std', difficulty: 'master', level: rawSong.lev_mas },
     { type: 'std', difficulty: 'remaster', level: rawSong.lev_remas },
-    { type: 'utage', difficulty: `【${rawSong.utage_type}】`, level: rawSong.lev_utage },
+    { type: 'utage', difficulty: `【${utageType}】`, level: rawSong.lev_utage },
   ].filter((e) => !!e.level).map((rawSheet) => ({
     songId: getSongId(rawSong),
     ...rawSheet,

@@ -45,6 +45,7 @@ const manualMappings = new Map([
   ['Re:End of a Dream', 'Re：End of a Dream'],
   ['Rooftop Run: Act１', 'Rooftop Run: Act1'],
   ['Rooftop Run:Act1', 'Rooftop Run: Act1'],
+  ['SQUAD -Phvntom-', 'SQUAD-Phvntom-'],
   ['Save This World νMix', 'Save This World νMIX'],
   ['Seclet Sleuth', 'Secret Sleuth'],
   ['Session High↑', 'Session High⤴'],
@@ -290,6 +291,60 @@ async function fetchSheetsV8() {
   ];
 }
 
+async function fetchSheetsV9() {
+  const spreadsheet = new GoogleSpreadsheet('1vSqx2ghJKjWwCLrDEyZTUMSy5wkq_gY4i0GrJgSreQc');
+  spreadsheet.useApiKey(process.env.GOOGLE_API_KEY!);
+  await spreadsheet.loadInfo();
+
+  return [
+    ...await extractRecords({
+      spreadsheet, sheetName: 'BUDDiES新曲',
+      dataIndexes: [0, 6, 12, 18, 24],
+      dataOffsets: [0, 1, 2, 4],
+    }),
+    ...await extractRecords({
+      spreadsheet, sheetName: '14以上',
+      dataIndexes: [0, 7, 14, 21, 28, 35],
+      dataOffsets: [0, 2, 3, 5],
+    }),
+    ...await extractRecords({
+      spreadsheet, sheetName: '13+',
+      dataIndexes: [0, 7, 14, 21],
+      dataOffsets: [0, 2, 3, 5],
+    }),
+    ...await extractRecords({
+      spreadsheet, sheetName: '13',
+      dataIndexes: [0, 7, 14, 21, 28, 35, 42],
+      dataOffsets: [0, 2, 3, 5],
+    }),
+    ...await extractRecords({
+      spreadsheet, sheetName: '12+',
+      dataIndexes: [0, 6, 12, 19, 26, 33],
+      dataOffsets: [0, 1, 2, 4],
+    }),
+    ...await extractRecords({
+      spreadsheet, sheetName: '12+',
+      dataIndexes: [39],
+      dataOffsets: [0, 2, 3, 5],
+    }),
+    ...await extractRecords({
+      spreadsheet, sheetName: '12',
+      dataIndexes: [0, 6, 13, 19, 26, 32],
+      dataOffsets: [0, 1, 2, 4],
+    }),
+    ...await extractRecords({
+      spreadsheet, sheetName: '12',
+      dataIndexes: [38],
+      dataOffsets: [0, 2, 3, 5],
+    }),
+    ...await extractRecords({
+      spreadsheet, sheetName: 'Tmai',
+      dataIndexes: [0],
+      dataOffsets: [1, 2, 3, 7],
+    }),
+  ];
+}
+
 export default async function run() {
   if (!process.env.GOOGLE_API_KEY) {
     throw new Error('Please set your GOOGLE_API_KEY in the .env file');
@@ -299,7 +354,8 @@ export default async function run() {
   const rawSheets = [
     // ...await fetchSheetsV6(),
     // ...await fetchSheetsV7(),
-    ...await fetchSheetsV8(),
+    // ...await fetchSheetsV8(),
+    ...await fetchSheetsV9(),
   ];
   logger.info(`OK, ${rawSheets.length} sheets fetched.`);
 
