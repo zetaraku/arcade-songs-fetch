@@ -9,7 +9,7 @@ import { Song, Sheet } from '@@/db/jubeat/models';
 const logger = log4js.getLogger('jubeat/fetch-songs');
 logger.level = log4js.levels.INFO;
 
-const VERSION_ID = 'ave';
+const VERSION_ID = 'beyond';
 
 const DATA_URL = 'https://p.eagate.573.jp';
 const IMAGE_BASE_URL = 'https://p.eagate.573.jp/';
