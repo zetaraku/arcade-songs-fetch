@@ -26,8 +26,8 @@
     "lib": ["ESNext"],
     "resolveJsonModule": true,
     "paths": {
-      "@@/*": ["*"],
-      "@/*": ["src/*"]
+      "@/*": ["src/*"],
+      "@@/*": ["*"]
     }
   }
 }
