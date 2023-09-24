@@ -72,7 +72,8 @@ export default async function run({
           internalLevel: sheet.internalLevel,
           internalLevelValue: getInternalLevelValueOf(sheet),
 
-          noteDesigner: sheet.noteDesigner,
+          noteDesigner: sheet.noteDesigner ?? null,
+
           noteCounts: sheet.noteCounts ?? undefined,
 
           regions: sheet.regions != null ? Object.fromEntries(
@@ -81,7 +82,7 @@ export default async function run({
             ),
           ) : undefined,
 
-          isSpecial: getIsSpecialOf(sheet) || undefined,
+          isSpecial: getIsSpecialOf(sheet) ?? null,
 
           version: sheet.version ?? undefined,
         })),

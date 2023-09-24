@@ -43,8 +43,12 @@ export default async function run() {
         {
           type: gameCode,
           difficulty: gameCode,
+
           level: null,
           levelValue: null,
+
+          noteDesigner: null,
+
           isSpecial: song.sheets[0].isSpecial,
         },
       ];
