@@ -44,7 +44,7 @@ export default async function run({
   ).sorted;
 
   const songs = songRecords.map((song) => ({
-    songId: song.songId ?? null,
+    songId: song.songId,
 
     category: song.category ?? null,
     title: song.title ?? null,
