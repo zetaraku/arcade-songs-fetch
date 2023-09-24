@@ -1,5 +1,6 @@
 import fs from 'node:fs';
 import log4js from 'log4js';
+import { makeOutput } from '@/_core/utils';
 
 const logger = log4js.getLogger('any/gen-json');
 logger.level = log4js.levels.INFO;
@@ -61,7 +62,7 @@ export default async function run() {
   const flatZip = (...arrs: any[][]) => [...Array(Math.max(...arrs.map((arr) => arr.length)))]
     .flatMap((_, i) => arrs.map((arr) => arr[i]).filter(Boolean));
 
-  const output = {
+  const output = makeOutput({
     songs: flatZip(...songsArray).slice().reverse(),
     categories: [],
     versions: [],
@@ -69,7 +70,7 @@ export default async function run() {
     difficulties,
     regions: [],
     updateTime: new Date().toISOString(),
-  };
+  });
 
   logger.info(`Writing output into ${DIST_PATH}/data.json ...`);
   fs.mkdirSync(DIST_PATH, { recursive: true });

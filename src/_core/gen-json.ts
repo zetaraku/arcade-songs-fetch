@@ -1,4 +1,4 @@
-import { getSheetSorter } from '@/_core/utils';
+import { getSheetSorter, makeOutput } from '@/_core/utils';
 
 function defaultGetInternalLevelValueOf(sheet: Record<string, any>) {
   if (sheet.internalLevel === undefined) return undefined;
@@ -84,6 +84,7 @@ export default async function run({
 
           isSpecial: getIsSpecialOf(sheet) ?? null,
 
+          // optional sheet overrides
           version: sheet.version ?? undefined,
         })),
     ),
@@ -93,7 +94,7 @@ export default async function run({
     delete e.releaseDate;
   });
 
-  const output = {
+  const output = makeOutput({
     songs,
     categories,
     versions,
@@ -101,7 +102,7 @@ export default async function run({
     difficulties,
     regions,
     updateTime: new Date().toISOString(),
-  };
+  });
 
   return JSON.stringify(output, null, '\t');
 }

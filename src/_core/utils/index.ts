@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import crypto from 'node:crypto';
 import { parse as parseCsv } from 'csv/sync';
+import { rawDataSchema } from './schemas';
 
 export function hashed(text: string): string {
   return crypto.createHash('sha256').update(text).digest('hex');
@@ -145,4 +146,8 @@ export function wikiwikiWikiTitleEscape(title: string) {
     .replaceAll('[', '［')
     .replaceAll(']', '］')
     .replaceAll(':', '：');
+}
+
+export function makeOutput(output: unknown) {
+  return rawDataSchema.parse(output);
 }
