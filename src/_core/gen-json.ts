@@ -14,7 +14,6 @@ export default async function run({
   types,
   difficulties,
   regions,
-  updateTime = new Date(),
   getLevelValueOf,
   getInternalLevelValueOf = defaultGetInternalLevelValueOf,
   getIsSpecialOf,
@@ -26,7 +25,6 @@ export default async function run({
   types: Record<string, any>[],
   difficulties: Record<string, any>[],
   regions: Record<string, any>[],
-  updateTime?: Date,
   getLevelValueOf: (sheet: any) => number | null,
   getInternalLevelValueOf?: (sheet: any) => number | null | undefined,
   getIsSpecialOf: (sheet: any) => boolean | null,
@@ -101,7 +99,7 @@ export default async function run({
     types,
     difficulties,
     regions,
-    updateTime: updateTime.toISOString(),
+    updateTime: new Date().toISOString(),
   };
 
   return JSON.stringify(output, null, '\t');
