@@ -21,7 +21,12 @@ const difficultyMap = new Map([
 ]);
 
 function getSongId(rawSong: Record<string, any>) {
-  return rawSong.title;
+  const { title, artist } = rawSong;
+  if (title === 'トルコ行進曲') {
+    if (artist === 'モーツァルト') return 'トルコ行進曲';
+    if (artist === 'ベートーヴェン') return 'トルコ行進曲 (2)';
+  }
+  return title;
 }
 
 export async function getCookies() {
