@@ -32,7 +32,7 @@ export const rawSongSchema = z.object({
   songId: z.string(),
 
   category: z.string().nullable(),
-  title: z.string().nullable(),
+  title: z.string(),
   artist: z.string().nullable(),
   bpm: z.number().nullable(),
 
