@@ -6,6 +6,9 @@ Data fetching scripts for [arcade-songs](https://github.com/zetaraku/arcade-song
 
 ## Prerequisites
 
+- [Bash](https://en.wikipedia.org/wiki/Bash_(Unix_shell)) shell
+  - The npm scripts are assumed to be run in `bash` shell.
+  - You can use **Git Bash** brought by [Git](https://git-scm.com/) on Windows.
 - [Node.js](https://nodejs.org/) (LTS version or above)
 - [AWS CLI v2](https://aws.amazon.com/cli/) (optional)
 
