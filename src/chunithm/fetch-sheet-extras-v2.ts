@@ -30,6 +30,7 @@ function getSongWikiUrl(song: Record<string, any>) {
     //! hotfix
     const manualMappings = new Map([
       ['#SUP3RORBITAL', '♯SUP3RORBITAL'],
+      ['Breaking Dawn (feat. 棗いつき)', 'Breaking Dawn(feat.棗いつき)'],
       ['U&iVERSE -銀河鸞翔-', 'U＆iVERSE ‐銀河鸞翔‐'],
       [']-[|/34<#!', 'ヒバチ'],
       ['ウルガレオン', 'ウルガレオン(楽曲名)'],
