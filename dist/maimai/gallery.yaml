@@ -1,162 +1,450 @@
-- title: FESTiVAL PLUS 段位認定
+- title: BUDDiES 段位認定
+  id: buddies-dan
   sections:
-    - title: 【初段】
+    - &buddies-1-dan
+      title: 【初段】
       description: ❤ 350｜-0/-2/-5｜+20
       sheets:
-        - ヴァンパイア|dx|basic
+        - フォニイ|dx|basic
         - だれかの心臓になれたなら|dx|basic
         - 林檎華憐歌|std|basic
         - 光線チューニング|std|basic
-    - title: 【二段】
+    - &buddies-2-dan
+      title: 【二段】
       description: ❤ 350｜-0/-2/-5｜+20
       sheets:
         - ヴィラン|dx|advanced
         - 三妖精SAY YA!!!|dx|advanced
-        - 砂の惑星 feat. HATSUNE MIKU|std|advanced
+        - エゴロック|dx|advanced
         - インドア系ならトラックメイカー|dx|advanced
-    - title: 【三段】
+    - &buddies-3-dan
+      title: 【三段】
       description: ❤ 600｜-1/-2/-5｜+50
       sheets:
         - シャルル|std|advanced
-        - インビジブル|std|advanced
-        - チエルカ／エソテリカ|dx|advanced
+        - エイリアンエイリアン|std|advanced
+        - 初音ミクの激唱|std|advanced
         - Don't Fight The Music|dx|advanced
-    - title: 【四段】
+    - &buddies-4-dan
+      title: 【四段】
       description: ❤ 700｜-2/-2/-5｜+50
       sheets:
-        - セカイはまだ始まってすらいない|dx|expert
+        - さんさーら！|dx|expert
         - Dive into The Sky ～initialized～|dx|expert
         - オーケー？　オーライ！|dx|expert
         - wheel|dx|expert
-    - title: 【五段】
+    - &buddies-5-dan
+      title: 【五段】
       description: ❤ 700｜-2/-2/-5｜+50
       sheets:
         - サヨナラチェーンソー|dx|expert
-        - トリアージ|dx|expert
+        - 時計の国のジェミニ|dx|expert
         - Southern Cross|dx|expert
         - DETARAME ROCK&ROLL THEORY|std|expert
-    - title: 【六段】
+    - &buddies-6-dan
+      title: 【六段】
       description: ❤ 700｜-2/-2/-5｜+50
       sheets:
-        - Kinda Way|std|expert
+        - N3V3R G3T OV3R|dx|expert
         - Signature|std|expert
         - Mare Maris|std|expert
         - 約束|dx|master
-    - title: 【七段】
+    - &buddies-7-dan
+      title: 【七段】
       description: ❤ 700｜-2/-2/-5｜+50
       sheets:
         - 再会|dx|master
-        - 隠然|std|master
+        - 最終鬼畜妹フランドール・S|std|master
         - でらっくmaimai♪てんてこまい!|dx|master
         - Lionheart|std|master
-    - title: 【八段】
+    - &buddies-8-dan
+      title: 【八段】
       description: ❤ 700｜-2/-2/-5｜+20
       sheets:
-        - 星めぐり、果ての君へ。|dx|master
+        - スローアライズ|dx|master
         - ジャンキーナイトタウンオーケストラ|dx|master
-        - 蒼空に舞え、墨染の桜|std|master
+        - 緋色のDance|std|master
         - Revive The Rave|std|master
-    - title: 【九段】
+    - &buddies-9-dan
+      title: 【九段】
       description: ❤ 800｜-2/-2/-5｜+30
       sheets:
         - OTOGEMA|dx|master
-        - Scars of FAUNA|std|master
+        - Rainbow Rush Story|dx|master
         - みんなのマイマイマー|std|remaster
         - Reach For The Stars (Re-Colors)|dx|master
-    - title: 【十段】
+    - &buddies-10-dan
+      title: 【十段】
       description: ❤ 900｜-2/-2/-5｜+30
       sheets:
-        - 群青シグナル|dx|master
-        - Justified|std|master
-        - Tricolor⁂circuS|dx|master
-        - Caliburne ～Story of the Legendary sword～|std|master
-    - title: 【真初段】
+        - Imperishable Night 2006 (2016 Refine)|std|master
+        - Kairos|dx|master
+        - ULTRA SYNERGY MATRIX|dx|master
+        - ViRTUS|dx|master
+    - &buddies-shin-1-dan
+      title: 【真初段】
       description: ❤ 50｜-2/-3/-5｜+10
       sheets:
         - STARTLINER|dx|master
         - 泡沫、哀のまほろば|std|master
-        - ぐるぐるWASH！コインランドリー・ディスコ|std|master
+        - Change Our MIRAI！|dx|master
         - Streak|std|expert
-    - title: 【真二段】
+    - &buddies-shin-2-dan
+      title: 【真二段】
       description: ❤ 50｜-2/-3/-5｜+10
       sheets:
         - Ultranova|std|expert
         - その群青が愛しかったようだった|std|master
-        - Quartet Theme [Reborn]|std|master
+        - tape/stop/night|dx|master
         - フラジール|std|master
-    - title: 【真三段】
+    - &buddies-shin-3-dan
+      title: 【真三段】
       description: ❤ 50｜-2/-3/-5｜+10
       sheets:
-        - シエルブルーマルシェ|dx|master
         - KING|dx|master
-        - Black Out|std|expert
+        - 秋の未確認生物|dx|master
+        - ねぇ、壊れタ人形ハ何処へ棄テらレるノ？|std|expert
         - 絶え間なく藍色|dx|master
-    - title: 【真四段】
+    - &buddies-shin-4-dan
+      title: 【真四段】
       description: ❤ 50｜-2/-3/-5｜+10
       sheets:
-        - Kattobi KEIKYU Rider|std|expert
-        - Money Money|std|master
-        - ワードワードワード|dx|master
-        - YA･DA･YO [Reborn]|std|master
-    - title: 【真五段】
+        - ENERGY SYNERGY MATRIX|std|expert
+        - Sweets Time|dx|master
+        - ありふれたせかいせいふく|std|master
+        - Garden Of The Dragon|std|master
+    - &buddies-shin-5-dan
+      title: 【真五段】
       description: ❤ 50｜-2/-3/-5｜+10
       sheets:
         - Define|dx|master
-        - ソリッド|dx|master
-        - Signature|std|master
+        - Phantasm Brigade|std|master
+        - CHOCOLATE BOMB!!!!|dx|master
         - 咲キ誇レ常世ノ華|std|master
-    - title: 【真六段】
+    - &buddies-shin-6-dan
+      title: 【真六段】
       description: ❤ 50｜-2/-3/-5｜+10
       sheets:
-        - Turn around|std|master
-        - カラッポ・ノンフィクション|dx|master
+        - EVERGREEN|std|master
+        - Komplexe|dx|master
         - 遺伝子レベル∞スパイラル|dx|master
-        - Jouez Avec Moi?|dx|master
-    - title: 【真七段】
+        - 宵の鳥|dx|master
+    - &buddies-shin-7-dan
+      title: 【真七段】
       description: ❤ 50｜-2/-3/-5｜+10
       sheets:
         - Neon Kingdom|dx|master
         - Doll Judgment|std|master
-        - DRAGONLADY|std|master
-        - Luminaria|dx|master
-    - title: 【真八段】
+        - VANTABLACK RAVER|dx|master
+        - We Gonna Journey|std|master
+    - &buddies-shin-8-dan
+      title: 【真八段】
       description: ❤ 50｜-2/-3/-5｜+10
       sheets:
         - Sun Dance|std|remaster
-        - 夜明けまであと３秒|std|master
-        - Beat Opera op.1|dx|master
+        - NightTheater|dx|master
+        - 人里に下ったアタイがいつの間にか社畜になっていた件|std|master
         - Ragnarok|std|master
-    - title: 【真九段】
+    - &buddies-shin-9-dan
+      title: 【真九段】
       description: ❤ 50｜-2/-3/-5｜+10
       sheets:
-        - Calamity Fortune|std|master
-        - "#狂った民族２ PRAVARGYAZOOQA|dx|master"
-        - Dragoon|std|remaster
-        - BIRTH|dx|master
-    - title: 【真十段】
+        - 患部で止まってすぐ溶ける～狂気の優曇華院|std|remaster
+        - 7thSense|std|master
+        - Re：End of a Dream|dx|master
+        - FUJIN Rumble|std|master
+    - &buddies-shin-10-dan
+      title: 【真十段】
       description: ❤ 50｜-2/-3/-5｜+10
       sheets:
-        - Titania|dx|master
-        - TiamaT:F minor|std|master
-        - チューリングの跡|dx|master
-        - In Chaos|std|remaster
-    - title: 【真皆伝】
+        - VIIIbit Explorer|std|master
+        - 脳天直撃|dx|master
+        - GIGANTØMAKHIA|dx|master
+        - Garakuta Doll Play|std|remaster
+    - &buddies-shin-kaiden
+      title: 【真皆伝】
       description: ❤ 50｜-2/-3/-5｜+5
       sheets:
-        - 康莊大道|dx|master
+        - 超熊猫的周遊記（ワンダーパンダートラベラー）|dx|master
         - Alea jacta est!|std|remaster
         - 躯樹の墓守|dx|master
         - sølips|dx|master
-    - title: 【裏皆伝】
+    - &buddies-ura-kaiden
+      title: 【裏皆伝】
       description: ❤ 10｜-1/-3/-10｜+0
       sheets:
         - the EmpErroR|std|remaster
         - Schwarzschild|std|remaster
         - QZKago Requiem|std|remaster
         - PANDORA PARADOXXX|std|remaster
-- title: FESTiVAL PLUS オトモダチ対戦
+- title: BUDDiES オトモダチ対戦
+  id: buddies-otomodachi
   sections:
-    - title: 【A5~A1】
+    - &buddies-otomodachi-a-boss
+      title: 【A5~A1】
+      sheets:
+        - MAGENTA POTION|dx|expert
+        - ナイト・オブ・ナイツ|dx|expert
+        - ZIGG-ZAGG|std|master
+        - マトリョシカ|std|master
+        - テレキャスタービーボーイ|dx|master
+      sheetDescriptions:
+        - S+
+        - S+
+        - S+
+        - SS
+        - SS
+    - &buddies-otomodachi-s-boss
+      title: 【S5~S1】
+      sheets:
+        - Crazy Circle|dx|master
+        - INFINITE WORLD|std|master
+        - クレイジー・ビート|dx|master
+        - 不機嫌なスリーカード|dx|master
+        - アカツキアライヴァル|dx|master
+      sheetDescriptions:
+        - SS
+        - SS
+        - SS+
+        - SS+
+        - SSS
+    - &buddies-otomodachi-ss-boss
+      title: 【SS5~SS1】
+      sheets:
+        - ちがう!!!|std|master
+        - クレイジークレイジーダンサーズ|std|remaster
+        - なるとなぎのパーフェクトロックンロール教室|std|master
+        - にゃーにゃー冒険譚|dx|master
+        - DADDY MULK -Groove remix-|std|remaster
+      sheetDescriptions:
+        - SSS
+        - SSS+
+        - SSS+
+        - SSS+
+        - SSS+
+    - &buddies-otomodachi-sss-boss
+      title: 【SSS5~SSS1】
+      sheets:
+        - VSpook!|dx|master
+        - Swift Swing|dx|master
+        - Yorugao|dx|master
+        - 封焔の135秒|dx|master
+        - Latent Kingdom|dx|master
+      sheetDescriptions:
+        - MAX
+        - MAX
+        - MAX
+        - MAX
+        - MAX
+- title: FESTiVAL PLUS 段位認定
+  id: festival-plus-dan
+  sections:
+    - &festival-plus-1-dan
+      title: 【初段】
+      description: ❤ 350｜-0/-2/-5｜+20
+      sheets:
+        - ヴァンパイア|dx|basic
+        - だれかの心臓になれたなら|dx|basic
+        - 林檎華憐歌|std|basic
+        - 光線チューニング|std|basic
+    - &festival-plus-2-dan
+      title: 【二段】
+      description: ❤ 350｜-0/-2/-5｜+20
+      sheets:
+        - ヴィラン|dx|advanced
+        - 三妖精SAY YA!!!|dx|advanced
+        - 砂の惑星 feat. HATSUNE MIKU|std|advanced
+        - インドア系ならトラックメイカー|dx|advanced
+    - &festival-plus-3-dan
+      title: 【三段】
+      description: ❤ 600｜-1/-2/-5｜+50
+      sheets:
+        - シャルル|std|advanced
+        - インビジブル|std|advanced
+        - チエルカ／エソテリカ|dx|advanced
+        - Don't Fight The Music|dx|advanced
+    - &festival-plus-4-dan
+      title: 【四段】
+      description: ❤ 700｜-2/-2/-5｜+50
+      sheets:
+        - セカイはまだ始まってすらいない|dx|expert
+        - Dive into The Sky ～initialized～|dx|expert
+        - オーケー？　オーライ！|dx|expert
+        - wheel|dx|expert
+    - &festival-plus-5-dan
+      title: 【五段】
+      description: ❤ 700｜-2/-2/-5｜+50
+      sheets:
+        - サヨナラチェーンソー|dx|expert
+        - トリアージ|dx|expert
+        - Southern Cross|dx|expert
+        - DETARAME ROCK&ROLL THEORY|std|expert
+    - &festival-plus-6-dan
+      title: 【六段】
+      description: ❤ 700｜-2/-2/-5｜+50
+      sheets:
+        - Kinda Way|std|expert
+        - Signature|std|expert
+        - Mare Maris|std|expert
+        - 約束|dx|master
+    - &festival-plus-7-dan
+      title: 【七段】
+      description: ❤ 700｜-2/-2/-5｜+50
+      sheets:
+        - 再会|dx|master
+        - 隠然|std|master
+        - でらっくmaimai♪てんてこまい!|dx|master
+        - Lionheart|std|master
+    - &festival-plus-8-dan
+      title: 【八段】
+      description: ❤ 700｜-2/-2/-5｜+20
+      sheets:
+        - 星めぐり、果ての君へ。|dx|master
+        - ジャンキーナイトタウンオーケストラ|dx|master
+        - 蒼空に舞え、墨染の桜|std|master
+        - Revive The Rave|std|master
+    - &festival-plus-9-dan
+      title: 【九段】
+      description: ❤ 800｜-2/-2/-5｜+30
+      sheets:
+        - OTOGEMA|dx|master
+        - Scars of FAUNA|std|master
+        - みんなのマイマイマー|std|remaster
+        - Reach For The Stars (Re-Colors)|dx|master
+    - &festival-plus-10-dan
+      title: 【十段】
+      description: ❤ 900｜-2/-2/-5｜+30
+      sheets:
+        - 群青シグナル|dx|master
+        - Justified|std|master
+        - Tricolor⁂circuS|dx|master
+        - Caliburne ～Story of the Legendary sword～|std|master
+    - &festival-plus-shin-1-dan
+      title: 【真初段】
+      description: ❤ 50｜-2/-3/-5｜+10
+      sheets:
+        - STARTLINER|dx|master
+        - 泡沫、哀のまほろば|std|master
+        - ぐるぐるWASH！コインランドリー・ディスコ|std|master
+        - Streak|std|expert
+    - &festival-plus-shin-2-dan
+      title: 【真二段】
+      description: ❤ 50｜-2/-3/-5｜+10
+      sheets:
+        - Ultranova|std|expert
+        - その群青が愛しかったようだった|std|master
+        - Quartet Theme [Reborn]|std|master
+        - フラジール|std|master
+    - &festival-plus-shin-3-dan
+      title: 【真三段】
+      description: ❤ 50｜-2/-3/-5｜+10
+      sheets:
+        - シエルブルーマルシェ|dx|master
+        - KING|dx|master
+        - Black Out|std|expert
+        - 絶え間なく藍色|dx|master
+    - &festival-plus-shin-4-dan
+      title: 【真四段】
+      description: ❤ 50｜-2/-3/-5｜+10
+      sheets:
+        - Kattobi KEIKYU Rider|std|expert
+        - Money Money|std|master
+        - ワードワードワード|dx|master
+        - YA･DA･YO [Reborn]|std|master
+    - &festival-plus-shin-5-dan
+      title: 【真五段】
+      description: ❤ 50｜-2/-3/-5｜+10
+      sheets:
+        - Define|dx|master
+        - ソリッド|dx|master
+        - Signature|std|master
+        - 咲キ誇レ常世ノ華|std|master
+    - &festival-plus-shin-6-dan
+      title: 【真六段】
+      description: ❤ 50｜-2/-3/-5｜+10
+      sheets:
+        - Turn around|std|master
+        - カラッポ・ノンフィクション|dx|master
+        - 遺伝子レベル∞スパイラル|dx|master
+        - Jouez Avec Moi?|dx|master
+    - &festival-plus-shin-7-dan
+      title: 【真七段】
+      description: ❤ 50｜-2/-3/-5｜+10
+      sheets:
+        - Neon Kingdom|dx|master
+        - Doll Judgment|std|master
+        - DRAGONLADY|std|master
+        - Luminaria|dx|master
+    - &festival-plus-shin-8-dan
+      title: 【真八段】
+      description: ❤ 50｜-2/-3/-5｜+10
+      sheets:
+        - Sun Dance|std|remaster
+        - 夜明けまであと３秒|std|master
+        - Beat Opera op.1|dx|master
+        - Ragnarok|std|master
+    - &festival-plus-shin-9-dan
+      title: 【真九段】
+      description: ❤ 50｜-2/-3/-5｜+10
+      sheets:
+        - Calamity Fortune|std|master
+        - "#狂った民族２ PRAVARGYAZOOQA|dx|master"
+        - Dragoon|std|remaster
+        - BIRTH|dx|master
+    - &festival-plus-shin-10-dan
+      title: 【真十段】
+      description: ❤ 50｜-2/-3/-5｜+10
+      sheets:
+        - Titania|dx|master
+        - TiamaT:F minor|std|master
+        - チューリングの跡|dx|master
+        - In Chaos|std|remaster
+    - &festival-plus-shin-kaiden
+      title: 【真皆伝】
+      description: ❤ 50｜-2/-3/-5｜+5
+      sheets:
+        - 康莊大道|dx|master
+        - Alea jacta est!|std|remaster
+        - 躯樹の墓守|dx|master
+        - sølips|dx|master
+    - &festival-plus-ura-kaiden
+      title: 【裏皆伝】
+      description: ❤ 10｜-1/-3/-10｜+0
+      sheets:
+        - the EmpErroR|std|remaster
+        - Schwarzschild|std|remaster
+        - QZKago Requiem|std|remaster
+        - PANDORA PARADOXXX|std|remaster
+- title: FESTiVAL PLUS 段位認定（海外版）
+  id: festival-plus-dan-intl
+  sections:
+    - *festival-plus-1-dan
+    - *festival-plus-2-dan
+    - *festival-plus-3-dan
+    - *festival-plus-4-dan
+    - *festival-plus-5-dan
+    - *festival-plus-6-dan
+    - *festival-plus-7-dan
+    - *festival-plus-8-dan
+    - *festival-plus-9-dan
+    - *festival-plus-10-dan
+    - *festival-plus-shin-1-dan
+    - *festival-plus-shin-2-dan
+    - *festival-plus-shin-3-dan
+    - *festival-plus-shin-4-dan
+    - *festival-plus-shin-5-dan
+    - *festival-plus-shin-6-dan
+    - *festival-plus-shin-7-dan
+    - *festival-plus-shin-8-dan
+    - *festival-plus-shin-9-dan
+    - *festival-plus-shin-10-dan
+    - *festival-plus-shin-kaiden
+    - *festival-plus-ura-kaiden
+- title: FESTiVAL PLUS オトモダチ対戦
+  id: festival-plus-otomodachi
+  sections:
+    - &festival-plus-otomodachi-a-boss
+      title: 【A5~A1】
       sheets:
         - エイリアンエイリアン|std|expert
         - You Mean the World to Me|dx|expert
@@ -169,7 +457,8 @@
         - S+
         - SS
         - SS
-    - title: 【S5~S1】
+    - &festival-plus-otomodachi-s-boss
+      title: 【S5~S1】
       sheets:
         - Counselor|std|master
         - M.S.S.Planet|std|master
@@ -182,7 +471,8 @@
         - SS+
         - SS+
         - SSS
-    - title: 【SS5~SS1】
+    - &festival-plus-otomodachi-ss-boss
+      title: 【SS5~SS1】
       sheets:
         - Falling|dx|master
         - 踊|dx|remaster
@@ -195,7 +485,8 @@
         - SSS+
         - SSS+
         - SSS+
-    - title: 【SSS5~SSS1】
+    - &festival-plus-otomodachi-sss-boss
+      title: 【SSS5~SSS1】
       sheets:
         - "#狂った民族２ PRAVARGYAZOOQA|dx|master"
         - Credits|std|master
@@ -208,165 +499,234 @@
         - MAX
         - MAX
         - MAX
-- title: FESTiVAL 段位認定
+- title: FESTiVAL PLUS オトモダチ対戦（海外版）
+  id: festival-plus-otomodachi-intl
   sections:
-    - title: 【初段】
+    - *festival-plus-otomodachi-a-boss
+    - *festival-plus-otomodachi-s-boss
+    - *festival-plus-otomodachi-ss-boss
+    - title: 【SSS5~SSS1】
+      sheets:
+        - "#狂った民族２ PRAVARGYAZOOQA|dx|master"
+        - Credits|std|master
+        - WiPE OUT MEMORIES|dx|master
+        - the EmpErroR|std|master
+        - VeRForTe αRtE:VEiN|dx|master
+      sheetDescriptions:
+        - MAX
+        - MAX
+        - MAX
+        - MAX
+        - MAX
+- title: FESTiVAL 段位認定
+  id: festival-dan
+  sections:
+    - &festival-1-dan
+      title: 【初段】
       description: ❤ 350｜-0/-2/-5｜+20
       sheets:
         - ヴァンパイア|dx|basic
         - ベノム|dx|basic
         - 林檎華憐歌|std|basic
         - ドーナツホール|std|basic
-    - title: 【二段】
+    - &festival-2-dan
+      title: 【二段】
       description: ❤ 350｜-0/-2/-5｜+20
       sheets:
         - メルト|dx|advanced
         - 幽闇に目醒めしは|std|advanced
         - 砂の惑星 feat. HATSUNE MIKU|std|advanced
         - 六兆年と一夜物語|dx|advanced
-    - title: 【三段】
+    - &festival-3-dan
+      title: 【三段】
       description: ❤ 600｜-1/-2/-5｜+50
       sheets:
         - シャルル|std|advanced
         - 初音天地開闢神話|dx|advanced
         - 花と、雪と、ドラムンベース。|std|advanced
         - エンドマークに希望と涙を添えて|std|advanced
-    - title: 【四段】
+    - &festival-4-dan
+      title: 【四段】
       description: ❤ 700｜-2/-2/-5｜+50
       sheets:
         - とりあえずアナタがいなくなるまえに|dx|expert
         - Dive into The Sky ～initialized～|dx|expert
         - フォルテシモBELL|std|expert
         - wheel|dx|expert
-    - title: 【五段】
+    - &festival-5-dan
+      title: 【五段】
       description: ❤ 700｜-2/-2/-5｜+50
       sheets:
         - KING|dx|expert
         - ヤミツキ|dx|expert
         - Money Money|std|expert
         - DETARAME ROCK&ROLL THEORY|std|expert
-    - title: 【六段】
+    - &festival-6-dan
+      title: 【六段】
       description: ❤ 700｜-2/-2/-5｜+50
       sheets:
         - UniTas|dx|expert
         - Signature|std|expert
         - チエルカ／エソテリカ|dx|expert
         - BREaK! BREaK! BREaK!|dx|expert
-    - title: 【七段】
+    - &festival-7-dan
+      title: 【七段】
       description: ❤ 700｜-2/-2/-5｜+50
       sheets:
         - メルティランドナイトメア|dx|master
         - 洗脳|std|master
         - 悪戯センセーション|dx|master
         - Lionheart|std|master
-    - title: 【八段】
+    - &festival-8-dan
+      title: 【八段】
       description: ❤ 700｜-2/-2/-5｜+20
       sheets:
         - さんさーら！|dx|master
         - Stardust Memories|dx|master
         - トランスダンスアナーキー|dx|master
         - Revive The Rave|std|master
-    - title: 【九段】
+    - &festival-9-dan
+      title: 【九段】
       description: ❤ 800｜-2/-2/-5｜+20
       sheets:
         - My My My|dx|master
         - -OutsideR:RequieM-|std|master
         - Upshift|dx|master
         - Reach For The Stars|std|master
-    - title: 【十段】
+    - &festival-10-dan
+      title: 【十段】
       description: ❤ 900｜-2/-2/-5｜+50
       sheets:
         - 蒼穹舞楽|dx|master
         - 天火明命|std|master
         - HECATONCHEIR|dx|master
         - Alea jacta est!|std|master
-    - title: 【真初段】
+    - &festival-shin-1-dan
+      title: 【真初段】
       description: ❤ 50｜-2/-3/-5｜+10
       sheets:
         - STARTLINER|dx|master
         - 色は匂へど散りぬるを|std|master
         - SHOW TIME|std|master
         - Streak|std|expert
-    - title: 【真二段】
+    - &festival-shin-2-dan
+      title: 【真二段】
       description: ❤ 50｜-2/-3/-5｜+10
       sheets:
         - Ultranova|std|expert
         - 怪盗Rのテーマ|std|master
         - Quartet Theme [Reborn]|std|master
         - Paranoia|dx|master
-    - title: 【真三段】
+    - &festival-shin-3-dan
+      title: 【真三段】
       description: ❤ 50｜-2/-3/-5｜+10
       sheets:
         - フラグメンツ -T.V. maimai edit-|std|master
         - エンヴィーベイビー|dx|master
         - スピカの天秤|dx|expert
         - 絶え間なく藍色|dx|master
-    - title: 【真四段】
+    - &festival-shin-4-dan
+      title: 【真四段】
       description: ❤ 50｜-2/-3/-5｜+10
       sheets:
         - 人里に下ったアタイがいつの間にか社畜になっていた件|std|expert
         - キャプテン・ムラサのケツアンカー|std|master
         - No Routine|std|master
         - 炭★坑★節|std|master
-    - title: 【真五段】
+    - &festival-shin-5-dan
+      title: 【真五段】
       description: ❤ 50｜-2/-3/-5｜+10
       sheets:
         - 春嵐|dx|master
         - Round Round Spinning Around|dx|master
         - Jörqer|dx|master
         - After Burner|std|master
-    - title: 【真六段】
+    - &festival-shin-6-dan
+      title: 【真六段】
       description: ❤ 50｜-2/-3/-5｜+10
       sheets:
         - We Gonna Party|std|master
         - カラッポ・ノンフィクション|dx|master
         - Irresistible|dx|master
         - LANCE|std|master
-    - title: 【真七段】
+    - &festival-shin-7-dan
+      title: 【真七段】
       description: ❤ 50｜-2/-3/-5｜+10
       sheets:
         - 華の集落、秋のお届け|dx|master
         - Doll Judgment|std|master
         - Scars of FAUNA|std|master
         - Nerverakes|std|master
-    - title: 【真八段】
+    - &festival-shin-8-dan
+      title: 【真八段】
       description: ❤ 50｜-2/-3/-5｜+10
       sheets:
         - HAGAKIRI|dx|master
         - Sun Dance|std|remaster
         - First Dance|dx|master
         - keep hopping|std|master
-    - title: 【真九段】
+    - &festival-shin-9-dan
+      title: 【真九段】
       description: ❤ 50｜-2/-3/-5｜+10
       sheets:
         - Calamity Fortune|std|master
         - Swift Swing|dx|master
         - Beat of getting entangled|std|remaster
         - Strive against fate|dx|master
-    - title: 【真十段】
+    - &festival-shin-10-dan
+      title: 【真十段】
       description: ❤ 50｜-2/-3/-5｜+10
       sheets:
         - Yorugao|dx|master
         - Metamorphosism|dx|master
         - AMAZING MIGHTYYYY!!!!|std|master
         - Excalibur ～Revived resolution～|std|master
-    - title: 【真皆伝】
+    - &festival-shin-kaiden
+      title: 【真皆伝】
       description: ❤ 50｜-2/-3/-5｜+5
       sheets:
         - Heavenly Blast|dx|master
         - Our Wrenally|std|master
         - World's end loneliness|dx|master
         - sølips|dx|master
-    - title: 【裏皆伝】
+    - &festival-ura-kaiden
+      title: 【裏皆伝】
       description: ❤ 10｜-1/-3/-10｜+0
       sheets:
         - the EmpErroR|std|remaster
         - Schwarzschild|std|remaster
         - QZKago Requiem|std|remaster
         - PANDORA PARADOXXX|std|remaster
-- title: FESTiVAL オトモダチ対戦
+- title: FESTiVAL 段位認定（海外版）
+  id: festival-dan-intl
   sections:
-    - title: 【A5~A1】
+    - *festival-1-dan
+    - *festival-2-dan
+    - *festival-3-dan
+    - *festival-4-dan
+    - *festival-5-dan
+    - *festival-6-dan
+    - *festival-7-dan
+    - *festival-8-dan
+    - *festival-9-dan
+    - *festival-10-dan
+    - *festival-shin-1-dan
+    - *festival-shin-2-dan
+    - *festival-shin-3-dan
+    - *festival-shin-4-dan
+    - *festival-shin-5-dan
+    - *festival-shin-6-dan
+    - *festival-shin-7-dan
+    - *festival-shin-8-dan
+    - *festival-shin-9-dan
+    - *festival-shin-10-dan
+    - *festival-shin-kaiden
+    - *festival-ura-kaiden
+- title: FESTiVAL オトモダチ対戦
+  id: festival-otomodachi
+  sections:
+    - &festival-otomodachi-a-boss
+      title: 【A5~A1】
       sheets:
         - アルティメットセンパイ|dx|expert
         - Limits|dx|expert
@@ -379,7 +739,8 @@
         - S+
         - SS
         - SS
-    - title: 【S5~S1】
+    - &festival-otomodachi-s-boss
+      title: 【S5~S1】
       sheets:
         - アルカリレットウセイ|std|master
         - バレリーコ|std|master
@@ -392,7 +753,8 @@
         - SS+
         - SS+
         - SSS
-    - title: 【SS5~SS1】
+    - &festival-otomodachi-ss-boss
+      title: 【SS5~SS1】
       sheets:
         - 四次元跳躍機関|std|master
         - ヴァンパイア|dx|remaster
@@ -405,7 +767,8 @@
         - SSS+
         - SSS+
         - SSS+
-    - title: 【SSS5~SSS1】
+    - &festival-otomodachi-sss-boss
+      title: 【SSS5~SSS1】
       sheets:
         - Good bye, Merry-Go-Round.|dx|master
         - 脳天直撃|dx|master
@@ -418,176 +781,178 @@
         - MAX
         - MAX
         - MAX
-- title: 10週連続「Re:MASTER」譜面追加！
-  description: 10週連続で、歴代バージョン楽曲のRe:MASTER譜面が続々と追加！
+- title: FESTiVAL オトモダチ対戦（海外版）
+  id: festival-otomodachi-intl
   sections:
-    - sheets:
-        - 源平大戦絵巻テーマソング|std|remaster
-        - 記憶、記録|std|remaster
-        - FLOWER|std|remaster
-        - Revive The Rave|std|remaster
-        - Limit Break|std|remaster
-        - SPILL OVER COLORS|std|remaster
-        - 超常マイマイン|dx|remaster
-        - シエルブルーマルシェ|dx|remaster
-        - ぼくたちいつでも　しゅわっしゅわ！|dx|remaster
-        - 星めぐり、果ての君へ。|dx|remaster
-        - みんなのマイマイマー|std|remaster
-      sheetDescriptions:
-        - maimai
-        - GreeN
-        - ORANGE
-        - PiNK
-        - MURASAKi
-        - MiLK
-        - maimaiでらっくす
-        - maimaiでらっくす PLUS
-        - Splash
-        - Splash PLUS
-        - (生放送)
+  - *festival-otomodachi-a-boss
+  - *festival-otomodachi-s-boss
+  - *festival-otomodachi-ss-boss
+  - *festival-otomodachi-sss-boss
 - title: UNiVERSE PLUS 段位認定
+  id: universe-plus-dan
   sections:
-    - title: 【初段】
+    - &universe-plus-1-dan
+      title: 【初段】
       description: ❤ 350｜-0/-2/-5｜+20
       sheets:
         - ゴーストルール|dx|basic
         - 林檎華憐歌|std|basic
         - ロキ|std|basic
         - インビジブル|std|basic
-    - title: 【二段】
+    - &universe-plus-2-dan
+      title: 【二段】
       description: ❤ 350｜-0/-2/-5｜+20
       sheets:
         - メルト|dx|advanced
         - 幽闇に目醒めしは|std|advanced
         - 砂の惑星 feat. HATSUNE MIKU|std|advanced
         - 人生リセットボタン|std|advanced
-    - title: 【三段】
+    - &universe-plus-3-dan
+      title: 【三段】
       description: ❤ 600｜-1/-2/-5｜+50
       sheets:
         - 乙女解剖|dx|advanced
         - テレキャスタービーボーイ|dx|advanced
         - Bad Apple!! feat.nomico (REDALiCE Remix)|dx|advanced
         - conflict|dx|advanced
-    - title: 【四段】
+    - &universe-plus-4-dan
+      title: 【四段】
       description: ❤ 700｜-2/-2/-5｜+50
       sheets:
         - シアワセうさぎ|std|expert
         - ネガティブ進化論|dx|expert
         - フォルテシモBELL|std|expert
         - wheel|dx|expert
-    - title: 【五段】
+    - &universe-plus-5-dan
+      title: 【五段】
       description: ❤ 700｜-2/-2/-5｜+50
       sheets:
         - すろぉもぉしょん|std|expert
         - 絶対にチョコミントを食べるアオイチャン|dx|expert
         - ヤミツキ|dx|expert
         - DETARAME ROCK&ROLL THEORY|std|expert
-    - title: 【六段】
+    - &universe-plus-6-dan
+      title: 【六段】
       description: ❤ 700｜-2/-2/-5｜+50
       sheets:
         - 天狗の落とし文 feat. ｙｔｒ|std|expert
         - Signature|std|expert
         - YA･DA･YO [Reborn]|std|expert
         - ≠彡"/了→|dx|expert
-    - title: 【七段】
+    - &universe-plus-7-dan
+      title: 【七段】
       description: ❤ 700｜-2/-2/-5｜+50
       sheets:
         - メルティランドナイトメア|dx|master
         - ナミダと流星|std|master
         - 天狗の落とし文 feat. ｙｔｒ|std|master
         - Lionheart|std|master
-    - title: 【八段】
+    - &universe-plus-8-dan
+      title: 【八段】
       description: ❤ 700｜-2/-2/-5｜+20
       sheets:
         - スローアライズ|dx|master
         - Kinda Way|std|master
         - Stardust Memories|dx|master
         - Revive The Rave|std|master
-    - title: 【九段】
+    - &universe-plus-9-dan
+      title: 【九段】
       description: ❤ 800｜-2/-2/-5｜+20
       sheets:
         - My My My|dx|master
         - energy trixxx|dx|master
         - Reach For The Stars|std|master
         - 幻想のサテライト|std|master
-    - title: 【十段】
+    - &universe-plus-10-dan
+      title: 【十段】
       description: ❤ 900｜-2/-2/-5｜+20
       sheets:
         - パラボラ|dx|master
         - Like the Wind [Reborn]|std|master
         - Starry Colors|dx|master
         - チエルカ／エソテリカ|dx|master
-    - title: 【真初段】
+    - &universe-plus-shin-1-dan
+      title: 【真初段】
       description: ❤ 50｜-2/-3/-5｜+10
       sheets:
         - STARTLINER|dx|master
         - 色は匂へど散りぬるを|std|master
         - BLACK ROSE|dx|master
         - Streak|std|expert
-    - title: 【真二段】
+    - &universe-plus-shin-2-dan
+      title: 【真二段】
       description: ❤ 50｜-2/-3/-5｜+10
       sheets:
         - アポカリプスに反逆の焔を焚べろ|dx|expert
         - Witches night|dx|master
         - Dreampainter|std|master
         - 待チ人ハ来ズ。|std|master
-    - title: 【真三段】
+    - &universe-plus-shin-3-dan
+      title: 【真三段】
       description: ❤ 50｜-2/-3/-5｜+10
       sheets:
         - フラグメンツ -T.V. maimai edit-|std|master
         - KING|dx|master
         - BIRTH|dx|expert
         - 絶え間なく藍色|dx|master
-    - title: 【真四段】
+    - &universe-plus-shin-4-dan
+      title: 【真四段】
       description: ❤ 50｜-2/-3/-5｜+10
       sheets:
         - ガラテアの螺旋|std|expert
         - Terminal Storm|std|master
         - Boys O’Clock|dx|master
         - 炭★坑★節|std|master
-    - title: 【真五段】
+    - &universe-plus-shin-5-dan
+      title: 【真五段】
       description: ❤ 50｜-2/-3/-5｜+10
       sheets:
         - 生命不詳|dx|master
         - KISS CANDY FLAVOR|std|master
         - Jörqer|dx|master
         - After Burner|std|master
-    - title: 【真六段】
+    - &universe-plus-shin-6-dan
+      title: 【真六段】
       description: ❤ 50｜-2/-3/-5｜+10
       sheets:
         - みんなのマイマイマー|std|master
         - 空威張りビヘイビア|std|master
         - Komplexe|dx|master
         - LANCE|std|master
-    - title: 【真七段】
+    - &universe-plus-shin-7-dan
+      title: 【真七段】
       description: ❤ 50｜-2/-3/-5｜+10
       sheets:
         - Upshift|dx|master
         - Doll Judgment|std|master
         - Selector|std|master
         - Nerverakes|std|master
-    - title: 【真八段】
+    - &universe-plus-shin-8-dan
+      title: 【真八段】
       description: ❤ 50｜-2/-3/-5｜+10
       sheets:
         - 蒼穹舞楽|dx|master
         - Sun Dance|std|remaster
         - GRÄNDIR|dx|master
         - Outlaw's Lullaby|std|master
-    - title: 【真九段】
+    - &universe-plus-shin-9-dan
+      title: 【真九段】
       description: ❤ 50｜-2/-3/-5｜+10
       sheets:
         - UniTas|dx|master
         - Calamity Fortune|std|master
         - Beat Of Mind|std|remaster
         - Axeria|std|master
-    - title: 【真十段】
+    - &universe-plus-shin-10-dan
+      title: 【真十段】
       description: ❤ 50｜-2/-3/-5｜+10
       sheets:
         - ガラテアの螺旋|std|master
         - BLACK SWAN|dx|master
         - Valsqotch|dx|master
         - SILENT BLUE|std|master
-    - title: 【真皆伝】
+    - &universe-plus-shin-kaiden
+      title: 【真皆伝】
       description: ❤ 50｜-2/-3/-5｜+5
       sheets:
         - Lia=Fail|dx|master
@@ -595,35 +960,12 @@
         - 躯樹の墓守|dx|master
         - PANDORA PARADOXXX|std|master
 - title: UNiVERSE PLUS 段位認定（海外版）
+  id: universe-plus-dan-intl
   sections:
-    - title: 【初段】
-      description: ❤ 350｜-0/-2/-5｜+20
-      sheets:
-        - ゴーストルール|dx|basic
-        - 林檎華憐歌|std|basic
-        - ロキ|std|basic
-        - インビジブル|std|basic
-    - title: 【二段】
-      description: ❤ 350｜-0/-2/-5｜+20
-      sheets:
-        - メルト|dx|advanced
-        - 幽闇に目醒めしは|std|advanced
-        - 砂の惑星 feat. HATSUNE MIKU|std|advanced
-        - 人生リセットボタン|std|advanced
-    - title: 【三段】
-      description: ❤ 600｜-1/-2/-5｜+50
-      sheets:
-        - 乙女解剖|dx|advanced
-        - テレキャスタービーボーイ|dx|advanced
-        - Bad Apple!! feat.nomico (REDALiCE Remix)|dx|advanced
-        - conflict|dx|advanced
-    - title: 【四段】
-      description: ❤ 700｜-2/-2/-5｜+50
-      sheets:
-        - シアワセうさぎ|std|expert
-        - ネガティブ進化論|dx|expert
-        - フォルテシモBELL|std|expert
-        - wheel|dx|expert
+    - *universe-plus-1-dan
+    - *universe-plus-2-dan
+    - *universe-plus-3-dan
+    - *universe-plus-4-dan
     - title: 【五段】
       description: ❤ 700｜-2/-2/-5｜+50
       sheets:
@@ -631,121 +973,27 @@
         - 絶対にチョコミントを食べるアオイチャン|dx|expert
         - ヤミツキ|dx|expert
         - DETARAME ROCK&ROLL THEORY|std|expert
-    - title: 【六段】
-      description: ❤ 700｜-2/-2/-5｜+50
-      sheets:
-        - 天狗の落とし文 feat. ｙｔｒ|std|expert
-        - Signature|std|expert
-        - YA･DA･YO [Reborn]|std|expert
-        - ≠彡"/了→|dx|expert
-    - title: 【七段】
-      description: ❤ 700｜-2/-2/-5｜+50
-      sheets:
-        - メルティランドナイトメア|dx|master
-        - ナミダと流星|std|master
-        - 天狗の落とし文 feat. ｙｔｒ|std|master
-        - Lionheart|std|master
-    - title: 【八段】
-      description: ❤ 700｜-2/-2/-5｜+20
-      sheets:
-        - スローアライズ|dx|master
-        - Kinda Way|std|master
-        - Stardust Memories|dx|master
-        - Revive The Rave|std|master
-    - title: 【九段】
-      description: ❤ 800｜-2/-2/-5｜+20
-      sheets:
-        - My My My|dx|master
-        - energy trixxx|dx|master
-        - Reach For The Stars|std|master
-        - 幻想のサテライト|std|master
-    - title: 【十段】
-      description: ❤ 900｜-2/-2/-5｜+20
-      sheets:
-        - パラボラ|dx|master
-        - Like the Wind [Reborn]|std|master
-        - Starry Colors|dx|master
-        - チエルカ／エソテリカ|dx|master
-    - title: 【真初段】
-      description: ❤ 50｜-2/-3/-5｜+10
-      sheets:
-        - STARTLINER|dx|master
-        - 色は匂へど散りぬるを|std|master
-        - BLACK ROSE|dx|master
-        - Streak|std|expert
-    - title: 【真二段】
-      description: ❤ 50｜-2/-3/-5｜+10
-      sheets:
-        - アポカリプスに反逆の焔を焚べろ|dx|expert
-        - Witches night|dx|master
-        - Dreampainter|std|master
-        - 待チ人ハ来ズ。|std|master
-    - title: 【真三段】
-      description: ❤ 50｜-2/-3/-5｜+10
-      sheets:
-        - フラグメンツ -T.V. maimai edit-|std|master
-        - KING|dx|master
-        - BIRTH|dx|expert
-        - 絶え間なく藍色|dx|master
-    - title: 【真四段】
-      description: ❤ 50｜-2/-3/-5｜+10
-      sheets:
-        - ガラテアの螺旋|std|expert
-        - Terminal Storm|std|master
-        - Boys O’Clock|dx|master
-        - 炭★坑★節|std|master
-    - title: 【真五段】
-      description: ❤ 50｜-2/-3/-5｜+10
-      sheets:
-        - 生命不詳|dx|master
-        - KISS CANDY FLAVOR|std|master
-        - Jörqer|dx|master
-        - After Burner|std|master
-    - title: 【真六段】
-      description: ❤ 50｜-2/-3/-5｜+10
-      sheets:
-        - みんなのマイマイマー|std|master
-        - 空威張りビヘイビア|std|master
-        - Komplexe|dx|master
-        - LANCE|std|master
-    - title: 【真七段】
-      description: ❤ 50｜-2/-3/-5｜+10
-      sheets:
-        - Upshift|dx|master
-        - Doll Judgment|std|master
-        - Selector|std|master
-        - Nerverakes|std|master
-    - title: 【真八段】
-      description: ❤ 50｜-2/-3/-5｜+10
-      sheets:
-        - 蒼穹舞楽|dx|master
-        - Sun Dance|std|remaster
-        - GRÄNDIR|dx|master
-        - Outlaw's Lullaby|std|master
-    - title: 【真九段】
-      description: ❤ 50｜-2/-3/-5｜+10
-      sheets:
-        - UniTas|dx|master
-        - Calamity Fortune|std|master
-        - Beat Of Mind|std|remaster
-        - Axeria|std|master
-    - title: 【真十段】
-      description: ❤ 50｜-2/-3/-5｜+10
-      sheets:
-        - ガラテアの螺旋|std|master
-        - BLACK SWAN|dx|master
-        - Valsqotch|dx|master
-        - SILENT BLUE|std|master
-    - title: 【真皆伝】
-      description: ❤ 50｜-2/-3/-5｜+5
-      sheets:
-        - Lia=Fail|dx|master
-        - Our Wrenally|std|master
-        - 躯樹の墓守|dx|master
-        - PANDORA PARADOXXX|std|master
+    - *universe-plus-6-dan
+    - *universe-plus-7-dan
+    - *universe-plus-8-dan
+    - *universe-plus-9-dan
+    - *universe-plus-10-dan
+    - *universe-plus-shin-1-dan
+    - *universe-plus-shin-2-dan
+    - *universe-plus-shin-3-dan
+    - *universe-plus-shin-4-dan
+    - *universe-plus-shin-5-dan
+    - *universe-plus-shin-6-dan
+    - *universe-plus-shin-7-dan
+    - *universe-plus-shin-8-dan
+    - *universe-plus-shin-9-dan
+    - *universe-plus-shin-10-dan
+    - *universe-plus-shin-kaiden
 - title: UNiVERSE PLUS オトモダチ対戦
+  id: universe-plus-otomodachi
   sections:
-    - title: 【A5~A1】
+    - &universe-plus-otomodachi-a-boss
+      title: 【A5~A1】
       sheets:
         - STARTLINER|dx|expert
         - テレキャスタービーボーイ|dx|expert
@@ -758,7 +1006,8 @@
         - S+
         - SS
         - SS
-    - title: 【S5~S1】
+    - &universe-plus-otomodachi-s-boss
+      title: 【S5~S1】
       sheets:
         - Backyun! －悪い女－|std|master
         - TRUST|std|master
@@ -771,7 +1020,8 @@
         - SS+
         - SS+
         - SSS
-    - title: 【SS5~SS1】
+    - &universe-plus-otomodachi-ss-boss
+      title: 【SS5~SS1】
       sheets:
         - L9|std|master
         - TwisteD! XD|dx|master
@@ -784,7 +1034,8 @@
         - SSS+
         - SSS+
         - SSS+
-    - title: 【SSS5~SSS1】
+    - &universe-plus-otomodachi-sss-boss
+      title: 【SSS5~SSS1】
       sheets:
         - ワンダーシャッフェンの法則|dx|master
         - BLACK SWAN|dx|master
@@ -798,6 +1049,7 @@
         - MAX
         - MAX
 - title: UNiVERSE PLUS オトモダチ対戦（海外版）
+  id: universe-plus-otomodachi-intl
   sections:
     - title: 【A5~A1】
       sheets:
@@ -825,175 +1077,173 @@
         - SS+
         - SS+
         - SSS
-    - title: 【SS5~SS1】
-      sheets:
-        - L9|std|master
-        - TwisteD! XD|dx|master
-        - Sound Chimera|dx|master
-        - マツヨイナイトバグ|dx|master
-        - 華の集落、秋のお届け|dx|master
-      sheetDescriptions:
-        - SSS
-        - SSS
-        - SSS+
-        - SSS+
-        - SSS+
-    - title: 【SSS5~SSS1】
-      sheets:
-        - ワンダーシャッフェンの法則|dx|master
-        - BLACK SWAN|dx|master
-        - 怒槌|std|master
-        - 封焔の135秒|dx|master
-        - sølips|dx|master
-      sheetDescriptions:
-        - SSS+
-        - SSS+
-        - SSS+
-        - MAX
-        - MAX
+    - *universe-plus-otomodachi-ss-boss
+    - *universe-plus-otomodachi-sss-boss
 - title: UNiVERSE 段位認定
+  id: universe-dan
   sections:
-    - title: 【初段】
+    - &universe-1-dan
+      title: 【初段】
       description: ❤ 350｜-0/-2/-5｜+20
       sheets:
         - 太陽系デスコ|dx|basic
         - 林檎華憐歌|std|basic
         - ヒバナ|std|basic
         - 六兆年と一夜物語|std|basic
-    - title: 【二段】
+    - &universe-2-dan
+      title: 【二段】
       description: ❤ 350｜-0/-2/-5｜+20
       sheets:
         - メルティランドナイトメア|dx|advanced
         - 囲い無き世は一期の月影|std|advanced
         - ドーナツホール|std|advanced
         - 敗北の少年|std|advanced
-    - title: 【三段】
+    - &universe-3-dan
+      title: 【三段】
       description: ❤ 600｜-1/-2/-5｜+50
       sheets:
         - 命に嫌われている|dx|advanced
         - アゲアゲアゲイン|std|advanced
         - Bad Apple!! feat.nomico (REDALiCE Remix)|dx|advanced
         - Arty Party|dx|advanced
-    - title: 【四段】
+    - &universe-4-dan
+      title: 【四段】
       description: ❤ 700｜-2/-2/-5｜+50
       sheets:
         - 東京リアルワールド|std|expert
         - ネガティブ進化論|dx|expert
         - 絵の上手かった友達|std|expert
         - wheel|dx|expert
-    - title: 【五段】
+    - &universe-5-dan
+      title: 【五段】
       description: ❤ 700｜-2/-2/-5｜+50
       sheets:
         - ドクハク|std|expert
         - ♡マイマイマイラブ♡|dx|expert
         - ロストワードクロニカル|dx|expert
         - ナイト・オブ・ナイツ (Cranky Remix)|dx|expert
-    - title: 【六段】
+    - &universe-6-dan
+      title: 【六段】
       description: ❤ 700｜-2/-2/-5｜+50
       sheets:
         - 福宿音屋魂音泉|dx|expert
         - Imitation:Loud Lounge|std|expert
         - YA･DA･YO [Reborn]|std|expert
         - QZKago Requiem|std|expert
-    - title: 【七段】
+    - &universe-7-dan
+      title: 【七段】
       description: ❤ 700｜-2/-2/-5｜+50
       sheets:
         - だれかの心臓になれたなら|dx|master
         - オトヒメモリー☆ウタゲーション|std|master
         - げきオコスティックファイナリアリティぷんぷんマスタースパーク|dx|master
         - Lionheart|std|master
-    - title: 【八段】
+    - &universe-8-dan
+      title: 【八段】
       description: ❤ 700｜-2/-2/-5｜+20
       sheets:
         - EVERGREEN|std|master
         - ARROW|std|master
         - Stardust Memories|dx|master
         - Revive The Rave|std|master
-    - title: 【九段】
+    - &universe-9-dan
+      title: 【九段】
       description: ❤ 800｜-2/-2/-5｜+20
       sheets:
         - My My My|dx|master
         - 頓珍漢の宴|std|master
         - 管弦楽組曲 第3番 ニ長調「第2曲（G線上のアリア）」BWV.1068-2|dx|master
         - 幻想のサテライト|std|master
-    - title: 【十段】
+    - &universe-10-dan
+      title: 【十段】
       description: ❤ 900｜-2/-2/-5｜+20
       sheets:
         - CHAOS|dx|master
         - Nitrous Fury|std|master
         - ほしぞらスペクタクル|dx|master
         - VERTeX|std|master
-    - title: 【真初段】
+    - &universe-shin-1-dan
+      title: 【真初段】
       description: ❤ 50｜-2/-3/-5｜+10
       sheets:
         - STARTLINER|dx|master
         - 色は匂へど散りぬるを|std|master
         - BLACK ROSE|dx|master
         - Streak|std|expert
-    - title: 【真二段】
+    - &universe-shin-2-dan
+      title: 【真二段】
       description: ❤ 50｜-2/-3/-5｜+10
       sheets:
         - Urban Crusher [Remix]|std|expert
         - Witches night|dx|master
         - アウトサイダー|dx|master
         - 待チ人ハ来ズ。|std|master
-    - title: 【真三段】
+    - &universe-shin-3-dan
+      title: 【真三段】
       description: ❤ 50｜-2/-3/-5｜+10
       sheets:
         - 四次元跳躍機関|std|master
         - KING|dx|master
         - Turn around|std|expert
         - 絶え間なく藍色|dx|master
-    - title: 【真四段】
+    - &universe-shin-4-dan
+      title: 【真四段】
       description: ❤ 50｜-2/-3/-5｜+10
       sheets:
         - Glorious Crown|std|expert
         - GOODMEN|std|master
         - Paradisoda|dx|master
         - 炭★坑★節|std|master
-    - title: 【真五段】
+    - &universe-shin-5-dan
+      title: 【真五段】
       description: ❤ 50｜-2/-3/-5｜+10
       sheets:
         - TwisteD! XD|dx|master
         - デスパレイト|std|master
         - ソリッド|dx|master
         - Space Harrier Main Theme [Reborn]|std|master
-    - title: 【真六段】
+    - &universe-shin-6-dan
+      title: 【真六段】
       description: ❤ 50｜-2/-3/-5｜+10
       sheets:
         - カラッポ・ノンフィクション|dx|master
         - LANCE|std|master
         - Halcyon|dx|master
         - 猛進ソリストライフ！|std|master
-    - title: 【真七段】
+    - &universe-shin-7-dan
+      title: 【真七段】
       description: ❤ 50｜-2/-3/-5｜+10
       sheets:
         - アトロポスと最果の探究者|dx|master
         - Doll Judgment|std|master
         - emomomo|dx|master
         - Nerverakes|std|master
-    - title: 【真八段】
+    - &universe-shin-8-dan
+      title: 【真八段】
       description: ❤ 50｜-2/-3/-5｜+10
       sheets:
         - Lunar Mare|dx|master
         - Sun Dance|std|remaster
         - Good Bye, Mr. Jack|std|master
         - Schwarzschild|std|master
-    - title: 【真九段】
+    - &universe-shin-9-dan
+      title: 【真九段】
       description: ❤ 50｜-2/-3/-5｜+10
       sheets:
         - Desperado Waltz|dx|master
         - Calamity Fortune|std|master
         - AMABIE|dx|master
         - Axeria|std|master
-    - title: 【真十段】
+    - &universe-shin-10-dan
+      title: 【真十段】
       description: ❤ 50｜-2/-3/-5｜+10
       sheets:
         - FFT|std|remaster
         - CITRUS MONSTER|std|master
         - Valsqotch|dx|master
         - larva|std|master
-    - title: 【真皆伝】
+    - &universe-shin-kaiden
+      title: 【真皆伝】
       description: ❤ 50｜-2/-3/-5｜+5
       sheets:
         - 渦状銀河のシンフォニエッタ|dx|master
@@ -1001,21 +1251,10 @@
         - VIIIbit Explorer|dx|master
         - PANDORA PARADOXXX|std|master
 - title: UNiVERSE 段位認定（海外版）
+  id: universe-dan-intl
   sections:
-    - title: 【初段】
-      description: ❤ 350｜-0/-2/-5｜+20
-      sheets:
-        - 太陽系デスコ|dx|basic
-        - 林檎華憐歌|std|basic
-        - ヒバナ|std|basic
-        - 六兆年と一夜物語|std|basic
-    - title: 【二段】
-      description: ❤ 350｜-0/-2/-5｜+20
-      sheets:
-        - メルティランドナイトメア|dx|advanced
-        - 囲い無き世は一期の月影|std|advanced
-        - ドーナツホール|std|advanced
-        - 敗北の少年|std|advanced
+    - *universe-1-dan
+    - *universe-2-dan
     - title: 【三段】
       description: ❤ 600｜-1/-2/-5｜+50
       sheets:
@@ -1030,55 +1269,13 @@
         - ネガティブ進化論|dx|expert
         - フラグメンツ -T.V. maimai edit-|std|expert
         - wheel|dx|expert
-    - title: 【五段】
-      description: ❤ 700｜-2/-2/-5｜+50
-      sheets:
-        - ドクハク|std|expert
-        - ♡マイマイマイラブ♡|dx|expert
-        - ロストワードクロニカル|dx|expert
-        - ナイト・オブ・ナイツ (Cranky Remix)|dx|expert
-    - title: 【六段】
-      description: ❤ 700｜-2/-2/-5｜+50
-      sheets:
-        - 福宿音屋魂音泉|dx|expert
-        - Imitation:Loud Lounge|std|expert
-        - YA･DA･YO [Reborn]|std|expert
-        - QZKago Requiem|std|expert
-    - title: 【七段】
-      description: ❤ 700｜-2/-2/-5｜+50
-      sheets:
-        - だれかの心臓になれたなら|dx|master
-        - オトヒメモリー☆ウタゲーション|std|master
-        - げきオコスティックファイナリアリティぷんぷんマスタースパーク|dx|master
-        - Lionheart|std|master
-    - title: 【八段】
-      description: ❤ 700｜-2/-2/-5｜+20
-      sheets:
-        - EVERGREEN|std|master
-        - ARROW|std|master
-        - Stardust Memories|dx|master
-        - Revive The Rave|std|master
-    - title: 【九段】
-      description: ❤ 800｜-2/-2/-5｜+20
-      sheets:
-        - My My My|dx|master
-        - 頓珍漢の宴|std|master
-        - 管弦楽組曲 第3番 ニ長調「第2曲（G線上のアリア）」BWV.1068-2|dx|master
-        - 幻想のサテライト|std|master
-    - title: 【十段】
-      description: ❤ 900｜-2/-2/-5｜+20
-      sheets:
-        - CHAOS|dx|master
-        - Nitrous Fury|std|master
-        - ほしぞらスペクタクル|dx|master
-        - VERTeX|std|master
-    - title: 【真初段】
-      description: ❤ 50｜-2/-3/-5｜+10
-      sheets:
-        - STARTLINER|dx|master
-        - 色は匂へど散りぬるを|std|master
-        - BLACK ROSE|dx|master
-        - Streak|std|expert
+    - *universe-5-dan
+    - *universe-6-dan
+    - *universe-7-dan
+    - *universe-8-dan
+    - *universe-9-dan
+    - *universe-10-dan
+    - *universe-shin-1-dan
     - title: 【真二段】
       description: ❤ 50｜-2/-3/-5｜+10
       sheets:
@@ -1086,72 +1283,20 @@
         - Witches night|dx|master
         - Money Money|std|master
         - 待チ人ハ来ズ。|std|master
-    - title: 【真三段】
-      description: ❤ 50｜-2/-3/-5｜+10
-      sheets:
-        - 四次元跳躍機関|std|master
-        - KING|dx|master
-        - Turn around|std|expert
-        - 絶え間なく藍色|dx|master
-    - title: 【真四段】
-      description: ❤ 50｜-2/-3/-5｜+10
-      sheets:
-        - Glorious Crown|std|expert
-        - GOODMEN|std|master
-        - Paradisoda|dx|master
-        - 炭★坑★節|std|master
-    - title: 【真五段】
-      description: ❤ 50｜-2/-3/-5｜+10
-      sheets:
-        - TwisteD! XD|dx|master
-        - デスパレイト|std|master
-        - ソリッド|dx|master
-        - Space Harrier Main Theme [Reborn]|std|master
-    - title: 【真六段】
-      description: ❤ 50｜-2/-3/-5｜+10
-      sheets:
-        - カラッポ・ノンフィクション|dx|master
-        - LANCE|std|master
-        - Halcyon|dx|master
-        - 猛進ソリストライフ！|std|master
-    - title: 【真七段】
-      description: ❤ 50｜-2/-3/-5｜+10
-      sheets:
-        - アトロポスと最果の探究者|dx|master
-        - Doll Judgment|std|master
-        - emomomo|dx|master
-        - Nerverakes|std|master
-    - title: 【真八段】
-      description: ❤ 50｜-2/-3/-5｜+10
-      sheets:
-        - Lunar Mare|dx|master
-        - Sun Dance|std|remaster
-        - Good Bye, Mr. Jack|std|master
-        - Schwarzschild|std|master
-    - title: 【真九段】
-      description: ❤ 50｜-2/-3/-5｜+10
-      sheets:
-        - Desperado Waltz|dx|master
-        - Calamity Fortune|std|master
-        - AMABIE|dx|master
-        - Axeria|std|master
-    - title: 【真十段】
-      description: ❤ 50｜-2/-3/-5｜+10
-      sheets:
-        - FFT|std|remaster
-        - CITRUS MONSTER|std|master
-        - Valsqotch|dx|master
-        - larva|std|master
-    - title: 【真皆伝】
-      description: ❤ 50｜-2/-3/-5｜+5
-      sheets:
-        - 渦状銀河のシンフォニエッタ|dx|master
-        - Our Wrenally|std|master
-        - VIIIbit Explorer|dx|master
-        - PANDORA PARADOXXX|std|master
+    - *universe-shin-3-dan
+    - *universe-shin-4-dan
+    - *universe-shin-5-dan
+    - *universe-shin-6-dan
+    - *universe-shin-7-dan
+    - *universe-shin-8-dan
+    - *universe-shin-9-dan
+    - *universe-shin-10-dan
+    - *universe-shin-kaiden
 - title: UNiVERSE オトモダチ対戦
+  id: universe-otomodachi
   sections:
-    - title: 【A5~A1】
+    - &universe-otomodachi-a-boss
+      title: 【A5~A1】
       sheets:
         - 六兆年と一夜物語|dx|expert
         - 絡めトリック利己ライザー|dx|expert
@@ -1164,7 +1309,8 @@
         - S+
         - SS
         - SS
-    - title: 【S5~S1】
+    - &universe-otomodachi-s-boss
+      title: 【S5~S1】
       sheets:
         - 今、誰が為のかがり火へ|dx|master
         - welcome to maimai!! with マイマイマー|std|master
@@ -1177,7 +1323,8 @@
         - SS+
         - SS+
         - SS+
-    - title: 【SS5~SS1】
+    - &universe-otomodachi-ss-boss
+      title: 【SS5~SS1】
       sheets:
         - トルコ行進曲 - オワタ＼(^o^)／|std|master
         - Burning Hearts ～炎のANGEL～|std|remaster
@@ -1190,7 +1337,8 @@
         - SSS+
         - SSS+
         - SSS+
-    - title: 【SSS5~SSS1】
+    - &universe-otomodachi-sss-boss
+      title: 【SSS5~SSS1】
       sheets:
         - Desperado Waltz|dx|master
         - AMAZING MIGHTYYYY!!!!|std|remaster
@@ -1204,202 +1352,177 @@
         - MAX
         - MAX
 - title: UNiVERSE オトモダチ対戦（海外版）
+  id: universe-otomodachi-intl
   sections:
-    - title: 【A5~A1】
-      sheets:
-        - 六兆年と一夜物語|dx|expert
-        - 絡めトリック利己ライザー|dx|expert
-        - りばーぶ|std|master
-        - Tic Tac DREAMIN’|std|master
-        - バレリーコ|std|master
-      sheetDescriptions:
-        - S+
-        - S+
-        - S+
-        - SS
-        - SS
-    - title: 【S5~S1】
-      sheets:
-        - 今、誰が為のかがり火へ|dx|master
-        - welcome to maimai!! with マイマイマー|std|master
-        - "Rooftop Run: Act1|std|remaster"
-        - スローアライズ|dx|master
-        - 単一指向性オーバーブルーム|dx|master
-      sheetDescriptions:
-        - SS
-        - SS
-        - SS+
-        - SS+
-        - SS+
-    - title: 【SS5~SS1】
-      sheets:
-        - トルコ行進曲 - オワタ＼(^o^)／|std|master
-        - Burning Hearts ～炎のANGEL～|std|remaster
-        - Nerverakes|std|master
-        - Jack-the-Ripper◆|std|master
-        - MEGATON KICK|dx|master
-      sheetDescriptions:
-        - SSS
-        - SSS
-        - SSS+
-        - SSS+
-        - SSS+
-    - title: 【SSS5~SSS1】
-      sheets:
-        - Desperado Waltz|dx|master
-        - AMAZING MIGHTYYYY!!!!|std|remaster
-        - Alea jacta est!|std|remaster
-        - In Chaos|std|remaster
-        - Lia=Fail|dx|master
-      sheetDescriptions:
-        - SSS+
-        - SSS+
-        - SSS+
-        - MAX
-        - MAX
+    - *universe-otomodachi-a-boss
+    - *universe-otomodachi-s-boss
+    - *universe-otomodachi-ss-boss
+    - *universe-otomodachi-sss-boss
 - title: Splash PLUS 段位認定
+  id: splash-plus-dan
   sections:
-    - title: 【初段】
+    - &splash-plus-1-dan
+      title: 【初段】
       description: ❤ 350｜-0/-2/-5｜+20
       sheets:
         - 太陽系デスコ|dx|basic
         - 林檎華憐歌|std|basic
         - だれかの心臓になれたなら|dx|basic
         - 六兆年と一夜物語|std|basic
-    - title: 【二段】
+    - &splash-plus-2-dan
+      title: 【二段】
       description: ❤ 350｜-0/-2/-5｜+20
       sheets:
         - メルティランドナイトメア|dx|advanced
         - シアワセうさぎ|std|advanced
         - ドーナツホール|std|advanced
         - サンバランド|dx|advanced
-    - title: 【三段】
+    - &splash-plus-3-dan
+      title: 【三段】
       description: ❤ 600｜-1/-2/-5｜+50
       sheets:
         - アスノヨゾラ哨戒班|dx|advanced
         - アゲアゲアゲイン|std|advanced
         - Bad Apple!! feat.nomico (REDALiCE Remix)|dx|advanced
         - 骸骨楽団とリリア|dx|advanced
-    - title: 【四段】
+    - &splash-plus-4-dan
+      title: 【四段】
       description: ❤ 700｜-2/-2/-5｜+50
       sheets:
         - 東京リアルワールド|std|expert
         - 乙女解剖|dx|expert
         - 絵の上手かった友達|std|expert
         - wheel|dx|expert
-    - title: 【五段】
+    - &splash-plus-5-dan
+      title: 【五段】
       description: ❤ 700｜-2/-2/-5｜+50
       sheets:
         - Session High⤴|std|expert
         - ♡マイマイマイラブ♡|dx|expert
         - 少女幻葬戦慄曲 ～ Necro Fantasia|std|expert
         - ナイト・オブ・ナイツ (Cranky Remix)|dx|expert
-    - title: 【六段】
+    - &splash-plus-6-dan
+      title: 【六段】
       description: ❤ 700｜-2/-2/-5｜+50
       sheets:
         - 福宿音屋魂音泉|dx|expert
         - デンパラダイム|dx|expert
         - Imitation:Loud Lounge|std|expert
         - YA･DA･YO [Reborn]|std|expert
-    - title: 【七段】
+    - &splash-plus-7-dan
+      title: 【七段】
       description: ❤ 700｜-2/-2/-5｜+50
       sheets:
         - メルティランドナイトメア|dx|master
         - オトヒメモリー☆ウタゲーション|std|master
         - 全力ハッピーライフ|dx|master
         - Lionheart|std|master
-    - title: 【八段】
+    - &splash-plus-8-dan
+      title: 【八段】
       description: ❤ 700｜-2/-2/-5｜+20
       sheets:
         - Saika|dx|master
         - クローバー♣クラブ|std|master
         - Stardust Memories|dx|master
         - Revive The Rave|std|master
-    - title: 【九段】
+    - &splash-plus-9-dan
+      title: 【九段】
       description: ❤ 800｜-2/-2/-5｜+20
       sheets:
         - My My My|dx|master
         - 人生リセットボタン|std|master
         - 管弦楽組曲 第3番 ニ長調「第2曲（G線上のアリア）」BWV.1068-2|dx|master
         - 幻想のサテライト|std|master
-    - title: 【十段】
+    - &splash-plus-10-dan
+      title: 【十段】
       description: ❤ 900｜-2/-2/-5｜+20
       sheets:
         - 天火明命|std|master
         - Ether Strike|dx|master
         - Lividi|std|master
         - VERTeX|std|master
-    - title: 【真初段】
+    - &splash-plus-shin-1-dan
+      title: 【真初段】
       description: ❤ 50｜-2/-3/-5｜+10
       sheets:
         - STARTLINER|dx|master
         - Starlight Dance Floor|std|master
         - BLACK ROSE|dx|master
         - Streak|std|expert
-    - title: 【真二段】
+    - &splash-plus-shin-2-dan
+      title: 【真二段】
       description: ❤ 50｜-2/-3/-5｜+10
       sheets:
         - FFT|std|expert
         - グラーヴェ|dx|master
         - 自傷無色|dx|master
         - 待チ人ハ来ズ。|std|master
-    - title: 【真三段】
+    - &splash-plus-shin-3-dan
+      title: 【真三段】
       description: ❤ 50｜-2/-3/-5｜+10
       sheets:
         - Jimang Shot|std|master
         - アンドロイドガール|dx|master
         - Credits|std|expert
         - 絶え間なく藍色|dx|master
-    - title: 【真四段】
+    - &splash-plus-shin-4-dan
+      title: 【真四段】
       description: ❤ 50｜-2/-3/-5｜+10
       sheets:
         - 玩具狂奏曲 -終焉-|dx|expert
         - GOODMEN|std|master
         - 共鳴|dx|master
         - 炭★坑★節|std|master
-    - title: 【真五段】
+    - &splash-plus-shin-5-dan
+      title: 【真五段】
       description: ❤ 50｜-2/-3/-5｜+10
       sheets:
         - Jörqer|dx|master
         - CYCLES|std|master
         - ソリッド|dx|master
         - Space Harrier Main Theme [Reborn]|std|master
-    - title: 【真六段】
+    - &splash-plus-shin-6-dan
+      title: 【真六段】
       description: ❤ 50｜-2/-3/-5｜+10
       sheets:
         - カラッポ・ノンフィクション|dx|master
         - ウサテイ|std|master
         - Halcyon|dx|master
         - Last Brave ～ Go to zero|std|master
-    - title: 【真七段】
+    - &splash-plus-shin-7-dan
+      title: 【真七段】
       description: ❤ 50｜-2/-3/-5｜+10
       sheets:
         - スリップフリップ|std|master
         - 魔ジョ狩リ|dx|master
         - Doll Judgment|std|master
         - emomomo|dx|master
-    - title: 【真八段】
+    - &splash-plus-shin-8-dan
+      title: 【真八段】
       description: ❤ 50｜-2/-3/-5｜+10
       sheets:
         - Yakumo >>JOINT STRUGGLE (2019 Update)|dx|master
         - Sun Dance|std|remaster
         - 奏者はただ背中と提琴で語るのみ|std|master
         - Schwarzschild|std|master
-    - title: 【真九段】
+    - &splash-plus-shin-9-dan
+      title: 【真九段】
       description: ❤ 50｜-2/-3/-5｜+10
       sheets:
         - felys -final remix-|dx|master
         - Calamity Fortune|std|master
         - ≠彡"/了→|dx|master
         - Alea jacta est!|std|master
-    - title: 【真十段】
+    - &splash-plus-shin-10-dan
+      title: 【真十段】
       description: ❤ 50｜-2/-3/-5｜+10
       sheets:
         - Oshama Scramble!|std|master
         - 雷切-RAIKIRI-|std|master
         - 封焔の135秒|dx|master
         - QZKago Requiem|std|master
-    - title: 【真皆伝】
+    - &splash-plus-shin-kaiden
+      title: 【真皆伝】
       description: ❤ 50｜-2/-3/-5｜+5
       sheets:
         - TEmPTaTiON|dx|master
@@ -1407,21 +1530,10 @@
         - Regulus|dx|master
         - PANDORA PARADOXXX|std|master
 - title: Splash PLUS 段位認定（海外版）
+  id: splash-plus-dan-intl
   sections:
-    - title: 【初段】
-      description: ❤ 350｜-0/-2/-5｜+20
-      sheets:
-        - 太陽系デスコ|dx|basic
-        - 林檎華憐歌|std|basic
-        - だれかの心臓になれたなら|dx|basic
-        - 六兆年と一夜物語|std|basic
-    - title: 【二段】
-      description: ❤ 350｜-0/-2/-5｜+20
-      sheets:
-        - メルティランドナイトメア|dx|advanced
-        - シアワセうさぎ|std|advanced
-        - ドーナツホール|std|advanced
-        - サンバランド|dx|advanced
+    - *splash-plus-1-dan
+    - *splash-plus-2-dan
     - title: 【三段】
       description: ❤ 600｜-1/-2/-5｜+50
       sheets:
@@ -1436,27 +1548,9 @@
         - 乙女解剖|dx|expert
         - フラグメンツ -T.V. maimai edit-|std|expert
         - wheel|dx|expert
-    - title: 【五段】
-      description: ❤ 700｜-2/-2/-5｜+50
-      sheets:
-        - Session High⤴|std|expert
-        - ♡マイマイマイラブ♡|dx|expert
-        - 少女幻葬戦慄曲 ～ Necro Fantasia|std|expert
-        - ナイト・オブ・ナイツ (Cranky Remix)|dx|expert
-    - title: 【六段】
-      description: ❤ 700｜-2/-2/-5｜+50
-      sheets:
-        - 福宿音屋魂音泉|dx|expert
-        - デンパラダイム|dx|expert
-        - Imitation:Loud Lounge|std|expert
-        - YA･DA･YO [Reborn]|std|expert
-    - title: 【七段】
-      description: ❤ 700｜-2/-2/-5｜+50
-      sheets:
-        - メルティランドナイトメア|dx|master
-        - オトヒメモリー☆ウタゲーション|std|master
-        - 全力ハッピーライフ|dx|master
-        - Lionheart|std|master
+    - *splash-plus-5-dan
+    - *splash-plus-6-dan
+    - *splash-plus-7-dan
     - title: 【八段】
       description: ❤ 700｜-2/-2/-5｜+20
       sheets:
@@ -1464,27 +1558,9 @@
         - ARROW|std|master
         - Stardust Memories|dx|master
         - Revive The Rave|std|master
-    - title: 【九段】
-      description: ❤ 800｜-2/-2/-5｜+20
-      sheets:
-        - My My My|dx|master
-        - 人生リセットボタン|std|master
-        - 管弦楽組曲 第3番 ニ長調「第2曲（G線上のアリア）」BWV.1068-2|dx|master
-        - 幻想のサテライト|std|master
-    - title: 【十段】
-      description: ❤ 900｜-2/-2/-5｜+20
-      sheets:
-        - 天火明命|std|master
-        - Ether Strike|dx|master
-        - Lividi|std|master
-        - VERTeX|std|master
-    - title: 【真初段】
-      description: ❤ 50｜-2/-3/-5｜+10
-      sheets:
-        - STARTLINER|dx|master
-        - Starlight Dance Floor|std|master
-        - BLACK ROSE|dx|master
-        - Streak|std|expert
+    - *splash-plus-9-dan
+    - *splash-plus-10-dan
+    - *splash-plus-shin-1-dan
     - title: 【真二段】
       description: ❤ 50｜-2/-3/-5｜+10
       sheets:
@@ -1492,72 +1568,20 @@
         - グラーヴェ|dx|master
         - Witches night|dx|master
         - 待チ人ハ来ズ。|std|master
-    - title: 【真三段】
-      description: ❤ 50｜-2/-3/-5｜+10
-      sheets:
-        - Jimang Shot|std|master
-        - アンドロイドガール|dx|master
-        - Credits|std|expert
-        - 絶え間なく藍色|dx|master
-    - title: 【真四段】
-      description: ❤ 50｜-2/-3/-5｜+10
-      sheets:
-        - 玩具狂奏曲 -終焉-|dx|expert
-        - GOODMEN|std|master
-        - 共鳴|dx|master
-        - 炭★坑★節|std|master
-    - title: 【真五段】
-      description: ❤ 50｜-2/-3/-5｜+10
-      sheets:
-        - Jörqer|dx|master
-        - CYCLES|std|master
-        - ソリッド|dx|master
-        - Space Harrier Main Theme [Reborn]|std|master
-    - title: 【真六段】
-      description: ❤ 50｜-2/-3/-5｜+10
-      sheets:
-        - カラッポ・ノンフィクション|dx|master
-        - ウサテイ|std|master
-        - Halcyon|dx|master
-        - Last Brave ～ Go to zero|std|master
-    - title: 【真七段】
-      description: ❤ 50｜-2/-3/-5｜+10
-      sheets:
-        - スリップフリップ|std|master
-        - 魔ジョ狩リ|dx|master
-        - Doll Judgment|std|master
-        - emomomo|dx|master
-    - title: 【真八段】
-      description: ❤ 50｜-2/-3/-5｜+10
-      sheets:
-        - Yakumo >>JOINT STRUGGLE (2019 Update)|dx|master
-        - Sun Dance|std|remaster
-        - 奏者はただ背中と提琴で語るのみ|std|master
-        - Schwarzschild|std|master
-    - title: 【真九段】
-      description: ❤ 50｜-2/-3/-5｜+10
-      sheets:
-        - felys -final remix-|dx|master
-        - Calamity Fortune|std|master
-        - ≠彡"/了→|dx|master
-        - Alea jacta est!|std|master
-    - title: 【真十段】
-      description: ❤ 50｜-2/-3/-5｜+10
-      sheets:
-        - Oshama Scramble!|std|master
-        - 雷切-RAIKIRI-|std|master
-        - 封焔の135秒|dx|master
-        - QZKago Requiem|std|master
-    - title: 【真皆伝】
-      description: ❤ 50｜-2/-3/-5｜+5
-      sheets:
-        - TEmPTaTiON|dx|master
-        - Our Wrenally|std|master
-        - Regulus|dx|master
-        - PANDORA PARADOXXX|std|master
+    - *splash-plus-shin-3-dan
+    - *splash-plus-shin-4-dan
+    - *splash-plus-shin-5-dan
+    - *splash-plus-shin-6-dan
+    - *splash-plus-shin-7-dan
+    - *splash-plus-shin-8-dan
+    - *splash-plus-shin-9-dan
+    - *splash-plus-shin-10-dan
+    - *splash-plus-shin-kaiden
 - title: Splash PLUS オトモダチ対戦
+  id: splash-plus-otomodachi
   sections:
-    - title: 【A5~A1】
+    - &splash-plus-otomodachi-a-boss
+      title: 【A5~A1】
       sheets:
         - アディショナルメモリー|dx|expert
         - ブレインジャックシンドローム|dx|expert
@@ -1570,7 +1594,8 @@
         - S+
         - SS
         - SS
-    - title: 【S5~S1】
+    - &splash-plus-otomodachi-s-boss
+      title: 【S5~S1】
       sheets:
         - MIRACLE RUSH|dx|master
         - キミノヨゾラ哨戒班|std|master
@@ -1583,7 +1608,8 @@
         - SS+
         - SS+
         - SS+
-    - title: 【SS5~SS1】
+    - &splash-plus-otomodachi-ss-boss
+      title: 【SS5~SS1】
       sheets:
         - Signature|std|master
         - 閃鋼のブリューナク|std|master
@@ -1596,7 +1622,8 @@
         - SSS+
         - SSS+
         - SSS+
-    - title: 【SSS5~SSS1】
+    - &splash-plus-otomodachi-sss-boss
+      title: 【SSS5~SSS1】
       sheets:
         - 雷切-RAIKIRI-|std|master
         - Our Wrenally|std|master
@@ -1610,6 +1637,7 @@
         - MAX
         - MAX
 - title: Splash PLUS オトモダチ対戦（海外版）
+  id: splash-plus-otomodachi-intl
   sections:
     - title: 【A5~A1】
       sheets:
@@ -1637,33 +1665,38 @@
         - SS+
         - SS+
         - SS+
-    - title: 【SS5~SS1】
-      sheets:
-        - Signature|std|master
-        - 閃鋼のブリューナク|std|master
-        - ULTRA B+K|std|master
-        - Selector|std|master
-        - 初音ミクの激唱|std|master
+    - *splash-plus-otomodachi-ss-boss
+    - *splash-plus-otomodachi-sss-boss
+- title: 10週連続「Re:MASTER」譜面追加！
+  id: 10th-anniversary
+  description: 10週連続で、歴代バージョン楽曲のRe:MASTER譜面が続々と追加！
+  sections:
+    - sheets:
+        - 源平大戦絵巻テーマソング|std|remaster
+        - 記憶、記録|std|remaster
+        - FLOWER|std|remaster
+        - Revive The Rave|std|remaster
+        - Limit Break|std|remaster
+        - SPILL OVER COLORS|std|remaster
+        - 超常マイマイン|dx|remaster
+        - シエルブルーマルシェ|dx|remaster
+        - ぼくたちいつでも　しゅわっしゅわ！|dx|remaster
+        - 星めぐり、果ての君へ。|dx|remaster
+        - みんなのマイマイマー|std|remaster
       sheetDescriptions:
-        - SSS
-        - SSS
-        - SSS+
-        - SSS+
-        - SSS+
-    - title: 【SSS5~SSS1】
-      sheets:
-        - 雷切-RAIKIRI-|std|master
-        - Our Wrenally|std|master
-        - larva|std|master
-        - Regulus|dx|master
-        - Heavenly Blast|dx|master
-      sheetDescriptions:
-        - SSS+
-        - SSS+
-        - SSS+
-        - MAX
-        - MAX
+        - maimai
+        - GreeN
+        - ORANGE
+        - PiNK
+        - MURASAKi
+        - MiLK
+        - maimaiでらっくす
+        - maimaiでらっくす PLUS
+        - Splash
+        - Splash PLUS
+        - (生放送)
 - title: ALL PERFECT COLLECTION 発売記念イベント
+  id: all-perfect-collection
   sections:
     - title: 《第1弾》
       sheets:
@@ -1688,7 +1721,103 @@
         - planet dancer|std|remaster
         - FEEL the BEATS|std|remaster
         - アージェントシンメトリー|std|remaster
+- title: ランダム段位認定
+  id: random-dan
+  sections:
+    - title: 【EXPERT 初級】
+      description: ❤ 700｜-2/-2/-5｜+50
+      sheets:
+        - ランダムで選曲されます|rnd|expert|7~9
+        - ランダムで選曲されます|rnd|expert|7~9
+        - ランダムで選曲されます|rnd|expert|7~9
+        - ランダムで選曲されます|rnd|expert|7~9
+    - title: 【EXPERT 中級】
+      description: ❤ 600｜-2/-2/-5｜+50
+      sheets:
+        - ランダムで選曲されます|rnd|expert|9+~11
+        - ランダムで選曲されます|rnd|expert|9+~11
+        - ランダムで選曲されます|rnd|expert|9+~11
+        - ランダムで選曲されます|rnd|expert|9+~11
+    - title: 【EXPERT 上級】
+      description: ❤ 500｜-2/-2/-5｜+50
+      sheets:
+        - ランダムで選曲されます|rnd|expert|11+~12
+        - ランダムで選曲されます|rnd|expert|11+~12
+        - ランダムで選曲されます|rnd|expert|11+~12
+        - ランダムで選曲されます|rnd|expert|11+~12
+    - title: 【EXPERT 超上級】
+      description: ❤ 400｜-2/-2/-5｜+50
+      sheets:
+        - ランダムで選曲されます|rnd|expert|12+~13+
+        - ランダムで選曲されます|rnd|expert|12+~13+
+        - ランダムで選曲されます|rnd|expert|12+~13+
+        - ランダムで選曲されます|rnd|expert|12+~13+
+    - title: 【MASTER 初級】
+      description: ❤ 700｜-2/-2/-5｜+50
+      sheets:
+        - ランダムで選曲されます|rnd|master|10~11+
+        - ランダムで選曲されます|rnd|master|10~11+
+        - ランダムで選曲されます|rnd|master|10~11+
+        - ランダムで選曲されます|rnd|master|10~11+
+    - title: 【MASTER 中級】
+      description: ❤ 500｜-2/-2/-5｜+50
+      sheets:
+        - ランダムで選曲されます|rnd|master|12~13
+        - ランダムで選曲されます|rnd|master|12~13
+        - ランダムで選曲されます|rnd|master|12~13
+        - ランダムで選曲されます|rnd|master|12~13
+    - title: 【MASTER 上級】
+      description: ❤ 300｜-2/-2/-5｜+20
+      sheets:
+        - ランダムで選曲されます|rnd|master|13~14
+        - ランダムで選曲されます|rnd|master|13~14
+        - ランダムで選曲されます|rnd|master|13~14
+        - ランダムで選曲されます|rnd|master|13~14
+    - title: 【MASTER 超上級】
+      description: ❤ 100｜-2/-3/-5｜+10
+      sheets:
+        - ランダムで選曲されます|rnd|master|14~14+
+        - ランダムで選曲されます|rnd|master|14~14+
+        - ランダムで選曲されます|rnd|master|14~14+
+        - ランダムで選曲されます|rnd|master|14~14+
+- title: Sheets with different versions in International ver.
+  id: different-versions-in-intl
+  description: (Last updated on 2023/11/02)
+  sections:
+    - sheets:
+        - 自傷無色|dx|master
+        - 劣等上等|dx|master
+        - needLe|dx|master
+        - アイドル新鋭隊|dx|master
+        - セカイはまだ始まってすらいない|dx|master
+        - INTERNET OVERDOSE|dx|master
+        - Let you DIVE!|dx|master
+        - Knight Rider|dx|master
+        - Trrricksters!!|dx|master
+        - VOLTAGE|dx|master
+        - 8-EM|dx|master
+        - OTOGEMA|dx|master
+        - コスモポップファンクラブ|dx|master
+        - 宿星審判|dx|master
+        - BREaK! BREaK! BREaK!|dx|master
+      sheetDescriptions:
+        - FESTiVAL
+        - FESTiVAL
+        - FESTiVAL
+        - FESTiVAL
+        - FESTiVAL
+        - FESTiVAL
+        - FESTiVAL
+        - FESTiVAL
+        - FESTiVAL
+        - UNiVERSE PLUS
+        - UNiVERSE
+        - UNiVERSE
+        - UNiVERSE
+        - Splash PLUS
+        - Splash
 - title: Author's choice!
+  id: authors-choice
   isHidden: true
   sections:
     - title: Raku's Favorite!
@@ -1729,6 +1858,7 @@
         - リッジでリッジでGO!GO!GO! -GMT mashup-|std|master
         - ファンタジーゾーン OPA-OPA! -GMT remix-|std|master
 - title: TEST
+  id: test
   isHidden: true
   sections:
     - title: TEST
