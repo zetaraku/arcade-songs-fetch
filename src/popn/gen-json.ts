@@ -42,8 +42,8 @@ const versions = [
   { version: 'pop\'n éclale' },
   { version: 'pop\'n うさぎと猫と少年の夢' },
   { version: 'pop\'n peace' },
-  { version: 'pop\'n 解明リドルズ' },
-  { version: 'pop\'n UniLab' },
+  { version: 'pop\'n 解明リドルズ', abbr: 'pop\'n 解明リドルズ (Not updating)' },
+  { version: 'pop\'n UniLab', abbr: 'pop\'n UniLab (Not updating)' },
   //! add further version here !//
 ];
 const types = [
