@@ -38,6 +38,7 @@ const manualMappings = new Map([
   ['L4TS:2018 (feat. あひる ＆ KTA)', 'L4TS:2018 (feat. あひる & KTA)'],
   ['L4TS:2018(feat.あひる＆KTA)', 'L4TS:2018 (feat. あひる & KTA)'],
   ['L\'epilogue', 'L\'épilogue'],
+  ['Love kills U', 'Love Kills U'],
   ['Love’s Theme of BADASS ～バッド・アス 愛のテーマ～', 'Love\'s Theme of BADASS ～バッド・アス 愛のテーマ～'],
   ['Mjolnir', 'Mjölnir'],
   ['Party 4U "holy nite mix"', 'Party 4U ”holy nite mix”'],
