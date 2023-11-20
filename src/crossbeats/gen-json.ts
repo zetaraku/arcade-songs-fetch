@@ -25,7 +25,7 @@ const types = [
 const difficulties = [
   { difficulty: 'easy', name: 'EASY', color: '#438eff' },
   { difficulty: 'standard', name: 'STANDARD', color: '#39ea11' },
-  { difficulty: 'hard', name: 'HARD', color: '#fff664' },
+  { difficulty: 'hard', name: 'HARD', color: '#e6db19' },
   { difficulty: 'master', name: 'MASTER', color: '#d11832' },
   { difficulty: 'unlimited', name: 'UNLIMITED', color: '#c119d0' },
 ];
