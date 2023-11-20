@@ -50,6 +50,7 @@ npm run <game-code>:<script-name>
   - `drs` (DANCERUSH STARDOM)
   - `ddr` (DanceDanceRevolution)
   - `nostalgia` (NOSTALGIA)
+  - `crossbeats` (crossbeats REV.)
 
 - Available `<script-name>`:
   - See `package.json`.
