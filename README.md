@@ -51,6 +51,7 @@ npm run <game-code>:<script-name>
   - `ddr` (DanceDanceRevolution)
   - `nostalgia` (NOSTALGIA)
   - `crossbeats` (crossbeats REV.)
+  - `rb` (REFLEC BEAT)
 
 - Available `<script-name>`:
   - See `package.json`.
