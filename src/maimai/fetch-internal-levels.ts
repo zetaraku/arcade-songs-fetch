@@ -24,6 +24,7 @@ const manualMappings = new Map([
   ['Boys O\'Clock', 'Boys O’Clock'],
   ['Caliburne ～Story of the Legendary Sword～', 'Caliburne ～Story of the Legendary sword～'],
   ['Change Our MIRAI!', 'Change Our MIRAI！'],
+  ['City Escape:Act1', 'City Escape: Act1'],
   ['Cyber Sparks', 'CYBER Sparks'],
   ['D✪N’T ST✪P R✪CKIN’', 'D✪N’T  ST✪P  R✪CKIN’'],
   ['Excalibur ～Revived Resolution～', 'Excalibur ～Revived resolution～'],
