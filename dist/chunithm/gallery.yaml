@@ -37,6 +37,13 @@
         - メルト|std|master
         - メルティランドナイトメア|std|master
     - description: |-
+        「うた検定」コース
+        ❤ 50｜-0/-0/-1｜+0
+      sheets:
+        - 物凄い勢いでけーねが物凄いうた|std|expert
+        - 札付きのワル　～マイケルのうた～|std|expert
+        - むしとりのうた|std|master
+    - description: |-
         「クラス認定 - I - Random」コース
         ❤ 50｜-0/-0/-1｜+10
       sheets:
@@ -79,6 +86,13 @@
         - どうぶつ☆パラダイス|std|master
         - 人生攻略☆Tips|std|master
         - トリドリ⇒モリモリ! Lovely fruits☆|std|master
+    - description: |-
+        「Negative Set」コース
+        ❤ 50｜-0/-0/-1｜+10
+      sheets:
+        - 違う、そうじゃない|std|master
+        - 哀しみ集め|std|master
+        - なにやってもうまくいかない|std|master
     - description: |-
         「クラス認定 - Ⅱ - Random」コース
         ❤ 50｜-0/-0/-1｜+0
@@ -123,6 +137,13 @@
         - ドキドキDREAM!!!|std|master
         - DDDD|std|master
     - description: |-
+        「4 Katakana」コース
+        ❤ 50｜-0/-0/-1｜+0
+      sheets:
+        - ヤミツキ|std|master
+        - ヒビカセ|std|master
+        - ウサテイ|std|master
+    - description: |-
         「クラス認定 - Ⅲ - Random」コース
         ❤ 30｜-0/-0/-1｜+0
       sheets:
@@ -165,6 +186,13 @@
         - 絶対トキメキデリバリー|std|master
         - 絶対にチョコミントを食べるアオイチャン|std|master
         - absolute rightness|std|master
+    - description: |-
+        「イロドリミドリ Cover Collection」コース
+        ❤ 80｜-0/-1/-1｜+0
+      sheets:
+        - Kattobi舞高Riders|std|master
+        - エンドマークに希望と涙を添えて ～イロドリミドリアレンジ～|std|master
+        - 僕らのFreedom DiVE↓|std|master
     - description: |-
         「クラス認定 - Ⅳ - Random」コース
         ❤ 500｜-1/-1/-1｜+0
@@ -209,6 +237,13 @@
         - DRAGONLADY|std|master
         - Finite|std|master
     - description: |-
+        「Hash Collection」コース
+        ❤ 100｜-0/-1/-1｜+0
+      sheets:
+        - "#FairyJoke|std|master"
+        - "#SUP3RORBITAL|std|master"
+        - "]-[|/34<#!|std|master"
+    - description: |-
         「クラス認定 - Ⅴ - Random」コース
         ❤ 300｜-1/-1/-1｜+0
       sheets:
@@ -237,6 +272,13 @@
         - X7124|std|master
         - 玩具狂奏曲 -終焉-|std|master
         - macrocosmos|std|master
+    - description: |-
+        「Pray of the Game」コース
+        ❤ 30｜-0/-1/-1｜+10
+      sheets:
+        - DA'AT -The First Seeker of Souls-|std|master
+        - MALKUTH -The Last Ruler of Terrestrials-|std|master
+        - 祈 -我ら神祖と共に歩む者なり-|std|master
     - description: |-
         「クラス認定 - ∞ - Random」コース
         ❤ 150｜-1/-1/-1｜+0
@@ -274,6 +316,45 @@
         - L'épisode|std|master
         - (WE) アルストロメリア|we|【蔵】
         - (WE) やらなきゃいけないことばかり|we|【狂】
+    - description: |-
+        「Remembers」コース
+        ❤ 100｜-0/-0/-1｜+0
+      sheets:
+        - (WE) 董卓討つべし|we|【覚】
+        - (WE) 痛快リズムアクション「B.B.K.K.B.K.K.」|we|【覚】
+        - (WE) Devastating Blaster|we|【覚】
+    - description: |-
+        【期間限定】
+        「KING of Performai The 5th 予選① EXPERT」コース
+        ❤ 50｜(+50)/+50/+50/-1｜+0
+      sheets:
+        - 封焔の135秒|std|expert
+        - Viyella's Tears|std|expert
+        - sølips|std|expert
+    - description: |-
+        【期間限定】
+        「KING of Performai The 5th 予選② EXPERT」コース
+        ❤ 50｜(+50)/+50/+50/-1｜+0
+      sheets:
+        - Opfer|std|expert
+        - 《破滅》 ～ Rhapsody for The End|std|expert
+        - Λzure Vixen|std|expert
+    - description: |-
+        【期間限定】
+        「KING of Performai The 5th 予選① MASTER」コース
+        ❤ 30｜(+30)/+30/+30/-1｜+0
+      sheets:
+        - 封焔の135秒|std|master
+        - Viyella's Tears|std|master
+        - sølips|std|master
+    - description: |-
+        【期間限定】
+        「KING of Performai The 5th 予選② MASTER」コース
+        ❤ 30｜(+30)/+30/+30/-1｜+0
+      sheets:
+        - Opfer|std|master
+        - 《破滅》 ～ Rhapsody for The End|std|master
+        - Λzure Vixen|std|master
     - description: |-
         【期間限定】
         「KING of Performai The 4th 予選① EXPERT」コース
