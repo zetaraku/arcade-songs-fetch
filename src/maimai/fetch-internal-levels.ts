@@ -252,12 +252,12 @@ async function fetchSheetsV8() {
     }),
     ...await extractRecords({
       spreadsheet, sheetName: '14以上',
-      dataIndexes: [0, 7, 15, 22],
+      dataIndexes: [0, 7, 14, 21],
       dataOffsets: [0, 2, 3, 5],
     }),
     ...await extractRecords({
       spreadsheet, sheetName: '13+',
-      dataIndexes: [0, 7, 14, 22],
+      dataIndexes: [0, 7, 14, 21],
       dataOffsets: [0, 2, 3, 5],
     }),
     ...await extractRecords({
@@ -267,12 +267,12 @@ async function fetchSheetsV8() {
     }),
     ...await extractRecords({
       spreadsheet, sheetName: '12+',
-      dataIndexes: [0, 7, 13, 19, 25, 32],
+      dataIndexes: [0, 7, 13, 19, 25, 31],
       dataOffsets: [0, 1, 2, 4],
     }),
     ...await extractRecords({
       spreadsheet, sheetName: '12+',
-      dataIndexes: [38],
+      dataIndexes: [37],
       dataOffsets: [0, 2, 3, 5],
     }),
     ...await extractRecords({
