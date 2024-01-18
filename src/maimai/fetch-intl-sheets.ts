@@ -114,6 +114,40 @@ async function getIntlSheets(
   });
 }
 
+async function getIntlUtageSheets(
+  cookies: Record<string, string>,
+) {
+  const response = await axios.get(DATA_URL, {
+    headers: {
+      Cookie: `userId=${cookies.userId};`,
+    },
+    params: {
+      genre: 99,
+      diff: 10,
+    },
+  });
+
+  const $ = cheerio.load(response.data);
+
+  if ($(':contains("ERROR CODE")').length > 0) {
+    throw new Error('An error occurred while fetching the page.');
+  }
+
+  const sheetBlocks = $('.music_utage_score_back').toArray();
+
+  return sheetBlocks.map((e) => {
+    const title = $(e).find('.music_name_block').text()/* .trim() */;
+
+    const utageType = $(e).find('.music_kind_icon_utage_text').eq(0).text();
+
+    return {
+      songId: getSongId(title, '宴会場'),
+      type: 'utage',
+      difficulty: `【${utageType}】`,
+    };
+  });
+}
+
 export default async function run() {
   logger.info('Logging in to get the required cookies ...');
   const cookies = await getIntlCookies();
@@ -135,6 +169,12 @@ export default async function run() {
 
       await sleep(500);
     }
+  }
+  try {
+    logger.info("* category '宴会場'");
+    intlSheets.push(...await getIntlUtageSheets(cookies));
+  } catch {
+    logger.info("* category '宴会場' is not available.");
   }
   logger.info(`OK, ${intlSheets.length} sheets fetched.`);
 
