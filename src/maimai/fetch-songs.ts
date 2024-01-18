@@ -87,7 +87,7 @@ function extractSong(rawSong: Record<string, any>) {
 }
 
 function extractSheets(rawSong: Record<string, any>) {
-  const utageType = rawSong.utage_type ?? (rawSong.title as string).match(/^\[(.+?)\]/)?.[1] ?? undefined;
+  const utageType = rawSong.kanji ?? rawSong.utage_type;
 
   return [
     { type: 'dx', difficulty: 'basic', level: rawSong.dx_lev_bas },
