@@ -177,6 +177,31 @@
         - Schwarzschild|std|remaster
         - QZKago Requiem|std|remaster
         - PANDORA PARADOXXX|std|remaster
+- title: BUDDiES 段位認定（海外版）
+  id: buddies-dan-intl
+  sections:
+    - *buddies-1-dan
+    - *buddies-2-dan
+    - *buddies-3-dan
+    - *buddies-4-dan
+    - *buddies-5-dan
+    - *buddies-6-dan
+    - *buddies-7-dan
+    - *buddies-8-dan
+    - *buddies-9-dan
+    - *buddies-10-dan
+    - *buddies-shin-1-dan
+    - *buddies-shin-2-dan
+    - *buddies-shin-3-dan
+    - *buddies-shin-4-dan
+    - *buddies-shin-5-dan
+    - *buddies-shin-6-dan
+    - *buddies-shin-7-dan
+    - *buddies-shin-8-dan
+    - *buddies-shin-9-dan
+    - *buddies-shin-10-dan
+    - *buddies-shin-kaiden
+    - *buddies-ura-kaiden
 - title: BUDDiES オトモダチ対戦
   id: buddies-otomodachi
   sections:
@@ -236,6 +261,25 @@
         - MAX
         - MAX
         - MAX
+- title: BUDDiES オトモダチ対戦（海外版）
+  id: buddies-otomodachi-intl
+  sections:
+    - *buddies-otomodachi-a-boss
+    - *buddies-otomodachi-s-boss
+    - title: 【SS5~SS1】
+      sheets:
+        - バッド・ダンス・ホール|std|master
+        - クレイジークレイジーダンサーズ|std|remaster
+        - なるとなぎのパーフェクトロックンロール教室|std|master
+        - にゃーにゃー冒険譚|dx|master
+        - DADDY MULK -Groove remix-|std|remaster
+      sheetDescriptions:
+        - SSS
+        - SSS+
+        - SSS+
+        - SSS+
+        - SSS+
+    - *buddies-otomodachi-sss-boss
 - title: FESTiVAL PLUS 段位認定
   id: festival-plus-dan
   sections:
