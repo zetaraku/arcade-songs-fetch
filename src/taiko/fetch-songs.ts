@@ -16,6 +16,18 @@ function getSongId(rawSong: Record<string, any>) {
     if (artist === '「アイドルマスター シンデレラガールズ」より') return 'エンジェル ドリーム';
     if (category === 'ナムコオリジナル') return 'エンジェル ドリーム (2)';
   }
+  if (title === 'ファミレスウォーズ') {
+    if (artist === null) return 'ファミレスウォーズ';
+    if (artist === '本間ひまわり / FOCUS ON (にじさんじ) × 太鼓の達人') return 'ファミレスウォーズ (2)';
+  }
+  if (title === 'Fly away') {
+    if (artist === null) return 'Fly away';
+    if (artist === '伏見ガク / FOCUS ON (にじさんじ) × 太鼓の達人') return 'Fly away (2)';
+  }
+  if (title === '濃紅') {
+    if (artist === '黒沢ダイスケ × 小寺可南子') return '濃紅';
+    if (artist === 'レヴィ・エリファ / FOCUS ON (にじさんじ) × 太鼓の達人') return '濃紅 (2)';
+  }
   return title;
 }
 
