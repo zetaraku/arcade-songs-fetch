@@ -13,15 +13,15 @@ function getSongId(rawSong: Record<string, any>) {
   const { category, title, id } = rawSong;
   if (category === 'LUNATIC') {
     if (title === 'Perfect Shining!!') {
-      if (id === '901100') return '(LUN) Perfect Shining!!';
-      if (id === '900960') return '(LUN) Perfect Shining!! (2)';
+      if (id === '987300') return '(LUN) Perfect Shining!!';
+      if (id === '948700') return '(LUN) Perfect Shining!! (2)';
     }
     return `(LUN) ${title}`;
   }
   if (title === 'Singularity') {
-    if (id === '615400') return 'Singularity';
-    if (id === '402400') return 'Singularity (2)';
-    if (id === '403700') return 'Singularity (3)';
+    if (id === '683300') return 'Singularity';
+    if (id === '481800') return 'Singularity (2)';
+    if (id === '484900') return 'Singularity (3)';
   }
   return title;
 }
