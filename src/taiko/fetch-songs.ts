@@ -28,6 +28,18 @@ function getSongId(rawSong: Record<string, any>) {
     if (artist === '黒沢ダイスケ × 小寺可南子') return '濃紅';
     if (artist === 'レヴィ・エリファ / FOCUS ON (にじさんじ) × 太鼓の達人') return '濃紅 (2)';
   }
+  if (title === 'CYBERgenicALICE') {
+    if (artist === null) return 'CYBERgenicALICE';
+    if (artist === '先斗寧 / FOCUS ON (にじさんじ) × 太鼓の達人') return 'CYBERgenicALICE (2)';
+  }
+  if (title === 'マリオネットピュア') {
+    if (artist === null) return 'マリオネットピュア';
+    if (artist === 'リゼ・ヘルエスタ / FOCUS ON (にじさんじ) × 太鼓の達人') return 'マリオネットピュア (2)';
+  }
+  if (title === 'Phoenix') {
+    if (artist === null) return 'Phoenix';
+    if (artist === 'レオス・ヴィンセント / FOCUS ON (にじさんじ) × 太鼓の達人') return 'Phoenix (2)';
+  }
   return title;
 }
 
