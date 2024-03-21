@@ -1,4 +1,5 @@
 - title: "[EXCEED GEAR] SKILL ANALYZER（スキルアナライザー）"
+  id: exceed-gear-skill-analyzer
   sections:
     - title: 【Lv.01 岳翔】
     - description: 第1回 Aコース
@@ -604,6 +605,7 @@
         - Absolute Domination|std|maximum
         - APØCALYPSE RAY|std|maximum
 - title: "[VIVID WAVE] SKILL ANALYZER（スキルアナライザー）"
+  id: vivid-wave-skill-analyzer
   sections:
     - title: 【Lv.01 岳翔】
     - description: 第1回 Aコース

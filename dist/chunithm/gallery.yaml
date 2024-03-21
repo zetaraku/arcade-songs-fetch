@@ -1,4 +1,5 @@
 - title: SUN クラス認定
+  id: sun-class-certification
   sections:
     - title: 【CLASS Ⅰ】
     - description: |-
@@ -388,6 +389,7 @@
         - Glorious Crown (tpz over-Over-OVERCUTE REMIX)|std|master
         - Rebellion|std|master
 - title: NEW クラス認定
+  id: new-class-certification
   sections:
     - title: 【CLASS Ⅰ】
     - description: |-
@@ -737,6 +739,7 @@
         - SON OF SUN|std|master
         - ENDYMION|std|master
 - title: NEW クラス認定（海外版）
+  id: new-class-certification-intl
   sections:
     - title: 【CLASS Ⅰ】
     - description: |-

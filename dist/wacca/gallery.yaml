@@ -1,4 +1,5 @@
 - title: Reverse 常駐ステージアップ（オフライン版）
+  id: reverse-normal-stage-up-offline
   sections:
     - title: 【ステージ I】
       description: ❤ 50｜-0/-0/-1｜+20
@@ -61,6 +62,7 @@
         - 神|std|expert
         - クリムゾン帝王|std|inferno
 - title: Reverse 常駐ステージアップ
+  id: reverse-normal-stage-up
   sections:
     - title: 【ステージ I】
       description: ❤ 50｜-0/-0/-1｜+20
@@ -147,6 +149,7 @@
         - eden|std|inferno
         - Silentphobia|std|inferno
 - title: Reverse イベントステージアップ
+  id: reverse-event-stage-up
   sections:
     - title: 【SPURT Re:MIX Vol.1】
       description: ❤ 250｜-1/-1/-1｜+99
