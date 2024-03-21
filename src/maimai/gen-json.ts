@@ -67,14 +67,14 @@ const regions = [
 function getLevelValueOf(sheet: Record<string, any>) {
   if (sheet.level === null) return null;
   if (sheet.level === '*') return 0;
-  if (sheet.level.endsWith('?')) return Number(sheet.level.replace('?', '').replace('+', '.7'));
-  return Number(sheet.level.replace('+', '.7'));
+  if (sheet.level.endsWith('?')) return Number(sheet.level.replace('?', '').replace('+', '.6'));
+  return Number(sheet.level.replace('+', '.6'));
 }
 function getInternalLevelValueOf(sheet: Record<string, any>) {
   if (sheet.internalLevel != null) return Number(sheet.internalLevel);
   if (sheet.level === '*') return 0;
-  if (sheet.level.endsWith('?')) return Number(sheet.level.replace('?', '').replace('+', '.7'));
-  return Number(sheet.level.replace('+', '.7'));
+  if (sheet.level.endsWith('?')) return Number(sheet.level.replace('?', '').replace('+', '.6'));
+  return Number(sheet.level.replace('+', '.6'));
 }
 function getIsSpecialOf(sheet: Record<string, any>) {
   return sheet.type === 'utage';
