@@ -127,7 +127,7 @@ async function extractRecords({
       internalLevelIndex,
     ] = dataOffsets.map((offset) => dataIndex + offset);
 
-    return [...Array(sheet.rowCount).keys()]
+    const rawSheets = [...Array(sheet.rowCount).keys()]
       .filter((rowIndex) => {
         const internalLevelValue = sheet.getCell(rowIndex, internalLevelIndex).value;
         return typeof internalLevelValue === 'number' && internalLevelValue > 0;
@@ -139,6 +139,10 @@ async function extractRecords({
         internalLevel: Number(sheet.getCell(rowIndex, internalLevelIndex).value).toFixed(1),
       }))
       .filter((rawSheet) => rawSheet.title !== 'Link');
+
+    logger.info(`* found ${rawSheets.length} record(s) at column ${dataIndex}`);
+
+    return rawSheets;
   });
 }
 
