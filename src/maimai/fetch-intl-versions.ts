@@ -34,6 +34,8 @@ export const versionIdMap = new Map([
   ['UNiVERSE', 17],
   ['UNiVERSE PLUS', 18],
   ['FESTiVAL', 19],
+  ['FESTiVAL PLUS', 20],
+  ['BUDDiES', 21],
   //! add further version here !//
 ]);
 
