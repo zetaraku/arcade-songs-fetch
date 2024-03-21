@@ -35,6 +35,7 @@ const versionIdMap = new Map([
   ['FESTiVAL', 19],
   ['FESTiVAL PLUS', 20],
   ['BUDDiES', 21],
+  ['BUDDiES PLUS', 22],
   //! add further version here !//
 ]);
 
