@@ -348,6 +348,60 @@ async function fetchSheetsV9() {
   ];
 }
 
+async function fetchSheetsV10() {
+  const spreadsheet = new GoogleSpreadsheet('1d1AjO92Hj-iay10MsqdR_5TswEaikzC988aEOtFyybo');
+  spreadsheet.useApiKey(process.env.GOOGLE_API_KEY!);
+  await spreadsheet.loadInfo();
+
+  return [
+    ...await extractRecords({
+      spreadsheet, sheetName: 'BUDDiES+新曲',
+      dataIndexes: [0, 6, 12, 18, 24],
+      dataOffsets: [0, 1, 2, 4],
+    }),
+    ...await extractRecords({
+      spreadsheet, sheetName: '14以上',
+      dataIndexes: [0, 7, 15, 22, 29, 37],
+      dataOffsets: [0, 2, 3, 5],
+    }),
+    ...await extractRecords({
+      spreadsheet, sheetName: '13+',
+      dataIndexes: [0, 8, 15, 22, 29],
+      dataOffsets: [0, 2, 3, 5],
+    }),
+    ...await extractRecords({
+      spreadsheet, sheetName: '13',
+      dataIndexes: [0, 8, 16, 23, 30, 37, 45],
+      dataOffsets: [0, 2, 3, 5],
+    }),
+    ...await extractRecords({
+      spreadsheet, sheetName: '12+',
+      dataIndexes: [0, 7, 14, 20, 27],
+      dataOffsets: [0, 1, 2, 4],
+    }),
+    ...await extractRecords({
+      spreadsheet, sheetName: '12+',
+      dataIndexes: [34],
+      dataOffsets: [0, 2, 3, 5],
+    }),
+    ...await extractRecords({
+      spreadsheet, sheetName: '12',
+      dataIndexes: [0, 7, 14, 21, 28, 35],
+      dataOffsets: [0, 1, 2, 4],
+    }),
+    ...await extractRecords({
+      spreadsheet, sheetName: '12',
+      dataIndexes: [42],
+      dataOffsets: [0, 2, 3, 5],
+    }),
+    ...await extractRecords({
+      spreadsheet, sheetName: 'Tmai',
+      dataIndexes: [0],
+      dataOffsets: [1, 2, 3, 7],
+    }),
+  ];
+}
+
 export default async function run() {
   if (!process.env.GOOGLE_API_KEY) {
     throw new Error('Please set your GOOGLE_API_KEY in the .env file');
@@ -358,7 +412,8 @@ export default async function run() {
     // ...await fetchSheetsV6(),
     // ...await fetchSheetsV7(),
     // ...await fetchSheetsV8(),
-    ...await fetchSheetsV9(),
+    // ...await fetchSheetsV9(),
+    ...await fetchSheetsV10(),
   ];
   logger.info(`OK, ${rawSheets.length} sheets fetched.`);
 
