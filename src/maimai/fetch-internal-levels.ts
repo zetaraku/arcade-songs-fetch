@@ -21,6 +21,7 @@ const manualMappings = new Map([
   ['Baban!!  ー甘い罠ー', 'BaBan!! －甘い罠－'],
   ['Backyun! -悪い女-', 'Backyun! －悪い女－'],
   ['Bad Apple!! feat.nomico 〜五十嵐撫子Ver.〜', 'Bad Apple!! feat.nomico ～五十嵐 撫子 Ver.～'],
+  ['Bad Apple!! feat.nomico(REDALiCE Remix)', 'Bad Apple!! feat.nomico (REDALiCE Remix)'],
   ['Boys O\'Clock', 'Boys O’Clock'],
   ['Caliburne ～Story of the Legendary Sword～', 'Caliburne ～Story of the Legendary sword～'],
   ['Change Our MIRAI!', 'Change Our MIRAI！'],
