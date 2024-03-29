@@ -61,6 +61,7 @@ const manualMappings = new Map([
   ['Urban Crusher[Remix]', 'Urban Crusher [Remix]'],
   ['YA･DA･YO[Reborn]', 'YA･DA･YO [Reborn]'],
   ['Yakumo>>JOINT STRUGGLE(2019 update)', 'Yakumo >>JOINT STRUGGLE (2019 Update)'],
+  ['falling', 'Falling'],
   ['null', '　'],
   ['“411Ψ892”', '"411Ψ892"'],
   ['≠彡゛/了→', '≠彡"/了→'],
