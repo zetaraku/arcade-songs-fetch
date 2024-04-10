@@ -58,6 +58,8 @@ function extractSong(rawSong: Record<string, any>) {
 
     isNew: null,
     isLocked: rawSong.unlock_type > 1,
+
+    comment: rawSong.description,
   };
 }
 

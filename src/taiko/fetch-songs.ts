@@ -96,6 +96,8 @@ async function getSongs(pageUrl: string) {
 
         isNew: $th.find('.new').length !== 0,
         isLocked: $th.find('.icoMedal, .icoAi, .icoCampaign, .icoCode, .icoSecrect').length !== 0,
+
+        comment: null,
       };
 
       return {

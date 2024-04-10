@@ -44,6 +44,8 @@ export const rawSongSchema = z.object({
   isNew: z.boolean().nullable(),
   isLocked: z.boolean().nullable(),
 
+  comment: z.string().nullable(),
+
   sheets: z.array(rawSheetSchema),
 }).strict();
 

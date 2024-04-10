@@ -81,6 +81,8 @@ async function* getPages(categoryId: string) {
           isNew: null,
           isLocked: null,
 
+          comment: null,
+
           bpm,
         };
 

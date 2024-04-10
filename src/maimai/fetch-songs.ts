@@ -84,6 +84,8 @@ function extractSong(rawSong: Record<string, any>) {
 
     isNew: !!rawSong.date,
     isLocked: !!rawSong.key,
+
+    comment: rawSong.comment ?? rawSong.utage_comment,
   };
 }
 

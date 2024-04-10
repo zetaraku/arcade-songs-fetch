@@ -83,6 +83,8 @@ function extractSongs($: cheerio.CheerioAPI, category: string, selector: string)
         isNew: $(a).find('.new img').length > 0,
         isLocked: null,
 
+        comment: null,
+
         hasEx: $(a).find('img.icon_extra').length > 0,
         detailUrl,
       };

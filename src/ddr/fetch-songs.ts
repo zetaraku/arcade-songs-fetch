@@ -165,6 +165,8 @@ async function* getPages(versionId: number) {
 
           isNew: null,
           isLocked: null,
+
+          comment: null,
         };
 
         return {

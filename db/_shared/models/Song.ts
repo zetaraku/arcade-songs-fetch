@@ -19,5 +19,7 @@ export default function defineModel(sequelize: Sequelize, modelName: string = 'S
 
     isNew: DataTypes.BOOLEAN,
     isLocked: DataTypes.BOOLEAN,
+
+    comment: DataTypes.TEXT,
   });
 }

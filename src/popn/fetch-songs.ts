@@ -108,6 +108,8 @@ async function* fetchSongs(versionId: number, cookies: Record<string, string>) {
           isNew: null,
           isLocked: null,
 
+          comment: null,
+
           detailUrl,
         };
 

@@ -52,6 +52,8 @@ function extractSong(rawSong: Record<string, any>) {
 
     isNew: null,
     isLocked: Number(rawSong.info.limitation_type) < 3,
+
+    comment: null,
   };
 }
 

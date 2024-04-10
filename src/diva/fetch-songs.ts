@@ -135,6 +135,8 @@ async function fetchSong(songInfo: Record<string, any>, cookies: Record<string, 
 
     isNew: null,
     isLocked: null,
+
+    comment: null,
   };
 }
 

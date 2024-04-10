@@ -71,6 +71,8 @@ async function* getPages(listId: string) {
 
           isNew: null,
           isLocked: null,
+
+          comment: null,
         };
 
         return {

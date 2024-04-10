@@ -59,6 +59,8 @@ export default async function run({
     isNew: song.isNew != null ? Boolean(song.isNew) : null,
     isLocked: song.isLocked != null ? Boolean(song.isLocked) : null,
 
+    comment: song.comment ?? null,
+
     sheets: getSortedSheetsOf(
       sheetRecords
         .filter((sheet) => sheet.songId === song.songId)
