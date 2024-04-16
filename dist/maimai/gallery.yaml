@@ -1,3 +1,241 @@
+- title: BUDDiES PLUS 段位認定
+  id: buddies-plus-dan
+  sections:
+    - &buddies-plus-1-dan
+      title: 【初段】
+      description: ❤ 350｜-0/-2/-5｜+20
+      sheets:
+        - 神っぽいな|dx|basic
+        - だれかの心臓になれたなら|dx|basic
+        - 響縁|std|basic
+        - 光線チューニング|std|basic
+    - &buddies-plus-2-dan
+      title: 【二段】
+      description: ❤ 350｜-0/-2/-5｜+20
+      sheets:
+        - だから僕は音楽を辞めた|dx|advanced
+        - 三妖精SAY YA!!!|dx|advanced
+        - エゴロック|dx|advanced
+        - 命に嫌われている|dx|advanced
+    - &buddies-plus-3-dan
+      title: 【三段】
+      description: ❤ 600｜-1/-2/-5｜+50
+      sheets:
+        - テレキャスタービーボーイ|dx|advanced
+        - エイリアンエイリアン|std|advanced
+        - PUPA|dx|advanced
+        - Don't Fight The Music|dx|advanced
+    - &buddies-plus-4-dan
+      title: 【四段】
+      description: ❤ 700｜-2/-2/-5｜+50
+      sheets:
+        - 絶え間なく藍色|dx|expert
+        - 神っぽいな|dx|expert
+        - Witches night|dx|expert
+        - スカーレット警察のゲットーパトロール24時|dx|expert
+    - &buddies-plus-5-dan
+      title: 【五段】
+      description: ❤ 700｜-2/-2/-5｜+50
+      sheets:
+        - welcome to maimai!! with マイマイマー|std|expert
+        - NOIZY BOUNCE|dx|expert
+        - Southern Cross|dx|expert
+        - DETARAME ROCK&ROLL THEORY|std|expert
+    - &buddies-plus-6-dan
+      title: 【六段】
+      description: ❤ 700｜-2/-2/-5｜+50
+      sheets:
+        - ULTRA SYNERGY MATRIX|dx|expert
+        - Signature|std|expert
+        - Vallista|dx|expert
+        - 約束|dx|master
+    - &buddies-plus-7-dan
+      title: 【七段】
+      description: ❤ 700｜-2/-2/-5｜+50
+      sheets:
+        - 再会|dx|master
+        - STEREOSCAPE|dx|master
+        - おねがいダーリン|std|master
+        - サンバディ！|dx|master
+    - &buddies-plus-8-dan
+      title: 【八段】
+      description: ❤ 700｜-2/-2/-5｜+20
+      sheets:
+        - オリフィス|dx|master
+        - マーシャル・マキシマイザー|dx|master
+        - ピリオドサイン|dx|master
+        - エゴロック|dx|master
+    - &buddies-plus-9-dan
+      title: 【九段】
+      description: ❤ 800｜-2/-2/-5｜+30
+      sheets:
+        - Irresistible|dx|master
+        - Revive The Rave|std|master
+        - Lost Desire|dx|master
+        - "[X]|dx|master"
+    - &buddies-plus-10-dan
+      title: 【十段】
+      description: ❤ 900｜-2/-2/-5｜+30
+      sheets:
+        - Imperishable Night 2006 (2016 Refine)|std|master
+        - 宵の鳥|dx|master
+        - 僕の和風本当上手|dx|master
+        - Caliburne ～Story of the Legendary sword～|std|master
+    - &buddies-plus-shin-1-dan
+      title: 【真初段】
+      description: ❤ 50｜-2/-3/-5｜+10
+      sheets:
+        - STARTLINER|dx|master
+        - Crazy Circle|dx|master
+        - 永遠のメロディ|std|master
+        - Streak|std|expert
+    - &buddies-plus-shin-2-dan
+      title: 【真二段】
+      description: ❤ 50｜-2/-3/-5｜+10
+      sheets:
+        - ロールプレイングゲーム|std|master
+        - tape/stop/night|dx|master
+        - Don't Fight The Music|dx|expert
+        - 命ばっかり|std|master
+    - &buddies-plus-shin-3-dan
+      title: 【真三段】
+      description: ❤ 50｜-2/-3/-5｜+10
+      sheets:
+        - 秋の未確認生物|dx|master
+        - 時計の国のジェミニ|dx|master
+        - System “Z”|std|expert
+        - NOIZY BOUNCE|dx|master
+    - &buddies-plus-shin-4-dan
+      title: 【真四段】
+      description: ❤ 50｜-2/-3/-5｜+10
+      sheets:
+        - 大輪の魂 (feat. AO, 司芭扶)|dx|master
+        - ねぇ、壊れタ人形ハ何処へ棄テらレるノ？|std|expert
+        - ヒバリ|dx|master
+        - Garden Of The Dragon|std|master
+    - &buddies-plus-shin-5-dan
+      title: 【真五段】
+      description: ❤ 50｜-2/-3/-5｜+10
+      sheets:
+        - Define|dx|master
+        - Terminal Storm|std|master
+        - Jörqer|dx|master
+        - ロストワンの号哭|std|master
+    - &buddies-plus-shin-6-dan
+      title: 【真六段】
+      description: ❤ 50｜-2/-3/-5｜+10
+      sheets:
+        - EVERGREEN|std|master
+        - my flow|dx|master
+        - Sweet Requiem|dx|master
+        - とびだせ！TO THE COSMIC!!|dx|master
+    - &buddies-plus-shin-7-dan
+      title: 【真七段】
+      description: ❤ 50｜-2/-3/-5｜+10
+      sheets:
+        - カラッポ・ノンフィクション|dx|master
+        - Doll Judgment|std|master
+        - Black Lair|dx|master
+        - ULTRA B+K|std|master
+    - &buddies-plus-shin-8-dan
+      title: 【真八段】
+      description: ❤ 50｜-2/-3/-5｜+10
+      sheets:
+        - Sun Dance|std|remaster
+        - NightTheater|dx|master
+        - GEMINI -M-|std|master
+        - Schwarzschild|std|master
+    - &buddies-plus-shin-9-dan
+      title: 【真九段】
+      description: ❤ 50｜-2/-3/-5｜+10
+      sheets:
+        - 患部で止まってすぐ溶ける～狂気の優曇華院|std|remaster
+        - Swift Swing|dx|master
+        - U&iVERSE -銀河鸞翔-|dx|master
+        - Strive against fate|dx|master
+    - &buddies-plus-shin-10-dan
+      title: 【真十段】
+      description: ❤ 50｜-2/-3/-5｜+10
+      sheets:
+        - ガラテアの螺旋|std|master
+        - Yorugao|dx|master
+        - GIGANTØMAKHIA|dx|master
+        - Excalibur ～Revived resolution～|std|master
+    - &buddies-plus-shin-kaiden
+      title: 【真皆伝】
+      description: ❤ 50｜-2/-3/-5｜+5
+      sheets:
+        - Regulus|dx|master
+        - Straight into the lights|dx|master
+        - World's end loneliness|dx|master
+        - sølips|dx|master
+    - &buddies-plus-ura-kaiden
+      title: 【裏皆伝】
+      description: ❤ 10｜-1/-3/-10｜+0
+      sheets:
+        - PANDORA PARADOXXX|std|remaster
+        - Latent Kingdom|dx|master
+        - raputa|dx|master
+        - 系ぎて|dx|remaster
+- title: BUDDiES PLUS オトモダチ対戦
+  id: buddies-plus-otomodachi
+  sections:
+    - &buddies-plus-otomodachi-a-boss
+      title: 【A5~A1】
+      sheets:
+        - エイリアンエイリアン|std|expert
+        - Alice's Suitcase|dx|expert
+        - りばーぶ|std|master
+        - バグ|dx|master
+        - WARNING×WARNING×WARNING|dx|master
+      sheetDescriptions:
+        - S+
+        - S+
+        - S+
+        - SS
+        - SS
+    - &buddies-plus-otomodachi-s-boss
+      title: 【S5~S1】
+      sheets:
+        - Virtual to LIVE|dx|master
+        - Counselor|std|master
+        - フラグメンツ -T.V. maimai edit-|std|master
+        - Ututu|dx|master
+        - 私のドッペルゲンガー|dx|master
+      sheetDescriptions:
+        - SS
+        - SS+
+        - SS+
+        - SS+
+        - SSS
+    - &buddies-plus-otomodachi-ss-boss
+      title: 【SS5~SS1】
+      sheets:
+        - Grip & Break down !!|std|master
+        - ツクヨミステップ|dx|master
+        - エゴロック|dx|master
+        - See The Light|dx|master
+        - First Dance|dx|master
+      sheetDescriptions:
+        - SSS
+        - SSS+
+        - SSS+
+        - SSS+
+        - SSS+
+    - &buddies-plus-otomodachi-sss-boss
+      title: 【SSS5~SSS1】
+      sheets:
+        - Party☆People☆Princess|dx|master
+        - otorii INNOVATED -[i]3-|dx|master
+        - AMAZING MIGHTYYYY!!!!|std|master
+        - 怒槌|std|master
+        - IF:U|dx|master
+      sheetDescriptions:
+        - MAX
+        - MAX
+        - MAX
+        - MAX
+        - MAX
 - title: BUDDiES 段位認定
   id: buddies-dan
   sections:
@@ -1826,25 +2064,37 @@
         - ランダムで選曲されます|rnd|master|14~14+
 - title: Sheets with different versions in International ver.
   id: different-versions-in-intl
-  description: (Last updated on 2023/11/02)
+  description: (Last updated on 2024/04/16)
   sections:
     - sheets:
-        - 自傷無色|dx|master
-        - 劣等上等|dx|master
-        - needLe|dx|master
-        - アイドル新鋭隊|dx|master
+        - Λzure Vixen|dx|master
+        - ジングルベル|dx|master
+        - KHYMΞXΛ|dx|master
+        - ワーワーワールド|dx|master
+        - セカイ|dx|master
+        - 群青讃歌|dx|master
         - セカイはまだ始まってすらいない|dx|master
-        - INTERNET OVERDOSE|dx|master
-        - Let you DIVE!|dx|master
-        - Knight Rider|dx|master
+        - アイドル新鋭隊|dx|master
+        - needLe|dx|master
         - Trrricksters!!|dx|master
+        - Knight Rider|dx|master
+        - Let you DIVE!|dx|master
+        - INTERNET OVERDOSE|dx|master
+        - 劣等上等|dx|master
+        - 自傷無色|dx|master
         - VOLTAGE|dx|master
-        - 8-EM|dx|master
         - OTOGEMA|dx|master
+        - 8-EM|dx|master
         - コスモポップファンクラブ|dx|master
         - 宿星審判|dx|master
         - BREaK! BREaK! BREaK!|dx|master
       sheetDescriptions:
+        - BUDDiES
+        - FESTiVAL PLUS
+        - FESTiVAL PLUS
+        - FESTiVAL PLUS
+        - FESTiVAL PLUS
+        - FESTiVAL PLUS
         - FESTiVAL
         - FESTiVAL
         - FESTiVAL
