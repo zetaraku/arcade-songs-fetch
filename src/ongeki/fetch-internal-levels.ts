@@ -20,6 +20,10 @@ function getSongId(rawSheet: Record<string, any>) {
     if (id === '425') return 'Singularity (2)';
     if (id === '487') return 'Singularity (3)';
   }
+  if (title === 'Hand in Hand') {
+    if (id === '185') return 'Hand in Hand';
+    if (id === '337') return 'Hand in Hand (2)';
+  }
   return title;
 }
 

@@ -23,6 +23,10 @@ function getSongId(rawSong: Record<string, any>) {
     if (id === '481800') return 'Singularity (2)';
     if (id === '484900') return 'Singularity (3)';
   }
+  if (title === 'Hand in Hand') {
+    if (category === 'POPS＆ANIME') return 'Hand in Hand';
+    if (category === 'niconico') return 'Hand in Hand (2)';
+  }
   return title;
 }
 
