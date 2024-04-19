@@ -8,8 +8,15 @@ import 'dotenv/config';
 const logger = log4js.getLogger('ongeki/fetch-internal-levels');
 logger.level = log4js.levels.INFO;
 
+const manualMappings = new Map([
+  ['God knows...', 'God knows…'],
+  ['sister\'s noise', 'sister’s noise'],
+  ['Prominence -式宮 碧音ソロver.-', 'Prominence -式宮碧音ソロver.-'],
+]);
+
 function getSongId(rawSheet: Record<string, any>) {
   const { type, title, id } = rawSheet;
+  if (manualMappings.has(title)) return manualMappings.get(title);
   if (type === 'lun') {
     if (title === 'Perfect Shining!!') return '(LUN) Perfect Shining!!';
     if (title === 'Perfect Shining!!(ロケテスト譜面)') return '(LUN) Perfect Shining!! (2)';
