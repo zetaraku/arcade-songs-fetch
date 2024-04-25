@@ -34,9 +34,13 @@ const regions = [
 ] as any[];
 
 function getLevelValueOf(sheet: Record<string, any>) {
-  if (sheet.level === null) return null;
-  if (sheet.level.includes('◆')) return 90 + Number(sheet.level.replace('◆', ''));
-  return Number(sheet.level);
+  if (sheet.level != null) return sheet.level.includes('◆') ? 90 + Number(sheet.level.replace('◆', '')) : Number(sheet.level);
+  return null;
+}
+function getInternalLevelValueOf(sheet: Record<string, any>) {
+  if (sheet.internalLevel != null) return Number(sheet.internalLevel);
+  if (sheet.level != null) return sheet.level.includes('◆') ? 10 + Number(sheet.level.replace('◆', '')) : Number(sheet.level);
+  return null;
 }
 function getIsSpecialOf(_sheet: Record<string, any>) {
   return false;
@@ -58,10 +62,21 @@ export default async function run() {
     SELECT
       *
     FROM "Sheets"
+      NATURAL LEFT JOIN "SheetInternalLevels"
   `, {
     type: Sequelize.QueryTypes.SELECT,
     nest: true,
   });
+
+  /*
+    Levels of non-Real sheets have a known internal level relationship.
+  */
+  for (const sheetRecord of sheetRecords as Record<string, any>[]) {
+    const levelValue = getLevelValueOf(sheetRecord);
+    if (sheetRecord.difficulty !== 'real' && levelValue !== null) {
+      sheetRecord.internalLevel = levelValue.toFixed(1);
+    }
+  }
 
   const jsonText = await genJson({
     songRecords,
@@ -72,6 +87,7 @@ export default async function run() {
     difficulties,
     regions,
     getLevelValueOf,
+    getInternalLevelValueOf,
     getIsSpecialOf,
   });
 
