@@ -11,10 +11,11 @@ logger.level = log4js.levels.INFO;
 const DATA_URL = 'https://taiko.namco-ch.net/taiko/songlist/';
 
 function getSongId(rawSong: Record<string, any>) {
-  const { title, artist, category } = rawSong;
+  const { title, artist } = rawSong;
   if (title === 'エンジェル ドリーム') {
     if (artist === '「アイドルマスター シンデレラガールズ」より') return 'エンジェル ドリーム';
-    if (category === 'ナムコオリジナル') return 'エンジェル ドリーム (2)';
+    if (artist === null) return 'エンジェル ドリーム (2)';
+    if (artist === 'フレン・E・ルスタリオ / FOCUS ON (にじさんじ) × 太鼓の達人') return 'エンジェル ドリーム (3)';
   }
   if (title === 'ファミレスウォーズ') {
     if (artist === null) return 'ファミレスウォーズ';
@@ -39,6 +40,18 @@ function getSongId(rawSong: Record<string, any>) {
   if (title === 'Phoenix') {
     if (artist === null) return 'Phoenix';
     if (artist === 'レオス・ヴィンセント / FOCUS ON (にじさんじ) × 太鼓の達人') return 'Phoenix (2)';
+  }
+  if (title === 'ヘイラ') {
+    if (artist === 'necchi') return 'ヘイラ';
+    if (artist === 'ましろ爻 / FOCUS ON (にじさんじ) × 太鼓の達人') return 'ヘイラ (2)';
+  }
+  if (title === 'いっそこのままで') {
+    if (artist === 'ミフメイ(BNSI) feat. 相沢') return 'いっそこのままで';
+    if (artist === '山神カルタ / FOCUS ON (にじさんじ) × 太鼓の達人') return 'いっそこのままで (2)';
+  }
+  if (title === 'ボクハシンセ') {
+    if (artist === null) return 'ボクハシンセ';
+    if (artist === '花畑チャイカ / FOCUS ON (にじさんじ) × 太鼓の達人') return 'ボクハシンセ (2)';
   }
   return title;
 }
