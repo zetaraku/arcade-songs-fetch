@@ -1,0 +1,28 @@
+{
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Run All",
+      "detail": "Run all *:all npm scripts",
+      "dependsOn": [
+        "npm: maimai:all",
+        "npm: chunithm:all",
+        "npm: wacca:all",
+        "npm: taiko:all",
+        "npm: jubeat:all",
+        "npm: sdvx:all",
+        "npm: ongeki:all",
+        "npm: gc:all",
+        "npm: diva:all",
+        "npm: popn:all",
+        "npm: drs:all",
+        "npm: ddr:all",
+        "npm: nostalgia:all",
+        "npm: crossbeats:all",
+        "npm: rb:all"
+      ]
+    }
+  ]
+}
