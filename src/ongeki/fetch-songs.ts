@@ -27,6 +27,9 @@ function getSongId(rawSong: Record<string, any>) {
     if (category === 'POPS＆ANIME') return 'Hand in Hand';
     if (category === 'niconico') return 'Hand in Hand (2)';
   }
+  if (title === 'Cogit ergo sum') {
+    return 'Cogito ergo sum';
+  }
   return title;
 }
 
