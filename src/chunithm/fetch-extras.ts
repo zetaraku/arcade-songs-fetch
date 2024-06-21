@@ -19,6 +19,9 @@ export function getSongId(rawSong: Record<string, any>): string {
     if (title === 'Random【分D】') return '(WE) Random (4)';
     if (title === 'Random【分E】') return '(WE) Random (5)';
     if (title === 'Random【分F】') return '(WE) Random (6)';
+    if (title === '強風オールバック【戻】') return '(WE) 強風オールバック';
+    if (title === '強風オールバック【弾】') return '(WE) 強風オールバック (2)';
+    if (title === '強風オールバック【避】') return '(WE) 強風オールバック (3)';
     return `(WE) ${title.replace(/【.】$/, '')}`;
   }
   return title;

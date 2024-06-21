@@ -28,6 +28,11 @@ export function getSongId(rawSong: Record<string, any>): string {
       if (id === '8248') return '(WE) Random (5)';
       if (id === '8249') return '(WE) Random (6)';
     }
+    if (title === '強風オールバック') {
+      if (id === '8283') return '(WE) 強風オールバック';
+      if (id === '8284') return '(WE) 強風オールバック (2)';
+      if (id === '8285') return '(WE) 強風オールバック (3)';
+    }
     return `(WE) ${title}`;
   }
   return title;
