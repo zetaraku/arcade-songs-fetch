@@ -52,6 +52,16 @@
         - 怪盗Ｆの台本～消えたダイヤの謎～(EXIT TUNES)|std|novice
         - 待チ人ハ来ズ。|std|advanced
         - Future MUSiC|std|advanced
+    - description: 第7回
+      sheets:
+        - 準備運動|std|novice
+        - honey trap|std|advanced
+        - 777|std|novice
+    - description: 第8回
+      sheets:
+        - Beyond the BLUE|std|novice
+        - Alice Maestera feat. nomico|std|advanced
+        - Triple Counter|std|novice
     - title: 【Lv.02 流星】
     - description: 第1回 Aコース
       sheets:
@@ -104,6 +114,16 @@
           Asaba|std|advanced
         - 隅田川夏恋歌 (I/O Angel mix)|std|advanced
         - 深海シティアンダーグラウンド(EXIT TUNES)|std|advanced
+    - description: 第7回
+      sheets:
+        - いーあるふぁんくらぶ(EXIT TUNES)|std|advanced
+        - StrayedCatz|std|advanced
+        - 明星ロケット|std|advanced
+    - description: 第8回
+      sheets:
+        - Shiny Up!|std|advanced
+        - Find the Answer|std|advanced
+        - Mr.VIRTUALIZER|std|advanced
     - title: 【Lv.03 月衝】
     - description: 第1回 Aコース
       sheets:
@@ -155,6 +175,16 @@
         - 星の器 feat. らっぷびと|std|advanced
         - Second Heaven GravityPfArrange|std|advanced
         - BEAT MAGIC|std|advanced
+    - description: 第7回
+      sheets:
+        - Le ××××|std|advanced
+        - 朧 (kamome sano remix)|std|advanced
+        - 六兆年と一夜物語(EXIT TUNES)|std|advanced
+    - description: 第8回
+      sheets:
+        - 君と僕とその空白と(EXIT TUNES)|std|advanced
+        - 灼熱のBlazin' Beat|std|advanced
+        - Hi-Fi!!双子'S|std|advanced
     - title: 【Lv.04 瞬光】
     - description: 第1回 Aコース
       sheets:
@@ -206,6 +236,16 @@
         - concon (picom'n'bass rmx)|std|advanced
         - 私の恋色。|std|advanced
         - 終点(EXIT TUNES)|std|advanced
+    - description: 第7回
+      sheets:
+        - 水槽のクジラ|std|advanced
+        - オンディーヌの泪|std|advanced
+        - Follow Up|std|advanced
+    - description: 第8回
+      sheets:
+        - ジャンピン・スマイル|std|advanced
+        - Inixia|std|advanced
+        - ハイスピヰド・ランパンシヰ|std|advanced
     - title: 【Lv.05 天極】
     - description: 第1回 Aコース
       sheets:
@@ -242,7 +282,7 @@
         - party:stage|std|advanced
         - 君がいる場所へ|std|exhaust
         - Scene(EXIT TUNES)|std|exhaust
-    - description: 第5回 Aコース
+    - description: 第5回 Aコース (削除済み)
       sheets:
         - REDO the NIGHT|std|advanced
         - Cappuccino Hearts|std|advanced
@@ -257,6 +297,16 @@
         - それは花火のような恋|std|advanced
         - She Turns Me On|std|advanced
         - .59 -BOOTH BOOST REMIX-|std|exhaust
+    - description: 第7回
+      sheets:
+        - Profession|std|advanced
+        - 天弓天華オトハナビ|std|advanced
+        - Divine's or Deal|std|advanced
+    - description: 第8回
+      sheets:
+        - Bolérrot|std|advanced
+        - Clash of swords|std|advanced
+        - NOT YOUR IDOL|std|advanced
     - title: 【Lv.06 烈風】
     - description: 第1回 Aコース
       sheets:
@@ -308,6 +358,16 @@
         - 近未来百鬼夜行譚～死返之巻～|std|exhaust
         - インビジブル(EXIT TUNES)|std|exhaust
         - 零の位相|std|exhaust
+    - description: 第7回
+      sheets:
+        - sink into the dream|std|exhaust
+        - シル・ヴ・プレジデント|std|exhaust
+        - EGG|std|exhaust
+    - description: 第8回
+      sheets:
+        - 狂騒こども節|std|exhaust
+        - カシオペアノヒカリ|std|exhaust
+        - Heavenly Adventure|std|exhaust
     - title: 【Lv.07 雷電】
     - description: 第1回 Aコース
       sheets:
@@ -354,11 +414,21 @@
         - 神にした彼女が示す世界線|std|exhaust
         - LEMON SUMMER|std|exhaust
         - 創世ノート|std|exhaust
-    - description: 第6回
+    - description: 第6回 (削除済み)
       sheets:
         - 過去に囚われている|std|exhaust
         - Jailbreaker|std|exhaust
         - SprrRush!!|std|maximum
+    - description: 第7回
+      sheets:
+        - sparky spark|std|exhaust
+        - ミライプリズム|std|infinite
+        - take a step forward|std|exhaust
+    - description: 第8回
+      sheets:
+        - のぼれ八坂坂！|std|exhaust
+        - MONOLITH|std|exhaust
+        - はわわｗ！な展開っ！|std|exhaust
     - title: 【Lv.08 麗華】
     - description: 第1回 Aコース
       sheets:
@@ -400,7 +470,7 @@
         - フラッター現象の顛末と単一指向性の感情論|std|exhaust
         - 恋愛♡悪戯！？まじかる☆ぱふゅ～む！！|std|exhaust
         - テレポーテーションでやってきた彼とのその後の顛末|std|maximum
-    - description: 第5回 Bコース
+    - description: 第5回 Bコース (削除済み)
       sheets:
         - Enchanté|std|exhaust
         - ナミカレ|std|exhaust
@@ -410,6 +480,16 @@
         - Lieselotte|std|exhaust
         - crêpe suzette|std|exhaust
         - ゜*。Chantilly Fille。*°|std|maximum
+    - description: 第7回
+      sheets:
+        - twilight signal|std|exhaust
+        - ゔぉるみっくす!!!!|std|exhaust
+        - I'm so Happy|std|exhaust
+    - description: 第8回
+      sheets:
+        - 刃の如く ft. ネコメアリ|std|maximum
+        - GRISAILLE|std|exhaust
+        - FEEL THE FORCE|std|exhaust
     - title: 【Lv.09 魔騎士】
     - description: 第1回 Aコース
       sheets:
@@ -431,7 +511,7 @@
         - Innocent|std|exhaust
         - Venomous Firefly|std|exhaust
         - The Sampling Paradise (P*Light Remix)|std|exhaust
-    - description: 第3回
+    - description: 第3回 (削除済み)
       sheets:
         - Engraved Mark-Gow's ill! RMX-|std|maximum
         - くらべられっ子|std|maximum
@@ -461,6 +541,16 @@
         - トキメキストリーム|std|maximum
         - Never Ending Future|std|exhaust
         - β(EXIT TUNES)|std|maximum
+    - description: 第7回
+      sheets:
+        - Paranoia|std|exhaust
+        - "*ハロー、プラネット。|std|maximum"
+        - Re:call|std|maximum
+    - description: 第8回
+      sheets:
+        - Aqua,Luna-rium|std|maximum
+        - Dogeza Stairs|std|exhaust
+        - Realize／アニメ「Re:ゼロから始める異世界生活」より|std|maximum
     - title: 【Lv.10 剛力羅】
     - description: 第1回 Aコース
       sheets:
@@ -487,7 +577,7 @@
         - "- Jupiter -|std|maximum"
         - Sulk|std|maximum
         - 狂水一華|std|maximum
-    - description: 第4回 Aコース
+    - description: 第4回 Aコース (削除済み)
       sheets:
         - 泥の分際で私だけの大切を奪おうだなんて|std|maximum
         - そして紫の幻想曲は全てを受け入れる|std|exhaust
@@ -512,6 +602,16 @@
         - 斑咲花|std|maximum
         - NEON LOVE♥POTION!!!|std|maximum
         - Candy Colored Hearts|std|exhaust
+    - description: 第7回
+      sheets:
+        - フォニイ|std|maximum
+        - WONDER_WOBBLER|std|maximum
+        - ネメシス SDVX Edit|std|exhaust
+    - description: 第8回
+      sheets:
+        - MOVE! (We Keep It Movin')|std|maximum
+        - Dualive(EXIT TUNES)|std|exhaust
+        - Harpuia|std|exhaust
     - title: 【Lv.11 或帝滅斗】
     - description: 第1回 Aコース
       sheets:
@@ -558,6 +658,16 @@
         - Touch My Body|std|maximum
         - 蝕|std|maximum
         - trea→journey|std|maximum
+    - description: 第7回
+      sheets:
+        - Butterfly Twist|std|maximum
+        - Khionos TiARA|std|maximum
+        - Archangelio|std|maximum
+    - description: 第8回
+      sheets:
+        - CadenzaMaiden|std|maximum
+        - Test Flight|std|maximum
+        - サイコパスラビット|std|maximum
     - title: 【Lv.∞ 暴龍天】
     - description: 第1回 Aコース
       sheets:
@@ -604,6 +714,16 @@
         - Elemental Creation|std|maximum
         - Absolute Domination|std|maximum
         - APØCALYPSE RAY|std|maximum
+    - description: 第7回
+      sheets:
+        - Growth Memories|std|gravity
+        - All We Need is HAPPY END!!!|std|maximum
+        - HeaveИ's Rain|std|maximum
+    - description: 第8回
+      sheets:
+        - XROSS INFECTION|std|gravity
+        - ЯeviveR|std|maximum
+        - Λkasha|std|maximum
 - title: "[VIVID WAVE] SKILL ANALYZER（スキルアナライザー）"
   id: vivid-wave-skill-analyzer
   sections:
