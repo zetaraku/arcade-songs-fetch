@@ -26,7 +26,8 @@ Data fetching scripts for [arcade-songs](https://github.com/zetaraku/arcade-song
   npm run db:migrate:all
   ```
 
-- You might need to re-run the `npm run db:migrate:all` command when the database schema is changed.
+> [!NOTE]
+> You might need to re-run the `npm run db:migrate:all` command when the database schema is changed.
 
 ## Usage
 
