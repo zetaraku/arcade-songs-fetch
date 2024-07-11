@@ -42,6 +42,7 @@ export function getSongWikiTitle(song: Record<string, any>) {
       ['Sqlupp (Camellia\'s "Sqleipd*Hiytex" Remix)', 'Sqlupp （Camellia’s ”Sqleipd＊Hiytex” Remix）'],
       ['THE IDOLM@STER 2nd-mix', 'THE IDOLM＠STER 2nd-mix'],
       ['The world is all one !!', 'The world is all one ！！'],
+      ['Trust', 'Trust（TANO*C）'],
       ['YA･DA･YO [Reborn]', 'YA・DA・YO [Reborn]'],
       ['galaxias!', 'galaxias！'],
       ['　', '\u200E'],
