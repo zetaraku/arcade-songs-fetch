@@ -177,6 +177,31 @@
         - Latent Kingdom|dx|master
         - raputa|dx|master
         - 系ぎて|dx|remaster
+- title: BUDDiES PLUS 段位認定（海外版）
+  id: buddies-plus-dan-intl
+  sections:
+    - *buddies-plus-1-dan
+    - *buddies-plus-2-dan
+    - *buddies-plus-3-dan
+    - *buddies-plus-4-dan
+    - *buddies-plus-5-dan
+    - *buddies-plus-6-dan
+    - *buddies-plus-7-dan
+    - *buddies-plus-8-dan
+    - *buddies-plus-9-dan
+    - *buddies-plus-10-dan
+    - *buddies-plus-shin-1-dan
+    - *buddies-plus-shin-2-dan
+    - *buddies-plus-shin-3-dan
+    - *buddies-plus-shin-4-dan
+    - *buddies-plus-shin-5-dan
+    - *buddies-plus-shin-6-dan
+    - *buddies-plus-shin-7-dan
+    - *buddies-plus-shin-8-dan
+    - *buddies-plus-shin-9-dan
+    - *buddies-plus-shin-10-dan
+    - *buddies-plus-shin-kaiden
+    - *buddies-plus-ura-kaiden
 - title: BUDDiES PLUS オトモダチ対戦
   id: buddies-plus-otomodachi
   sections:
@@ -236,6 +261,13 @@
         - MAX
         - MAX
         - MAX
+- title: BUDDiES PLUS オトモダチ対戦（海外版）
+  id: buddies-plus-otomodachi-intl
+  sections:
+    - *buddies-plus-otomodachi-a-boss
+    - *buddies-plus-otomodachi-s-boss
+    - *buddies-plus-otomodachi-ss-boss
+    - *buddies-plus-otomodachi-sss-boss
 - title: BUDDiES 段位認定
   id: buddies-dan
   sections:
