@@ -33,6 +33,7 @@ function getSongWikiUrl(song: Record<string, any>) {
       ['Blow My Mind', 'Blow my mind'],
       ['U&iVERSE -銀河鸞翔-', 'U＆iVERSE ‐銀河鸞翔‐'],
       [']-[|/34<#!', 'ヒバチ'],
+      ['ÅMARA (大未来電脳)', 'ÅMARA(大未来電脳)'],
       ['ウルガレオン', 'ウルガレオン(楽曲名)'],
       ['トリスメギストス', 'トリスメギストス(楽曲名)'],
       ['紅', '紅(楽曲名)'],
