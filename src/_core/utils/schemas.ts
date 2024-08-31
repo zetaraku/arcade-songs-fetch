@@ -21,6 +21,13 @@ export const rawSheetSchema = z.object({
     z.string(),
     z.boolean(),
   ).optional(),
+  regionOverrides: z.record(
+    z.string(),
+    z.record(
+      z.string(),
+      z.any(),
+    ),
+  ).optional(),
 
   isSpecial: z.boolean().nullable(),
 

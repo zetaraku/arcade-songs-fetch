@@ -83,6 +83,7 @@ export default async function run({
               ([region, value]) => [region, Boolean(value)],
             ),
           ) : undefined,
+          regionOverrides: sheet.regionOverrides ?? undefined,
 
           isSpecial: getIsSpecialOf(sheet) ?? null,
 
