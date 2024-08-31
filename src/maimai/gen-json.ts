@@ -101,7 +101,9 @@ export default async function run() {
       *,
       "JpSheets"."songId" IS NOT NULL AS "regions.jp",
       "IntlSheets"."songId" IS NOT NULL AS "regions.intl",
-      "CnSheets"."songId" IS NOT NULL AS "regions.cn"
+      "CnSheets"."songId" IS NOT NULL AS "regions.cn",
+      "SheetVersions"."version" AS "version",
+      "IntlSheetVersions"."version" AS "regionOverrides.intl.version"
     FROM "Sheets"
       NATURAL LEFT JOIN "SheetVersions"
       NATURAL LEFT JOIN "SheetExtras"
@@ -109,10 +111,15 @@ export default async function run() {
       NATURAL LEFT JOIN "JpSheets"
       NATURAL LEFT JOIN "IntlSheets"
       NATURAL LEFT JOIN "CnSheets"
+      LEFT JOIN "IntlSheetVersions" USING ("songId", "type")
   `, {
     type: Sequelize.QueryTypes.SELECT,
     nest: true,
   });
+
+  for (const sheetRecord of sheetRecords) {
+    sheetRecord.regionOverrides.intl.version ??= undefined;
+  }
 
   const jsonText = await genJson({
     songRecords,
