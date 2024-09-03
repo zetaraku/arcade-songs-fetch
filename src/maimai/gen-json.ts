@@ -103,6 +103,7 @@ export default async function run() {
       "IntlSheets"."songId" IS NOT NULL AS "regions.intl",
       "CnSheets"."songId" IS NOT NULL AS "regions.cn",
       "Sheets"."level" AS "level",
+      "IntlSheets"."level" AS "regionOverrides.intl.level",
       "SheetVersions"."version" AS "version",
       "IntlSheetVersions"."version" AS "regionOverrides.intl.version"
     FROM "Sheets"
@@ -119,6 +120,12 @@ export default async function run() {
   });
 
   for (const sheetRecord of sheetRecords) {
+    sheetRecord.regionOverrides.intl.levelValue = getLevelValueOf({
+      level: sheetRecord.regionOverrides.intl.level,
+    });
+
+    sheetRecord.regionOverrides.intl.level ??= undefined;
+    sheetRecord.regionOverrides.intl.levelValue ??= undefined;
     sheetRecord.regionOverrides.intl.version ??= undefined;
   }
 
