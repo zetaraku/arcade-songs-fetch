@@ -102,6 +102,7 @@ export default async function run() {
       "JpSheets"."songId" IS NOT NULL AS "regions.jp",
       "IntlSheets"."songId" IS NOT NULL AS "regions.intl",
       "CnSheets"."songId" IS NOT NULL AS "regions.cn",
+      "Sheets"."level" AS "level",
       "SheetVersions"."version" AS "version",
       "IntlSheetVersions"."version" AS "regionOverrides.intl.version"
     FROM "Sheets"
@@ -109,7 +110,7 @@ export default async function run() {
       NATURAL LEFT JOIN "SheetExtras"
       NATURAL LEFT JOIN "SheetInternalLevels"
       NATURAL LEFT JOIN "JpSheets"
-      NATURAL LEFT JOIN "IntlSheets"
+      LEFT JOIN "IntlSheets" USING ("songId", "type", "difficulty")
       NATURAL LEFT JOIN "CnSheets"
       LEFT JOIN "IntlSheetVersions" USING ("songId", "type")
   `, {
