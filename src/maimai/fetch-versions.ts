@@ -109,7 +109,8 @@ async function getJpSheets(
     throw new Error('An error occurred while fetching the page.');
   }
 
-  const sheetBlocks = $(`.music_${difficulty}_score_back`).toArray();
+  const sheetBlockSelector = `.music_${difficulty}_score_back`;
+  const sheetBlocks = $(sheetBlockSelector).toArray();
 
   return sheetBlocks.map((e) => {
     const title = $(e).find('.music_name_block').text()/* .trim() */;
