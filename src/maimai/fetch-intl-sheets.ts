@@ -107,10 +107,13 @@ async function getIntlSheets(
       throw new Error('Unknown sheet type');
     })();
 
+    const level = $(e).find('.music_lv_block').text().trim();
+
     return {
       songId: getSongId(title, category),
       type,
       difficulty,
+      level,
     };
   });
 }
@@ -141,10 +144,13 @@ async function getIntlUtageSheets(
 
     const utageType = $(e).find('.music_kind_icon_utage_text').eq(0).text();
 
+    const level = $(e).find('.music_lv_block').text().trim();
+
     return {
       songId: getSongId(title, '宴会場'),
       type: 'utage',
       difficulty: `【${utageType}】`,
+      level,
     };
   });
 }
