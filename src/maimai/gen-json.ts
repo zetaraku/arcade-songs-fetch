@@ -119,14 +119,23 @@ export default async function run() {
     nest: true,
   });
 
-  for (const sheetRecord of sheetRecords) {
-    sheetRecord.regionOverrides.intl.levelValue = getLevelValueOf({
-      level: sheetRecord.regionOverrides.intl.level,
-    });
+  for (const sheetRecord of sheetRecords as any[]) {
+    // postprocess region overrides
+    for (const region of Object.keys(sheetRecord.regionOverrides)) {
+      const regionOverride = sheetRecord.regionOverrides[region];
 
-    sheetRecord.regionOverrides.intl.level ??= undefined;
-    sheetRecord.regionOverrides.intl.levelValue ??= undefined;
-    sheetRecord.regionOverrides.intl.version ??= undefined;
+      // remove empty override properties
+      for (const key of Object.keys(regionOverride)) {
+        if (regionOverride[key] == null) {
+          delete regionOverride[key];
+        }
+      }
+
+      // override levelValue manually if level is overridden
+      if ('level' in regionOverride) {
+        regionOverride.levelValue = getLevelValueOf({ level: regionOverride.level });
+      }
+    }
   }
 
   const jsonText = await genJson({
