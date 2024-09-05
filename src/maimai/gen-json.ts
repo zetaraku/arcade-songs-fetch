@@ -126,7 +126,7 @@ export default async function run() {
 
       // remove empty override properties
       for (const key of Object.keys(regionOverride)) {
-        if (regionOverride[key] == null) {
+        if (regionOverride[key] == null || regionOverride[key] === sheetRecord[key]) {
           delete regionOverride[key];
         }
       }
