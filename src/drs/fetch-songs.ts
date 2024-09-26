@@ -23,7 +23,12 @@ const categoryMasks = [
 ];
 
 function getSongId(rawSong: Record<string, any>) {
-  return rawSong.info.title_name;
+  const { title_name: title, artist_name: artist } = rawSong.info;
+  if (title === 'Touch Me') {
+    if (artist === 'C-Show') return 'Touch Me';
+    if (artist === 'BEMANI Sound Team "GekiReco ＆ Sota F."') return 'Touch Me (2)';
+  }
+  return title;
 }
 
 function extractSong(rawSong: Record<string, any>) {
