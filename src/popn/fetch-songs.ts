@@ -51,6 +51,7 @@ const versionMap = new Map([
   [27, 'pop\'n peace'],
   [28, 'pop\'n 解明リドルズ'],
   [29, 'pop\'n UniLab'],
+  [30, 'pop\'n Jam&Fizz'],
   //! add further version here !//
 ]);
 

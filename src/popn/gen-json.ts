@@ -44,6 +44,7 @@ const versions = [
   { version: 'pop\'n peace' },
   { version: 'pop\'n 解明リドルズ', abbr: 'pop\'n 解明リドルズ (Not updating)' },
   { version: 'pop\'n UniLab', abbr: 'pop\'n UniLab (Not updating)' },
+  { version: 'pop\'n Jam&Fizz', abbr: 'pop\'n Jam&Fizz (Not updating)' },
   //! add further version here !//
 ];
 const types = [
