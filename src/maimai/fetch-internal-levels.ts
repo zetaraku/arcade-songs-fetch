@@ -18,6 +18,7 @@ const difficultyMapping = new Map([
 ]);
 
 const manualMappings = new Map([
+  ['Alea jacta est', 'Alea jacta est!'],
   ['Baban!!  ー甘い罠ー', 'BaBan!! －甘い罠－'],
   ['Backyun! -悪い女-', 'Backyun! －悪い女－'],
   ['Bad Apple!! feat.nomico 〜五十嵐撫子Ver.〜', 'Bad Apple!! feat.nomico ～五十嵐 撫子 Ver.～'],
@@ -451,6 +452,57 @@ async function fetchSheetsV10() {
   ];
 }
 
+async function fetchSheetsV11() {
+  const spreadsheet = new GoogleSpreadsheet('1DKssDl2MM-jjK_GmHPEIVcOMcpVzaeiXA9P5hmhDqAo');
+  spreadsheet.useApiKey(process.env.GOOGLE_API_KEY!);
+  await spreadsheet.loadInfo();
+
+  return [
+    ...await extractRecords({
+      spreadsheet,
+      sheetName: 'PRiSM新曲',
+      dataIndexes: [0, 6, 12, 18, 24],
+      dataOffsets: [0, 1, 2, 4],
+    }),
+    ...await extractRecords({
+      spreadsheet,
+      sheetName: '14以上',
+      dataIndexes: [0, 7, 14, 21, 28],
+      dataOffsets: [0, 2, 3, 5],
+    }),
+    ...await extractRecords({
+      spreadsheet,
+      sheetName: '13+',
+      dataIndexes: [0, 7, 14, 21],
+      dataOffsets: [0, 2, 3, 5],
+    }),
+    ...await extractRecords({
+      spreadsheet,
+      sheetName: '13',
+      dataIndexes: [0, 8, 15, 22, 29, 36],
+      dataOffsets: [0, 2, 3, 5],
+    }),
+    ...await extractRecords({
+      spreadsheet,
+      sheetName: '12+',
+      dataIndexes: [0, 6, 12, 18, 24],
+      dataOffsets: [0, 1, 2, 4],
+    }),
+    ...await extractRecords({
+      spreadsheet,
+      sheetName: '12',
+      dataIndexes: [0, 7, 14, 22, 29, 36],
+      dataOffsets: [0, 1, 2, 4],
+    }),
+    ...await extractRecords({
+      spreadsheet,
+      sheetName: 'Tmai',
+      dataIndexes: [0],
+      dataOffsets: [1, 2, 3, 7],
+    }),
+  ];
+}
+
 export default async function run() {
   if (!process.env.GOOGLE_API_KEY) {
     throw new Error('Please set your GOOGLE_API_KEY in the .env file');
@@ -462,7 +514,8 @@ export default async function run() {
     // ...await fetchSheetsV7(),
     // ...await fetchSheetsV8(),
     // ...await fetchSheetsV9(),
-    ...await fetchSheetsV10(),
+    // ...await fetchSheetsV10(),
+    ...await fetchSheetsV11(),
   ];
   logger.info(`OK, ${rawSheets.length} sheets fetched.`);
 
