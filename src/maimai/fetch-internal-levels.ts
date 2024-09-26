@@ -93,15 +93,19 @@ const manualMappings = new Map([
   ['実験', undefined],
 ]);
 
-function getSongId(title: string) {
-  if (title === 'Link') throw new Error(`Title required manual resolve: ${title}`);
+function getSongId(rawSheet: Record<string, any>) {
+  const { title } = rawSheet;
+  if (title === 'Link') {
+    logger.warn('Title requires manual resolve:', rawSheet);
+    return undefined;
+  }
   if (manualMappings.has(title)) return manualMappings.get(title);
   return title;
 }
 
 function extractSheet(rawSheet: Record<string, any>) {
   return {
-    songId: getSongId(rawSheet.title),
+    songId: getSongId(rawSheet),
     ...rawSheet,
   };
 }
@@ -140,8 +144,7 @@ async function extractRecords({
         type: typeMapping.get(String(sheet.getCell(rowIndex, typeIndex).value)),
         difficulty: difficultyMapping.get(String(sheet.getCell(rowIndex, difficultyIndex).value)),
         internalLevel: Number(sheet.getCell(rowIndex, internalLevelIndex).value).toFixed(1),
-      }))
-      .filter((rawSheet) => rawSheet.title !== 'Link');
+      }));
 
     logger.info(`* found ${rawSheets.length} record(s) at column ${dataIndex}`);
 
