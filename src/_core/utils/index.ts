@@ -7,6 +7,11 @@ export function hashed(text: string): string {
   return crypto.createHash('sha256').update(text).digest('hex');
 }
 
+export function concatOrCoalesceString(a: string | null, b: string | null): string | null {
+  if (a != null && b != null) return [a, b].join('|');
+  return a ?? b;
+}
+
 export function getSheetSorter({
   types,
   difficulties,
