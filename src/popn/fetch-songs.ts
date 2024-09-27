@@ -5,6 +5,7 @@ import sleep from 'sleep-promise';
 import log4js from 'log4js';
 import * as cheerio from 'cheerio';
 import { Song, Sheet, JpSheet, SongArtist } from '@@/db/popn/models';
+import { concatOrCoalesceString } from '@/_core/utils';
 import 'dotenv/config';
 
 const logger = log4js.getLogger('popn/fetch-songs');
@@ -16,6 +17,7 @@ const DATA_URL = 'https://p.eagate.573.jp';
 
 const categoryMap = new Map([
   [21, 'TV･ｱﾆﾒ'],
+  [22, 'CS'],
   [23, 'BEMANI'],
   //! add further category here !//
 ]);
@@ -242,7 +244,7 @@ function mergeSongs(songs: Record<string, any>[]) {
         mergedSongs.set(song.id, mergedSong);
       }
 
-      mergedSong.category ??= song.category;
+      mergedSong.category = concatOrCoalesceString(mergedSong.category, song.category);
       mergedSong.version ??= song.version;
     } else {
       const currNo = (lastTitleNo.get(song.title) ?? 0) + 1;

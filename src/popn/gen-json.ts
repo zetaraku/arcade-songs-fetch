@@ -11,6 +11,7 @@ const DIST_PATH = 'dist/popn';
 
 const categories = [
   { category: 'TV･ｱﾆﾒ' },
+  { category: 'CS' },
   { category: 'BEMANI' },
   { category: null },
   //! add further category here !//
@@ -37,7 +38,6 @@ const versions = [
   { version: 'pop\'n 19 TUNE STREET' },
   { version: 'pop\'n 20 fantasia' },
   { version: 'pop\'n Sunny Park' },
-  { version: 'CS' },
   { version: 'pop\'n ラピストリア' },
   { version: 'pop\'n éclale' },
   { version: 'pop\'n うさぎと猫と少年の夢' },
