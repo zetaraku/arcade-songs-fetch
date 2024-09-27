@@ -44,9 +44,6 @@ const versionMap = new Map([
   [18, 'pop\'n 19 TUNE STREET'],
   [19, 'pop\'n 20 fantasia'],
   [20, 'pop\'n Sunny Park'],
-  [21, 'TV･ｱﾆﾒ'],
-  [22, 'CS'],
-  [23, 'BEMANI'],
   [24, 'pop\'n ラピストリア'],
   [25, 'pop\'n éclale'],
   [26, 'pop\'n うさぎと猫と少年の夢'],
@@ -57,9 +54,6 @@ const versionMap = new Map([
   //! add further version here !//
 ]);
 
-const isCategory = (versionId: number) => categoryMap.has(versionId);
-const isVersion = (versionId: number) => !categoryMap.has(versionId);
-
 export async function getCookies() {
   if (process.env.POPN_JP_KONAMI_SESSION_TOKEN) {
     return { M573SSID: process.env.POPN_JP_KONAMI_SESSION_TOKEN };
@@ -68,7 +62,7 @@ export async function getCookies() {
   throw new Error('Please set your POPN_JP_KONAMI_SESSION_TOKEN in the .env file');
 }
 
-async function* fetchSongs(versionId: number, cookies: Record<string, string>) {
+async function* fetchSongs(versionOrCategoryId: number, cookies: Record<string, string>) {
   async function* startFetchPage(pageNo = 0): AsyncGenerator<Record<string, any>[]> {
     logger.info(`- page ${pageNo}`);
 
@@ -77,7 +71,7 @@ async function* fetchSongs(versionId: number, cookies: Record<string, string>) {
         Cookie: `M573SSID=${cookies.M573SSID};`,
       },
       params: {
-        version: versionId,
+        version: versionOrCategoryId,
         page: pageNo,
       },
     });
@@ -98,14 +92,14 @@ async function* fetchSongs(versionId: number, cookies: Record<string, string>) {
         const rawSong = {
           id,
 
-          category: isCategory(versionId) ? categoryMap.get(versionId) : null,
+          category: categoryMap.get(versionOrCategoryId) ?? null,
           title,
           artist: null,
 
           imageName: 'default-cover.png',
           imageUrl: null,
 
-          version: isVersion(versionId) ? versionMap.get(versionId) : null,
+          version: versionMap.get(versionOrCategoryId) ?? null,
           releaseDate: null,
 
           isNew: null,
@@ -272,6 +266,13 @@ export default async function run() {
     logger.info(`* version '${version}' (${versionId})`);
 
     for await (const pageOfSongs of fetchSongs(versionId, cookies)) {
+      rawSongs.push(...pageOfSongs);
+    }
+  }
+  for (const [categoryId, category] of categoryMap.entries()) {
+    logger.info(`* category '${category}' (${categoryId})`);
+
+    for await (const pageOfSongs of fetchSongs(categoryId, cookies)) {
       rawSongs.push(...pageOfSongs);
     }
   }
