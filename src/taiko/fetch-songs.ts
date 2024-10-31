@@ -53,6 +53,10 @@ function getSongId(rawSong: Record<string, any>) {
     if (artist === null) return 'ボクハシンセ';
     if (artist === '花畑チャイカ / FOCUS ON (にじさんじ) × 太鼓の達人') return 'ボクハシンセ (2)';
   }
+  if (title === 'Just Awake') {
+    if (artist === 'Fear, and Loathing in Las Vegas 「HUNTER×HUNTER」より') return 'Just Awake';
+    if (artist === 'Fear') return 'Just Awake (2)';
+  }
   return title;
 }
 
