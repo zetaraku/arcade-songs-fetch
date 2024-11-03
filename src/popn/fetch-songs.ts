@@ -1,3 +1,4 @@
+/* eslint-disable object-curly-newline */
 /* eslint-disable no-await-in-loop */
 /* eslint-disable newline-per-chained-call */
 import axios from 'axios';
@@ -5,7 +6,7 @@ import sleep from 'sleep-promise';
 import log4js from 'log4js';
 import * as cheerio from 'cheerio';
 import { Song, Sheet, JpSheet, SongArtist } from '@@/db/popn/models';
-import { concatOrCoalesceString } from '@/_core/utils';
+import { concatOrCoalesceString, ensureNoDuplicateEntry } from '@/_core/utils';
 import 'dotenv/config';
 
 const logger = log4js.getLogger('popn/fetch-songs');
@@ -54,6 +55,102 @@ const versionMap = new Map([
   //! add further version here !//
 ]);
 
+const manualUpperMappingWithVersion = new Map([
+  ['Aithon', [null, 'pop\'n peace']],
+  ['Blue River', [null, 'pop\'n peace']],
+  ['Butter-FLY', ['pop\'n 17 THE MOVIE', 'pop\'n 解明リドルズ']],
+  ['FLOWER', ['pop\'n 20 fantasia', 'pop\'n peace']],
+  ['GET WILD', ['pop\'n 13 カーニバル', 'pop\'n 解明リドルズ']],
+  ['Little prayer', [null, 'pop\'n 解明リドルズ']],
+  ['MADSPEED狂信道', ['pop\'n éclale', 'pop\'n peace']],
+  ['Russian Caravan Rhapsody', ['pop\'n ラピストリア', 'pop\'n 解明リドルズ']],
+  ['ZETA〜素数の世界と超越者〜', ['pop\'n 15 ADVENTURE', 'pop\'n 解明リドルズ']],
+  ['murmur twins(guitar pop ver.)', ['pop\'n 10', 'pop\'n peace']],
+  ['nostos', ['pop\'n うさぎと猫と少年の夢', 'pop\'n peace']],
+  ['only my railgun', ['pop\'n 19 TUNE STREET', 'pop\'n UniLab']],
+  ['perditus†paradisus', ['pop\'n ラピストリア', 'pop\'n peace']],
+  ['いーあるふぁんくらぶ', ['pop\'n ラピストリア', 'pop\'n Jam&Fizz']],
+  ['エイプリルフールの唄', ['pop\'n 12 いろは', 'pop\'n peace']],
+  ['クラゲータ', ['pop\'n 11', 'pop\'n peace']],
+  ['シャムシールの舞', ['pop\'n 14 FEVER!', 'pop\'n peace']],
+  ['シュガーソングとビターステップ', ['pop\'n éclale', 'pop\'n 解明リドルズ']],
+  ['セツナトリップ', ['pop\'n Sunny Park', 'pop\'n 解明リドルズ']],
+  ['ナスカの丘', ['pop\'n 19 TUNE STREET', 'pop\'n 解明リドルズ']],
+  ['ポルターガイスト', ['pop\'n 16 PARTY♪', 'pop\'n 解明リドルズ']],
+  ['一触即発☆禅ガール', ['pop\'n peace', 'pop\'n Jam&Fizz']],
+  ['創聖のアクエリオン', ['pop\'n 16 PARTY♪', 'pop\'n 解明リドルズ']],
+  ['夏祭り', ['pop\'n 17 THE MOVIE', 'pop\'n 解明リドルズ']],
+  ['夢幻ノ光', ['pop\'n 12 いろは', 'pop\'n peace']],
+  ['子供の落書き帳', [null, 'pop\'n peace']],
+  ['少年リップルズ', ['pop\'n 19 TUNE STREET', 'pop\'n 解明リドルズ']],
+  ['序', ['pop\'n 18 せんごく列伝', 'pop\'n peace']],
+  ['桃花恋情', ['pop\'n 15 ADVENTURE', 'pop\'n 解明リドルズ']],
+  ['残酷な天使のテーゼ', ['pop\'n 12 いろは', 'pop\'n UniLab']],
+  ['生命の焔纏いて', ['pop\'n Sunny Park', 'pop\'n 解明リドルズ']],
+  ['真超深ＴＩＯＮ', ['pop\'n 13 カーニバル', 'pop\'n peace']],
+  ['路男', ['pop\'n 15 ADVENTURE', 'pop\'n 解明リドルズ']],
+  ['雫', ['pop\'n 12 いろは', 'pop\'n peace']],
+  ['鳳凰〜Chinese Phoenix Mix〜', ['pop\'n 20 fantasia', 'pop\'n 解明リドルズ']],
+]);
+
+const manualAltMappingWithGenre = new Map([
+  ['つぼみ', ['ピンキッシュ', 'つぼみ']],
+  ['Denpasar', ['バリトランス', 'ウラ・バリトランス']],
+  ['H@ppy Choice', ['メロコア', 'メロコアＬＩＶＥ']],
+  ['Homesick Pt.2&3', ['ソフトロック', 'ソフトロックＬＯＮＧ']],
+  ['I REALLY WANT TO HURT YOU', ['ポップス', 'ポップスアンコール']],
+  ['cat\'s scat', ['スキャット', 'ウラ・スキャット']],
+  ['une fille dans la pluie', ['フレンチポップ', 'フレンチポップＪ']],
+  ['今宵Lover\'s Day', ['パッション', 'パッションＬＩＶＥ']],
+  ['光の季節', ['メロウ', 'メロウREMIX']],
+  ['男々道', ['ヒップロック２', 'ウラ・ヒップロック2']],
+  ['西新宿清掃曲', ['パーカッシヴ', 'ウラ・パーカッシヴ']],
+  ['赤いリンゴ', ['グルーブロック', 'グルーブロックＬＩＶＥ']],
+]);
+
+function getSheetType(rawSong: Record<string, any>) {
+  const { title, version, id } = rawSong;
+
+  if (title === 'Popperz Chronicle') {
+    if (id === 'H2sHxwnmJmfPvtJL/5TpSQ==') return 'std';
+    if (id === 'wCYAsaXbEgmT2HqFoX4qCQ==') return 'upper';
+
+    throw new Error(`Unable to resolve sheet type: ${JSON.stringify(rawSong)}`);
+  }
+
+  if (manualUpperMappingWithVersion.has(title)) {
+    const versions = manualUpperMappingWithVersion.get(title)!;
+    const versionPos = versions.indexOf(version);
+
+    if (versionPos === 0) return 'std';
+    if (versionPos === 1) return 'upper';
+
+    throw new Error(`Cannot use manual mapping with version: ${JSON.stringify(rawSong)}`);
+  }
+
+  return 'std';
+}
+
+function getSongId(rawSong: Record<string, any>) {
+  const { title, genre, sheetType } = rawSong;
+
+  if (manualAltMappingWithGenre.has(title)) {
+    const genres = manualAltMappingWithGenre.get(title)!;
+    const genrePos = genres.indexOf(genre);
+
+    if (genrePos === 0) return title;
+    if (genrePos >= 1) return `${title} (${1 + genrePos})`;
+
+    throw new Error(`Cannot use manual mapping with genre: ${JSON.stringify(rawSong)}`);
+  }
+
+  if (sheetType === 'upper') {
+    return `(UPPER) ${title}`;
+  }
+
+  return title;
+}
+
 export async function getCookies() {
   if (process.env.POPN_JP_KONAMI_SESSION_TOKEN) {
     return { M573SSID: process.env.POPN_JP_KONAMI_SESSION_TOKEN };
@@ -87,10 +184,11 @@ async function* fetchSongs(versionOrCategoryId: number, cookies: Record<string, 
         const detailUrl = new URL($(li).find('.col_music > a').attr('href')!, DATA_URL).toString();
         const id = new URL(detailUrl).searchParams.get('no');
         const title = $(li).find('.col_music > a').text().trim();
-        // const genre = $(li).find('.col_music > div').text().trim();
+        const genre = $(li).find('.col_music > div').text().trim();
 
         const rawSong = {
           id,
+          genre,
 
           category: categoryMap.get(versionOrCategoryId) ?? null,
           title,
@@ -150,18 +248,21 @@ async function* fetchSheets(levelValue: number, cookies: Record<string, string>)
     const sheets = $('.mu_list_table > li').toArray().slice(1)
       .map((li) => {
         const id = new URL($(li).find('.col_music_lv > a').attr('href')!, DATA_URL).searchParams.get('no');
-        const title = $(li).find('.col_music_lv > a').text().trim();
-        // const genre = $(li).find('.col_music_lv > div').text().trim();
+        const title = $(li).find('.col_music_lv > a').text().trim()
+          // changed from pop'n Jam&Fizz
+          .replaceAll(/* FULL WIDTH TILDE */ '～', /* WAVE DASH */ '〜');
+        const genre = $(li).find('.col_music_lv > div').text().trim();
 
         const difficulty = $(li).find('.col_normal_lv').text().trim().toLowerCase();
         const level = $(li).find('.col_hyper_lv').text().trim();
 
         const rawSheet = {
           id,
+          genre,
 
           title,
 
-          type: 'std',
+          // type will be assigned during merge
           difficulty,
           level,
         };
@@ -226,30 +327,27 @@ async function* fetchSongArtists(songs: Record<string, any>[], cookies: Record<s
 
 function mergeSongs(songs: Record<string, any>[]) {
   const mergedSongs = new Map<string, Record<string, any>>();
-  const lastTitleNo = new Map<string, number>();
 
   for (const song of songs) {
     if (mergedSongs.has(song.id)) {
       const mergedSong = mergedSongs.get(song.id)!;
 
-      // move the entry to the last if the version will be updated
-      if (mergedSong.version === null && song.version !== null) {
-        mergedSongs.delete(song.id);
-        mergedSongs.set(song.id, mergedSong);
-      }
-
       mergedSong.category = concatOrCoalesceString(mergedSong.category, song.category);
       mergedSong.version ??= song.version;
     } else {
-      const currNo = (lastTitleNo.get(song.title) ?? 0) + 1;
-      lastTitleNo.set(song.title, currNo);
-      song.songId = currNo > 1 ? `${song.title} (${currNo})` : song.title;
-
       mergedSongs.set(song.id, song);
     }
   }
 
-  return Array.from(mergedSongs.values());
+  const mergedSongsList = [...mergedSongs.values()]
+    .toSorted((a, b) => Number(a.version != null) - Number(b.version != null));
+
+  for (const song of mergedSongsList) {
+    song.sheetType = getSheetType(song);
+    song.songId = getSongId(song);
+  }
+
+  return mergedSongsList;
 }
 
 export default async function run() {
@@ -281,6 +379,9 @@ export default async function run() {
   const songs = mergeSongs(rawSongs);
   logger.info(`OK, ${rawSongs.length} raw songs merged into ${songs.length} songs.`);
 
+  logger.info('Ensuring every song has an unique songId ...');
+  ensureNoDuplicateEntry(songs.map((song) => song.songId));
+
   logger.info(`Fetching sheets from: ${DATA_URL} ...`);
   const sheets: Record<string, any>[] = [];
   for (let levelValue = 1; levelValue <= 50; levelValue += 1) {
@@ -288,7 +389,10 @@ export default async function run() {
 
     for await (const pageOfSheets of fetchSheets(levelValue, cookies)) {
       for (const sheet of pageOfSheets) {
-        sheet.songId = songs.find((song) => song.id === sheet.id)?.songId;
+        const parentSong = songs.find((song) => song.id === sheet.id)!;
+        sheet.songId = parentSong.songId;
+        sheet.type = parentSong.sheetType;
+
         sheets.push(sheet);
       }
     }
