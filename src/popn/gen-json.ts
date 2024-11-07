@@ -42,13 +42,14 @@ const versions = [
   { version: 'pop\'n éclale' },
   { version: 'pop\'n うさぎと猫と少年の夢' },
   { version: 'pop\'n peace' },
-  { version: 'pop\'n 解明リドルズ', abbr: 'pop\'n 解明リドルズ (Not updating)' },
-  { version: 'pop\'n UniLab', abbr: 'pop\'n UniLab (Not updating)' },
-  { version: 'pop\'n Jam&Fizz', abbr: 'pop\'n Jam&Fizz (Not updating)' },
+  { version: 'pop\'n 解明リドルズ', abbr: 'pop\'n 解明リドルズ (Not complete)' },
+  { version: 'pop\'n UniLab', abbr: 'pop\'n UniLab (Not complete)' },
+  { version: 'pop\'n Jam&Fizz', abbr: 'pop\'n Jam&Fizz (Not complete)' },
   //! add further version here !//
 ];
 const types = [
-  // empty
+  { type: 'std', name: 'STANDARD', abbr: 'STD' },
+  { type: 'upper', name: 'UPPER', abbr: 'UPPER' },
 ] as any[];
 const difficulties = [
   { difficulty: 'easy', name: 'EASY', color: '#0077ff' },
