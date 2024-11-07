@@ -57,7 +57,7 @@ const difficulties = [
   { difficulty: 'ex', name: 'EX', color: '#ff0077' },
 ];
 const regions = [
-  // empty
+  { region: 'jp', name: '日本版' },
 ] as any[];
 
 function getLevelValueOf(sheet: Record<string, any>) {
@@ -83,8 +83,10 @@ export default async function run() {
 
   const sheetRecords = await sequelize.query(/* sql */ `
     SELECT
-      *
+      *,
+      "JpSheets"."songId" IS NOT NULL AS "regions.jp"
     FROM "Sheets"
+      NATURAL LEFT JOIN "JpSheets"
   `, {
     type: Sequelize.QueryTypes.SELECT,
     nest: true,
