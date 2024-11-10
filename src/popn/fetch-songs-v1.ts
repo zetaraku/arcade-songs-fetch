@@ -9,7 +9,7 @@ import { Song, Sheet, JpSheet, SongArtist } from '@@/db/popn/models';
 import { concatOrCoalesceString, ensureNoDuplicateEntry } from '@/_core/utils';
 import 'dotenv/config';
 
-const logger = log4js.getLogger('popn/fetch-songs');
+const logger = log4js.getLogger('popn/fetch-songs-v1');
 logger.level = log4js.levels.INFO;
 
 const VERSION_ID = 'unilab';
