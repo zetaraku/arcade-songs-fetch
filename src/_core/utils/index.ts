@@ -12,6 +12,17 @@ export function concatOrCoalesceString(a: string | null, b: string | null): stri
   return a ?? b;
 }
 
+export function chunkBy<T>(arr: T[], chunkSize: number): T[][] {
+  const chunkCount = Math.ceil(arr.length / chunkSize);
+
+  return [...Array(chunkCount).keys()].map(
+    (index) => arr.slice(
+      chunkSize * index,
+      chunkSize * (index + 1),
+    ),
+  );
+}
+
 export function getSheetSorter({
   types,
   difficulties,
