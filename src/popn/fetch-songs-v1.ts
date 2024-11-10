@@ -17,7 +17,7 @@ const VERSION_ID = 'unilab';
 const DATA_URL = 'https://p.eagate.573.jp';
 
 const categoryMap = new Map([
-  [21, 'TV･ｱﾆﾒ'],
+  [21, 'TV・アニメ'],
   [22, 'CS'],
   [23, 'BEMANI'],
   //! add further category here !//
@@ -112,8 +112,14 @@ function getSheetType(rawSong: Record<string, any>) {
   const { title, version, id } = rawSong;
 
   if (title === 'Popperz Chronicle') {
-    if (id === 'H2sHxwnmJmfPvtJL/5TpSQ==') return 'std';
-    if (id === 'wCYAsaXbEgmT2HqFoX4qCQ==') return 'upper';
+    if (id === 'H2sHxwnmJmfPvtJL/5TpSQ==' || id === '2jSSvdnkagfziSpzjpi5emJ+2wtJTvbYhZLjizNqpC1a7JahCgiM7oqScF2mhqVO') return 'std';
+    if (id === 'wCYAsaXbEgmT2HqFoX4qCQ==' || id === '2jSSvdnkagfziSpzjpi5esQbbYqC2Vo03Pes9eYjkA9a7JahCgiM7oqScF2mhqVO') return 'upper';
+
+    throw new Error(`Unable to resolve sheet type: ${JSON.stringify(rawSong)}`);
+  }
+  if (title === 'virkatoの主題によるperson09風超絶技巧変奏曲') {
+    if (id === '2jSSvdnkagfziSpzjpi5etrIEVZxvlH3RH2GVKDHaDJa7JahCgiM7oqScF2mhqVO') return 'std';
+    if (id === '2jSSvdnkagfziSpzjpi5egtksZ1XCyLw9qB103UINPJa7JahCgiM7oqScF2mhqVO') return 'upper';
 
     throw new Error(`Unable to resolve sheet type: ${JSON.stringify(rawSong)}`);
   }
@@ -325,7 +331,7 @@ async function* fetchSongArtists(songs: Record<string, any>[], cookies: Record<s
   }
 }
 
-function mergeSongs(songs: Record<string, any>[]) {
+export function mergeSongs(songs: Record<string, any>[]) {
   const mergedSongs = new Map<string, Record<string, any>>();
 
   for (const song of songs) {

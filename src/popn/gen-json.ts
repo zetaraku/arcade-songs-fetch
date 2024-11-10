@@ -42,7 +42,7 @@ const versions = [
   { version: 'pop\'n éclale' },
   { version: 'pop\'n うさぎと猫と少年の夢' },
   { version: 'pop\'n peace' },
-  { version: 'pop\'n 解明リドルズ', abbr: 'pop\'n 解明リドルズ (Not complete)' },
+  { version: 'pop\'n 解明リドルズ' },
   { version: 'pop\'n UniLab', abbr: 'pop\'n UniLab (Not complete)' },
   { version: 'pop\'n Jam&Fizz', abbr: 'pop\'n Jam&Fizz (Not complete)' },
   //! add further version here !//
@@ -76,7 +76,7 @@ export default async function run() {
     SELECT
       *
     FROM "Songs"
-      LEFT JOIN "SongArtists" USING ("songId")
+      -- LEFT JOIN "SongArtists" USING ("songId")
   `, {
     type: Sequelize.QueryTypes.SELECT,
     nest: true,
