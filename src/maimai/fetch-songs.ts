@@ -64,6 +64,7 @@ function extractSong(rawSong: Record<string, any>) {
   // const sortOrder = Number(rawSong.sort);
   const version = versionMap.get(versionId);
   const releaseDate = Number(rawSong.release) ? `20${rawSong.release.substring(0, 2)}-${rawSong.release.substring(2, 4)}-${rawSong.release.substring(4, 6)}` : null;
+  const isBuddy = !!rawSong.buddy;
 
   if (version === undefined) {
     logger.warn(`Unknown version id: ${versionId}, remember to add new version entry.`);
@@ -86,7 +87,7 @@ function extractSong(rawSong: Record<string, any>) {
     isNew: !!rawSong.date,
     isLocked: !!rawSong.key,
 
-    comment: rawSong.comment ?? rawSong.utage_comment,
+    comment: (rawSong.comment ?? rawSong.utage_comment)?.replace(/^/, isBuddy ? '【🤝バディ】' : ''),
   };
 }
 
