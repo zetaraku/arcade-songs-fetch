@@ -184,6 +184,8 @@ export default async function run() {
       logger.error(e.message);
     } finally {
       await sleep(500);
+      // sleep for extra 60 seconds per 30 requests (rate limit from wikiwiki)
+      if ((1 + index) % 30 === 0) await sleep(60 * 1000);
     }
   }
 
