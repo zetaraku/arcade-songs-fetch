@@ -62,6 +62,11 @@
         - Beyond the BLUE|std|novice
         - Alice Maestera feat. nomico|std|advanced
         - Triple Counter|std|novice
+    - description: 第9回
+      sheets:
+        - waxing and wanding|std|novice
+        - SO FLY ME TO YOU|std|advanced
+        - Starlight Vision|std|advanced
     - title: 【Lv.02 流星】
     - description: 第1回 Aコース
       sheets:
@@ -124,6 +129,11 @@
         - Shiny Up!|std|advanced
         - Find the Answer|std|advanced
         - Mr.VIRTUALIZER|std|advanced
+    - description: 第9回
+      sheets:
+        - 始まりへと続く帰り道|std|advanced
+        - KIRAMEKI OVERDRIVE|std|advanced
+        - 心臓デモクラシー(EXIT TUNES)|std|advanced
     - title: 【Lv.03 月衝】
     - description: 第1回 Aコース
       sheets:
@@ -185,6 +195,11 @@
         - 君と僕とその空白と(EXIT TUNES)|std|advanced
         - 灼熱のBlazin' Beat|std|advanced
         - Hi-Fi!!双子'S|std|advanced
+    - description: 第9回
+      sheets:
+        - Utopia|std|advanced
+        - WARNING×WARNING×WARNING|std|advanced
+        - 突撃!ガラスのニーソ姫! D.watt nu-denpa RMX|std|advanced
     - title: 【Lv.04 瞬光】
     - description: 第1回 Aコース
       sheets:
@@ -246,6 +261,11 @@
         - ジャンピン・スマイル|std|advanced
         - Inixia|std|advanced
         - ハイスピヰド・ランパンシヰ|std|advanced
+    - description: 第9回
+      sheets:
+        - Wuv U -More2 HAPPY Re-Mix Special-|std|advanced
+        - Smooth Wind|std|advanced
+        - Game Over|std|advanced
     - title: 【Lv.05 天極】
     - description: 第1回 Aコース
       sheets:
@@ -307,6 +327,11 @@
         - Bolérrot|std|advanced
         - Clash of swords|std|advanced
         - NOT YOUR IDOL|std|advanced
+    - description: 第9回
+      sheets:
+        - 片翼のディザイア|std|advanced
+        - Spice Road|std|exhaust
+        - Hello world!|std|exhaust
     - title: 【Lv.06 烈風】
     - description: 第1回 Aコース
       sheets:
@@ -368,6 +393,11 @@
         - 狂騒こども節|std|exhaust
         - カシオペアノヒカリ|std|exhaust
         - Heavenly Adventure|std|exhaust
+    - description: 第9回
+      sheets:
+        - ナスカの丘 (Hi-NRG Remix)|std|exhaust
+        - 腐れ外道とチョコレゐト(EXIT TUNES)|std|exhaust
+        - MAXIVCORD|std|exhaust
     - title: 【Lv.07 雷電】
     - description: 第1回 Aコース
       sheets:
@@ -429,6 +459,11 @@
         - のぼれ八坂坂！|std|exhaust
         - MONOLITH|std|exhaust
         - はわわｗ！な展開っ！|std|exhaust
+    - description: 第9回
+      sheets:
+        - LIKE A VAMPIRE|std|exhaust
+        - ハガネノツルギ|std|exhaust
+        - Space Diver Tama|std|exhaust
     - title: 【Lv.08 麗華】
     - description: 第1回 Aコース
       sheets:
@@ -490,6 +525,11 @@
         - 刃の如く ft. ネコメアリ|std|maximum
         - GRISAILLE|std|exhaust
         - FEEL THE FORCE|std|exhaust
+    - description: 第9回
+      sheets:
+        - PIZZATIME|std|exhaust
+        - The EXworld of sound|std|exhaust
+        - Tomorrow Perfume (C-Show Remix)|std|exhaust
     - title: 【Lv.09 魔騎士】
     - description: 第1回 Aコース
       sheets:
@@ -551,6 +591,11 @@
         - Aqua,Luna-rium|std|maximum
         - Dogeza Stairs|std|exhaust
         - Realize／アニメ「Re:ゼロから始める異世界生活」より|std|maximum
+    - description: 第9回
+      sheets:
+        - アガット|std|exhaust
+        - Little Big Princess(DJ katsu EDIT)|std|maximum
+        - Hopscotch|std|maximum
     - title: 【Lv.10 剛力羅】
     - description: 第1回 Aコース
       sheets:
@@ -612,6 +657,11 @@
         - MOVE! (We Keep It Movin')|std|maximum
         - Dualive(EXIT TUNES)|std|exhaust
         - Harpuia|std|exhaust
+    - description: 第9回
+      sheets:
+        - Lovesick Lovetune(brz_style)|std|maximum
+        - Jetcoaster Windy|std|maximum
+        - Sakura Mirage|std|exhaust
     - title: 【Lv.11 或帝滅斗】
     - description: 第1回 Aコース
       sheets:
@@ -668,6 +718,11 @@
         - CadenzaMaiden|std|maximum
         - Test Flight|std|maximum
         - サイコパスラビット|std|maximum
+    - description: 第9回
+      sheets:
+        - Leviathan|std|maximum
+        - Chant du Cygne|std|exceed
+        - トリコエリヌム▽コンチェルト|std|maximum
     - title: 【Lv.∞ 暴龍天】
     - description: 第1回 Aコース
       sheets:
@@ -724,6 +779,11 @@
         - XROSS INFECTION|std|gravity
         - ЯeviveR|std|maximum
         - Λkasha|std|maximum
+    - description: 第9回
+      sheets:
+        - VΛZiLiSQ|std|maximum
+        - perditus†paradisus|std|maximum
+        - Don't you dare play GOD|std|maximum
 - title: "[VIVID WAVE] SKILL ANALYZER（スキルアナライザー）"
   id: vivid-wave-skill-analyzer
   sections:
