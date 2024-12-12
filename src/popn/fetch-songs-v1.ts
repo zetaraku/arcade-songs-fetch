@@ -255,8 +255,8 @@ async function* fetchSheets(levelValue: number, cookies: Record<string, string>)
       .map((li) => {
         const id = new URL($(li).find('.col_music_lv > a').attr('href')!, DATA_URL).searchParams.get('no');
         const title = $(li).find('.col_music_lv > a').text().trim()
-          // changed from pop'n Jam&Fizz
-          .replaceAll(/* FULL WIDTH TILDE */ '～', /* WAVE DASH */ '〜');
+          // changed from pop'n Jam&Fizz (again!)
+          .replaceAll(/* WAVE DASH */ '〜', /* FULL WIDTH TILDE */ '～');
         const genre = $(li).find('.col_music_lv > div').text().trim();
 
         const difficulty = $(li).find('.col_normal_lv').text().trim().toLowerCase();
