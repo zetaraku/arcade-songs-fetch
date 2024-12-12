@@ -64,7 +64,7 @@ const manualUpperMappingWithVersion = new Map([
   ['Little prayer', [null, 'pop\'n 解明リドルズ']],
   ['MADSPEED狂信道', ['pop\'n éclale', 'pop\'n peace']],
   ['Russian Caravan Rhapsody', ['pop\'n ラピストリア', 'pop\'n 解明リドルズ']],
-  ['ZETA〜素数の世界と超越者〜', ['pop\'n 15 ADVENTURE', 'pop\'n 解明リドルズ']],
+  ['ZETA～素数の世界と超越者～', ['pop\'n 15 ADVENTURE', 'pop\'n 解明リドルズ']],
   ['murmur twins(guitar pop ver.)', ['pop\'n 10', 'pop\'n peace']],
   ['nostos', ['pop\'n うさぎと猫と少年の夢', 'pop\'n peace']],
   ['only my railgun', ['pop\'n 19 TUNE STREET', 'pop\'n UniLab']],
@@ -90,7 +90,7 @@ const manualUpperMappingWithVersion = new Map([
   ['真超深ＴＩＯＮ', ['pop\'n 13 カーニバル', 'pop\'n peace']],
   ['路男', ['pop\'n 15 ADVENTURE', 'pop\'n 解明リドルズ']],
   ['雫', ['pop\'n 12 いろは', 'pop\'n peace']],
-  ['鳳凰〜Chinese Phoenix Mix〜', ['pop\'n 20 fantasia', 'pop\'n 解明リドルズ']],
+  ['鳳凰～Chinese Phoenix Mix～', ['pop\'n 20 fantasia', 'pop\'n 解明リドルズ']],
 ]);
 
 const manualAltMappingWithGenre = new Map([
