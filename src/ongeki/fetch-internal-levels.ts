@@ -10,8 +10,6 @@ logger.level = log4js.levels.INFO;
 
 const manualMappings = new Map([
   ['God knows...', 'God knows…'],
-  ['Prominence -式宮 碧音ソロver.-', 'Prominence -式宮碧音ソロver.-'],
-  ['TiamaT:F minor', 'TiamaT：F minor'],
   ['sister\'s noise', 'sister’s noise'],
 ]);
 
