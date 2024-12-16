@@ -38,6 +38,7 @@ const versions = [
   { releaseDate: '2023-05-11', version: 'SUN PLUS', abbr: 'SUN+' },
   { releaseDate: '2023-12-14', version: 'LUMINOUS', abbr: 'LUMINOUS' },
   { releaseDate: '2024-06-20', version: 'LUMINOUS PLUS', abbr: 'LUMINOUS+' },
+  { releaseDate: '2024-12-12', version: 'VERSE', abbr: 'VERSE' },
   //! add further mapping here !//
 ];
 const types = [
