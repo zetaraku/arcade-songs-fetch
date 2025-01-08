@@ -35,6 +35,9 @@ export function getSongId(rawSong: Record<string, any>): string {
     }
     return `(WE) ${title}`;
   }
+  if (title === 'Help me, ERINNNNNN!!') {
+    if (id === '97') return 'Help me, ERINNNNNN!!（Band ver.）';
+  }
   return title;
 }
 
