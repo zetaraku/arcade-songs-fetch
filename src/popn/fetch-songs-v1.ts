@@ -112,14 +112,14 @@ function getSheetType(rawSong: Record<string, any>) {
   const { title, version, id } = rawSong;
 
   if (title === 'Popperz Chronicle') {
-    if (id === 'H2sHxwnmJmfPvtJL/5TpSQ==' || id === '2jSSvdnkagfziSpzjpi5emJ+2wtJTvbYhZLjizNqpC1a7JahCgiM7oqScF2mhqVO') return 'std';
-    if (id === 'wCYAsaXbEgmT2HqFoX4qCQ==' || id === '2jSSvdnkagfziSpzjpi5esQbbYqC2Vo03Pes9eYjkA9a7JahCgiM7oqScF2mhqVO') return 'upper';
+    if (id === 'H2sHxwnmJmfPvtJL/5TpSQ==' || id === 'zU0ivUh73IFat5/hx/JghLkUxbaoemCVTI+4xVRMd9YFzVSkKdvUMooweJ0Zx0ks') return 'std';
+    if (id === 'wCYAsaXbEgmT2HqFoX4qCQ==' || id === 'zU0ivUh73IFat5/hx/JghLFV8e6oC6qQhrejqps81M4FzVSkKdvUMooweJ0Zx0ks') return 'upper';
 
     throw new Error(`Unable to resolve sheet type: ${JSON.stringify(rawSong)}`);
   }
   if (title === 'virkatoの主題によるperson09風超絶技巧変奏曲') {
-    if (id === '2jSSvdnkagfziSpzjpi5etrIEVZxvlH3RH2GVKDHaDJa7JahCgiM7oqScF2mhqVO') return 'std';
-    if (id === '2jSSvdnkagfziSpzjpi5egtksZ1XCyLw9qB103UINPJa7JahCgiM7oqScF2mhqVO') return 'upper';
+    if (id === 'zU0ivUh73IFat5/hx/JghHEHNc+gg77S/w3sSon5Hm4FzVSkKdvUMooweJ0Zx0ks') return 'std';
+    if (id === 'zU0ivUh73IFat5/hx/JghMpoXS8rwjn9H3qESJLMv4UFzVSkKdvUMooweJ0Zx0ks') return 'upper';
 
     throw new Error(`Unable to resolve sheet type: ${JSON.stringify(rawSong)}`);
   }
