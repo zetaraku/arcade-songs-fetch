@@ -15,7 +15,7 @@ const categories = [
   { category: 'POP MUSIC' },
   { category: 'VIRTUAL POP' },
   { category: 'ANIME & GAME' },
-  { category: '東方' },
+  { category: 'TOUHOU' },
   { category: 'FOR MUSIC GAMERS' },
   //! add further category here !//
 ];
