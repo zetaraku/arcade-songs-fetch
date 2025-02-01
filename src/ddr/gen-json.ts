@@ -11,12 +11,14 @@ const DIST_PATH = 'dist/ddr';
 
 const categories = [
   { category: null },
-  { category: 'FIRST STEP' },
-  { category: 'POP MUSIC' },
-  { category: 'VIRTUAL POP' },
-  { category: 'ANIME & GAME' },
-  { category: 'TOUHOU' },
-  { category: 'FOR MUSIC GAMERS' },
+  { category: 'J-POP' },
+  { category: '洋楽' },
+  { category: 'アニメ・ゲーム' },
+  { category: '東方アレンジ' },
+  { category: 'バラエティ' },
+  { category: 'ひなビタ♪' },
+  { category: 'バンめし♪' },
+  { category: 'ときめきアイドル' },
   //! add further category here !//
 ];
 const versions = [
@@ -39,7 +41,6 @@ const versions = [
   { version: 'DanceDanceRevolution A20', abbr: 'A20' },
   { version: 'DanceDanceRevolution A20 PLUS', abbr: 'A20 PLUS' },
   { version: 'DanceDanceRevolution A3', abbr: 'A3' },
-  { version: 'DanceDanceRevolution WORLD', abbr: 'WORLD' },
   //! add further version here !//
 ];
 const types = [

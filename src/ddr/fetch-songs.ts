@@ -9,7 +9,7 @@ import { Song, Sheet } from '@@/db/ddr/models';
 const logger = log4js.getLogger('ddr/fetch-songs');
 logger.level = log4js.levels.INFO;
 
-const VERSION_ID = 'ddrworld';
+const VERSION_ID = 'ddra3';
 
 const DATA_URL = 'https://p.eagate.573.jp';
 const IMAGE_BASE_URL = 'https://p.eagate.573.jp/';
@@ -34,17 +34,18 @@ const versions = [
   { versionId: 16, version: 'DanceDanceRevolution A20' },
   { versionId: 17, version: 'DanceDanceRevolution A20 PLUS' },
   { versionId: 18, version: 'DanceDanceRevolution A3' },
-  { versionId: 19, version: 'DanceDanceRevolution WORLD' },
   //! add further version here !//
 ];
 
 const categories = [
-  { categoryId: 1, category: 'FIRST STEP' },
-  { categoryId: 2, category: 'POP MUSIC' },
-  { categoryId: 3, category: 'VIRTUAL POP' },
-  { categoryId: 4, category: 'ANIME & GAME' },
-  { categoryId: 5, category: 'TOUHOU' },
-  { categoryId: 6, category: 'FOR MUSIC GAMERS' },
+  { categoryId: 1, category: 'J-POP' },
+  { categoryId: 9, category: '洋楽' },
+  { categoryId: 2, category: 'アニメ・ゲーム' },
+  { categoryId: 8, category: '東方アレンジ' },
+  { categoryId: 3, category: 'バラエティ' },
+  { categoryId: 7, category: 'ひなビタ♪' },
+  { categoryId: 12, category: 'バンめし♪' },
+  { categoryId: 11, category: 'ときめきアイドル' },
   //! add further category here !//
 ] as const;
 
@@ -64,7 +65,7 @@ async function* getCategories() {
 
       const response = await axios.get(`${DATA_URL}/${pagePath}`, {
         params: {
-          filter: /* genre filter */ 7,
+          filter: /* genre filter */ 6,
           filtertype: categoryId,
           offset: pageIndex,
         },
