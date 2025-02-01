@@ -28,12 +28,12 @@ const versions = [
   { versionId: 10, version: 'DDR X' },
   { versionId: 11, version: 'DDR X2' },
   { versionId: 12, version: 'DDR X3 VS 2ndMIX' },
-  { versionId: 13, version: 'DanceDanceRevolution (2013)' },
-  { versionId: 14, version: 'DanceDanceRevolution (2014)' },
-  { versionId: 15, version: 'DanceDanceRevolution A' },
-  { versionId: 16, version: 'DanceDanceRevolution A20' },
-  { versionId: 17, version: 'DanceDanceRevolution A20 PLUS' },
-  { versionId: 18, version: 'DanceDanceRevolution A3' },
+  { versionId: 13, version: 'DDR (2013)' },
+  { versionId: 14, version: 'DDR (2014)' },
+  { versionId: 15, version: 'DDR A' },
+  { versionId: 16, version: 'DDR A20' },
+  { versionId: 17, version: 'DDR A20 PLUS' },
+  { versionId: 18, version: 'DDR A3' },
   //! add further version here !//
 ];
 
