@@ -4,7 +4,7 @@ import sleep from 'sleep-promise';
 import log4js from 'log4js';
 import * as cheerio from 'cheerio';
 import { hashed, ensureNoDuplicateEntry } from '@/_core/utils';
-import { Song, Sheet } from '@@/db/ddr/models';
+import { Song, Sheet, JpSheet } from '@@/db/ddr/models';
 import 'dotenv/config';
 
 const logger = log4js.getLogger('ddr/fetch-songs-v2');
@@ -344,6 +344,10 @@ export default async function run() {
 
   logger.info('Updating sheets ...');
   await Promise.all(sheets.map((sheet) => Sheet.upsert(sheet)));
+
+  logger.info('Truncating and Inserting jpSheets ...');
+  await JpSheet.truncate();
+  await JpSheet.bulkCreate(sheets);
 
   logger.info('Done!');
 }
