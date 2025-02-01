@@ -6,7 +6,7 @@ import * as cheerio from 'cheerio';
 import { hashed, ensureNoDuplicateEntry } from '@/_core/utils';
 import { Song, Sheet } from '@@/db/ddr/models';
 
-const logger = log4js.getLogger('ddr/fetch-songs');
+const logger = log4js.getLogger('ddr/fetch-songs-v1');
 logger.level = log4js.levels.INFO;
 
 const VERSION_ID = 'ddra3';
