@@ -250,7 +250,7 @@ function injectCategoryInfo(
   songCategoryMapping: Map<string, string[]>,
 ) {
   for (const song of songs) {
-    song.category = songCategoryMapping.get(song.songId)?.join('|');
+    song.category = songCategoryMapping.get(song.songId)?.join('|') ?? null;
   }
 }
 
@@ -259,7 +259,7 @@ function injectVersionInfo(
   songVersionMapping: Map<string, string[]>,
 ) {
   for (const song of songs) {
-    song.version = songVersionMapping.get(song.songId);
+    song.version = songVersionMapping.get(song.songId) ?? null;
   }
 }
 

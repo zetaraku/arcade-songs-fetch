@@ -191,7 +191,7 @@ function injectCategoryInfo(
   songCategoryMapping: Map<string, string[]>,
 ) {
   for (const song of songs) {
-    song.category = songCategoryMapping.get(song.songId)?.join('|');
+    song.category = songCategoryMapping.get(song.songId)?.join('|') ?? null;
   }
 }
 
