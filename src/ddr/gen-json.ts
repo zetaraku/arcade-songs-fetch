@@ -11,14 +11,12 @@ const DIST_PATH = 'dist/ddr';
 
 const categories = [
   { category: null },
-  { category: 'J-POP' },
-  { category: '洋楽' },
-  { category: 'アニメ・ゲーム' },
-  { category: '東方アレンジ' },
-  { category: 'バラエティ' },
-  { category: 'ひなビタ♪' },
-  { category: 'バンめし♪' },
-  { category: 'ときめきアイドル' },
+  { category: 'FIRST STEP' },
+  { category: 'POP MUSIC' },
+  { category: 'VIRTUAL POP' },
+  { category: 'ANIME & GAME' },
+  { category: 'TOUHOU' },
+  { category: 'FOR MUSIC GAMERS' },
   //! add further category here !//
 ];
 const versions = [
@@ -41,6 +39,7 @@ const versions = [
   { version: 'DDR A20', abbr: 'A20' },
   { version: 'DDR A20 PLUS', abbr: 'A20 PLUS' },
   { version: 'DDR A3', abbr: 'A3' },
+  { version: 'DDR WORLD', abbr: 'WORLD' },
   //! add further version here !//
 ];
 const types = [
