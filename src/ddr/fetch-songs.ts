@@ -76,7 +76,7 @@ async function* getCategories() {
       const songs = $('#data_tbl tr.data').toArray()
         .map((tr) => {
           const title = $(tr).find('.music_tit').text().trim();
-          const artist = $(tr).find('.artist_nam').text().trim();
+          const artist = $(tr).find('.artist_nam').text().trim() || null;
 
           const rawSong = {
             category,
