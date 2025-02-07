@@ -49,6 +49,7 @@ const manualMappings = new Map([
   ['Re:End of a Dream', 'Re：End of a Dream'],
   ['Rooftop Run: Act１', 'Rooftop Run: Act1'],
   ['Rooftop Run:Act1', 'Rooftop Run: Act1'],
+  ['R’N’R Monsta', 'R\'N\'R Monsta'],
   ['SQUAD -Phvntom-', 'SQUAD-Phvntom-'],
   ['Save This World νMix', 'Save This World νMIX'],
   ['Seclet Sleuth', 'Secret Sleuth'],
