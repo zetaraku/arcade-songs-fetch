@@ -1,3 +1,368 @@
+- title: LUMINOUS クラス認定
+  id: luminous-class-certification
+  sections:
+    - title: 【CLASS Ⅰ】
+    - description: |-
+        「First Step」コース
+        ❤ 50｜-0/-0/-1｜+10
+      sheets:
+        - STARTLINER|std|master
+        - Starduster|std|master
+        - Snow Colored Score|std|master
+    - description: |-
+        「はじまりのコース」コース
+        ❤ 50｜-0/-0/-1｜+10
+      sheets:
+        - ここからはじまるプロローグ。|std|expert
+        - ハジマリノピアノ|std|expert
+        - Yume no hajimari|std|expert
+    - description: |-
+        「読めたらクラス認定」コース
+        ❤ 50｜-0/-0/-1｜+10
+      sheets:
+        - 立川浄穢捕物帳|std|expert
+        - U&iVERSE -銀河鸞翔-|std|expert
+        - 昵懇レファレンス|std|master
+    - description: |-
+        「ADVANCED BOSS RUSH」コース
+        ❤ 50｜-0/-0/-1｜+10
+      sheets:
+        - POTENTIAL|std|advanced
+        - Strange Love|std|advanced
+        - Rebellion|std|advanced
+    - description: |-
+        「Saturn Set」コース
+        ❤ 50｜-0/-0/-1｜+10
+      sheets:
+        - セガサターン起動音[H.][Remix]|std|expert
+        - Dreams Dreams:Kids Ver.|std|master
+        - 檄!帝国華撃団|std|master
+    - description: |-
+        「卯月 Set」コース
+        ❤ 50｜-0/-0/-1｜+10
+      sheets:
+        - 4月1日でございました|std|expert
+        - Help me, あーりん！|std|master
+        - Yes! Party Time!!|std|master
+    - description: |-
+        「クラス認定 - I - Random」コース
+        ❤ 50｜-0/-0/-1｜+10
+      sheets:
+        - ランダムで選曲されます|rnd|random|10
+        - ランダムで選曲されます|rnd|random|10+
+        - ランダムで選曲されます|rnd|random|11
+    - title: 【CLASS Ⅱ】
+    - description: |-
+        「イロドリミドリ Random」コース
+        ❤ 50｜-0/-0/-1｜+10
+      sheets:
+        - 特定楽曲から選曲されます|rnd|random|-
+        - 特定楽曲から選曲されます|rnd|random|-
+        - 特定楽曲から選曲されます|rnd|random|-
+    - description: |-
+        「猫だらけ！？」コース
+        ❤ 30｜-0/-0/-1｜+0
+      sheets:
+        - ▲MEW▲△MEW△CAKE|std|master
+        - ネ！コ！|std|master
+        - 猫祭り|std|master
+    - description: |-
+        「隠れ光吉 Selection」コース
+        ❤ 50｜-0/-0/-1｜+0
+      sheets:
+        - The wheel to the right|std|expert
+        - 8-EM|std|expert
+        - 恋はりんりん☆あーりんベル|std|master
+    - description: |-
+        「放課後 Set」コース
+        ❤ 50｜-0/-0/-1｜+0
+      sheets:
+        - アフタースクール・エモーション|std|master
+        - 放課後マーメイド|std|master
+        - 放課後ストライド|std|master
+    - description: |-
+        「魂音Set」コース
+        ❤ 50｜-0/-0/-1｜+0
+      sheets:
+        - WE GOTTA SOUL|std|master
+        - Paradisoda|std|master
+        - 福宿音屋魂音泉|std|master
+    - description: |-
+        「Bad Apple!! Set」コース
+        ❤ 50｜-0/-0/-1｜+0
+      sheets:
+        - Bad Apple!! feat.nomico|std|master
+        - Bad Apple!! feat.nomico (Nhato Remix)|std|master
+        - Bad Apple!! feat.nomico (REDALiCE Remix)|std|master
+    - description: |-
+        「クラス認定 - Ⅱ - Random」コース
+        ❤ 50｜-0/-0/-1｜+0
+      sheets:
+        - ランダムで選曲されます|rnd|random|11+
+        - ランダムで選曲されます|rnd|random|12
+        - ランダムで選曲されます|rnd|random|12+
+    - title: 【CLASS Ⅲ】
+    - description: |-
+        「小鳥遊さんSet」コース
+        ❤ 50｜-0/-0/-1｜+0
+      sheets:
+        - 非実在系女子達はどうすりゃいいですか？|std|master
+        - Mami Mami Zone|std|master
+        - ぽっぴっぽー|std|master
+    - description: |-
+        「→→→→→→→→」コース
+        ❤ 80｜-0/-1/-1｜+10
+      sheets:
+        - トリドリ⇒モリモリ! Lovely fruits☆|std|master
+        - まっすぐ→→→ストリーム！|std|master
+        - キラメケ→Shoot it Now!|std|master
+    - description: |-
+        「【Ⅲ】コース【CHUNITHM】」コース
+        ❤ 30｜-0/-0/-1｜+0
+      sheets:
+        - ばかみたい【Taxi Driver Edition】|std|master
+        - 【東方ニコカラ】秘神マターラ feat.魂音泉【IOSYS】|std|master
+        - 【冒険】イングリット葛西降臨！【実況】|std|master
+    - description: |-
+        「革命」コース
+        ❤ 100｜-0/-1/-1｜+0
+      sheets:
+        - KING|std|master
+        - No Life Queen [DJ Command Remix]|std|master
+        - Jack the GAME|std|master
+    - description: |-
+        「檸檬 Set」コース
+        ❤ 30｜-0/-0/-1｜+0
+      sheets:
+        - 異星にいこうね|std|master
+        - 全力ハッピーライフ|std|master
+        - 《信仰》 ～ Eudaimonia|std|master
+    - description: |-
+        「Over Set」コース
+        ❤ 100｜-0/-1/-1｜+0
+      sheets:
+        - Starting Over|std|master
+        - Summer is over|std|master
+        - Drivessover|std|master
+    - description: |-
+        「クラス認定 - Ⅲ - Random」コース
+        ❤ 30｜-0/-0/-1｜+0
+      sheets:
+        - ランダムで選曲されます|rnd|random|12+
+        - ランダムで選曲されます|rnd|random|13
+        - ランダムで選曲されます|rnd|random|13+
+    - title: 【CLASS Ⅳ】
+    - description: |-
+        「アー、アー、アー」コース
+        ❤ 50｜-0/-1/-1｜+0
+      sheets:
+        - フィクサー|std|master
+        - ヴンダーカンマー|std|master
+        - サイバーサンダーサイダー|std|master
+    - description: |-
+        「CRITICAL HARD CHALLENGE」コース
+        ❤ 16｜-1/-1/-1｜+0
+      sheets:
+        - Be4Step|std|advanced
+        - Advance（CHUNITHM edit）|std|advanced
+        - 幾望の月|std|advanced
+    - description: |-
+        「曲名覚えたらクラス認定」コース
+        ❤ 50｜-0/-1/-1｜+10
+      sheets:
+        - 男装女形表裏一体発狂小娘の詐称疑惑と苦悩と情熱。|std|master
+        - 私の中の幻想的世界観及びその顕現を想起させたある現実での出来事に関する一考察|std|master
+        - 紅き魔汁、闇より降りて天啓の響きを導く|std|master
+    - description: |-
+        「RAVE Selection」コース
+        ❤ 80｜-0/-1/-1｜+10
+      sheets:
+        - REDRAVE|std|master
+        - MUSIC PЯAYER|std|master
+        - We Gonna Journey|std|master
+    - description: |-
+        「!?!!!!?????」コース
+        ❤ 80｜-0/-1/-1｜+10
+      sheets:
+        - The wheel to the Night ～インド人が夢に!?～|std|master
+        - CHOCOLATE BOMB!!!!|std|master
+        - めっちゃ煽ってくるタイプの音ゲーボス曲ちゃんなんかに負けないが？？？？？|std|master
+    - description: |-
+        「owl＊tree -final set-」コース
+        ❤ 50｜-0/-1/-1｜+10
+      sheets:
+        - Inpaqq|std|master
+        - Baqeela|std|master
+        - felys -final remix-|std|master
+    - description: |-
+        「クラス認定 - Ⅳ - Random」コース
+        ❤ 500｜-1/-1/-1｜+0
+      sheets:
+        - ランダムで選曲されます|rnd|random|13+
+        - ランダムで選曲されます|rnd|random|14
+        - ランダムで選曲されます|rnd|random|14+
+    - title: 【CLASS Ⅴ】
+    - description: |-
+        「Requiem Collection」コース
+        ❤ 300｜-1/-1/-1｜+0
+      sheets:
+        - ぜったい！昇天★鎮魂歌♂|std|master
+        - Odin|std|master
+        - End Time|std|master
+    - description: |-
+        「CRITICAL EX CHALLENGE」コース
+        ❤ 12｜-1/-1/-1｜+0
+      sheets:
+        - ECHO|std|expert
+        - おとせサンダー|std|expert
+        - CHAOS|std|expert
+    - description: |-
+        「EXPERT BOSS RUSH」コース
+        ❤ 50｜-0/-1/-1｜+0
+      sheets:
+        - 怒槌|std|expert
+        - Killing Rhythm|std|expert
+        - MALKUTH -The Last Ruler of Terrestrials-|std|expert
+    - description: |-
+        「【Ⅴ】コース【CHUNITHM】」コース (LUMINOUS)
+        ❤ 50｜-0/-1/-1｜+10
+      sheets:
+        - "]-[|/34<#!|std|master"
+        - "[CRYSTAL_ACCESS]|std|master"
+        - otorii INNOVATED -[i]3-|std|master
+    - description: |-
+        「【Ⅴ】コース【CHUNITHM】」コース (LUMINOUS PLUS)
+        ❤ 50｜-0/-1/-1｜+10
+      sheets:
+        - Like the Wind [Reborn]|std|master
+        - "[CRYSTAL_ACCESS]|std|master"
+        - otorii INNOVATED -[i]3-|std|master
+    - description: |-
+        「Triple Time Set」コース
+        ❤ 50｜-0/-1/-1｜+10
+      sheets:
+        - Walzer für das Nichts|std|master
+        - Last Celebration|std|master
+        - 混沌を越えし我らが神聖なる調律主を讃えよ|std|master
+    - description: |-
+        「Speed 202」コース
+        ❤ 50｜-0/-1/-1｜+0
+      sheets:
+        - larva|std|master
+        - AttraqtiA|std|master
+        - βlαnoir|std|master
+    - description: |-
+        「クラス認定 - Ⅴ - Random」コース
+        ❤ 300｜-1/-1/-1｜+0
+      sheets:
+        - ランダムで選曲されます|rnd|random|14
+        - ランダムで選曲されます|rnd|random|14+
+        - ランダムで選曲されます|rnd|random|14+
+    - title: 【CLASS ∞】
+    - description: |-
+        「INNOVATION Set」コース
+        ❤ 30｜-0/-1/-1｜+10
+      sheets:
+        - (WE) Trackless wilderness|we|【狂】
+        - (WE) Parad'ox|we|【狂】
+        - (WE) otorii INNOVATED -[i]3-|we|【狂】
+    - description: |-
+        「CRITICAL JUSTICE CHALLENGE」コース
+        ❤ 8｜-1/-1/-1｜+0
+      sheets:
+        - MEGALOVANIA|std|master
+        - Twice up Scenery|std|master
+        - volcanic|std|master
+    - description: |-
+        「infinite sprint」コース
+        ❤ 30｜-0/-1/-1｜+10
+      sheets:
+        - 雪男|std|master
+        - ENDYMION|std|master
+        - Λzure Vixen|std|master
+    - description: |-
+        「Sunset」コース
+        ❤ 30｜-0/-1/-1｜+10
+      sheets:
+        - グラウンドスライダー協奏曲第一番「風唄」|std|master
+        - Makear|std|master
+        - Daphnis|std|master
+    - description: |-
+        「クラス認定 - ∞ - Random」コース
+        ❤ 150｜-1/-1/-1｜+0
+      sheets:
+        - ランダムで選曲されます|rnd|random|14
+        - ランダムで選曲されます|rnd|random|14+
+        - ランダムで選曲されます|rnd|random|15
+    - title: 【CLASS EXTRA】
+    - description: |-
+        「RANDOM」コース
+        ❤ 50｜-0/-0/-1｜+0
+      sheets:
+        - ランダムで選曲されます|rnd|random|12
+        - ランダムで選曲されます|rnd|random|13
+        - (WE) Random|we|【分】
+    - description: |-
+        「Wall Panic!」コース
+        ❤ 400｜(+1)/-1/-1/-1｜+0
+        ※スピードが5.5になる、LIFEに応じてフィールドウォールが変動
+      sheets:
+        - ランダムで選曲されます|rnd|random|10+
+        - ランダムで選曲されます|rnd|random|11
+        - ランダムで選曲されます|rnd|random|11+
+    - description: |-
+        「IRODORI LUNATIC!!」コース
+        ❤ 3000｜-1/-1/-1｜+0
+      sheets:
+        - (WE) イロドリミドリ杯花映塚全一決定戦公式テーマソング『ウソテイ』|we|【嘘】
+        - (WE) あねぺったん|we|【嘘】
+        - (WE) Help me, あーりん！|we|【嘘】
+    - description: |-
+        「蔵出し Set」コース
+        ❤ 100｜-0/-1/-1｜+50
+      sheets:
+        - (WE) 月の光|we|【蔵】
+        - (WE) 創世のコンツェルティーナ|we|【蔵】
+        - (WE) Therapeutic Hoedown|we|【蔵】
+    - description: |-
+        「Irregular Speed」コース
+        ❤ 100｜-0/-0/-1｜+0
+      sheets:
+        - (WE) 回レ！雪月花|we|【速】
+        - (WE) タイムカプセル|we|【時】
+        - (WE) レーイレーイ|we|【？】
+    - description: |-
+        【期間限定】
+        「KING of Performai The 6th 予選① EXPERT」コース
+        ❤ 50｜(+50)/+50/+50/-1｜+0
+      sheets:
+        - TEmPTaTiON|std|expert
+        - 小悪魔の遊園地|std|expert
+        - MeteorSnow|std|expert
+    - description: |-
+        【期間限定】
+        「KING of Performai The 6th 予選② EXPERT」コース
+        ❤ 50｜(+50)/+50/+50/-1｜+0
+      sheets:
+        - Titania|std|expert
+        - 《創造》 ～ Cries, beyond The End|std|expert
+        - To：Be Continued|std|expert
+    - description: |-
+        【期間限定】
+        「KING of Performai The 6th 予選① MASTER」コース
+        ❤ 30｜(+30)/+30/+30/-1｜+0
+      sheets:
+        - TEmPTaTiON|std|master
+        - 小悪魔の遊園地|std|master
+        - MeteorSnow|std|master
+    - description: |-
+        【期間限定】
+        「KING of Performai The 6th 予選② MASTER」コース
+        ❤ 30｜(+30)/+30/+30/-1｜+0
+      sheets:
+        - Titania|std|master
+        - 《創造》 ～ Cries, beyond The End|std|master
+        - To：Be Continued|std|master
 - title: SUN クラス認定
   id: sun-class-certification
   sections:
