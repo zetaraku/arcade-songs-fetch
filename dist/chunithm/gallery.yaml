@@ -1,3 +1,146 @@
+- title: VERSE クラス認定
+  id: verse-class-certification
+  sections:
+    - title: 【CLASS Ⅰ】
+    - description: |-
+        「First Step」コース
+        ❤ 50｜-0/-0/-1｜+10
+      sheets:
+        - STARTLINER|std|master
+        - Starduster|std|master
+        - 少女PastQ|std|master
+    - description: |-
+        「Adventure Set」コース
+        ❤ 50｜-0/-0/-1｜+10
+      sheets:
+        - キズナヒトツ|std|master
+        - 鳥の詩|std|master
+        - Clover Heart's|std|master
+    - description: |-
+        「クラス認定 - I - Random」コース
+        ❤ 50｜-0/-0/-1｜+10
+      sheets:
+        - ランダムで選曲されます|rnd|random|10
+        - ランダムで選曲されます|rnd|random|10+
+        - ランダムで選曲されます|rnd|random|11
+    - title: 【CLASS Ⅱ】
+    - description: |-
+        「タオル Set」コース
+        ❤ 50｜-0/-0/-1｜+0
+      sheets:
+        - Splash Dance!!|std|master
+        - ハッピータイフーン|std|master
+        - (WE) 青春サイダー|we|【布】
+    - description: |-
+        「ゆっくりしていってね！」コース
+        ❤ 30｜-0/-0/-1｜+0
+      sheets:
+        - ロング・スロー・アライブ|std|master
+        - すろぉもぉしょん|std|master
+        - ユックリ feat.餅千歳|std|master
+    - description: |-
+        「クラス認定 - Ⅱ - Random」コース
+        ❤ 50｜-0/-0/-1｜+0
+      sheets:
+        - ランダムで選曲されます|rnd|random|11+
+        - ランダムで選曲されます|rnd|random|12
+        - ランダムで選曲されます|rnd|random|12+
+    - title: 【CLASS Ⅲ】
+    - description: |-
+        「インターネット Set」コース
+        ❤ 50｜-0/-0/-1｜+0
+      sheets:
+        - INTERNET OVERDOSE|std|master
+        - インターネットサバイバー|std|master
+        - INTERNET YAMERO|std|master
+    - description: |-
+        「いよわ Set」コース
+        ❤ 80｜-0/-1/-1｜+10
+      sheets:
+        - 1000年生きてる|std|master
+        - 異星にいこうね|std|master
+        - きゅうくらりん|std|master
+    - description: |-
+        「クラス認定 - Ⅲ - Random」コース
+        ❤ 30｜-0/-0/-1｜+0
+      sheets:
+        - ランダムで選曲されます|rnd|random|12+
+        - ランダムで選曲されます|rnd|random|13
+        - ランダムで選曲されます|rnd|random|13+
+    - title: 【CLASS Ⅳ】
+    - description: |-
+        「TAP TAP PARADISE Set」コース
+        ❤ 80｜-0/-1/-1｜+0
+      sheets:
+        - Ωκεανος|std|master
+        - NightTheater|std|master
+        - Vallista|std|master
+    - description: |-
+        「ULTIMATE SeelischTact Set」コース
+        ❤ 80｜-0/-1/-1｜+10
+      sheets:
+        - Anemone|std|ultima
+        - 砂漠のハンティングガール♡|std|ultima
+        - Theme of SeelischTact|std|ultima
+    - description: |-
+        「クラス認定 - Ⅳ - Random」コース
+        ❤ 500｜-1/-1/-1｜+0
+      sheets:
+        - ランダムで選曲されます|rnd|random|13+
+        - ランダムで選曲されます|rnd|random|14
+        - ランダムで選曲されます|rnd|random|14+
+    - title: 【CLASS Ⅴ】
+    - description: |-
+        「Boss Selection Set」コース
+        ❤ 100｜-0/-1/-1｜+0
+      sheets:
+        - Garakuta Doll Play|std|master
+        - Contrapasso -inferno-|std|master
+        - 怒槌|std|master
+    - description: |-
+        「CRITICAL EX CHALLENGE」コース
+        ❤ 12｜-1/-1/-1｜+0
+      sheets:
+        - 神っぽいな|std|expert
+        - さくゆいたいそう|std|expert
+        - CHAOS|std|expert
+    - description: |-
+        「クラス認定 - Ⅴ - Random」コース
+        ❤ 300｜-1/-1/-1｜+0
+      sheets:
+        - ランダムで選曲されます|rnd|random|14
+        - ランダムで選曲されます|rnd|random|14+
+        - ランダムで選曲されます|rnd|random|15
+    - title: 【CLASS ∞】
+    - description: |-
+        「INNOVATION Set」コース
+        ❤ 30｜-0/-1/-1｜+10
+      sheets:
+        - (WE) Trackless wilderness|we|【狂】
+        - (WE) Parad'ox|we|【狂】
+        - (WE) otorii INNOVATED -[i]3-|we|【狂】
+    - description: |-
+        「クラス認定 - ∞ - Random」コース
+        ❤ 200｜-1/-1/-1｜+0
+      sheets:
+        - ランダムで選曲されます|rnd|random|14+
+        - ランダムで選曲されます|rnd|random|15
+        - ランダムで選曲されます|rnd|random|15+
+    - title: 【CLASS EXTRA】
+    - description: |-
+        「RANDOM」コース
+        ❤ 50｜-0/-0/-1｜+0
+      sheets:
+        - (WE) Random|we|【分】
+        - (WE) Random|we|【分】
+        - (WE) Random|we|【分】
+    - description: |-
+        「Split Set」コース
+        ❤ 100｜-0/-0/-1｜+0
+      sheets:
+        - (WE) 人生攻略☆Tips|we|【割】
+        - (WE) ロキ|we|【割】
+        - (WE) M.S.S.Planet|we|【割】
 - title: LUMINOUS クラス認定
   id: luminous-class-certification
   sections:
