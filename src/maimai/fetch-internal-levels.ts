@@ -45,6 +45,7 @@ const manualMappings = new Map([
   ['Love’s Theme of BADASS ～バッド・アス 愛のテーマ～', 'Love\'s Theme of BADASS ～バッド・アス 愛のテーマ～'],
   ['Mjolnir', 'Mjölnir'],
   ['Party 4U "holy nite mix"', 'Party 4U ”holy nite mix”'],
+  ['Quartet Theme[Reborn]', 'Quartet Theme [Reborn]'],
   ['REVIVER オルタンシア･サーガ-蒼の騎士団- オリジナルVer.', 'REVIVER オルタンシア・サーガ -蒼の騎士団- オリジナルVer.'],
   ['Re:End of a Dream', 'Re：End of a Dream'],
   ['Rooftop Run: Act１', 'Rooftop Run: Act1'],
@@ -509,6 +510,57 @@ async function fetchSheetsV11() {
   ];
 }
 
+async function fetchSheetsV12() {
+  const spreadsheet = new GoogleSpreadsheet('10N6jmyrzmHrZGbGhDWfpdg4hQKm0t84H2DPkaFG7PNs');
+  spreadsheet.useApiKey(process.env.GOOGLE_API_KEY!);
+  await spreadsheet.loadInfo();
+
+  return [
+    ...await extractRecords({
+      spreadsheet,
+      sheetName: 'PRiSM PLUS新曲',
+      dataIndexes: [0, 6, 12, 18, 24],
+      dataOffsets: [0, 1, 2, 4],
+    }),
+    ...await extractRecords({
+      spreadsheet,
+      sheetName: '14以上',
+      dataIndexes: [0, 7, 14, 21, 28],
+      dataOffsets: [0, 2, 3, 5],
+    }),
+    ...await extractRecords({
+      spreadsheet,
+      sheetName: '13+',
+      dataIndexes: [0, 7, 14, 21],
+      dataOffsets: [0, 2, 3, 5],
+    }),
+    ...await extractRecords({
+      spreadsheet,
+      sheetName: '13',
+      dataIndexes: [0, 6, 12, 18, 24, 30],
+      dataOffsets: [0, 1, 2, 4],
+    }),
+    ...await extractRecords({
+      spreadsheet,
+      sheetName: '12+',
+      dataIndexes: [0, 6, 12, 18, 24],
+      dataOffsets: [0, 1, 2, 4],
+    }),
+    ...await extractRecords({
+      spreadsheet,
+      sheetName: '12',
+      dataIndexes: [0, 6, 12, 18, 24, 30],
+      dataOffsets: [0, 1, 2, 4],
+    }),
+    ...await extractRecords({
+      spreadsheet,
+      sheetName: 'Tmai',
+      dataIndexes: [0],
+      dataOffsets: [1, 2, 3, 7],
+    }),
+  ];
+}
+
 export default async function run() {
   if (!process.env.GOOGLE_API_KEY) {
     throw new Error('Please set your GOOGLE_API_KEY in the .env file');
@@ -521,14 +573,16 @@ export default async function run() {
     // ...await fetchSheetsV8(),
     // ...await fetchSheetsV9(),
     // ...await fetchSheetsV10(),
-    ...await fetchSheetsV11(),
+    // ...await fetchSheetsV11(),
+    ...await fetchSheetsV12(),
   ];
   logger.info(`OK, ${rawSheets.length} sheets fetched.`);
 
-  logger.info('Updating sheetInternalLevels ...');
   const sheets = rawSheets
     .map((rawSheet) => extractSheet(rawSheet))
     .filter((sheet) => sheet.songId !== undefined);
+
+  logger.info('Updating sheetInternalLevels ...');
   await Promise.all(sheets.map((sheet) => SheetInternalLevel.upsert(sheet)));
 
   logger.info('Checking unmatched songIds ...');

@@ -44,7 +44,8 @@ const versions = [
   { releaseDate: '2023-03-23', version: 'FESTiVAL PLUS', abbr: 'FESTiVAL+ (祝)' },
   { releaseDate: '2023-09-14', version: 'BUDDiES', abbr: 'BUDDiES (双)' },
   { releaseDate: '2024-03-21', version: 'BUDDiES PLUS', abbr: 'BUDDiES+ (宴)' },
-  { releaseDate: '2024-09-12', version: 'PRiSM', abbr: 'PRiSM' },
+  { releaseDate: '2024-09-12', version: 'PRiSM', abbr: 'PRiSM (鏡)' },
+  { releaseDate: '2025-03-13', version: 'PRiSM PLUS', abbr: 'PRiSM+' },
   //! add further version here !//
 ];
 const types = [
