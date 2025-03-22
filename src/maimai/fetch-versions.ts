@@ -54,6 +54,12 @@ export function getSongId(title: string, version: string) {
     if (version === 'maimai PLUS') return 'Link';
     if (version === 'ORANGE') return 'Link (2)';
   }
+  if (title === 'Help me, ERINNNNNN!!') {
+    return 'Help me, ERINNNNNN!!（Band ver.）';
+  }
+  if (title === 'Bad Apple!! feat nomico') {
+    return 'Bad Apple!! feat.nomico';
+  }
   return title;
 }
 

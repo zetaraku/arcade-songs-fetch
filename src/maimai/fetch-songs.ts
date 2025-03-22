@@ -52,6 +52,12 @@ function getSongId(rawSong: Record<string, any>) {
     if (catcode === 'maimai') return 'Link';
     if (catcode === 'niconico＆ボーカロイド') return 'Link (2)';
   }
+  if (title === 'Help me, ERINNNNNN!!') {
+    return 'Help me, ERINNNNNN!!（Band ver.）';
+  }
+  if (title === 'Bad Apple!! feat nomico') {
+    return 'Bad Apple!! feat.nomico';
+  }
   return title;
 }
 
