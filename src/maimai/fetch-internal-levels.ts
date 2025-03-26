@@ -68,6 +68,7 @@ const manualMappings = new Map([
   ['Yakumo>>JOINT STRUGGLE(2019 update)', 'Yakumo >>JOINT STRUGGLE (2019 Update)'],
   ['falling', 'Falling'],
   ['null', '　'],
+  ['Åntinomiε', 'Åntinomiε'],
   ['“411Ψ892”', '"411Ψ892"'],
   ['≠彡゛/了→', '≠彡"/了→'],
   ['【東方ニコカラ】秘神マターラfeat.魂音泉【IOSYS】', '【東方ニコカラ】秘神マターラ feat.魂音泉【IOSYS】'],
