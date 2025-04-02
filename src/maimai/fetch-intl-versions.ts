@@ -13,6 +13,9 @@ logger.level = log4js.levels.INFO;
 
 const DATA_URL = 'https://maimaidx-eng.com/maimai-mobile/record/musicVersion/search/';
 
+// the default axios 'User-Agent' header must not be present
+axios.defaults.headers.common['User-Agent'] = null;
+
 export const versionIdMap = new Map([
   ['maimai', 0],
   ['maimai PLUS', 1],

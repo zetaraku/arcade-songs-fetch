@@ -12,6 +12,9 @@ logger.level = log4js.levels.INFO;
 
 const DATA_URL = 'https://maimaidx-eng.com/maimai-mobile/record/musicGenre/search/';
 
+// the default axios 'User-Agent' header must not be present
+axios.defaults.headers.common['User-Agent'] = null;
+
 const categoryIdMap = new Map([
   ['POPS＆アニメ', 101],
   ['niconico＆ボーカロイド', 102],
