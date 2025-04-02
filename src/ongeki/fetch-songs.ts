@@ -10,22 +10,22 @@ const DATA_URL = 'https://ongeki.sega.jp/assets/json/music/music.json';
 const IMAGE_BASE_URL = 'https://ongeki-net.com/ongeki-mobile/img/music/';
 
 function getSongId(rawSong: Record<string, any>) {
-  const { category, title, id } = rawSong;
+  const { category, title, artist, date } = rawSong;
   if (category === 'LUNATIC') {
     if (title === 'Perfect Shining!!') {
-      if (id === '987300') return '(LUN) Perfect Shining!!';
-      if (id === '948700') return '(LUN) Perfect Shining!! (2)';
+      if (date === '20220726') return '(LUN) Perfect Shining!!';
+      if (date === '20220804') return '(LUN) Perfect Shining!! (2)';
     }
     return `(LUN) ${title}`;
   }
   if (title === 'Singularity') {
-    if (id === '683300') return 'Singularity';
-    if (id === '481800') return 'Singularity (2)';
-    if (id === '484900') return 'Singularity (3)';
+    if (artist === 'technoplanet') return 'Singularity';
+    if (artist === 'ETIA.「Arcaea」') return 'Singularity (2)';
+    if (artist === 'SEGA SOUND STAFF「セガNET麻雀 MJ」') return 'Singularity (3)';
   }
   if (title === 'Hand in Hand') {
-    if (category === 'POPS＆ANIME') return 'Hand in Hand';
-    if (category === 'niconico') return 'Hand in Hand (2)';
+    if (artist === 'ユーフィリア(CV：高橋 李依)「アンジュ・ヴィエルジュ」') return 'Hand in Hand';
+    if (artist === 'livetune') return 'Hand in Hand (2)';
   }
   return title;
 }

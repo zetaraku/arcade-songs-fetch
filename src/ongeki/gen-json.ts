@@ -29,6 +29,7 @@ const versions = [
   { releaseDate: '2021-03-31', version: 'R.E.D. PLUS', abbr: 'R.E.D.+' },
   { releaseDate: '2021-10-21', version: 'bright', abbr: 'bright' },
   { releaseDate: '2022-03-03', version: 'bright MEMORY', abbr: 'bright+' },
+  { releaseDate: '2025-03-27', version: 'Re:Fresh', abbr: 'Re:Fresh' },
   //! add further mapping here !//
 ];
 const types = [
