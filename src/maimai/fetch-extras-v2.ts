@@ -32,6 +32,7 @@ export function getSongWikiTitle(song: Record<string, any>) {
       ['BOUNCE & DANCE', 'BOUNCE ＆ DANCE'],
       ['Bad Apple!! feat.nomico (REDALiCE Remix)', 'Bad Apple！！ feat.nomico （REDALiCE Remix）'],
       ['Bad Apple!! feat.nomico', 'Bad Apple feat nomico'],
+      ['Choo Choo TRAIN', 'Choo Choo Train'],
       ['DETARAME ROCK&ROLL THEORY', 'DETARAME ROCK＆ROLL THEORY'],
       ['D✪N’T  ST✪P  R✪CKIN’', 'D✪N’T ST✪P R✪CKIN’'],
       ['GET!! 夢&DREAM', 'GET 夢＆DREAM'],
