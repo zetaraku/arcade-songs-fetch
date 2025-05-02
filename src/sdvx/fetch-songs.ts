@@ -80,9 +80,9 @@ async function* getSongs() {
           comment: null,
         };
 
-        const sheets = $(div).find('.inner .level p').toArray()
+        const sheets = $(div).find('.inner .level p:not(.none)').toArray()
           .map((e) => {
-            const difficultyAbbr = $(e).attr('class')!;
+            const difficultyAbbr = $(e).attr('class')!.trim();
             const difficulty = difficultyMap.get(difficultyAbbr);
             const level = $(e).text().trim();
 
