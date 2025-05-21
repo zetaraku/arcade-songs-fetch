@@ -39,7 +39,6 @@ const manualMappings = new Map([
   ['Good Bye, Merry-Go-Round.', 'Good bye, Merry-Go-Round.'],
   ['Got more raves?', 'Got more raves？'],
   ['Help me, ERINNNNNN!! （Band ver.）', 'Help me, ERINNNNNN!!（Band ver.）'],
-  ['Help me, ERINNNNNN!!', 'Help me, ERINNNNNN!!（Band ver.）'],
   ['Imperishable Night 2006(2016 Refine)', 'Imperishable Night 2006 (2016 Refine)'],
   ['Jack-the-Ripper♦', 'Jack-the-Ripper◆'],
   ['Jorqer', 'Jörqer'],
