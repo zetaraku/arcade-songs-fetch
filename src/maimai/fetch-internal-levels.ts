@@ -18,6 +18,7 @@ const difficultyMapping = new Map([
 ]);
 
 const manualMappings = new Map([
+  ['ATLUS RUSH', 'ATLAS RUSH'],
   ['Agitation!', 'Agitation！'],
   ['Alea jacta est', 'Alea jacta est!'],
   ['Baban!!  ー甘い罠ー', 'BaBan!! －甘い罠－'],
@@ -94,6 +95,7 @@ const manualMappings = new Map([
   ['レッツゴー！陰陽師', 'レッツゴー!陰陽師'],
   ['夜明けまであと3秒', '夜明けまであと３秒'],
   ['天狗の落とし文 feat.ｙｔｒ', '天狗の落とし文 feat. ｙｔｒ'],
+  ['好きな総菜発表ドラゴン', '好きな惣菜発表ドラゴン'],
   ['教えて!!魔法のLyric', '教えて!! 魔法のLyric'],
   ['曖昧Mind', '曖昧mind'],
   ['泣き虫O\'Clock', '泣き虫O\'clock'],
