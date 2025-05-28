@@ -23,6 +23,7 @@ const difficulties = [
   { difficulty: 'nostalgia', name: 'NOSTALGIA', color: '#633300' },
   { difficulty: 'crossbeats', name: 'crossbeats REV.', color: '#d0c334' },
   { difficulty: 'rb', name: 'REFLEC BEAT', color: '#52369d' },
+  { difficulty: 'gitadora', name: 'GITADORA', color: '#21008d' },
 ];
 
 export default async function run() {

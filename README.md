@@ -53,6 +53,7 @@ npm run <game-code>:<script-name>
   - `nostalgia` (NOSTALGIA)
   - `crossbeats` (crossbeats REV.)
   - `rb` (REFLEC BEAT)
+  - `gitadora` (GITADORA)
 
 - Available `<script-name>`:
   - See `package.json`.
