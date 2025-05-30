@@ -17,8 +17,10 @@ function getSongId(rawSheet: Record<string, any>) {
   const { type, title, id } = rawSheet;
   if (manualMappings.has(title)) return manualMappings.get(title);
   if (type === 'lun') {
-    if (title === 'Perfect Shining!!') return '(LUN) Perfect Shining!!';
-    if (title === 'Perfect Shining!!(ロケテスト譜面)') return '(LUN) Perfect Shining!! (2)';
+    if (title === 'Perfect Shining!!') {
+      if (id === '69') return '(LUN) Perfect Shining!!';
+      if (id === '817') return '(LUN) Perfect Shining!! (2)';
+    }
     return `(LUN) ${title}`;
   }
   if (title === 'Singularity') {
