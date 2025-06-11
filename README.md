@@ -10,7 +10,7 @@ Data fetching scripts for [arcade-songs](https://github.com/zetaraku/arcade-song
   - The npm scripts are assumed to be run in `bash` shell.
   - You can use **Git Bash** brought by [Git](https://git-scm.com/) on Windows.
     - You also need to configure the [`script-shell`](https://docs.npmjs.com/cli/v8/using-npm/config#script-shell) to run npm scripts with Git Bash.
-    - See: [How to set shell for npm run-scripts in Windows - Stack Overflow](https://stackoverflow.com/questions/23243353/how-to-set-shell-for-npm-run-scripts-in-windows)
+    - See: [How to set shell for npm run-scripts in Windows - Stack Overflow](https://stackoverflow.com/a/46006249/8573978)
 - [Node.js](https://nodejs.org/) (LTS version or above)
 - [AWS CLI v2](https://aws.amazon.com/cli/) (optional)
 
