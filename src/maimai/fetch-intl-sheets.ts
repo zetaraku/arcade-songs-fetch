@@ -52,6 +52,10 @@ export async function getIntlCookies() {
     throw new Error('Please set your MAIMAI_INTL_SEGA_ID and MAIMAI_INTL_SEGA_PASSWORD in the .env file');
   }
 
+  if (!process.env.USER_AGENT) {
+    throw new Error('Please set a valid USER_AGENT in the .env file');
+  }
+
   const browser = await puppeteer.launch();
 
   const url = new URL('https://lng-tgk-aime-gw.am-all.net/common_auth/login');
@@ -59,6 +63,8 @@ export async function getIntlCookies() {
   url.searchParams.set('redirect_url', 'https://maimaidx-eng.com/maimai-mobile/');
 
   const page = await browser.newPage();
+  await page.setUserAgent(process.env.USER_AGENT);
+
   await page.goto(url.toString());
 
   await page.click('.c-button--openid--segaId');
