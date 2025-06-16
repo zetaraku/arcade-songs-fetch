@@ -7,11 +7,18 @@ import log4js from 'log4js';
 import * as cheerio from 'cheerio';
 import { gamerchWikiV2TitleEscape } from '@/_core/utils';
 import { sequelize, SongExtra, SheetExtra } from '@@/db/maimai/models';
+import 'dotenv/config';
 
 const logger = log4js.getLogger('maimai/fetch-extras-v2');
 logger.level = log4js.levels.INFO;
 
 const SONG_LIST_URL = 'https://gamerch.com/maimai/entry/545589';
+
+if (!process.env.USER_AGENT) {
+  throw new Error('Please set a valid USER_AGENT in the .env file');
+}
+
+axios.defaults.headers.common['User-Agent'] = process.env.USER_AGENT;
 
 const difficultyMap = new Map([
   ['#00ced1', null], // 'easy'
