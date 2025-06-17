@@ -1,3 +1,241 @@
+- title: PRiSM PLUS 段位認定
+  id: prism-plus-dan
+  sections:
+    - &prism-plus-1-dan
+      title: 【初段】
+      description: ❤ 350｜-0/-2/-5｜+20
+      sheets:
+        - いーあるふぁんくらぶ|dx|basic
+        - グリーンライツ・セレナーデ|dx|basic
+        - 幻想のサテライト|dx|basic
+        - オトヒメモリー☆ウタゲーション|std|basic
+    - &prism-plus-2-dan
+      title: 【二段】
+      description: ❤ 350｜-0/-2/-5｜+20
+      sheets:
+        - 唱|dx|advanced
+        - Oath Act|dx|advanced
+        - Alice in 冷凍庫|dx|advanced
+        - ＊ハロー、プラネット。|dx|advanced
+    - &prism-plus-3-dan
+      title: 【三段】
+      description: ❤ 600｜-1/-2/-5｜+50
+      sheets:
+        - さよならヒストリー|dx|advanced
+        - エンヴィーベイビー|dx|advanced
+        - インドア系ならトラックメイカー|dx|advanced
+        - 星界ちゃんと可不ちゃんのおつかい合騒曲|dx|advanced
+    - &prism-plus-4-dan
+      title: 【四段】
+      description: ❤ 700｜-2/-2/-5｜+50
+      sheets:
+        - 酔いどれ知らず|dx|expert
+        - 今、誰が為のかがり火へ|dx|expert
+        - 色は匂へど散りぬるを|dx|expert
+        - ウミユリ海底譚|std|expert
+    - &prism-plus-5-dan
+      title: 【五段】
+      description: ❤ 700｜-2/-2/-5｜+50
+      sheets:
+        - ポップミュージックは僕のもの|std|expert
+        - でらっくmaimai♪てんてこまい!|dx|expert
+        - Southern Cross|dx|expert
+        - Ultimate taste|dx|expert
+    - &prism-plus-6-dan
+      title: 【六段】
+      description: ❤ 700｜-2/-2/-5｜+50
+      sheets:
+        - 最終鬼畜妹・一部声|std|expert
+        - エータ・ベータ・イータ|dx|expert
+        - 幸せになれる隠しコマンドがあるらしい|std|expert
+        - 約束|dx|master
+    - &prism-plus-7-dan
+      title: 【七段】
+      description: ❤ 700｜-2/-2/-5｜+50
+      sheets:
+        - 再会|dx|master
+        - GET!! 夢&DREAM|std|master
+        - 解けないように|dx|master
+        - デビルじゃないもん|dx|master
+    - &prism-plus-8-dan
+      title: 【八段】
+      description: ❤ 700｜-2/-2/-5｜+20
+      sheets:
+        - 福宿音屋魂音泉|dx|master
+        - ナイト・オブ・ナイツ (Cranky Remix)|dx|master
+        - ぽわわん劇場|dx|master
+        - きゅうくらりん|dx|master
+    - &prism-plus-9-dan
+      title: 【九段】
+      description: ❤ 800｜-2/-2/-5｜+30
+      sheets:
+        - 新人類|dx|master
+        - energy trixxx|dx|master
+        - セイクリッド　ルイン|std|master
+        - Destiny Runner|dx|master
+    - &prism-plus-10-dan
+      title: 【十段】
+      description: ❤ 900｜-2/-2/-5｜+30
+      sheets:
+        - Imperishable Night 2006 (2016 Refine)|std|master
+        - Ether Strike|dx|master
+        - 初音天地開闢神話|dx|master
+        - Garakuta Doll Play|std|master
+    - &prism-plus-shin-1-dan
+      title: 【真初段】
+      description: ❤ 50｜-2/-3/-5｜+10
+      sheets:
+        - STARTLINER|dx|master
+        - Catch the Wave|dx|master
+        - サドマミホリック|std|master
+        - Streak|std|expert
+    - &prism-plus-shin-2-dan
+      title: 【真二段】
+      description: ❤ 50｜-2/-3/-5｜+10
+      sheets:
+        - ロールプレイングゲーム|std|master
+        - 悪戯センセーション|dx|master
+        - 脳漿炸裂ガール|std|expert
+        - ヱデン|dx|master
+    - &prism-plus-shin-3-dan
+      title: 【真三段】
+      description: ❤ 50｜-2/-3/-5｜+10
+      sheets:
+        - ザムザ|dx|master
+        - Money Money|std|master
+        - System “Z”|std|expert
+        - アウターサイエンス|std|master
+    - &prism-plus-shin-4-dan
+      title: 【真四段】
+      description: ❤ 50｜-2/-3/-5｜+10
+      sheets:
+        - ライアーダンサー|dx|master
+        - ねぇ、壊れタ人形ハ何処へ棄テらレるノ？|std|expert
+        - ナイト・オブ・ナイツ|std|master
+        - Garden Of The Dragon|std|master
+    - &prism-plus-shin-5-dan
+      title: 【真五段】
+      description: ❤ 50｜-2/-3/-5｜+10
+      sheets:
+        - インターネットサバイバー|dx|master
+        - ULTRA POWER|dx|master
+        - ありふれたせかいせいふく|std|master
+        - 咲キ誇レ常世ノ華|std|master
+    - &prism-plus-shin-6-dan
+      title: 【真六段】
+      description: ❤ 50｜-2/-3/-5｜+10
+      sheets:
+        - We Are Us|dx|master
+        - サイバーサンダーサイダー|dx|master
+        - レーイレーイ|dx|remaster
+        - 疾走あんさんぶる|std|master
+    - &prism-plus-shin-7-dan
+      title: 【真七段】
+      description: ❤ 50｜-2/-3/-5｜+10
+      sheets:
+        - Neon Kingdom|dx|master
+        - Cyaegha|dx|master
+        - 頓珍漢の宴|std|master
+        - Armageddon|dx|master
+    - &prism-plus-shin-8-dan
+      title: 【真八段】
+      description: ❤ 50｜-2/-3/-5｜+10
+      sheets:
+        - アマノジャクリバース feat. ｙｔｒ|std|master
+        - Arty Party|dx|master
+        - Sun Dance|std|remaster
+        - 夜明けまであと３秒|std|master
+    - &prism-plus-shin-9-dan
+      title: 【真九段】
+      description: ❤ 50｜-2/-3/-5｜+10
+      sheets:
+        - 勦滅|dx|master
+        - Energizing Flame|dx|master
+        - Panopticon|std|remaster
+        - MarbleBlue.|dx|master
+    - &prism-plus-shin-10-dan
+      title: 【真十段】
+      description: ❤ 50｜-2/-3/-5｜+10
+      sheets:
+        - 脳天直撃|dx|master
+        - Re:Unknown X|dx|master
+        - 康莊大道|dx|master
+        - KHYMΞXΛ|dx|master
+    - &prism-plus-shin-kaiden
+      title: 【真皆伝】
+      description: ❤ 50｜-2/-3/-5｜+5
+      sheets:
+        - Heavenly Blast|dx|master
+        - 氷滅の135小節|dx|master
+        - 躯樹の墓守|dx|master
+        - 宙天|dx|master
+    - &prism-plus-ura-kaiden
+      title: 【裏皆伝】
+      description: ❤ 10｜-1/-3/-10｜+0
+      sheets:
+        - PANDORA PARADOXXX|std|remaster
+        - Latent Kingdom|dx|master
+        - raputa|dx|master
+        - 系ぎて|dx|remaster
+- title: PRiSM PLUS オトモダチ対戦
+  id: prism-plus-otomodachi
+  sections:
+    - &prism-plus-otomodachi-a-boss
+      title: 【A5~A1】
+      sheets:
+        - トンデモワンダーズ|dx|expert
+        - Bad Apple!! feat.nomico ～五十嵐 撫子 Ver.～|dx|expert
+        - アイドル|dx|master
+        - Love or Lies|std|master
+        - STARTLINER|dx|master
+      sheetDescriptions:
+        - S+
+        - S+
+        - S+
+        - SS
+        - SS
+    - &prism-plus-otomodachi-s-boss
+      title: 【S5~S1】
+      sheets:
+        - 再会|dx|master
+        - Link|std|master
+        - Strobe♡Girl|dx|master
+        - 『んっあっあっ。』|dx|master
+        - アルカンシエル|dx|master
+      sheetDescriptions:
+        - SS
+        - SS+
+        - SS+
+        - SS+
+        - SSS
+    - &prism-plus-otomodachi-ss-boss
+      title: 【SS5~SS1】
+      sheets:
+        - 妖精村の月誕祭 ～Lunate Elf|std|master
+        - 魔法少女とチョコレゐト|dx|master
+        - PinqPiq (xovevox Remix)|dx|master
+        - Cyaegha|dx|master
+        - 華の集落、秋のお届け|dx|master
+      sheetDescriptions:
+        - SSS
+        - SSS+
+        - SSS+
+        - SSS+
+        - SSS+
+    - &prism-plus-otomodachi-sss-boss
+      title: 【SSS5~SSS1】
+      sheets:
+        - インパアフェクシオン・ホワイトガアル|dx|master
+        - VERTeX (rintaro soma deconstructed remix)|dx|master
+        - Prophesy One|std|master
+        - チューリングの跡|dx|master
+        - ATLAS RUSH|dx|master
+      sheetDescriptions:
+        - MAX
+        - MAX
+        - MAX
+        - MAX
+        - MAX
 - title: PRiSM 段位認定
   id: prism-dan
   sections:
