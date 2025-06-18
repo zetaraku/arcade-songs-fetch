@@ -17,6 +17,7 @@ const categories = [
   { category: 'EDM' },
   { category: 'SPINNIN’ RECORDS' },
   { category: 'BEMANI' },
+  //! add further category here !//
 ];
 const versions = [
   // empty

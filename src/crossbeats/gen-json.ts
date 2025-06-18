@@ -15,6 +15,7 @@ const categories = [
   { category: '東方Project' },
   { category: 'ORIGINAL' },
   { category: 'VARIETY' },
+  //! add further category here !//
 ];
 const versions = [
   // empty

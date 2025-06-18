@@ -16,6 +16,7 @@ const categories = [
   { category: 'バラエティ' },
   { category: 'BEMANI楽曲' },
   { category: 'ノスタルジアオリジナル' },
+  //! add further category here !//
 ];
 const versions = [
   // empty
