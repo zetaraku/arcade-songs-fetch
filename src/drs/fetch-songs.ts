@@ -7,8 +7,10 @@ import { Song, Sheet, SongBpm } from '@@/db/drs/models';
 const logger = log4js.getLogger('drs/fetch-songs');
 logger.level = log4js.levels.INFO;
 
-const DATA_URL = 'https://p.eagate.573.jp/game/dan/1st/json/musiclist_getdata.html';
-const IMAGE_BASE_URL = 'https://p.eagate.573.jp/game/dan/1st/img/jacket.html';
+const VERSION_ID = '1st';
+
+const DATA_URL = `https://p.eagate.573.jp/game/dan/${VERSION_ID}/json/musiclist_getdata.html`;
+const IMAGE_BASE_URL = `https://p.eagate.573.jp/game/dan/${VERSION_ID}/img/jacket.html`;
 
 const categoryMasks = [
   /* eslint-disable no-bitwise */
