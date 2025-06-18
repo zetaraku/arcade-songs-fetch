@@ -56,6 +56,7 @@ npm run <game-code>:<script-name>
   - `crossbeats` (crossbeats REV.)
   - `rb` (REFLEC BEAT)
   - `gitadora` (GITADORA)
+  - `polarischord` (ポラリスコード)
 
 - Available `<script-name>`:
   - See `package.json`.

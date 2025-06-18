@@ -24,6 +24,7 @@ const difficulties = [
   { difficulty: 'crossbeats', name: 'crossbeats REV.', color: '#d0c334' },
   { difficulty: 'rb', name: 'REFLEC BEAT', color: '#52369d' },
   { difficulty: 'gitadora', name: 'GITADORA', color: '#21008d' },
+  { difficulty: 'polarischord', name: 'ポラリスコード', color: '#695ca7' },
 ];
 
 export default async function run() {

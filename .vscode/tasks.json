@@ -22,7 +22,8 @@
         "npm: nostalgia:all",
         "npm: crossbeats:all",
         "npm: rb:all",
-        "npm: gitadora:all"
+        "npm: gitadora:all",
+        "npm: polarischord:all"
       ]
     }
   ]
