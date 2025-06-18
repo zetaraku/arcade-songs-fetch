@@ -10,8 +10,8 @@ logger.level = log4js.levels.INFO;
 const DIST_PATH = 'dist/jubeat';
 
 const categories = [
-  { category: null },
-];
+  // empty
+] as any[];
 const versions = [
   // empty
 ] as any[];
