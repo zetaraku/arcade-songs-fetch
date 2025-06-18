@@ -50,7 +50,7 @@ const versions = [
 const types = [
   { type: 'std', name: 'STANDARD', abbr: 'STD' },
   { type: 'upper', name: 'UPPER', abbr: 'UPPER' },
-] as any[];
+];
 const difficulties = [
   { difficulty: 'easy', name: 'EASY', color: '#0077ff' },
   { difficulty: 'normal', name: 'NORMAL', color: '#77ff00' },
@@ -59,7 +59,7 @@ const difficulties = [
 ];
 const regions = [
   { region: 'jp', name: '日本版' },
-] as any[];
+];
 
 function getLevelValueOf(sheet: Record<string, any>) {
   if (sheet.level === null) return null;

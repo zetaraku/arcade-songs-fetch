@@ -40,7 +40,7 @@ const difficulties = [
 ];
 const regions = [
   { region: 'offline', name: 'オフライン版 (Offline ver.)' },
-] as any[];
+];
 
 function getLevelValueOf(sheet: Record<string, any>) {
   if (sheet.level === null) return null;
