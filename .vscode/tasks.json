@@ -21,7 +21,8 @@
         "npm: ddr:all",
         "npm: nostalgia:all",
         "npm: crossbeats:all",
-        "npm: rb:all"
+        "npm: rb:all",
+        "npm: gitadora:all"
       ]
     }
   ]
