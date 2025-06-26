@@ -9,7 +9,7 @@
     "all:upload-data": "npm-run-all maimai:upload-data chunithm:upload-data wacca:upload-data taiko:upload-data jubeat:upload-data sdvx:upload-data ongeki:upload-data gc:upload-data diva:upload-data popn:upload-data drs:upload-data ddr:upload-data nostalgia:upload-data crossbeats:upload-data rb:upload-data gitadora:upload-data polarischord:upload-data any:upload-data",
     "# run-all scripts": "",
     "maimai:all": "npm-run-all maimai:fetch-songs maimai:gen-wiki-list maimai:fetch-images maimai:fetch-versions maimai:fetch-intl-versions maimai:fetch-intl-sheets maimai:fetch-cn-sheets maimai:fetch-extras-v2 maimai:fetch-internal-levels maimai:gen-json maimai:upload-data",
-    "chunithm:all": "npm-run-all chunithm:fetch-songs chunithm:fetch-images chunithm:fetch-intl-sheets chunithm:fetch-extras chunithm:fetch-sheet-extras-v2 chunithm:fetch-internal-levels chunithm:gen-json chunithm:upload-data",
+    "chunithm:all": "npm-run-all chunithm:fetch-songs chunithm:gen-wiki-list chunithm:fetch-images chunithm:fetch-intl-sheets chunithm:fetch-extras chunithm:fetch-sheet-extras-v2 chunithm:fetch-internal-levels chunithm:gen-json chunithm:upload-data",
     "wacca:all": "npm-run-all wacca:fetch-songs wacca:fetch-images wacca:gen-json wacca:upload-data",
     "taiko:all": "npm-run-all taiko:fetch-songs taiko:gen-json taiko:upload-data",
     "jubeat:all": "npm-run-all jubeat:fetch-songs jubeat:fetch-images jubeat:gen-json jubeat:upload-data",
