@@ -45,6 +45,7 @@ const difficulties = [
   { difficulty: 'heavenly', name: 'HEAVENLY', abbr: 'HVN', color: '#49c9fb' },
   { difficulty: 'vivid', name: 'VIVID', abbr: 'VVD', color: '#ff59cd' },
   { difficulty: 'exceed', name: 'EXCEED', abbr: 'XCD', color: '#187fff' },
+  { difficulty: 'ultimate', name: 'ULTIMATE', abbr: 'ULT', color: '#ffdd57' },
 ];
 const regions = [
   // empty

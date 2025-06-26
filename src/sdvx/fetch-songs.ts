@@ -24,6 +24,7 @@ export const difficultyMap = new Map([
   ['hvn', 'heavenly'],
   ['vvd', 'vivid'],
   ['xcd', 'exceed'],
+  ['ult', 'ultimate'],
   //! add further difficulty here !//
 ]);
 
