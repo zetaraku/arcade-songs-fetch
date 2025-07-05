@@ -155,11 +155,17 @@ async function getIntlUtageSheets(
   const sheetBlocks = $('.music_utage_score_back').toArray();
 
   return sheetBlocks.map((e) => {
-    const title = $(e).find('.music_name_block').text()/* .trim() */;
+    let title = $(e).find('.music_name_block').text()/* .trim() */;
 
-    const utageType = $(e).find('.music_kind_icon_utage_text').eq(0).text();
+    let utageType = $(e).find('.music_kind_icon_utage_text').eq(0).text();
 
     const level = $(e).find('.music_lv_block').text().trim();
+
+    //! hotfix
+    if (title === '[宴]人マニア') {
+      title = '[X]人マニア';
+      utageType = 'X';
+    }
 
     return {
       songId: getSongId(title, '宴会場'),
