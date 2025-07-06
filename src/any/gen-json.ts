@@ -20,7 +20,7 @@ const difficulties = [
   { difficulty: 'popn', name: 'pop\'n music', color: '#ffaa00' },
   { difficulty: 'drs', name: 'DANCERUSH STARDOM', color: '#06a6fb' },
   { difficulty: 'ddr', name: 'DanceDanceRevolution', color: '#2484c5' },
-  { difficulty: 'nostalgia', name: 'NOSTALGIA', color: '#633300' },
+  { difficulty: 'nostalgia', name: 'ノスタルジア', color: '#633300' },
   { difficulty: 'crossbeats', name: 'crossbeats REV.', color: '#d0c334' },
   { difficulty: 'rb', name: 'REFLEC BEAT', color: '#52369d' },
   { difficulty: 'gitadora', name: 'GITADORA', color: '#21008d' },

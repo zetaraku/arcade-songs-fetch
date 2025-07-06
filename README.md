@@ -52,7 +52,7 @@ npm run <game-code>:<script-name>
   - `popn` (pop'n music)
   - `drs` (DANCERUSH STARDOM)
   - `ddr` (DanceDanceRevolution)
-  - `nostalgia` (NOSTALGIA)
+  - `nostalgia` (ノスタルジア)
   - `crossbeats` (crossbeats REV.)
   - `rb` (REFLEC BEAT)
   - `gitadora` (GITADORA)
