@@ -67,6 +67,7 @@ export const rawDataSchema = z.object({
   versions: z.array(z.object({
     version: z.string().nullable(),
     abbr: z.string().optional(),
+    releaseDate: z.string().optional(),
   }).strict()),
 
   types: z.array(z.object({

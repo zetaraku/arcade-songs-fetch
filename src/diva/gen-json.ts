@@ -13,8 +13,10 @@ const categories = [
   // empty
 ] as any[];
 const versions = [
-  // empty
-] as any[];
+  { releaseDate: '2010-06-23', version: 'Project DIVA Arcade' },
+  { releaseDate: '2013-11-21', version: 'Future Tone' },
+  //! add further version here !//
+];
 const types = [
   // empty
 ] as any[];

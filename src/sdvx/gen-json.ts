@@ -22,15 +22,13 @@ const categories = [
   //! add further category here !//
 ];
 const versions = [
-  //! the data source no longer contains version information
-  // { version: 'BOOTH', abbr: '[I] BOOTH' },
-  // { version: 'INFINITE INFECTION', abbr: '[II] INFINITE INFECTION'},
-  // { version: 'GRAVITY WARS', abbr: '[III] GRAVITY WARS' },
-  // { version: 'HEAVENLY HAVEN', abbr: '[IV] HEAVENLY HAVEN' },
-  // { version: 'VIVID WAVE', abbr: '[V] VIVID WAVE' },
-  // { version: 'EXCEED GEAR', abbr: '[VI] EXCEED GEAR' },
-  { version: null },
-  //! add further mapping here !//
+  { releaseDate: '2012-01-18', version: 'BOOTH', abbr: '[I] BOOTH' },
+  { releaseDate: '2013-06-05', version: 'INFINITE INFECTION', abbr: '[II] INFINITE INFECTION' },
+  { releaseDate: '2014-11-20', version: 'GRAVITY WARS', abbr: '[III] GRAVITY WARS' },
+  { releaseDate: '2016-12-21', version: 'HEAVENLY HAVEN', abbr: '[IV] HEAVENLY HAVEN' },
+  { releaseDate: '2019-02-28', version: 'VIVID WAVE', abbr: '[V] VIVID WAVE' },
+  { releaseDate: '2021-02-17', version: 'EXCEED GEAR', abbr: '[VI] EXCEED GEAR' },
+  //! add further version here !//
 ];
 const types = [
   // empty

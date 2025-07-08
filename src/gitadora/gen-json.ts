@@ -13,8 +13,19 @@ const categories = [
   // empty
 ] as any[];
 const versions = [
-  // empty
-] as any[];
+  { releaseDate: '2013-02-14', version: 'GITADORA' },
+  { releaseDate: '2014-03-05', version: 'OverDrive' },
+  { releaseDate: '2015-04-21', version: 'Tri-Boost' },
+  { releaseDate: '2016-12-14', version: 'Tri-Boost Re:EVOLVE' },
+  { releaseDate: '2017-09-06', version: 'Matixx' },
+  { releaseDate: '2018-09-12', version: 'EXCHAIN' },
+  { releaseDate: '2019-10-02', version: 'NEX＋AGE' },
+  { releaseDate: '2021-04-21', version: 'HIGH-VOLTAGE' },
+  { releaseDate: '2022-12-14', version: 'FUZZ-UP' },
+  { releaseDate: '2024-03-13', version: 'GALAXY WAVE' },
+  { releaseDate: '2025-03-17', version: 'GALAXY WAVE DELTA' },
+  //! add further version here !//
+];
 const types = [
   { type: 'guitar', name: 'GUITAR', abbr: 'GUITAR', iconUrl: 'type-guitar.png', iconHeight: 22 },
   { type: 'bass', name: 'BASS', abbr: 'BASS', iconUrl: 'type-bass.png', iconHeight: 22 },

@@ -93,10 +93,6 @@ export default async function run({
     ),
   }));
 
-  versions.forEach((e) => {
-    delete e.releaseDate;
-  });
-
   const output = makeOutput({
     songs,
     categories,

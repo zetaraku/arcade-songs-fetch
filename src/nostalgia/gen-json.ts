@@ -19,8 +19,12 @@ const categories = [
   //! add further category here !//
 ];
 const versions = [
-  // empty
-] as any[];
+  { releaseDate: '2017-03-01', version: 'ノスタルジア' },
+  { releaseDate: '2017-07-19', version: 'FORTE' },
+  { releaseDate: '2018-09-26', version: 'Op.2' },
+  { releaseDate: '2019-12-02', version: 'Op.3' },
+  //! add further version here !//
+];
 const types = [
   // empty
 ] as any[];

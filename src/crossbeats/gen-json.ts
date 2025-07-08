@@ -18,8 +18,10 @@ const categories = [
   //! add further category here !//
 ];
 const versions = [
-  // empty
-] as any[];
+  { releaseDate: '2015-07-23', version: 'crossbeats REV.' },
+  { releaseDate: '2016-04-28', version: 'SUNRISE' },
+  //! add further version here !//
+];
 const types = [
   // empty
 ] as any[];

@@ -13,8 +13,16 @@ const categories = [
   // empty
 ] as any[];
 const versions = [
-  // empty
-] as any[];
+  { releaseDate: '2010-11-04', version: 'REFLEC BEAT' },
+  { releaseDate: '2011-11-16', version: 'limelight' },
+  { releaseDate: '2012-11-21', version: 'colette' },
+  { releaseDate: '2014-06-04', version: 'groovin\'!!' },
+  { releaseDate: '2014-11-20', version: 'groovin\'!! Upper' },
+  { releaseDate: '2015-10-28', version: 'VOLZZA' },
+  { releaseDate: '2016-03-24', version: 'VOLZZA 2' },
+  { releaseDate: '2016-12-01', version: '悠久のリフレシア The Reflesia of Eternity' },
+  //! add further version here !//
+];
 const types = [
   // empty
 ] as any[];

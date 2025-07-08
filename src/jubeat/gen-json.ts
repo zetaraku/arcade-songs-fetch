@@ -13,8 +13,23 @@ const categories = [
   // empty
 ] as any[];
 const versions = [
-  // empty
-] as any[];
+  { releaseDate: '2008-07-24', version: 'jubeat' },
+  { releaseDate: '2009-08-05', version: 'ripples' },
+  { releaseDate: '2010-03-18', version: 'ripples APPEND' },
+  { releaseDate: '2010-07-29', version: 'knit' },
+  { releaseDate: '2011-03-23', version: 'knit APPEND' },
+  { releaseDate: '2011-09-15', version: 'copious' },
+  { releaseDate: '2012-03-14', version: 'copious APPEND' },
+  { releaseDate: '2012-09-25', version: 'saucer' },
+  { releaseDate: '2014-03-03', version: 'saucer fulfill' },
+  { releaseDate: '2015-02-20', version: 'prop' },
+  { releaseDate: '2016-03-30', version: 'Qubell' },
+  { releaseDate: '2017-07-26', version: 'clan' },
+  { releaseDate: '2018-09-05', version: 'festo' },
+  { releaseDate: '2022-08-03', version: 'Ave.' },
+  { releaseDate: '2023-09-20', version: 'beyond the Ave.' },
+  //! add further version here !//
+];
 const types = [
   { type: 'std', name: '通常譜面', abbr: 'STD' },
   { type: 'v2', name: '[2] 譜面', abbr: 'V2' },
