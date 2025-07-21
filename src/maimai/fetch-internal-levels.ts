@@ -544,7 +544,7 @@ async function fetchSheetsV12() {
     ...await extractRecords({
       spreadsheet,
       sheetName: '13+',
-      dataIndexes: [0, 6, 12, 18, 24],
+      dataIndexes: [0, 6, 12, 18],
       dataOffsets: [0, 1, 2, 4],
     }),
     ...await extractRecords({
@@ -556,7 +556,7 @@ async function fetchSheetsV12() {
     ...await extractRecords({
       spreadsheet,
       sheetName: '12+',
-      dataIndexes: [0, 6, 12, 18, 24],
+      dataIndexes: [0, 6, 12, 18],
       dataOffsets: [0, 1, 2, 4],
     }),
     ...await extractRecords({
