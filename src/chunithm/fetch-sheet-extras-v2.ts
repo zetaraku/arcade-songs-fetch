@@ -31,7 +31,6 @@ function getSongWikiUrl(song: Record<string, any>) {
     const manualMappings = new Map([
       ['#SUP3RORBITAL', '♯SUP3RORBITAL'],
       ['Blow My Mind', 'Blow my mind'],
-      ['Help me, ERINNNNNN!!（Band ver.）', 'Help me, ERINNNNNN!!'],
       ['U&iVERSE -銀河鸞翔-', 'U＆iVERSE ‐銀河鸞翔‐'],
       [']-[|/34<#!', 'ヒバチ'],
       ['ÅMARA (大未来電脳)', 'ÅMARA(大未来電脳)'],
