@@ -38,12 +38,6 @@ function getSongId(title: string, category: string) {
     if (category === 'maimai') return 'Link';
     if (category === 'niconico＆ボーカロイド') return 'Link (2)';
   }
-  if (title === 'Help me, ERINNNNNN!!') {
-    return 'Help me, ERINNNNNN!!（Band ver.）';
-  }
-  if (title === 'Bad Apple!! feat nomico') {
-    return 'Bad Apple!! feat.nomico';
-  }
   return title;
 }
 
