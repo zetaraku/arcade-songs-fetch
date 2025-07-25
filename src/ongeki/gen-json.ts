@@ -67,6 +67,7 @@ export default async function run() {
     SELECT
       *
     FROM "Songs"
+      LEFT JOIN "SongExtras" USING ("songId")
     ORDER BY "releaseDate"
   `, {
     type: Sequelize.QueryTypes.SELECT,
@@ -78,6 +79,7 @@ export default async function run() {
       *,
       "JpSheets"."songId" IS NOT NULL AS "regions.jp"
     FROM "Sheets"
+      NATURAL LEFT JOIN "SheetExtras"
       NATURAL LEFT JOIN "SheetInternalLevels"
       NATURAL LEFT JOIN "JpSheets"
   `, {
