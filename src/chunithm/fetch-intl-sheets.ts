@@ -59,6 +59,7 @@ async function getIntlCookies() {
   const page = await browser.newPage();
   await page.goto(url.toString());
 
+  await page.click('#agree');
   await page.click('.c-button--openid--segaId');
   await page.type('#sid', process.env.CHUNITHM_INTL_SEGA_ID);
   await page.type('#password', process.env.CHUNITHM_INTL_SEGA_PASSWORD);

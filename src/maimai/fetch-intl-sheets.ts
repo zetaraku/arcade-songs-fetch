@@ -61,6 +61,7 @@ export async function getIntlCookies() {
 
   await page.goto(url.toString());
 
+  await page.click('#agree');
   await page.click('.c-button--openid--segaId');
   await page.type('#sid', process.env.MAIMAI_INTL_SEGA_ID);
   await page.type('#password', process.env.MAIMAI_INTL_SEGA_PASSWORD);
