@@ -53,6 +53,7 @@ const manualMappings = new Map([
   ['Quartet Theme[Reborn]', 'Quartet Theme [Reborn]'],
   ['REVIVER オルタンシア･サーガ-蒼の騎士団- オリジナルVer.', 'REVIVER オルタンシア・サーガ -蒼の騎士団- オリジナルVer.'],
   ['Re:End of a Dream', 'Re：End of a Dream'],
+  ['Retribution 〜 Cycle of Redemption 〜', 'Retribution ～ Cycle of Redemption ～'],
   ['Rooftop Run: Act１', 'Rooftop Run: Act1'],
   ['Rooftop Run:Act1', 'Rooftop Run: Act1'],
   ['R’N’R Monsta', 'R\'N\'R Monsta'],
