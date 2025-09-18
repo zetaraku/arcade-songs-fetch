@@ -42,6 +42,7 @@ export const versionIdMap = new Map([
   ['BUDDiES PLUS', 22],
   ['PRiSM', 23],
   ['PRiSM PLUS', 24],
+  // ['CiRCLE', 25],
   //! add further version here !//
 ]);
 

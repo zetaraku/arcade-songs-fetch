@@ -45,7 +45,8 @@ const versions = [
   { releaseDate: '2023-09-14', version: 'BUDDiES', abbr: 'BUDDiES (双)' },
   { releaseDate: '2024-03-21', version: 'BUDDiES PLUS', abbr: 'BUDDiES+ (宴)' },
   { releaseDate: '2024-09-12', version: 'PRiSM', abbr: 'PRiSM (鏡)' },
-  { releaseDate: '2025-03-13', version: 'PRiSM PLUS', abbr: 'PRiSM+' },
+  { releaseDate: '2025-03-13', version: 'PRiSM PLUS', abbr: 'PRiSM+ (彩)' },
+  { releaseDate: '2025-09-18', version: 'CiRCLE', abbr: 'CiRCLE' },
   //! add further version here !//
 ];
 const types = [

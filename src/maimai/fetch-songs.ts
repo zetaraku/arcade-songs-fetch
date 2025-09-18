@@ -36,6 +36,7 @@ const versionMap = new Map([
   [245, 'BUDDiES PLUS'],
   [250, 'PRiSM'],
   [255, 'PRiSM PLUS'],
+  [260, 'CiRCLE'],
   //! add further version here !//
 ]);
 
