@@ -177,6 +177,55 @@
         - Latent Kingdom|dx|master
         - raputa|dx|master
         - 系ぎて|dx|remaster
+- title: PRiSM PLUS 段位認定（海外版）
+  id: prism-plus-dan-intl
+  sections:
+    - *prism-plus-1-dan
+    - title: 【二段】
+      description: ❤ 350｜-0/-2/-5｜+20
+      sheets:
+        - 唱|dx|advanced
+        - Oath Act|dx|advanced
+        - Alice in 冷凍庫|dx|advanced
+        - ラビットホール|dx|advanced
+    - title: 【三段】
+      description: ❤ 600｜-1/-2/-5｜+50
+      sheets:
+        - さよならヒストリー|dx|advanced
+        - エンヴィーベイビー|dx|advanced
+        - Luminaria|dx|advanced
+        - 星界ちゃんと可不ちゃんのおつかい合騒曲|dx|advanced
+    - *prism-plus-4-dan
+    - *prism-plus-5-dan
+    - *prism-plus-6-dan
+    - *prism-plus-7-dan
+    - *prism-plus-8-dan
+    - *prism-plus-9-dan
+    - *prism-plus-10-dan
+    - *prism-plus-shin-1-dan
+    - *prism-plus-shin-2-dan
+    - title: 【真三段】
+      description: ❤ 50｜-2/-3/-5｜+10
+      sheets:
+        - まにまに|dx|master
+        - Money Money|std|master
+        - System “Z”|std|expert
+        - アウターサイエンス|std|master
+    - *prism-plus-shin-4-dan
+    - *prism-plus-shin-5-dan
+    - *prism-plus-shin-6-dan
+    - *prism-plus-shin-7-dan
+    - *prism-plus-shin-8-dan
+    - *prism-plus-shin-9-dan
+    - title: 【真十段】
+      description: ❤ 50｜-2/-3/-5｜+10
+      sheets:
+        - 脳天直撃|dx|master
+        - TEmPTaTiON|dx|master
+        - 康莊大道|dx|master
+        - KHYMΞXΛ|dx|master
+    - *prism-plus-shin-kaiden
+    - *prism-plus-ura-kaiden
 - title: PRiSM PLUS オトモダチ対戦
   id: prism-plus-otomodachi
   sections:
@@ -236,6 +285,25 @@
         - MAX
         - MAX
         - MAX
+- title: PRiSM PLUS オトモダチ対戦（海外版）
+  id: prism-plus-otomodachi-intl
+  sections:
+    - title: 【A5~A1】
+      sheets:
+        - トンデモワンダーズ|dx|expert
+        - Bad Apple!! feat.nomico ～五十嵐 撫子 Ver.～|dx|expert
+        - 踊|dx|master
+        - ルカルカ★ナイトフィーバー|std|master
+        - STARTLINER|dx|master
+      sheetDescriptions:
+        - S+
+        - S+
+        - S+
+        - SS
+        - SS
+    - *prism-plus-otomodachi-s-boss
+    - *prism-plus-otomodachi-ss-boss
+    - *prism-plus-otomodachi-sss-boss
 - title: PRiSM 段位認定
   id: prism-dan
   sections:
