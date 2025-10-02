@@ -34,6 +34,14 @@ function getSongId(rawSong: Record<string, any>) {
     if (artist === 'ぺのれり') return 'Prayer';
     if (artist === '溝口ゆうま feat. 大瀬良あい') return 'Prayer (2)';
   }
+  if (title === 'カジノファイヤーことみちゃん') {
+    if (artist === 'ARM feat. 山本椛 + Brasscapsule') return 'カジノファイヤーことみちゃん';
+    if (artist === 'covered by 一条莉々華(ReGLOSS)') return 'カジノファイヤーことみちゃん (2)';
+  }
+  if (title === '朱と碧のランページ') {
+    if (artist === 'NU-KO') return '朱と碧のランページ';
+    if (artist === 'covered by 儒烏風亭らでん(ReGLOSS)') return '朱と碧のランページ (2)';
+  }
   return title;
 }
 
