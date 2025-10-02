@@ -108,6 +108,11 @@ const manualAltMappingWithGenre = new Map([
   ['赤いリンゴ', ['グルーブロック', 'グルーブロックＬＩＶＥ']],
 ]);
 
+const manualAltMappingWithArtist = new Map([
+  ['朱と碧のランページ', ['NU-KO', 'covered by 儒烏風亭らでん(ReGLOSS)']],
+  ['リメンバーリメンバー', ['rino & m@sumi from plastic penguin', 'covered by 轟はじめ(ReGLOSS)']],
+]);
+
 function getSheetType(rawSong: Record<string, any>) {
   const { title, version, id } = rawSong;
 
@@ -138,7 +143,7 @@ function getSheetType(rawSong: Record<string, any>) {
 }
 
 function getSongId(rawSong: Record<string, any>) {
-  const { title, genre, sheetType } = rawSong;
+  const { title, genre, artist, sheetType } = rawSong;
 
   if (manualAltMappingWithGenre.has(title)) {
     const genres = manualAltMappingWithGenre.get(title)!;
@@ -148,6 +153,16 @@ function getSongId(rawSong: Record<string, any>) {
     if (genrePos >= 1) return `${title} (${1 + genrePos})`;
 
     throw new Error(`Cannot use manual mapping with genre: ${JSON.stringify(rawSong)}`);
+  }
+
+  if (manualAltMappingWithArtist.has(title)) {
+    const artists = manualAltMappingWithArtist.get(title)!;
+    const artistPos = artists.indexOf(artist);
+
+    if (artistPos === 0) return title;
+    if (artistPos >= 1) return `${title} (${1 + artistPos})`;
+
+    throw new Error(`Cannot use manual mapping with artist: ${JSON.stringify(rawSong)}`);
   }
 
   if (sheetType === 'upper') {
