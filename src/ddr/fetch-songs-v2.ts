@@ -139,6 +139,10 @@ async function* getVersions() {
 
       const $ = cheerio.load(response.data);
 
+      if ($(':contains("ご利用にはe-amusement へのログインが必要です。")').length !== 0) {
+        throw new Error('Login expired. Please run again to continue.');
+      }
+
       const songs = $('#data_tbl tr.data').toArray()
         .map((tr) => {
           const title = $(tr).find('td:nth-of-type(1) .music_info').text().trim();
