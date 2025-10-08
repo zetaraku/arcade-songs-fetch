@@ -125,9 +125,8 @@ export default async function run() {
   logger.info('Ensuring every sheet has an unique sheetExpr ...');
   ensureNoDuplicateEntry(intlSheets.map((sheet) => [sheet.songId, sheet.type, sheet.difficulty].join('|')));
 
-  logger.info('Truncating and Inserting intlSheetVersions ...');
-  await IntlSheetVersion.truncate();
-  await IntlSheetVersion.bulkCreate(intlSheets);
+  logger.info('Updating intlSheetVersions ...');
+  await Promise.all(intlSheets.map((intlSheet) => IntlSheetVersion.upsert(intlSheet)));
 
   logger.info('Done!');
 }
