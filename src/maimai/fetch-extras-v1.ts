@@ -149,7 +149,10 @@ export default async function run() {
         UNION
       SELECT DISTINCT "songId"
       FROM "Sheets" NATURAL LEFT JOIN "SheetExtras"
-      WHERE ("noteCounts.total" IS NULL) OR ("noteDesigner" IS NULL)
+      WHERE (FALSE
+        OR "noteCounts.total" IS NULL
+        OR "noteDesigner" IS NULL
+      )
     ) NATURAL LEFT JOIN "Songs"
     WHERE "category" <> '宴会場'
   `, {

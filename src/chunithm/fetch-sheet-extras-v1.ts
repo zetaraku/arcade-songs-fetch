@@ -218,7 +218,7 @@ export default async function run() {
           + "noteCounts.air"
           + COALESCE("noteCounts.flick", 0)
         ) <> "noteCounts.total"
-        OR ("noteDesigner" IS NULL)
+        OR "noteDesigner" IS NULL
       ) AND (
         "type" <> 'we'
       ) AND (

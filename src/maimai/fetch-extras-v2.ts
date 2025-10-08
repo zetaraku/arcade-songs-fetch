@@ -291,7 +291,7 @@ export default async function run() {
           + COALESCE("noteCounts.touch", 0)
           + "noteCounts.break"
         ) <> "noteCounts.total"
-        OR ("noteDesigner" IS NULL)
+        OR "noteDesigner" IS NULL
       ) AND "type" <> 'utage'
     ) NATURAL LEFT JOIN "Songs"
   `, {
