@@ -1,3 +1,182 @@
+- title: CiRCLE 段位認定
+  id: circle-dan
+  sections:
+    - &circle-1-dan
+      title: 【初段】
+      description: ❤ 350｜-0/-2/-5｜+20
+      sheets:
+        - いーあるふぁんくらぶ|dx|basic
+        - シャルル|dx|basic
+        - 物凄いヴァイブスで魔理沙が物凄いラップ|dx|basic
+        - オトヒメモリー☆ウタゲーション|std|basic
+    - &circle-2-dan
+      title: 【二段】
+      description: ❤ 350｜-0/-2/-5｜+20
+      sheets:
+        - 唱|dx|advanced
+        - ゆけむり魂温泉 II|dx|advanced
+        - 寝起きヤシの木|dx|advanced
+        - Trust|dx|advanced
+    - &circle-3-dan
+      title: 【三段】
+      description: ❤ 600｜-1/-2/-5｜+50
+      sheets:
+        - さよならヒストリー|dx|advanced
+        - きゅびずむ|dx|advanced
+        - 色は匂へど散りぬるを|std|advanced
+        - エイリアンエイリアン|std|advanced
+    - &circle-4-dan
+      title: 【四段】
+      description: ❤ 700｜-2/-2/-5｜+50
+      sheets:
+        - 酔いどれ知らず|dx|expert
+        - シアワセうさぎ|std|expert
+        - 愛包ダンスホール|dx|expert
+        - ウミユリ海底譚|std|expert
+    - &circle-5-dan
+      title: 【五段】
+      description: ❤ 700｜-2/-2/-5｜+50
+      sheets:
+        - 踊れオーケストラ|std|expert
+        - でらっくmaimai♪てんてこまい!|dx|expert
+        - まっすぐ→→→ストリーム！|dx|expert
+        - インターネットサバイバー|dx|expert
+    - &circle-6-dan
+      title: 【六段】
+      description: ❤ 700｜-2/-2/-5｜+50
+      sheets:
+        - ULTRA SYNERGY MATRIX|dx|expert
+        - 初音ミクの激唱|std|expert
+        - Scream out! -maimai SONIC WASHER Edit-|std|expert
+        - 約束|dx|master
+    - &circle-7-dan
+      title: 【七段】
+      description: ❤ 700｜-2/-2/-5｜+50
+      sheets:
+        - 再会|dx|master
+        - 雨とペトラ|dx|master
+        - LOVE EAST|std|master
+        - ラヴィ|dx|master
+    - &circle-8-dan
+      title: 【八段】
+      description: ❤ 700｜-2/-2/-5｜+20
+      sheets:
+        - アンビバレンス|dx|master
+        - ナイト・オブ・ナイツ|dx|master
+        - 隠密あんみつDX|dx|master
+        - きゅうくらりん|dx|master
+    - &circle-9-dan
+      title: 【九段】
+      description: ❤ 800｜-2/-2/-5｜+30
+      sheets:
+        - ウルトラトレーラー|dx|master
+        - energy trixxx|dx|master
+        - ゆけむり魂温泉 II|dx|master
+        - GEMINI -M-|std|master
+    - &circle-10-dan
+      title: 【十段】
+      description: ❤ 900｜-2/-2/-5｜+30
+      sheets:
+        - 人生リセットボタン|std|master
+        - Ether Second|dx|master
+        - taboo tears you up|dx|master
+        - Caliburne ～Story of the Legendary sword～|std|master
+    - &circle-shin-1-dan
+      title: 【真初段】
+      description: ❤ 50｜-2/-3/-5｜+10
+      sheets:
+        - STARTLINER|dx|master
+        - つるぺったん|dx|master
+        - ももいろの鍵|dx|master
+        - Streak|std|expert
+    - &circle-shin-2-dan
+      title: 【真二段】
+      description: ❤ 50｜-2/-3/-5｜+10
+      sheets:
+        - ロールプレイングゲーム|std|master
+        - 響け！CHIREI MY WAY!|dx|master
+        - 脳漿炸裂ガール|std|expert
+        - アスノヨゾラ哨戒班|dx|master
+    - &circle-shin-3-dan
+      title: 【真三段】
+      description: ❤ 50｜-2/-3/-5｜+10
+      sheets:
+        - ネガティブ進化論|dx|master
+        - Money Money|std|master
+        - System “Z”|std|expert
+        - アンノウン・マザーグース|std|master
+    - &circle-shin-4-dan
+      title: 【真四段】
+      description: ❤ 50｜-2/-3/-5｜+10
+      sheets:
+        - フィクサー|std|master
+        - 紅星ミゼラブル～廃憶編|dx|master
+        - ねぇ、壊れタ人形ハ何処へ棄テらレるノ？|std|expert
+        - Garden Of The Dragon|std|master
+    - &circle-shin-5-dan
+      title: 【真五段】
+      description: ❤ 50｜-2/-3/-5｜+10
+      sheets:
+        - 響縁|dx|master
+        - ULTRA POWER|dx|master
+        - ありふれたせかいせいふく|std|master
+        - Everybody Say HARDCORE TANO*C|dx|master
+    - &circle-shin-6-dan
+      title: 【真六段】
+      description: ❤ 50｜-2/-3/-5｜+10
+      sheets:
+        - ダーリンダンス|dx|remaster
+        - Ultimate taste|dx|master
+        - レーイレーイ|dx|remaster
+        - DO RORO DERODERO ON DO RORO|std|master
+    - &circle-shin-7-dan
+      title: 【真七段】
+      description: ❤ 50｜-2/-3/-5｜+10
+      sheets:
+        - Never Give Up!|dx|remaster
+        - 夜咄ディセイブ|std|master
+        - ウタヒメナイトストーム|dx|master
+        - Armageddon|dx|master
+    - &circle-shin-8-dan
+      title: 【真八段】
+      description: ❤ 50｜-2/-3/-5｜+10
+      sheets:
+        - アマノジャクリバース feat. ｙｔｒ|std|master
+        - Sakura Fubuki|std|master
+        - Sun Dance|std|remaster
+        - 脳漿炸裂ガール|std|master
+    - &circle-shin-9-dan
+      title: 【真九段】
+      description: ❤ 50｜-2/-3/-5｜+10
+      sheets:
+        - NAGAREBOSHI☆ROCKET|dx|master
+        - Energizing Flame|dx|master
+        - Panopticon|std|remaster
+        - Falsum Atlantis.|dx|master
+    - &circle-shin-10-dan
+      title: 【真十段】
+      description: ❤ 50｜-2/-3/-5｜+10
+      sheets:
+        - Yorugao|dx|master
+        - ガラテアの螺旋|std|remaster
+        - 康莊大道|dx|master
+        - larva|std|master
+    - &circle-shin-kaiden
+      title: 【真皆伝】
+      description: ❤ 50｜-2/-3/-5｜+5
+      sheets:
+        - SILENT BLUE|std|master
+        - 氷滅の135小節|dx|master
+        - 躯樹の墓守|dx|master
+        - 宙天|dx|master
+    - &circle-ura-kaiden
+      title: 【裏皆伝】
+      description: ❤ 10｜-1/-3/-10｜+0
+      sheets:
+        - PANDORA PARADOXXX|std|remaster
+        - World's end BLACKBOX|dx|master
+        - raputa|dx|master
+        - 系ぎて|dx|remaster
 - title: PRiSM PLUS 段位認定
   id: prism-plus-dan
   sections:
