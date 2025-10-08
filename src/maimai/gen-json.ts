@@ -4,6 +4,7 @@ import Sequelize from 'sequelize';
 import log4js from 'log4js';
 import genJson from '@/_core/gen-json';
 import { sequelize } from '@@/db/maimai/models';
+import usaHiddenSongs from '@@/data/maimai/usa-hidden-songs.json';
 
 const logger = log4js.getLogger('maimai/gen-json');
 logger.level = log4js.levels.INFO;
@@ -64,6 +65,7 @@ const difficulties = [
 const regions = [
   { region: 'jp', name: '日本版' },
   { region: 'intl', name: '海外版 (International ver.)' },
+  { region: 'usa', name: 'アメリカ海外版 (USA International ver.)' },
   { region: 'cn', name: '中国版 (舞萌DX)' },
 ];
 
@@ -104,6 +106,7 @@ export default async function run() {
       *,
       "JpSheets"."songId" IS NOT NULL AS "regions.jp",
       "IntlSheets"."songId" IS NOT NULL AS "regions.intl",
+      NULL AS "regions.usa", -- placeholder
       "CnSheets"."songId" IS NOT NULL AS "regions.cn",
       "Sheets"."level" AS "level",
       "IntlSheets"."level" AS "regionOverrides.intl.level",
@@ -122,6 +125,8 @@ export default async function run() {
     nest: true,
   });
 
+  const usaHiddenSongSet = new Set(usaHiddenSongs);
+
   for (const sheetRecord of sheetRecords as any[]) {
     // postprocess region overrides
     for (const region of Object.keys(sheetRecord.regionOverrides)) {
@@ -139,6 +144,8 @@ export default async function run() {
         regionOverride.levelValue = getLevelValueOf({ level: regionOverride.level });
       }
     }
+
+    sheetRecord.regions.usa = sheetRecord.regions.intl && !usaHiddenSongSet.has(sheetRecord.songId);
   }
 
   const jsonText = await genJson({
