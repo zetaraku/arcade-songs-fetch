@@ -12,7 +12,7 @@ for path in data/*; do
     (
       cd "$path" || exit
       mkdir -p backup/
-      sqlite3 db.sqlite3 .dump > "backup/$timestamp.sql"
+      sqlite3 db.sqlite3 ".dump" > "backup/$timestamp.sql"
     )
   fi
 done
