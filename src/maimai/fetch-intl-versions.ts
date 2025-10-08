@@ -4,6 +4,7 @@ import sleep from 'sleep-promise';
 import log4js from 'log4js';
 import * as cheerio from 'cheerio';
 import { IntlSheetVersion } from '@@/db/maimai/models';
+import { ensureNoDuplicateEntry } from '@/_core/utils';
 import { getIntlCookies } from './fetch-intl-sheets';
 import { getSongId } from './fetch-versions';
 import 'dotenv/config';
@@ -120,6 +121,9 @@ export default async function run() {
     await sleep(500);
   }
   logger.info(`OK, ${intlSheets.length} sheets fetched.`);
+
+  logger.info('Ensuring every sheet has an unique sheetExpr ...');
+  ensureNoDuplicateEntry(intlSheets.map((sheet) => [sheet.songId, sheet.type, sheet.difficulty].join('|')));
 
   logger.info('Truncating and Inserting intlSheetVersions ...');
   await IntlSheetVersion.truncate();

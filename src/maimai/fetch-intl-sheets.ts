@@ -5,6 +5,7 @@ import sleep from 'sleep-promise';
 import log4js from 'log4js';
 import * as cheerio from 'cheerio';
 import { IntlSheet } from '@@/db/maimai/models';
+import { ensureNoDuplicateEntry } from '@/_core/utils';
 import 'dotenv/config';
 
 const logger = log4js.getLogger('maimai/fetch-intl-sheets');
@@ -200,6 +201,9 @@ export default async function run() {
     logger.info("* category '宴会場' is not available.");
   }
   logger.info(`OK, ${intlSheets.length} sheets fetched.`);
+
+  logger.info('Ensuring every sheet has an unique sheetExpr ...');
+  ensureNoDuplicateEntry(intlSheets.map((sheet) => [sheet.songId, sheet.type, sheet.difficulty].join('|')));
 
   logger.info('Truncating and Inserting intlSheets ...');
   await IntlSheet.truncate();

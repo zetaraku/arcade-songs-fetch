@@ -7,6 +7,7 @@ import sleep from 'sleep-promise';
 import log4js from 'log4js';
 import * as cheerio from 'cheerio';
 import { IntlSheet } from '@@/db/chunithm/models';
+import { ensureNoDuplicateEntry } from '@/_core/utils';
 import { getSongId } from './fetch-songs';
 import 'dotenv/config';
 
@@ -185,6 +186,9 @@ export default async function run() {
   intlSheets.push(...await getIntlWorldsEndSheets(cookies));
 
   logger.info(`OK, ${intlSheets.length} sheets fetched.`);
+
+  logger.info('Ensuring every sheet has an unique sheetExpr ...');
+  ensureNoDuplicateEntry(intlSheets.map((sheet) => [sheet.songId, sheet.type, sheet.difficulty].join('|')));
 
   logger.info('Truncating and Inserting intlSheets ...');
   await IntlSheet.truncate();

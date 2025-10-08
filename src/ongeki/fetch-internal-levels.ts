@@ -2,7 +2,7 @@ import axios from 'axios';
 import log4js from 'log4js';
 import * as cheerio from 'cheerio';
 import { Song, SheetInternalLevel } from '@@/db/ongeki/models';
-import { checkUnmatchedEntries } from '@/_core/utils';
+import { checkUnmatchedEntries, ensureNoDuplicateEntry } from '@/_core/utils';
 import 'dotenv/config';
 
 const logger = log4js.getLogger('ongeki/fetch-internal-levels');
@@ -69,6 +69,9 @@ export default async function run() {
   logger.info('Fetching data from OngekiScoreLog ...');
   const sheets = await fetchSheets();
   logger.info(`OK, ${sheets.length} sheets fetched.`);
+
+  logger.info('Ensuring every sheet has an unique sheetExpr ...');
+  ensureNoDuplicateEntry(sheets.map((sheet) => [sheet.songId, sheet.type, sheet.difficulty].join('|')));
 
   logger.info('Updating sheetInternalLevels ...');
   await Promise.all(sheets.map((sheet) => SheetInternalLevel.upsert(sheet)));

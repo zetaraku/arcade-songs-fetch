@@ -1,6 +1,7 @@
 import axios from 'axios';
 import log4js from 'log4js';
 import { SongExtra } from '@@/db/chunithm/models';
+import { ensureNoDuplicateEntry } from '@/_core/utils';
 import 'dotenv/config';
 
 const logger = log4js.getLogger('chunithm/fetch-extras');
@@ -56,6 +57,9 @@ export default async function run() {
   logger.info('Fetching data from chunirec API v2.0 ...');
   const rawSongs = await fetchSongs();
   logger.info(`OK, ${rawSongs.length} songs fetched.`);
+
+  logger.info('Ensuring every song has an unique songId ...');
+  ensureNoDuplicateEntry(rawSongs.map((rawSong) => getSongId(rawSong)));
 
   logger.info('Updating songExtras ...');
   const songExtras = rawSongs.map((rawSong) => extractSongExtra(rawSong));

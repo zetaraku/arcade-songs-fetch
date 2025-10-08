@@ -5,6 +5,7 @@ import sleep from 'sleep-promise';
 import log4js from 'log4js';
 import * as cheerio from 'cheerio';
 import { SheetVersion } from '@@/db/maimai/models';
+import { ensureNoDuplicateEntry } from '@/_core/utils';
 import 'dotenv/config';
 
 const logger = log4js.getLogger('maimai/fetch-versions');
@@ -157,6 +158,9 @@ export default async function run() {
     await sleep(500);
   }
   logger.info(`OK, ${jpSheets.length} sheets fetched.`);
+
+  logger.info('Ensuring every sheet has an unique sheetExpr ...');
+  ensureNoDuplicateEntry(jpSheets.map((sheet) => [sheet.songId, sheet.type, sheet.difficulty].join('|')));
 
   logger.info('Updating sheet versions ...');
   await Promise.all(jpSheets.map((jpSheet) => SheetVersion.upsert(jpSheet)));

@@ -1,7 +1,7 @@
 import axios from 'axios';
 import log4js from 'log4js';
 import { Song, SheetInternalLevel } from '@@/db/chunithm/models';
-import { checkUnmatchedEntries } from '@/_core/utils';
+import { checkUnmatchedEntries, ensureNoDuplicateEntry } from '@/_core/utils';
 import { getSongId } from './fetch-extras';
 import 'dotenv/config';
 
@@ -52,6 +52,9 @@ export default async function run() {
   logger.info('Fetching data from chunirec API v2.0 ...');
   const rawSongs = await fetchSongs();
   logger.info(`OK, ${rawSongs.length} songs fetched.`);
+
+  logger.info('Ensuring every song has an unique songId ...');
+  ensureNoDuplicateEntry(rawSongs.map((rawSong) => getSongId(rawSong)));
 
   logger.info('Updating sheetInternalLevels ...');
   const sheets = rawSongs.flatMap((rawSong) => extractSheets(rawSong));

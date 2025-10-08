@@ -1,6 +1,7 @@
 import axios from 'axios';
 import log4js from 'log4js';
 import { CnSheet } from '@@/db/maimai/models';
+import { ensureNoDuplicateEntry } from '@/_core/utils';
 
 const logger = log4js.getLogger('maimai/fetch-cn-sheets');
 logger.level = log4js.levels.INFO;
@@ -72,8 +73,12 @@ export default async function run() {
   const rawCnSongs: Record<string, any>[] = response.data;
   logger.info(`OK, ${rawCnSongs.length} songs fetched.`);
 
-  logger.info('Truncating and Inserting cnSheets ...');
   const cnSheets = rawCnSongs.flatMap((rawCnSong) => extractCnSheets(rawCnSong));
+
+  logger.info('Ensuring every sheet has an unique sheetExpr ...');
+  ensureNoDuplicateEntry(cnSheets.map((sheet) => [sheet.songId, sheet.type, sheet.difficulty].join('|')));
+
+  logger.info('Truncating and Inserting cnSheets ...');
   await CnSheet.truncate();
   await CnSheet.bulkCreate(cnSheets);
 
