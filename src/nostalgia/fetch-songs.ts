@@ -10,6 +10,7 @@ logger.level = log4js.levels.INFO;
 
 const VERSION_ID = 'op3';
 
+// Note: musiclist_getdata.html doesn't contain locked songs, we have to use pdata_getdata.html
 const DATA_URL = `https://p.eagate.573.jp/game/nostalgia/${VERSION_ID}/json/pdata_getdata.html`;
 const IMAGE_BASE_URL = `https://p.eagate.573.jp/game/nostalgia/${VERSION_ID}/img/jacket.html`;
 
