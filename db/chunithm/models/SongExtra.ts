@@ -7,9 +7,8 @@ const SongExtra = sequelize.define('SongExtra', {
     primaryKey: true,
   },
 
-  releaseDate: DataTypes.DATEONLY,
-
   bpm: DataTypes.REAL,
+  releaseDate: DataTypes.DATEONLY,
 });
 
 export default SongExtra;
