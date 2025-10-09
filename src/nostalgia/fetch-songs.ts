@@ -92,6 +92,12 @@ export default async function run() {
     headers: {
       Cookie: `M573SSID=${cookies.M573SSID};`,
     },
+  }).catch((err) => {
+    if (err.response.status === 403) {
+      throw new Error('Login expired. Please run again to continue.');
+    } else {
+      throw err;
+    }
   });
 
   const rawSongs: Record<string, any>[] = response.data.data.music;
