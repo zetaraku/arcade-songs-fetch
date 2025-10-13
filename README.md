@@ -57,6 +57,7 @@ npm run <game-code>:<script-name>
   - `rb` (REFLEC BEAT)
   - `gitadora` (GITADORA)
   - `polarischord` (ポラリスコード)
+  - `museca` (MÚSECA)
 
 - Available `<script-name>`:
   - See `package.json`.
