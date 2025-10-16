@@ -177,6 +177,65 @@
         - World's end BLACKBOX|dx|master
         - raputa|dx|master
         - 系ぎて|dx|remaster
+- title: CiRCLE オトモダチ対戦
+  id: circle-otomodachi
+  sections:
+    - &circle-otomodachi-a-boss
+      title: 【A5~A1】
+      sheets:
+        - 過去を喰らう|dx|expert
+        - Y.Y.Y.計画!!!!|dx|expert
+        - 前衛的Landscape|dx|expert
+        - メランコリック|std|master
+        - WARNING×WARNING×WARNING|dx|master
+      sheetDescriptions:
+        - S+
+        - S+
+        - S+
+        - SS
+        - SS
+    - &circle-otomodachi-s-boss
+      title: 【S5~S1】
+      sheets:
+        - 熱異常|dx|master
+        - maimaiちゃんのテーマ|std|master
+        - さくゆいたいそう|dx|master
+        - Spring of Dreams|dx|master
+        - 転生林檎|dx|master
+      sheetDescriptions:
+        - SS
+        - SS+
+        - SS+
+        - SS+
+        - SSS
+    - &circle-otomodachi-ss-boss
+      title: 【SS5~SS1】
+      sheets:
+        - 橙の幻想郷音頭|std|master
+        - ULTRA POWER|dx|master
+        - MORNINGLOOM|dx|master
+        - YKWTD|dx|master
+        - LiftOff|dx|master
+      sheetDescriptions:
+        - SSS
+        - SSS+
+        - SSS+
+        - SSS+
+        - SSS+
+    - &circle-otomodachi-sss-boss
+      title: 【SSS5~SSS1】
+      sheets:
+        - Ragnarok|std|master
+        - Abstruse Dilemma|dx|master
+        - 渦状銀河のシンフォニエッタ|dx|master
+        - Metamorphosism|dx|master
+        - Customized Justice|dx|master
+      sheetDescriptions:
+        - MAX
+        - MAX
+        - MAX
+        - MAX
+        - MAX
 - title: PRiSM PLUS 段位認定
   id: prism-plus-dan
   sections:
@@ -662,6 +721,31 @@
         - Latent Kingdom|dx|master
         - raputa|dx|master
         - 系ぎて|dx|remaster
+- title: PRiSM 段位認定（海外版）
+  id: prism-dan-intl
+  sections:
+    - *prism-1-dan
+    - *prism-2-dan
+    - *prism-3-dan
+    - *prism-4-dan
+    - *prism-5-dan
+    - *prism-6-dan
+    - *prism-7-dan
+    - *prism-8-dan
+    - *prism-9-dan
+    - *prism-10-dan
+    - *prism-shin-1-dan
+    - *prism-shin-2-dan
+    - *prism-shin-3-dan
+    - *prism-shin-4-dan
+    - *prism-shin-5-dan
+    - *prism-shin-6-dan
+    - *prism-shin-7-dan
+    - *prism-shin-8-dan
+    - *prism-shin-9-dan
+    - *prism-shin-10-dan
+    - *prism-shin-kaiden
+    - *prism-ura-kaiden
 - title: PRiSM オトモダチ対戦
   id: prism-otomodachi
   sections:
@@ -721,6 +805,13 @@
         - MAX
         - MAX
         - MAX
+- title: PRiSM オトモダチ対戦（海外版）
+  id: prism-otomodachi-intl
+  sections:
+    - *prism-otomodachi-a-boss
+    - *prism-otomodachi-s-boss
+    - *prism-otomodachi-ss-boss
+    - *prism-otomodachi-sss-boss
 - title: BUDDiES PLUS 段位認定
   id: buddies-plus-dan
   sections:
