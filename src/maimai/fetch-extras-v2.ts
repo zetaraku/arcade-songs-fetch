@@ -42,6 +42,7 @@ export function getSongWikiTitle(song: Record<string, any>) {
       ['Choo Choo TRAIN', 'Choo Choo Train'],
       ['DETARAME ROCK&ROLL THEORY', 'DETARAME ROCK＆ROLL THEORY'],
       ['D✪N’T  ST✪P  R✪CKIN’', 'D✪N’T ST✪P R✪CKIN’'],
+      ['False Amber (from the Black Bazaar, Or by A Kervan Trader from the Lands Afar, Or Buried Beneath the Shifting Sands That Lead Everywhere but Nowhere)', 'False Amber'],
       ['GET!! 夢&DREAM', 'GET 夢＆DREAM'],
       ['GO MY WAY!!', 'GO MY WAY！！'],
       ['GO!!!', 'GO！！！'],
