@@ -42,6 +42,7 @@ const manualMappings = new Map([
   ['Imperishable Night 2006(2016 Refine)', 'Imperishable Night 2006 (2016 Refine)'],
   ['Jack-the-Ripper♦', 'Jack-the-Ripper◆'],
   ['Jorqer', 'Jörqer'],
+  ['ΚΗΥΜΞΧΛ\u202C', 'KHYMΞXΛ'],
   ['L4TS:2018 (feat. あひる ＆ KTA)', 'L4TS:2018 (feat. あひる & KTA)'],
   ['L4TS:2018(feat.あひる＆KTA)', 'L4TS:2018 (feat. あひる & KTA)'],
   ['L\'epilogue', 'L\'épilogue'],
