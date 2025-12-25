@@ -21,7 +21,8 @@ function extractSong(rawSong: Record<string, any>) {
   // const versionId = rawSong.id.split(/[-_]/)[0].trim();
   // const releaseBatchNo = Number(rawSong.id.split(/[-_]/)[1].trim());
   const releaseDate = (() => {
-    // DO NOT parse with new Date() as the format of release_date is not always in ECMAScript Date Time String Format
+    // DO NOT directly parse this with new Date()
+    // The format of release_date won't always be in ECMAScript Date Time String Format
     // See: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date#date_time_string_format
     const [/* $0 */, year, month, day] = rawSong.release_date.match(/^(?<year>\d+)-(?<month>\d+)-(?<day>\d+)$/);
     return `${year.padStart(4, '0')}-${month.padStart(2, '0')}-${day.padStart(2, '0')}`;
