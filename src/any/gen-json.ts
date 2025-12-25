@@ -55,7 +55,7 @@ export default async function run() {
 
           noteDesigner: null,
 
-          isSpecial: song.sheets[0].isSpecial,
+          isSpecial: song.sheets[0]?.isSpecial ?? false,
         },
       ];
       song.imageName = `../../../${gameCode}/img/cover-m/${song.imageName}`;
