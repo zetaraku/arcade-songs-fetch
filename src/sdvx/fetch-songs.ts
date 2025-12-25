@@ -59,14 +59,14 @@ async function* getSongs() {
 
     const $ = cheerio.load(response.data);
 
-    const songs = $('.music').toArray()
+    const songs = $('#music-result .music').toArray()
       .map((div) => {
         const category = $(div).find('.genre').toArray()
           .map((e) => $(e).text().trim())
           .join('|');
 
-        const title = $(div).find('.inner .info p:nth-child(1)').text().trim();
-        const artist = $(div).find('.inner .info p:nth-child(3)').text().trim();
+        const title = $(div).find('.info p:nth-of-type(1)').text().trim();
+        const artist = $(div).find('.info p:nth-of-type(2)').text().trim();
 
         const imagePath = $(div).find('.jk img').attr('src')!;
         const imageUrl = new URL(imagePath, IMAGE_BASE_URL).toString();
@@ -89,7 +89,7 @@ async function* getSongs() {
           comment: null,
         };
 
-        const sheets = $(div).find('.inner .level p:not(.none)').toArray()
+        const sheets = $(div).find('.level p:not(.none)').toArray()
           .map((e) => {
             const difficultyAbbr = $(e).attr('class')!.trim();
             const difficulty = difficultyMap.get(difficultyAbbr);
