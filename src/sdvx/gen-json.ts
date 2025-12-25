@@ -28,6 +28,7 @@ const versions = [
   { releaseDate: '2016-12-21', version: 'HEAVENLY HAVEN', abbr: '[IV] HEAVENLY HAVEN' },
   { releaseDate: '2019-02-28', version: 'VIVID WAVE', abbr: '[V] VIVID WAVE' },
   { releaseDate: '2021-02-17', version: 'EXCEED GEAR', abbr: '[VI] EXCEED GEAR' },
+  { releaseDate: '2025-12-24', version: '∇', abbr: '[VII] ∇' },
   //! add further version here !//
 ];
 const types = [

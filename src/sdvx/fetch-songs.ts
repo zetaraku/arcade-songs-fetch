@@ -9,7 +9,7 @@ import { Song, Sheet } from '@@/db/sdvx/models';
 const logger = log4js.getLogger('sdvx/fetch-songs');
 logger.level = log4js.levels.INFO;
 
-const VERSION_ID = 'vi';
+const VERSION_ID = 'vii';
 
 const DATA_URL = 'https://p.eagate.573.jp';
 const IMAGE_BASE_URL = 'https://p.eagate.573.jp/';
