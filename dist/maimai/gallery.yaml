@@ -177,6 +177,37 @@
         - World's end BLACKBOX|dx|master
         - raputa|dx|master
         - 系ぎて|dx|remaster
+- title: CiRCLE 段位認定（海外版）
+  id: circle-dan-intl
+  sections:
+    - *circle-1-dan
+    - *circle-2-dan
+    - *circle-3-dan
+    - *circle-4-dan
+    - *circle-5-dan
+    - *circle-6-dan
+    - *circle-7-dan
+    - *circle-8-dan
+    - *circle-9-dan
+    - *circle-10-dan
+    - *circle-shin-1-dan
+    - *circle-shin-2-dan
+    - *circle-shin-3-dan
+    - *circle-shin-4-dan
+    - *circle-shin-5-dan
+    - title: 【真六段】
+      description: ❤ 50｜-2/-3/-5｜+10
+      sheets:
+        - ダーリンダンス|dx|remaster
+        - Ultimate taste|dx|master
+        - レーイレーイ|dx|remaster
+        - ネクロファンタジア～Arr.Demetori|std|master
+    - *circle-shin-7-dan
+    - *circle-shin-8-dan
+    - *circle-shin-9-dan
+    - *circle-shin-10-dan
+    - *circle-shin-kaiden
+    - *circle-ura-kaiden
 - title: CiRCLE オトモダチ対戦
   id: circle-otomodachi
   sections:
@@ -236,6 +267,13 @@
         - MAX
         - MAX
         - MAX
+- title: CiRCLE オトモダチ対戦（海外版）
+  id: circle-otomodachi-intl
+  sections:
+    - *circle-otomodachi-a-boss
+    - *circle-otomodachi-s-boss
+    - *circle-otomodachi-ss-boss
+    - *circle-otomodachi-sss-boss
 - title: PRiSM PLUS 段位認定
   id: prism-plus-dan
   sections:
