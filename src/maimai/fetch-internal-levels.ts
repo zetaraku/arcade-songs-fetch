@@ -592,7 +592,7 @@ async function fetchSheetsV13() {
       spreadsheet,
       sheetName: 'PRiSM PLUS新曲',
       dataIndexes: [0, 6, 12, 18, 24],
-      dataOffsets: [0, 1, 2, 4],
+      dataOffsets: [0, 1, 2, 3],
     }),
     ...await extractRecords({
       spreadsheet,
