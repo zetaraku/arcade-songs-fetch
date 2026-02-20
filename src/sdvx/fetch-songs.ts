@@ -65,8 +65,10 @@ async function* getSongs() {
           .map((e) => $(e).text().trim())
           .join('|');
 
-        const title = $(div).find('.info p:nth-of-type(1)').text().trim();
-        const artist = $(div).find('.info p:nth-of-type(2)').text().trim();
+        const title = $(div).find('.info p:nth-of-type(1)').text().trim()
+          .replaceAll('\u00A0', ' ');
+        const artist = $(div).find('.info p:nth-of-type(2)').text().trim()
+          .replaceAll('\u00A0', ' ');
 
         const imagePath = $(div).find('.jk img').attr('src')!;
         const imageUrl = new URL(imagePath, IMAGE_BASE_URL).toString();
