@@ -33,6 +33,10 @@ export function getSongId(rawSong: Record<string, any>): string {
       if (id === '8284') return '(WE) 強風オールバック (2)';
       if (id === '8285') return '(WE) 強風オールバック (3)';
     }
+    if (title === 'volcanic') {
+      if (id === '8124') return '(WE) volcanic';
+      if (id === '8319') return '(WE) volcanic (2)';
+    }
     return `(WE) ${title}`;
   }
   return title;
