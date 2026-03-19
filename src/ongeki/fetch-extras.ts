@@ -33,7 +33,9 @@ function getSongWikiUrl(song: Record<string, any>) {
       ['Hand in Hand (2)', 'Hand in Hand - livetune'],
       // resolve title inconsistency
       ['Dramatic…?', 'Dramatic…？'],
+      ['Dream Believers (105期Ver.)', 'Dream Believers（105期Ver.）'],
       ['God knows…', 'God knows...'],
+      ['Good bye, Merry-Go-Round. (Kobaryo\'s FTN-Remix)', 'Good bye, Merry-Go-Round.(Kobaryo\'s FTN-Remix)'],
       ['Help me, ERINNNNNN!!（Band ver.）', 'Help me, ERINNNNNN!!'],
       ['Memories of O.N.G.E.K.I.', 'Memories of O.N.G.E.K.I.（楽曲）'],
       ['Opera of the wasteland', 'Opera of the wastrland'],
