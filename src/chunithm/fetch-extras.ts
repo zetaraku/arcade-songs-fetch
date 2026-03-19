@@ -23,6 +23,8 @@ export function getSongId(rawSong: Record<string, any>): string {
     if (title === '強風オールバック【戻】') return '(WE) 強風オールバック';
     if (title === '強風オールバック【弾】') return '(WE) 強風オールバック (2)';
     if (title === '強風オールバック【避】') return '(WE) 強風オールバック (3)';
+    if (title === 'volcanic【狂】') return '(WE) volcanic';
+    if (title === 'volcanic【避】') return '(WE) volcanic (2)';
     return `(WE) ${title.replace(/【.】$/, '')}`;
   }
   return title;
