@@ -173,7 +173,7 @@ async function extractRecords({
   });
 }
 
-async function fetchSheetsV6() {
+export async function fetchSheetsV6() {
   const spreadsheet = new GoogleSpreadsheet('1byBSBQE547KL2KzPkUjY45svcIrJeHh57h-DLJycQbs');
   spreadsheet.useApiKey(process.env.GOOGLE_API_KEY!);
   await spreadsheet.loadInfo();
@@ -224,7 +224,7 @@ async function fetchSheetsV6() {
   ];
 }
 
-async function fetchSheetsV7() {
+export async function fetchSheetsV7() {
   const spreadsheet = new GoogleSpreadsheet('1xbDMo-36bGL_d435Oy8TTVq4ADFmxl9sYFqhTXiJYRg');
   spreadsheet.useApiKey(process.env.GOOGLE_API_KEY!);
   await spreadsheet.loadInfo();
@@ -287,7 +287,7 @@ async function fetchSheetsV7() {
   ];
 }
 
-async function fetchSheetsV8() {
+export async function fetchSheetsV8() {
   const spreadsheet = new GoogleSpreadsheet('1xqXfzfDfxiEE9mREwgX_ITIY8AowRM7w-TH2t1I_RJE');
   spreadsheet.useApiKey(process.env.GOOGLE_API_KEY!);
   await spreadsheet.loadInfo();
@@ -350,7 +350,7 @@ async function fetchSheetsV8() {
   ];
 }
 
-async function fetchSheetsV9() {
+export async function fetchSheetsV9() {
   const spreadsheet = new GoogleSpreadsheet('1vSqx2ghJKjWwCLrDEyZTUMSy5wkq_gY4i0GrJgSreQc');
   spreadsheet.useApiKey(process.env.GOOGLE_API_KEY!);
   await spreadsheet.loadInfo();
@@ -413,7 +413,7 @@ async function fetchSheetsV9() {
   ];
 }
 
-async function fetchSheetsV10() {
+export async function fetchSheetsV10() {
   const spreadsheet = new GoogleSpreadsheet('1d1AjO92Hj-iay10MsqdR_5TswEaikzC988aEOtFyybo');
   spreadsheet.useApiKey(process.env.GOOGLE_API_KEY!);
   await spreadsheet.loadInfo();
@@ -476,7 +476,7 @@ async function fetchSheetsV10() {
   ];
 }
 
-async function fetchSheetsV11() {
+export async function fetchSheetsV11() {
   const spreadsheet = new GoogleSpreadsheet('1DKssDl2MM-jjK_GmHPEIVcOMcpVzaeiXA9P5hmhDqAo');
   spreadsheet.useApiKey(process.env.GOOGLE_API_KEY!);
   await spreadsheet.loadInfo();
@@ -527,7 +527,7 @@ async function fetchSheetsV11() {
   ];
 }
 
-async function fetchSheetsV12() {
+export async function fetchSheetsV12() {
   const spreadsheet = new GoogleSpreadsheet('10N6jmyrzmHrZGbGhDWfpdg4hQKm0t84H2DPkaFG7PNs');
   spreadsheet.useApiKey(process.env.GOOGLE_API_KEY!);
   await spreadsheet.loadInfo();
@@ -578,7 +578,7 @@ async function fetchSheetsV12() {
   ];
 }
 
-async function fetchSheetsV13() {
+export async function fetchSheetsV13() {
   const spreadsheet = new GoogleSpreadsheet('17vd35oIHxjXPUU-6QJwYoTLPs2nneHN4hokMNLoQQLY');
   spreadsheet.useApiKey(process.env.GOOGLE_API_KEY!);
   await spreadsheet.loadInfo();
@@ -641,7 +641,7 @@ async function fetchSheetsV13() {
   ];
 }
 
-async function fetchSheetsV14() {
+export async function fetchSheetsV14() {
   const spreadsheet = new GoogleSpreadsheet('1JXFhqpow60lXYzETOXaqIRVIaIpWWxCsGCcE0piLLDw');
   spreadsheet.useApiKey(process.env.GOOGLE_API_KEY!);
   await spreadsheet.loadInfo();
