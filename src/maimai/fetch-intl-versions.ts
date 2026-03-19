@@ -44,6 +44,7 @@ export const versionIdMap = new Map([
   ['PRiSM', 23],
   ['PRiSM PLUS', 24],
   ['CiRCLE', 25],
+  // ['CiRCLE PLUS', 26],
   //! add further version here !//
 ]);
 
