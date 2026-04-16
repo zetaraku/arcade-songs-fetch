@@ -12,6 +12,9 @@ logger.level = log4js.levels.INFO;
 
 const DATA_URL = 'https://wikiwiki.jp/gameongeki';
 
+// the default axios 'User-Agent' header must not be present
+axios.defaults.headers.common['User-Agent'] = null;
+
 const difficultyMap = new Map([
   ['BASIC', 'basic'],
   ['ADVANCED', 'advanced'],
