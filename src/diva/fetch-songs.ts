@@ -36,6 +36,10 @@ export async function getCookies() {
     page.click('#submit'),
   ]);
 
+  if ((await page.content()).includes('エラーが発生しました。')) {
+    throw new Error('Login failed. Please check your credential.');
+  }
+
   const cookies = await page.cookies();
 
   await browser.close();
@@ -54,6 +58,10 @@ async function* fetchPages(cookies: Record<string, string>) {
     });
 
     const $ = cheerio.load(response.data);
+
+    if ($(':contains("データ保護のためDIVA.NETサーバへの接続を終了します。")').length !== 0) {
+      throw new Error('Login expired. Please run again to continue.');
+    }
 
     const songInfos = $('a[href^="/divanet/pv/info/"]').toArray()
       .map((e) => {
