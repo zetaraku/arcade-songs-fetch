@@ -132,7 +132,7 @@ export default async function run() {
   const songsToFetch: Record<string, any>[] = await sequelize.query(/* sql */ `
     SELECT "songId", "category", "title"
     FROM (
-      SELECT DISTINCT "songId"
+      SELECT "songId"
       FROM "Songs" LEFT JOIN "SongExtras" USING ("songId")
       WHERE (FALSE
         OR "SongExtras"."bpm" IS NULL
