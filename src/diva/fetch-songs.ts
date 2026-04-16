@@ -49,7 +49,7 @@ async function* fetchPages(cookies: Record<string, string>) {
 
     const response = await axios.get(`${DATA_URL}/divanet/pv/sort/0/false/${pageNo}`, {
       headers: {
-        Cookie: `JSESSIONID=${cookies.JSESSIONID};`,
+        Cookie: `JSESSIONID=${cookies.JSESSIONID}; ROUTEID=${cookies.ROUTEID};`,
       },
     });
 
@@ -86,7 +86,7 @@ async function* fetchPages(cookies: Record<string, string>) {
 async function fetchSong(songInfo: Record<string, any>, cookies: Record<string, string>) {
   const response = await axios.get(songInfo.detailUrl, {
     headers: {
-      Cookie: `JSESSIONID=${cookies.JSESSIONID};`,
+      Cookie: `JSESSIONID=${cookies.JSESSIONID}; ROUTEID=${cookies.ROUTEID};`,
     },
   });
 
