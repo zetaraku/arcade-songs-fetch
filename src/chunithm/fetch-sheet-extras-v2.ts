@@ -13,6 +13,9 @@ logger.level = log4js.levels.INFO;
 
 const DATA_URL = 'https://wikiwiki.jp/chunithmwiki';
 
+// the default axios 'User-Agent' header must not be present
+axios.defaults.headers.common['User-Agent'] = null;
+
 const difficultyMap = new Map([
   ['#c0ff20', 'basic'],
   ['#ffe080', 'advanced'],
