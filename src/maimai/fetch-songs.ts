@@ -48,6 +48,13 @@ function getSongId(rawSong: Record<string, any>) {
       if (comment === 'バンドメンバーを集めて楽しもう！（入門編）') return '[協]青春コンプレックス（入門編）';
       if (comment === 'バンドメンバーを集めて挑め！（ヒーロー級）') return '[協]青春コンプレックス（ヒーロー級）';
     }
+    if (title === '[宴]Wonderland Wars　オープニング') {
+      if (comment === 'BASIC（当時は宴という枠が無かった）') return '[宴]Wonderland Wars　オープニング (BASIC)';
+      if (comment === 'ADVANCED（時代なので、急ぎで）') return '[宴]Wonderland Wars　オープニング (ADVANCED)';
+      if (comment === 'EXPERT（全難度を作成した訳です）') return '[宴]Wonderland Wars　オープニング (EXPERT)';
+      if (comment === 'MASTER（チャン氏のReMASが）') return '[宴]Wonderland Wars　オープニング (MASTER)';
+      if (comment === 'Re:MASTER（一番先にできた譜面！）') return '[宴]Wonderland Wars　オープニング (Re:MASTER)';
+    }
     return `${title}`;
   }
   if (title === 'Link') {
