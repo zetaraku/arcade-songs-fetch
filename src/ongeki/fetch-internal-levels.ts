@@ -8,6 +8,13 @@ import 'dotenv/config';
 const logger = log4js.getLogger('ongeki/fetch-internal-levels');
 logger.level = log4js.levels.INFO;
 
+// OngekiScoreLog is now blocking overseas access with CAPTCHA.
+// You may need to contact the author and set the User-Agent header to bypass the CAPTCHA.
+// See: https://ongeki-score.net/data-policy
+if (process.env.ONGEKI_SCORE_USER_AGENT) {
+  axios.defaults.headers.common['User-Agent'] = process.env.ONGEKI_SCORE_USER_AGENT;
+}
+
 const manualMappings = new Map([
   ['God knows...', 'God knows…'],
   ['sister\'s noise', 'sister’s noise'],
