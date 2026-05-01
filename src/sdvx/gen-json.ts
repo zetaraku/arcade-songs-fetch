@@ -45,6 +45,7 @@ const difficulties = [
   { difficulty: 'vivid', name: 'VIVID', abbr: 'VVD', color: '#ff59cd' },
   { difficulty: 'exceed', name: 'EXCEED', abbr: 'XCD', color: '#187fff' },
   { difficulty: 'ultimate', name: 'ULTIMATE', abbr: 'ULT', color: '#ffdd57' },
+  { difficulty: 'nabla', name: 'NABLA', abbr: 'NBL', color: '#95dd03' },
 ];
 const regions = [
   { region: 'jp', name: '日本版' },
