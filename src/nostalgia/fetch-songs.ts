@@ -27,6 +27,10 @@ function getSongId(rawSong: Record<string, any>) {
     if (artist === 'モーツァルト') return 'トルコ行進曲';
     if (artist === 'ベートーヴェン') return 'トルコ行進曲 (2)';
   }
+  if (title === 'メヌエット') {
+    if (artist === 'ペツォールト') return 'メヌエット';
+    if (artist === '瀧廉太郎') return 'メヌエット (2)';
+  }
   return title;
 }
 

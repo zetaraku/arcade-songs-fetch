@@ -9,10 +9,14 @@ const logger = log4js.getLogger('nostalgia/fetch-internal-levels');
 logger.level = log4js.levels.INFO;
 
 function getSongId(rawSheet: Record<string, any>) {
-  const { title, level } = rawSheet;
+  const { title, level, internalLevel } = rawSheet;
   if (title === 'トルコ行進曲') {
     if (level === '◆2') return 'トルコ行進曲';
     if (level === '◆1') return 'トルコ行進曲 (2)';
+  }
+  if (title === 'メヌエット') {
+    if (internalLevel === '9.0') return 'メヌエット';
+    if (internalLevel === '11.0') return 'メヌエット (2)';
   }
   return title;
 }
@@ -31,7 +35,7 @@ async function fetchSheets() {
     const internalLevel = Number(internalLevelText).toFixed(1);
 
     return {
-      songId: getSongId({ title, level }),
+      songId: getSongId({ title, level, internalLevel }),
       type: 'std',
       difficulty: 'real',
       internalLevel,
