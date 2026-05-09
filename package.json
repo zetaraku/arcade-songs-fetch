@@ -122,7 +122,7 @@
     "any:gen-json": "ts-node src/any/gen-json",
     "any:upload-data": "ts-node src/_core/upload-data any",
     "# linting": "",
-    "lint": "eslint src/ --ext .js,.ts",
+    "lint": "eslint src/ --ext .js,.ts --report-unused-disable-directives",
     "# database": "",
     "db:create:all": "bash db-create-all.bash",
     "db:migrate:all": "bash db-migrate-all.bash",
