@@ -1,4 +1,3 @@
-/* eslint-disable object-curly-newline */
 import fs from 'node:fs';
 import Sequelize from 'sequelize';
 import log4js from 'log4js';

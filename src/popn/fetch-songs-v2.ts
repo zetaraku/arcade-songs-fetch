@@ -1,6 +1,4 @@
-/* eslint-disable object-curly-newline */
 /* eslint-disable no-await-in-loop */
-/* eslint-disable newline-per-chained-call */
 import axios from 'axios';
 import sleep from 'sleep-promise';
 import log4js from 'log4js';

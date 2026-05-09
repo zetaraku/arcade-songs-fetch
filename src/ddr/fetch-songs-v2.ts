@@ -1,4 +1,3 @@
-/* eslint-disable no-await-in-loop */
 import axios from 'axios';
 import sleep from 'sleep-promise';
 import log4js from 'log4js';

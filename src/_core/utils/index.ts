@@ -58,6 +58,7 @@ export function ensureNoDuplicateEntry(entries: any[]) {
   }
 
   if (duplicateEntrySet.size > 0) {
+    // eslint-disable-next-line no-console
     console.error([...duplicateEntrySet]);
     throw new Error('! Duplicate entries detected');
   }
@@ -72,6 +73,7 @@ export function checkUnmatchedEntries(entries: any[], validEntries: any[]) {
   }
 
   if (unmatchedEntrySet.size > 0) {
+    // eslint-disable-next-line no-console
     console.warn('! Unmatched entries detected:', [...unmatchedEntrySet]);
   }
 }
