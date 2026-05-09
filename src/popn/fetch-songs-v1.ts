@@ -95,8 +95,8 @@ const manualUpperMappingWithVersion = new Map([
   ['鳳凰～Chinese Phoenix Mix～', ['pop\'n 20 fantasia', 'pop\'n 解明リドルズ']],
 ]);
 
-const manualAltMappingWithGenre = new Map([
-  ['つぼみ', ['ピンキッシュ', 'つぼみ']],
+export const manualAltMappingWithGenre = new Map([
+  ['つぼみ', ['ピンキッシュ', '胸キュン☆ブロッサム']],
   ['Denpasar', ['バリトランス', 'ウラ・バリトランス']],
   ['H@ppy Choice', ['メロコア', 'メロコアＬＩＶＥ']],
   ['Homesick Pt.2&3', ['ソフトロック', 'ソフトロックＬＯＮＧ']],
@@ -110,9 +110,11 @@ const manualAltMappingWithGenre = new Map([
   ['赤いリンゴ', ['グルーブロック', 'グルーブロックＬＩＶＥ']],
 ]);
 
-const manualAltMappingWithArtist = new Map([
+export const manualAltMappingWithArtist = new Map([
   ['朱と碧のランページ', ['NU-KO', 'covered by 儒烏風亭らでん(ReGLOSS)']],
   ['リメンバーリメンバー', ['rino & m@sumi from plastic penguin', 'covered by 轟はじめ(ReGLOSS)']],
+  ['Keep the Faith', ['ときめきアイドル project Rhythmixxx', '吾龍']],
+  ['僕の飛行機', ['宮永やよい', 'covered by 不知火フレア']],
 ]);
 
 function getSheetType(rawSong: Record<string, any>) {
