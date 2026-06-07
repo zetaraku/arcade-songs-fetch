@@ -34,7 +34,6 @@ function extractSongExtra(rawSong: Record<string, any>) {
   return {
     songId: getSongId(rawSong),
     releaseDate: rawSong.meta.release,
-    bpm: rawSong.meta.bpm || null,
   };
 }
 

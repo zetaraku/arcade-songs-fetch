@@ -6,7 +6,7 @@ import sleep from 'sleep-promise';
 import log4js from 'log4js';
 import * as cheerio from 'cheerio';
 import { wikiwikiWikiTitleEscape } from '@/_core/utils';
-import { sequelize, SheetExtra } from '@@/db/chunithm/models';
+import { sequelize, SongExtra, SheetExtra } from '@@/db/chunithm/models';
 
 const logger = log4js.getLogger('chunithm/fetch-sheet-extras-v2');
 logger.level = log4js.levels.INFO;
@@ -55,6 +55,14 @@ function getSongWikiUrl(song: Record<string, any>) {
   const encodedTitle = encodeURIComponent(wikiwikiWikiTitleEscape(title));
 
   return `${DATA_URL}/${encodedTitle}`;
+}
+
+function extractSongExtra($: cheerio.CheerioAPI) {
+  const bpm = Number.parseFloat($('th:contains("BPM")').next().text().trim()) || null;
+
+  return {
+    bpm,
+  };
 }
 
 function extractSheetExtras($: cheerio.CheerioAPI, table: cheerio.Element) {
@@ -126,6 +134,11 @@ async function fetchExtra(song: Record<string, any>, pageUrl: string) {
   const response = await axios.get(pageUrl);
   const $ = cheerio.load(response.data);
 
+  const songExtra = {
+    songId: song.songId,
+    ...extractSongExtra($),
+  };
+
   const sheetExtras = [
     $('h2:contains("詳細") + div > table').get(0),
     $('h2:contains("詳細") + p + div > table').get(0),
@@ -143,6 +156,7 @@ async function fetchExtra(song: Record<string, any>, pageUrl: string) {
   }
 
   return {
+    songExtra,
     sheetExtras,
   };
 }
@@ -151,6 +165,15 @@ export default async function run() {
   const songsToFetch: Record<string, any>[] = await sequelize.query(/* sql */ `
     SELECT "songId", "category", "title"
     FROM (
+      SELECT "songId"
+      FROM "Songs"
+        LEFT JOIN "SongExtras" USING ("songId")
+      WHERE (FALSE
+        OR "SongExtras"."bpm" IS NULL
+      ) AND (
+        "category" <> 'WORLD''S END'
+      )
+        UNION
       SELECT DISTINCT "songId"
       FROM "Sheets"
         LEFT JOIN "SheetExtras" USING ("songId", "type", "difficulty")
@@ -183,8 +206,9 @@ export default async function run() {
       logger.info(`(${1 + index} / ${songsToFetch.length}) Fetching & Updating extra: ${song.title} ...`);
       const pageUrl = getSongWikiUrl(song);
 
-      const { sheetExtras } = await fetchExtra(song, pageUrl);
+      const { songExtra, sheetExtras } = await fetchExtra(song, pageUrl);
 
+      await SongExtra.upsert(songExtra);
       await Promise.all(sheetExtras.map((sheetExtra) => SheetExtra.upsert(sheetExtra)));
     } catch (e: any) {
       logger.error(e.message);
