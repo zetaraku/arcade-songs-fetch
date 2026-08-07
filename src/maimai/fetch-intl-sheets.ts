@@ -34,7 +34,14 @@ const difficultyIdMap = new Map([
   ['remaster', 4],
 ]);
 
-function getSongId(title: string, category: string) {
+function getSongId(title: string, category: string, level: string) {
+  if (title === '[宴]Wonderland Wars　オープニング') {
+    if (level === '10?') return '[宴]Wonderland Wars　オープニング (BASIC)';
+    if (level === '11?') return '[宴]Wonderland Wars　オープニング (ADVANCED)';
+    if (level === '12?') return '[宴]Wonderland Wars　オープニング (EXPERT)';
+    if (level === '13?') return '[宴]Wonderland Wars　オープニング (MASTER)';
+    if (level === '14?') return '[宴]Wonderland Wars　オープニング (Re:MASTER)';
+  }
   if (title === 'Link') {
     if (category === 'maimai') return 'Link';
     if (category === 'niconico＆ボーカロイド') return 'Link (2)';
@@ -121,7 +128,7 @@ async function getIntlSheets(
     const level = $(e).find('.music_lv_block').text().trim();
 
     return {
-      songId: getSongId(title, category),
+      songId: getSongId(title, category, level),
       type,
       difficulty,
       level,
@@ -164,7 +171,7 @@ async function getIntlUtageSheets(
     }
 
     return {
-      songId: getSongId(title, '宴会場'),
+      songId: getSongId(title, '宴会場', level),
       type: 'utage',
       difficulty: `【${utageType}】`,
       level,
