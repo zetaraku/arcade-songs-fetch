@@ -21,6 +21,7 @@ if (!process.env.USER_AGENT) {
 axios.defaults.headers.common['User-Agent'] = process.env.USER_AGENT;
 
 const difficultyMap = new Map([
+  // standard color palette from the song template:
   ['#00ced1', null], // 'easy'
   ['#98fb98', 'basic'],
   ['#ffa500', 'advanced'],
@@ -28,6 +29,14 @@ const difficultyMap = new Map([
   ['#ee82ee', 'master'],
   ['#ffceff', 'remaster'],
   ['#ff5296', null], // 'utage'
+  // irregular color palette from a random user:
+  ['#2cb0ff', null], // 'easy'
+  ['#6fe163', 'basic'],
+  ['#f8df3a', 'advanced'],
+  ['#ff828e', 'expert'],
+  ['#c27ff4', 'master'],
+  ['#ed9cfb', 'remaster'],
+  ['#ff6ffd', null], // 'utage'
   //! add further difficulty here !//
 ]);
 
