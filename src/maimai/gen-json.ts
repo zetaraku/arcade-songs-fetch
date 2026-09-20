@@ -47,7 +47,8 @@ const versions = [
   { releaseDate: '2024-09-12', version: 'PRiSM', abbr: 'PRiSM (鏡)' },
   { releaseDate: '2025-03-13', version: 'PRiSM PLUS', abbr: 'PRiSM+ (彩)' },
   { releaseDate: '2025-09-18', version: 'CiRCLE', abbr: 'CiRCLE (丸)' },
-  { releaseDate: '2026-03-19', version: 'CiRCLE PLUS', abbr: 'CiRCLE+' },
+  { releaseDate: '2026-03-19', version: 'CiRCLE PLUS', abbr: 'CiRCLE+ (廻)' },
+  { releaseDate: '2026-09-17', version: 'MAGiCAL', abbr: 'MAGiCAL' },
   //! add further version here !//
 ];
 const types = [

@@ -41,6 +41,7 @@ const versionIdMap = new Map([
   ['PRiSM PLUS', 24],
   ['CiRCLE', 25],
   ['CiRCLE PLUS', 26],
+  ['MAGiCAL', 27],
   //! add further version here !//
 ]);
 

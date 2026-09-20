@@ -714,6 +714,58 @@ export async function fetchSheetsV14() {
   ];
 }
 
+export async function fetchSheetsV15() {
+  const spreadsheet = new GoogleSpreadsheet('1qnLuJHmV_M3klraaeetHs_U8vOFMQWVJd-Fw3xTN890', {
+    apiKey: process.env.GOOGLE_API_KEY!,
+  });
+  await spreadsheet.loadInfo();
+
+  return [
+    ...await extractRecords({
+      spreadsheet,
+      sheetName: 'MAGiCAL新曲',
+      dataIndexes: [0, 6, 12, 18, 24],
+      dataOffsets: [0, 1, 2, 4],
+    }),
+    ...await extractRecords({
+      spreadsheet,
+      sheetName: '新曲枠',
+      dataIndexes: [0, 7, 14, 21],
+      dataOffsets: [0, 2, 3, 5],
+    }),
+    ...await extractRecords({
+      spreadsheet,
+      sheetName: '14以上',
+      dataIndexes: [0, 7, 14, 21, 28],
+      dataOffsets: [0, 2, 3, 5],
+    }),
+    ...await extractRecords({
+      spreadsheet,
+      sheetName: '13+',
+      dataIndexes: [0, 6, 12, 18, 24],
+      dataOffsets: [0, 1, 2, 4],
+    }),
+    ...await extractRecords({
+      spreadsheet,
+      sheetName: '13',
+      dataIndexes: [0, 6, 12, 18, 24, 30, 36],
+      dataOffsets: [0, 1, 2, 4],
+    }),
+    ...await extractRecords({
+      spreadsheet,
+      sheetName: '12+',
+      dataIndexes: [0, 6, 12, 18],
+      dataOffsets: [0, 1, 2, 4],
+    }),
+    ...await extractRecords({
+      spreadsheet,
+      sheetName: '12',
+      dataIndexes: [0, 6, 12, 18, 24, 30],
+      dataOffsets: [0, 1, 2, 4],
+    }),
+  ];
+}
+
 export default async function run() {
   if (!process.env.GOOGLE_API_KEY) {
     throw new Error('Please set your GOOGLE_API_KEY in the .env file');
@@ -729,7 +781,8 @@ export default async function run() {
     // ...await fetchSheetsV11(),
     // ...await fetchSheetsV12(),
     // ...await fetchSheetsV13(),
-    ...await fetchSheetsV14(),
+    // ...await fetchSheetsV14(),
+    ...await fetchSheetsV15(),
   ];
   logger.info(`OK, ${rawSheets.length} sheets fetched.`);
 
