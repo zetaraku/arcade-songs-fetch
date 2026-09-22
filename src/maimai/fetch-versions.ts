@@ -114,7 +114,7 @@ async function getJpSheets(
 
   const $ = cheerio.load(response.data);
 
-  if ($(':contains("ERROR CODE")').length > 0) {
+  if ($(':contains("エラーコード")').length > 0) {
     throw new Error('An error occurred while fetching the page.');
   }
 
